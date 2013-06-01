@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Game.java" afterPath="$PROJECT_DIR$/Platformers/test3/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" afterPath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="Engine.iws" />
@@ -17,7 +15,7 @@
     <file path="/NormalPlatformGenerator.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370057483674" ignored="false" />
     <file path="/QImgaeProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369963662176" ignored="false" />
     <file path="/QPlatform.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369997838329" ignored="false" />
-    <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370092570358" ignored="false" />
+    <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370092777471" ignored="false" />
     <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370053687306" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +89,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="101" selection-start="3106" selection-end="3106" vertical-scroll-proportion="0.9201878">
+            <state line="105" column="86" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.82566583">
               <folding />
             </state>
           </provider>
@@ -606,7 +604,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="101" selection-start="3106" selection-end="3106" vertical-scroll-proportion="0.9201878">
+        <state line="105" column="86" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.82566583">
           <folding />
         </state>
       </provider>
