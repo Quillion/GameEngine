@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Game.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Game.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Main$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Main$KeyInputHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Main$MouseControl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Main$MouseMotion.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Main.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\Main.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\QLibrary.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\compile.bat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\examples\basics\compileAndRun.bat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Game.java" afterPath="$PROJECT_DIR$/Platformers/test3/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" afterPath="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/QCamera.java" afterPath="$PROJECT_DIR$/Engine/Logic/QCamera.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java" afterPath="$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +15,7 @@
     <file path="/NormalPlatformGenerator.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369965735905" ignored="false" />
     <file path="/QImgaeProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369963662176" ignored="false" />
     <file path="/QPlatform.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369997838329" ignored="false" />
-    <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370050004336" ignored="false" />
+    <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370051193339" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +185,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platforms" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -581,7 +582,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="104" selection-end="104" vertical-scroll-proportion="0.09058615">
+        <state line="13" column="4" selection-start="630" selection-end="630" vertical-scroll-proportion="0.39253998">
           <folding />
         </state>
       </provider>

@@ -1,5 +1,17 @@
 <b>Rules</b>
-ALL code must be commented. (I am working on commenting my code now.
+<p>
+ALL code must be commented. (I am working on commenting my code now).
+</p>
+
+<b>Directory explanation</b>
+<p>
+<b>Engine:</b> All the general stuff for the code goes here. Further on more specialized code will go somewhere else.<br>
+<b>Platformers:</b> Testing for platforming goes here, numbered testn where n is incrememntal, more complex each time.<br>
+<b>Template:</b> Templates go here. Currently only contains basic example.<br>
+<b>Examples:</b> Complete jars go here for just looking at.<br>
+<b>Scripts:</b> Currently holds garbage from my old project.<br>
+<b>Images:</b> Images and sprites go here.<br>
+</p>
 
 <b>Objects so far</b>
 
