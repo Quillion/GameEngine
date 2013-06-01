@@ -131,11 +131,16 @@ public class NormalPlatformGenerator
 		}
 	}
 
-	public BufferedImage getPlatform()
+	public BufferedImage getGround()
 	{
 	    return QImageProcessor.constructVertical(
 	            QImageProcessor.constructVertical(this.getPlatformTop(), this.getPlatformMiddle()),
 				this.getPlatformBottom());
+	}
+
+	public BufferedImage getPlatform()
+	{
+		return QImageProcessor.constructVertical(this.getPlatformTop(), this.getPlatformBottom());
 	}
 
 	public BufferedImage getWall()
