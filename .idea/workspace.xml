@@ -2,20 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Game.java" afterPath="$PROJECT_DIR$/Platformers/test3/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370049912234" ignored="false" />
-    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369998662449" ignored="false" />
+    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370051943884" ignored="false" />
     <file path="/QBCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784250279" ignored="false" />
     <file path="/QBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784584470" ignored="false" />
-    <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369789880996" ignored="false" />
+    <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370055148521" ignored="false" />
     <file path="/QImageExtractor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369955399313" ignored="false" />
     <file path="/NormalPlatformGenerator.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369965735905" ignored="false" />
     <file path="/QImgaeProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369963662176" ignored="false" />
     <file path="/QPlatform.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369997838329" ignored="false" />
     <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370051193339" ignored="false" />
+    <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370053687306" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,46 @@
     <favorites_list name="Engine" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Platformers/test3/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="34" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Platformers/test3/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="9" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Platformers/test2/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Platformers/test1/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="16" selection-start="238" selection-end="238" vertical-scroll-proportion="0.4116223">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -105,8 +146,8 @@
         <option value="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
         <option value="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
       </list>
     </option>
   </component>
@@ -198,11 +239,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Images" />
+              <option name="myItemId" value="Platformers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Platforms" />
+              <option name="myItemId" value="test3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -227,15 +304,22 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="FullScreen" value="false" />
-    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="project.propCompiler" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
@@ -340,54 +424,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="Platformer 1" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="test1.Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Engine" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Platformer 2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="test2.Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Engine" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Platformer 3" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="test3.Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Engine" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Platformer 1" />
       <item index="1" class="java.lang.String" itemvalue="Application.Platformer 2" />
@@ -414,7 +450,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -424,16 +460,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.770017" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22998296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.770017" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22998296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -513,11 +549,6 @@
         <state line="487" column="16" selection-start="17399" selection-end="17399" vertical-scroll-proportion="23.321127" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test1/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="236" selection-end="236" vertical-scroll-proportion="0.44067797" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Platformers/test2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="15" selection-start="137" selection-end="137" vertical-scroll-proportion="0.20581114" />
@@ -545,12 +576,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="5" selection-start="850" selection-end="850" vertical-scroll-proportion="0.73239434" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test2/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="0.35915494" />
+        <state line="40" column="5" selection-start="850" selection-end="850" vertical-scroll-proportion="0.73239434">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageExtractor.java">
@@ -563,16 +591,6 @@
         <state line="4" column="14" selection-start="62" selection-end="62" vertical-scroll-proportion="0.15962441" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test3/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="34" selection-start="868" selection-end="868" vertical-scroll-proportion="0.031021899" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test3/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="275" selection-end="275" vertical-scroll-proportion="0.36956522" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="3" selection-start="256" selection-end="256" vertical-scroll-proportion="0.31924883">
@@ -583,6 +601,36 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="4" selection-start="630" selection-end="630" vertical-scroll-proportion="0.39253998">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test3/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="34" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test3/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="9" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test2/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test1/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="16" selection-start="238" selection-end="238" vertical-scroll-proportion="0.4116223">
           <folding />
         </state>
       </provider>
@@ -652,7 +700,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.7 (1)</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

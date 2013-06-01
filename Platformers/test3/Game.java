@@ -33,16 +33,11 @@ public class Game
 		temp_platform = new QBPlatform();
 		temp_platform.setX(0);
 		temp_platform.setY(430);
-		temp_platform.setImage(
-				QImageProcessor.constructVertical(
-					QImageProcessor.constructHorizontal(
-						QImageProcessor.constructHorizontal(
-								QImageProcessor.constructHorizontal(
-										generator.getPlatform(), generator.getPlatform()),
-								generator.getPlatform()),
-						generator.getPlatform()),
-				generator.getPlatform())
-		);
+		temp_platform.setImage(QImageProcessor.constructHorizontal(generator.getPlatform(), generator.getPlatform()));
+		for(int i = 0; i < 9; i++)
+		{
+			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
+		}
 		platforms.add(temp_platform);
 
 		camera = new QCamera(111, 111, WIDTH/2, HEIGHT/2);
