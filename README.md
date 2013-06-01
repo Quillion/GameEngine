@@ -1,4 +1,7 @@
-Objects so far
+<b>Rules</b>
+ALL code must be commented. (I am working on commenting my code now.
+
+<b>Objects so far</b>
 
 QBox (Box):
     A simple box,

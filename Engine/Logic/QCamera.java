@@ -1,9 +1,12 @@
 package Logic;
+/**
+ * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version     Version 1
+ * @since       1.6
+ */
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.util.ArrayList;
-import java.util.List;
 
 import BasicShapes.QBBox;
 import BasicShapes.QBox;

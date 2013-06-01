@@ -29,6 +29,17 @@ public class QBPlatform extends QBBox
         image_ = null;
     }
 
+	/**
+	 * Set the image to whatever is passed to us. The width and height will be changed accordingly.
+	 * @param image the image for this platform
+	 */
+	public void setImage(BufferedImage image)
+	{
+		this.image_ = image;
+		super.setWidth(image_.getWidth());
+		super.setHeight(image_.getHeight());
+	}
+
     /**
      * Load the image from a given path,
      * @return true if image loaded successfully, false otherwise
