@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="" />
+    <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370178754833" ignored="false" />
@@ -16,6 +19,7 @@
     <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370092946737" ignored="false" />
     <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370053687306" ignored="false" />
     <file path="/Field.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370187553093" ignored="false" />
+    <file path="/.gitignore" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370188433883" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,10 +92,19 @@
       <file leaf-file-name="Field.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="11" selection-start="1136" selection-end="1136" vertical-scroll-proportion="1.6039076">
+            <state line="40" column="0" selection-start="586" selection-end="586" vertical-scroll-proportion="0.42273533">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,10 +146,10 @@
         <option value="$PROJECT_DIR$/Engine/Logic/QImageExtractor.java" />
         <option value="$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java" />
         <option value="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
         <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Engine/BasicShapes/Field.java" />
       </list>
     </option>
@@ -573,11 +586,6 @@
         <state line="40" column="5" selection-start="850" selection-end="850" vertical-scroll-proportion="0.73239434" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="62" selection-end="62" vertical-scroll-proportion="0.15962441" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Platformers/test1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="16" selection-start="238" selection-end="238" vertical-scroll-proportion="0.4116223" />
@@ -632,9 +640,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="11" selection-start="1136" selection-end="1136" vertical-scroll-proportion="1.6039076">
+        <state line="40" column="0" selection-start="586" selection-end="586" vertical-scroll-proportion="0.42273533">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
