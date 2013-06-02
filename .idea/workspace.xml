@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/Field.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" afterPath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/QCamera.java" afterPath="$PROJECT_DIR$/Engine/Logic/QCamera.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/QImageExtractor.java" afterPath="$PROJECT_DIR$/Engine/Logic/QImageExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" afterPath="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -13,14 +15,16 @@
     <file path="/QBCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784250279" ignored="false" />
     <file path="/QBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784584470" ignored="false" />
     <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370055148521" ignored="false" />
-    <file path="/QImageExtractor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369955399313" ignored="false" />
-    <file path="/NormalPlatformGenerator.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370057483674" ignored="false" />
+    <file path="/QImageExtractor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370196197943" ignored="false" />
+    <file path="/NormalPlatformGenerator.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370201916466" ignored="false" />
     <file path="/QImgaeProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369963662176" ignored="false" />
     <file path="/QPlatform.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369997838329" ignored="false" />
     <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370092946737" ignored="false" />
     <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370053687306" ignored="false" />
-    <file path="/Field.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370190131288" ignored="false" />
+    <file path="/Field.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370195578193" ignored="false" />
     <file path="/.gitignore" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370190166819" ignored="false" />
+    <file path="/QImageProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370196344438" ignored="false" />
+    <file path="/QCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370198903422" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,19 +97,10 @@
       <file leaf-file-name="Field.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="67" selection-start="2487" selection-end="2487" vertical-scroll-proportion="0.39253998">
+            <state line="12" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.3623446">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QImageExtractor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageExtractor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="3" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -132,17 +127,17 @@
         <option value="$PROJECT_DIR$/Engine/Logic/QBCamera.java" />
         <option value="$PROJECT_DIR$/Platformers/test2/Game.java" />
         <option value="$PROJECT_DIR$/Platformers/test1/Game.java" />
-        <option value="$PROJECT_DIR$/Engine/Logic/QCamera.java" />
         <option value="$PROJECT_DIR$/Engine/Logic/QImgaeProcessor.java" />
-        <option value="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" />
-        <option value="$PROJECT_DIR$/Engine/Logic/QImageExtractor.java" />
         <option value="$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java" />
         <option value="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
-        <option value="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
         <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/Engine/BasicShapes/Field.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Engine/BasicShapes/Field.java" />
+        <option value="$PROJECT_DIR$/Engine/Logic/QImageExtractor.java" />
+        <option value="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" />
+        <option value="$PROJECT_DIR$/Engine/Logic/QCamera.java" />
+        <option value="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
       </list>
     </option>
   </component>
@@ -237,6 +232,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Platformers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TooGeneral" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -558,16 +571,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Engine/ExtendedShapes/QMControls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="271" selection-end="271" vertical-scroll-proportion="0.030195381" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Logic/QCamera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.23943663" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="5" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.19953051" />
@@ -588,11 +591,6 @@
         <state line="111" column="0" selection-start="2826" selection-end="2826" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="72" selection-start="3082" selection-end="3082" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Platformers/test3/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="128" column="30" selection-start="3982" selection-end="3982" vertical-scroll-proportion="0.37089202" />
@@ -608,11 +606,6 @@
         <state line="16" column="13" selection-start="323" selection-end="323" vertical-scroll-proportion="0.21361503" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="203" selection-end="203" vertical-scroll-proportion="0.16197184" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="20" selection-start="46" selection-end="46" vertical-scroll-proportion="0.08232445" />
@@ -625,13 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="19" selection-start="190" selection-end="190" vertical-scroll-proportion="0.5133215">
@@ -639,9 +625,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="58" selection-start="1887" selection-end="1887" vertical-scroll-proportion="2.385435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="48" selection-start="1053" selection-end="1053" vertical-scroll-proportion="1.1474245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/QEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="39" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.21636364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/QCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="364" column="67" selection-start="10643" selection-end="10643" vertical-scroll-proportion="0.5737122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="34" selection-start="4578" selection-end="4578" vertical-scroll-proportion="0.63765544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="67" selection-start="2487" selection-end="2487" vertical-scroll-proportion="0.39253998">
+        <state line="12" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.3623446">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

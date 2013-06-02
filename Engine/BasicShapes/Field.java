@@ -17,6 +17,12 @@ public class Field
 	private List<Field> neighbors_;
 	private int type_;
 
+	/**
+	 * Basic constructor.
+	 * Each field should have id that is unique to it.
+	 * Please do not create fields with duplicate ids.
+	 * @param id The unique id of this field.
+	 */
 	public Field(int id)
 	{
 		this.id_ = id;
@@ -24,16 +30,30 @@ public class Field
 		this.type_ = QConstants.NONE;
 	}
 
+	/**
+	 * Sets the type of the field to what you want.
+	 * @param type What type of field it is.
+	 */
 	public void setType(int type)
 	{
 		this.type_ = type;
 	}
 
+	/**
+	 * Returns what type of field this is.
+	 * Value for the types of field are stored in QConstants.
+	 * @return The type of field this is.
+	 */
 	public int getType()
 	{
 		return this.type_;
 	}
 
+	/**
+	 * Returns id of this field.
+	 * It will almost always be unique, unless design is somewhat stupid.
+	 * @return Id that represents this field.
+	 */
 	public int getId()
 	{
 		return this.id_;
@@ -80,8 +100,7 @@ public class Field
 	{
 		if(index < this.getNumOfNeighbors() || index >= 0)
 			return this.neighbors_.get(index);
-		else
-			return null;
+		return null;
 	}
 
 	/**
@@ -95,7 +114,7 @@ public class Field
 		for(Field neighbor : this.neighbors_)
 			if(neighbor.getId() == id)
 				return neighbor;
-			return null;
+		return null;
 	}
 
 	/**
@@ -111,11 +130,24 @@ public class Field
 		return true;
 	}
 
-	public void removeFieldById(int index)
+	/**
+	 * Removes field by the given id.
+	 * If index is invalid then nothing will happen.
+	 * Yes this method is costly, live with it. Why the heck would you even go about removing fields anyway?
+	 * @param id true if the field was removed, false otherwise.
+	 */
+	public boolean removeFieldById(int id)
 	{
-		this.neighbors_.remove(index);
+		for(int i = 0; i < this.getNumOfNeighbors(); i++)
+			if(this.getFieldByIndex(i).getId() == id)
+				return this.removeFieldByIndex(i);
+		return false;
 	}
 
+	/**
+	 * Returns all the neighbors attached to this field.
+	 * @return List which contains all the neighbors of this field.
+	 */
 	public List<Field> getNeighbors()
 	{
 		return this.neighbors_;
