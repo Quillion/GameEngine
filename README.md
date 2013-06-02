@@ -1,6 +1,6 @@
 <h1><b>Rules</b></h1>
 <p>
-ALL code must be commented. And all methods should have javadoc comments. (I am working on commenting my code now).
+<b><u><i>ALL</i></u></b> code must be commented. And all methods should have javadoc comments. (I am working on commenting my code now).
 </p>
 
 <h2><b>Directory explanation</b></h2>
@@ -96,11 +96,11 @@ ALL code must be commented. And all methods should have javadoc comments. (I am 
 <b>QEngine:</b><br>
     Collision detection. This will be used to check for collision between all the objects, be it platformer or crawler.
 <br>
-<b>QImageExtractor</b><br>
+<b>QImageExtractor:</b><br>
     Give it an Image, and then you can use it to slice and dice the image and get the tinier pieces of it.
 <br>
-<b>QImageProcessor</b><br>
+<b>QImageProcessor:</b><br>
     Used to glue the images together however you would like.
 </p>
 
-<h1>If anyone can move TooGeneral from Engine filder into PlatformerEngine/TooGeneral folder and make it work, that would be amazing</h1>
+<h1>If anyone can move TooGeneral from Engine filder into PlatformerEngine/TooGeneral folder and make it work, that would be amazing!</h1>
