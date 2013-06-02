@@ -17,6 +17,11 @@ public class Field
 	private List<Field> neighbors_;
 	private int type_;
 
+	// THIS IS GOING TO BE A SUPER USEFUL FIELD WHEN WE WILL HAVE AI
+	// TRAVERSE THE FIELDS FOR OPTIMAL PATHS. I CAN THINK UP OF AT LEAST
+	// THREE OTHER USES FOR THIS VARIABLE, SO LET's KEEP IT, TRUST ME.
+	public int garbage;
+
 	/**
 	 * Basic constructor.
 	 * Each field should have id that is unique to it.
@@ -98,7 +103,7 @@ public class Field
 	 */
 	public Field getFieldByIndex(int index)
 	{
-		if(index < this.getNumOfNeighbors() || index >= 0)
+		if(index < this.getNumOfNeighbors() && index >= 0)
 			return this.neighbors_.get(index);
 		return null;
 	}
