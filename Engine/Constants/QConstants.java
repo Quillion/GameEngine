@@ -17,4 +17,8 @@ public class QConstants
     public static int RIGHT = 2;
     public static int UP = 3;
     public static int DOWN = 4;
+
+	// SIM
+	public static int FOUR_SIDED = 4;
+	public static int SIX_SIDED = 4;
 }
