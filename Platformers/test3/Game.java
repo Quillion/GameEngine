@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.*;
+import java.util.List;
 
 import BasicSprite.QBPlatform;
 import BasicSprite.QMCharacter;
@@ -19,7 +20,7 @@ public class Game
 
 	private NormalPlatformGenerator generator;
 
-	private java.util.List<QBPlatform> platforms;
+	private List<QBPlatform> platforms;
 	private QBPlatform temp_platform;
 
 	private QMCharacter character;
@@ -240,7 +241,6 @@ public class Game
 		for(QBPlatform platform : platforms)
 		{
 			camera.draw(g, platform);
-			//platform.draw(g);
 		}
 
 		g.setColor(Color.WHITE);
