@@ -51,4 +51,9 @@ public class QImageProcessor
 		g.drawImage(right, left.getWidth(), 0, null);
 		return combined;
 	}
+
+	public static BufferedImage extractImage(BufferedImage image, int x, int y, int width, int height)
+	{
+		return image.getSubimage(x, y, width, height);
+	}
 }

@@ -5,6 +5,7 @@ import BasicSprite.QMCharacter;
 import Constants.QConstants;
 import Logic.QCamera;
 import Logic.QEngine;
+import Logic.QImageExtractor;
 import Logic.QImageProcessor;
 import TooGeneral.NormalPlatformGenerator;
 
@@ -43,7 +44,7 @@ public class Game
 		characters = new ArrayList<QMCharacter>();
 		ai = new ArrayList<QMCharacter>();
 
-		QMCharacter temp_character = new QMCharacter();
+		temp_character = new QMCharacter();
 		temp_character.setX(150);
 		temp_character.setY(150);
 		temp_character.setWidth(30);
@@ -142,7 +143,7 @@ public class Game
 			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getGround(5)));
 		grounds.add(temp_platform);
 
-		/************ 2 JUMPING PLATFORMS **************/
+		/************ 4 JUMPING PLATFORMS **************/
 		temp_platform = new QBPlatform();
 		temp_platform.setX(50);
 		temp_platform.setY(430);
@@ -215,6 +216,51 @@ public class Game
 		temp_platform.setImage(generator.getPlatformTop());
 		platforms.add(temp_platform);
 
+		/************ TOP ACCESS **************/
+		temp_platform = new QBPlatform();
+		temp_platform.setX(350);
+		temp_platform.setY(130);
+		temp_platform.setVerticalOffset(5);
+		temp_platform.setImage(generator.getPlatform());
+		for(int i = 0; i < 4; i++)
+			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
+		platforms.add(temp_platform);
+
+		temp_platform = new QBPlatform();
+		temp_platform.setX(930);
+		temp_platform.setY(110);
+		temp_platform.setVerticalOffset(5);
+		temp_platform.setImage(generator.getPlatform());
+		for(int i = 0; i < 1; i++)
+			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
+		platforms.add(temp_platform);
+
+		temp_platform = new QBPlatform();
+		temp_platform.setX(1350);
+		temp_platform.setY(120);
+		temp_platform.setVerticalOffset(5);
+		temp_platform.setImage(generator.getPlatform());
+		for(int i = 0; i < 4; i++)
+			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
+		platforms.add(temp_platform);
+
+		temp_platform = new QBPlatform();
+		temp_platform.setX(1440);
+		temp_platform.setY(344);
+		temp_platform.setVerticalOffset(5);
+		temp_platform.setImage(QImageProcessor.constructHorizontal(generator.getGround(3), generator.getGround(3)));
+		for(int i = 0; i < 2; i++)
+			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getGround(3)));
+		platforms.add(temp_platform);
+
+		temp_platform = new QBPlatform();
+		temp_platform.setX(1300);
+		temp_platform.setY(450);
+		temp_platform.setVerticalOffset(5);
+		temp_platform.setImage(QImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
+		temp_platform.setImage(QImageProcessor.extractImage(temp_platform.getImage(), 0, 0, 50, 100));
+		platforms.add(temp_platform);
+
 		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
     }
 
@@ -234,6 +280,11 @@ public class Game
 
 		for(QBPlatform ground : grounds)
 			camera.draw(g, ground);
+
+		QImageExtractor extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+		g.drawImage(extractor.getImage(3, 3, 38, 35), null, 10, 10);
+		g.setColor(Color.WHITE);
+		g.drawRect(10, 10, 38, 35);
     }
 
     public void update()
