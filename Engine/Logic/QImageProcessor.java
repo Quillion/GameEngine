@@ -1,6 +1,8 @@
 package Logic;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 
 /**
@@ -55,5 +57,21 @@ public class QImageProcessor
 	public static BufferedImage extractImage(BufferedImage image, int x, int y, int width, int height)
 	{
 		return image.getSubimage(x, y, width, height);
+	}
+
+	public static BufferedImage flipVertically(BufferedImage image)
+	{
+		AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
+		tx.translate(0, -image.getHeight(null));
+		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+		return op.filter(image, null);
+	}
+
+	public static BufferedImage flipHorizontally(BufferedImage image)
+	{
+		AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
+		tx.translate(-image.getWidth(null), 0);
+		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+		return op.filter(image, null);
 	}
 }

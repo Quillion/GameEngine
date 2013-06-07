@@ -1,5 +1,6 @@
 package test4;
 
+import BasicShapes.Animation;
 import BasicSprite.QBPlatform;
 import BasicSprite.QMCharacter;
 import Constants.QConstants;
@@ -30,6 +31,9 @@ public class Game
 	private QMCharacter temp_character;
 
 	private QCamera camera;
+
+	QImageExtractor extractor;
+	Animation animation;
 
     public Game(int WIDTH, int HEIGHT)
     {
@@ -262,6 +266,12 @@ public class Game
 		platforms.add(temp_platform);
 
 		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
+
+		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+		animation = new Animation(3, 20);
+		animation.addImage(extractor.getImage(3, 48, 40, 35));
+		animation.addImage(extractor.getImage(53, 48, 40, 35));
+		animation.addImage(extractor.getImage(104, 48, 40, 35));
     }
 
     public void draw(Graphics2D g)
@@ -282,9 +292,16 @@ public class Game
 			camera.draw(g, ground);
 
 		QImageExtractor extractor = new QImageExtractor("Images/Characters/bluesnail.png");
-		g.drawImage(extractor.getImage(3, 3, 38, 35), null, 10, 10);
+		g.drawImage(extractor.getImage(3, 3, 40, 35), null, 10, 10);
+		g.drawImage(extractor.getImage(3, 48, 40, 35), null, 10, 50);
+		g.drawImage(extractor.getImage(53, 48, 40, 35), null, 50, 50);
+		g.drawImage(extractor.getImage(104, 48, 40, 35), null, 90, 50);
 		g.setColor(Color.WHITE);
-		g.drawRect(10, 10, 38, 35);
+		g.drawRect(10, 10, 40, 35);
+		g.drawRect(10, 50, 40, 35);
+		g.drawRect(50, 50, 40, 35);
+		g.drawRect(90, 50, 40, 35);
+		g.drawImage(animation.getImage(), null, 10, 90);
     }
 
     public void update()
