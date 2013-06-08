@@ -8,6 +8,7 @@ import Logic.QCamera;
 import Logic.QEngine;
 import Logic.QImageExtractor;
 import Logic.QImageProcessor;
+import Platformer.BasicCharacter;
 import TooGeneral.NormalPlatformGenerator;
 
 import java.awt.*;
@@ -26,9 +27,9 @@ public class Game
 	private List<QBPlatform> platforms;
 	private QBPlatform temp_platform;
 
-	private List<QMCharacter> characters;
-	private List<QMCharacter> ai;
-	private QMCharacter temp_character;
+	private List<BasicCharacter> characters;
+	private List<BasicCharacter> ai;
+	private BasicCharacter temp_character;
 
 	private QCamera camera;
 
@@ -45,14 +46,16 @@ public class Game
 		grounds = new ArrayList<QBPlatform>();
 		platforms = new ArrayList<QBPlatform>();
 
-		characters = new ArrayList<QMCharacter>();
-		ai = new ArrayList<QMCharacter>();
+		characters = new ArrayList<BasicCharacter>();
+		ai = new ArrayList<BasicCharacter>();
 
-		temp_character = new QMCharacter();
+		extractor = new QImageExtractor("Images/Characters/cat.png");
+
+		temp_character = new BasicCharacter();
 		temp_character.setX(150);
 		temp_character.setY(150);
-		temp_character.setWidth(30);
-		temp_character.setHeight(30);
+		temp_character.setWidth(43);
+		temp_character.setHeight(43);
 		temp_character.setGravity(0.2);
 		temp_character.setMaxSpeed(3.9);
 		temp_character.setJump(6);
@@ -62,14 +65,23 @@ public class Game
 		temp_character.setLeftKey(KeyEvent.VK_LEFT);
 		temp_character.setRightKey(KeyEvent.VK_RIGHT);
 		temp_character.setJumpKey(KeyEvent.VK_UP);
-		temp_character.setColor(Color.ORANGE);
+		temp_character.setJump(1, 100);
+		temp_character.addJump(extractor.getImage(3, 111, 40, 35));
+		temp_character.setStand(3, 20);
+		temp_character.addStand(extractor.getImage(3, 59, 43, 43));
+		temp_character.addStand(extractor.getImage(54, 58, 43, 43));
+		temp_character.addStand(extractor.getImage(109, 58, 43, 43));
+		temp_character.setWalk(3, 20);
+		temp_character.addWalk(extractor.getImage(3, 3, 43, 43));
+		temp_character.addWalk(extractor.getImage(53, 3, 43, 43));
+		temp_character.addWalk(extractor.getImage(111, 3, 43, 43));
 		characters.add(temp_character);
 
-		temp_character = new QMCharacter();
+		temp_character = new BasicCharacter();
 		temp_character.setX(350);
 		temp_character.setY(150);
-		temp_character.setWidth(30);
-		temp_character.setHeight(30);
+		temp_character.setWidth(43);
+		temp_character.setHeight(43);
 		temp_character.setGravity(0.2);
 		temp_character.setMaxSpeed(3.9);
 		temp_character.setJump(6);
@@ -79,8 +91,46 @@ public class Game
 		temp_character.setLeftKey(KeyEvent.VK_A);
 		temp_character.setRightKey(KeyEvent.VK_D);
 		temp_character.setJumpKey(KeyEvent.VK_W);
-		temp_character.setColor(Color.LIGHT_GRAY);
+		temp_character.setJump(1, 100);
+		temp_character.addJump(extractor.getImage(3, 111, 40, 35));
+		temp_character.setStand(3, 20);
+		temp_character.addStand(extractor.getImage(3, 59, 43, 43));
+		temp_character.addStand(extractor.getImage(54, 58, 43, 43));
+		temp_character.addStand(extractor.getImage(109, 58, 43, 43));
+		temp_character.setWalk(3, 20);
+		temp_character.addWalk(extractor.getImage(3, 3, 43, 43));
+		temp_character.addWalk(extractor.getImage(53, 3, 43, 43));
+		temp_character.addWalk(extractor.getImage(111, 3, 43, 43));
 		characters.add(temp_character);
+
+		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+
+		temp_character = new BasicCharacter();
+		temp_character.setX(300);
+		temp_character.setY(150);
+		temp_character.setWidth(40);
+		temp_character.setHeight(35);
+		temp_character.setGravity(0.2);
+		temp_character.setMaxSpeed(3.9);
+		temp_character.setJump(6);
+		temp_character.setAcceleration(0.5);
+		temp_character.setGroundFriction(0.2);
+		temp_character.setAirFriction(0.2);
+		temp_character.setJump(1, 100);
+		temp_character.addJump(extractor.getImage(3, 3, 40, 35));
+		temp_character.setStand(1, 100);
+		temp_character.addStand(extractor.getImage(3, 3, 40, 35));
+		temp_character.setWalk(3, 20);
+		temp_character.addWalk(extractor.getImage(3, 48, 40, 35));
+		temp_character.addWalk(extractor.getImage(53, 48, 40, 35));
+		temp_character.addWalk(extractor.getImage(104, 48, 40, 35));
+		ai.add(temp_character);
+
+		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+		animation = new Animation(3, 20);
+		animation.addImage(extractor.getImage(3, 48, 40, 35));
+		animation.addImage(extractor.getImage(53, 48, 40, 35));
+		animation.addImage(extractor.getImage(104, 48, 40, 35));
 
 		/************ LEFTMOST WALL **************/
 		temp_platform = new QBPlatform();
@@ -266,12 +316,6 @@ public class Game
 		platforms.add(temp_platform);
 
 		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
-
-		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
-		animation = new Animation(3, 20);
-		animation.addImage(extractor.getImage(3, 48, 40, 35));
-		animation.addImage(extractor.getImage(53, 48, 40, 35));
-		animation.addImage(extractor.getImage(104, 48, 40, 35));
     }
 
     public void draw(Graphics2D g)
@@ -282,33 +326,37 @@ public class Game
 		for(QBPlatform platform : platforms)
 			camera.draw(g, platform);
 
-		for (QMCharacter character : characters)
+		for (BasicCharacter character : characters)
 			camera.draw(g, character);
 
-		for (QMCharacter character : ai)
+		for (BasicCharacter character : ai)
 			camera.draw(g, character);
 
 		for(QBPlatform ground : grounds)
 			camera.draw(g, ground);
-
-		QImageExtractor extractor = new QImageExtractor("Images/Characters/bluesnail.png");
-		g.drawImage(extractor.getImage(3, 3, 40, 35), null, 10, 10);
-		g.drawImage(extractor.getImage(3, 48, 40, 35), null, 10, 50);
-		g.drawImage(extractor.getImage(53, 48, 40, 35), null, 50, 50);
-		g.drawImage(extractor.getImage(104, 48, 40, 35), null, 90, 50);
+/*
+		QImageExtractor extractor = new QImageExtractor("Images/Characters/cat.png");
+		g.drawImage(extractor.getImage(3, 111, 43, 43), null, 10, 10);
+		g.drawImage(extractor.getImage(53, 58, 43, 43), null, 60, 10);
+		g.drawImage(extractor.getImage(111, 57, 43, 43), null, 110, 10);
+		//g.drawImage(extractor.getImage(53, 48, 40, 35), null, 50, 50);
+		//g.drawImage(extractor.getImage(104, 48, 40, 35), null, 90, 50);
+		g.drawImage(extractor.getImage(), null, 10, 130);
 		g.setColor(Color.WHITE);
-		g.drawRect(10, 10, 40, 35);
-		g.drawRect(10, 50, 40, 35);
-		g.drawRect(50, 50, 40, 35);
-		g.drawRect(90, 50, 40, 35);
-		g.drawImage(animation.getImage(), null, 10, 90);
+		g.drawRect(10, 10, 43, 43);
+		g.drawRect(60, 10, 43, 43);
+		g.drawRect(110, 10, 43, 43);
+		//g.drawRect(10, 50, 40, 35);
+		//g.drawRect(50, 50, 40, 35);
+		//g.drawRect(90, 50, 40, 35);
+		//g.drawImage(animation.getImage(), null, 10, 90);*/
     }
 
     public void update()
     {
 		int x = 0;
 		int y = 0;
-		for(QMCharacter character : characters)
+		for(BasicCharacter character : characters)
 		{
 			QEngine.preUpdate(character);
 			character.setStanding(false);
@@ -364,19 +412,72 @@ public class Game
 			x += character.getCenterX();
 			y += character.getCenterY();
 		}
+		for(BasicCharacter character : ai)
+		{
+			QEngine.preUpdate(character);
+			character.setStanding(false);
+			for(QBPlatform ground : grounds)
+			{
+				int vert = QEngine.verticalCollision(character, ground);
+				int hort = QEngine.horizontalCollision(character, ground);
+
+				if(hort == QConstants.RIGHT)
+				{
+					character.setRight(false);
+					character.setX(ground.getLeftX() - character.getWidth());
+					character.setXVector(0);
+				}
+				else if(hort == QConstants.LEFT)
+				{
+					character.setLeft(false);
+					character.setX(ground.getRightX());
+					character.setXVector(0);
+				}
+
+				if(vert == QConstants.UP)
+				{
+					if(character.getGravity() < 0)
+						character.setStanding(true);
+					character.setY(ground.getBottomY());
+					character.setYVector(0);
+				}
+				else if(vert == QConstants.DOWN)
+				{
+					if(character.getGravity() > 0)
+						character.setStanding(true);
+					character.setY(ground.getTopY()-character.getHeight());
+					character.setYVector(0);
+				}
+			}
+
+			for(QBPlatform platform : platforms)
+			{
+				int vert = QEngine.verticalCollision(character, platform);
+
+				if(vert == QConstants.DOWN)
+				{
+					if(character.getGravity() > 0)
+						character.setStanding(true);
+					character.setY(platform.getTopY()-character.getHeight());
+					character.setYVector(0);
+				}
+			}
+
+			QEngine.postUpdate(character);
+		}
 
 		camera.updateCamera(x/characters.size(), y/characters.size());
     }
 
     public void keyPressed(KeyEvent e)
     {
-		for(QMCharacter character : characters)
+		for(BasicCharacter character : characters)
 			QEngine.keyPressed(e.getKeyCode(), character);
     }
 
     public void keyReleased(KeyEvent e)
     {
-		for(QMCharacter character : characters)
+		for(BasicCharacter character : characters)
 			QEngine.keyReleased(e.getKeyCode(), character);
     }
 

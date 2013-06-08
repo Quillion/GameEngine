@@ -17,14 +17,14 @@ public class BasicCharacter extends QBMControls
 	private Animation [] walk_;
 	private Animation [] jump_;
 	private Animation [] stand_;
-	private boolean left;
+	private boolean left_;
 
 	public BasicCharacter()
 	{
 		walk_ = new Animation[2];
 		jump_ = new Animation[2];
 		stand_ = new Animation[2];
-		left = true;
+		this.setLeftPressed(true);
 	}
 
 	public void setWalk(int size, int refreshRate)
@@ -63,9 +63,19 @@ public class BasicCharacter extends QBMControls
 		stand_[QConstants.RIGHT].addImage(QImageProcessor.flipVertically(image));
 	}
 
+	public void setLeftPressed(boolean left)
+	{
+		this.left_ = left;
+	}
+
+	public boolean getLeftPressed()
+	{
+		return this.left_;
+	}
+
 	public BufferedImage getImage()
 	{
-		if(left)
+		if(this.getLeftPressed())
 		{
 			if(super.isStanding())
 			{

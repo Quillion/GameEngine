@@ -61,16 +61,16 @@ public class QImageProcessor
 
 	public static BufferedImage flipVertically(BufferedImage image)
 	{
-		AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
-		tx.translate(0, -image.getHeight(null));
+		AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
+		tx.translate(-image.getWidth(null), 0);
 		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 		return op.filter(image, null);
 	}
 
 	public static BufferedImage flipHorizontally(BufferedImage image)
 	{
-		AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
-		tx.translate(-image.getWidth(null), 0);
+		AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
+		tx.translate(0, -image.getHeight(null));
 		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 		return op.filter(image, null);
 	}

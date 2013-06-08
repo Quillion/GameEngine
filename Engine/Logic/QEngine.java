@@ -15,6 +15,7 @@ import ExtendedShapes.QBMControls;
 import ExtendedShapes.QMControls;
 import MovingShapes.QBMBox;
 import MovingShapes.QMBox;
+import Platformer.BasicCharacter;
 
 public class QEngine
 {
@@ -759,6 +760,51 @@ public class QEngine
             character.setRight(false);
         }
     }
+
+	/**
+	 * Actions for key presses
+	 * Changes boolean values according to key presses to do things
+	 * @param key what key was pressed
+	 * @param character object whose key press to look out for
+	 */
+	public static void keyPressed(int key, BasicCharacter character)
+	{
+		if(key == character.getLeftKey())
+		{
+			character.setLeft(true);
+			character.setRight(false);
+			character.setLeftPressed(true);
+		}
+		else if(key == character.getRightKey())
+		{
+			character.setLeft(false);
+			character.setRight(true);
+			character.setLeftPressed(false);
+		}
+
+		if(key == character.getJumpKey())
+		{
+			QEngine.jump(character);
+		}
+	}
+
+	/**
+	 * Actions for key releases
+	 * Changes boolean values according to key presses to do things
+	 * @param key what key was released
+	 * @param character object whose key release to look out for
+	 */
+	public static void keyReleased(int key, BasicCharacter character)
+	{
+		if(key == character.getLeftKey())
+		{
+			character.setLeft(false);
+		}
+		else if(key == character.getRightKey())
+		{
+			character.setRight(false);
+		}
+	}
 
 /***********************************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
