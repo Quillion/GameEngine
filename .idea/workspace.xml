@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/BasicAIController.java" afterPath="$PROJECT_DIR$/Engine/Logic/BasicAIController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test4/Game.java" afterPath="$PROJECT_DIR$/Platformers/test4/Game.java" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370598834927" ignored="false" />
-    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370702519476" ignored="false" />
+    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370746666767" ignored="false" />
     <file path="/QBCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784250279" ignored="false" />
     <file path="/QBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784584470" ignored="false" />
     <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370302208441" ignored="false" />
@@ -28,7 +29,8 @@
     <file path="/Animation.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370389822362" ignored="false" />
     <file path="/BasicCharacter.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370659130275" ignored="false" />
     <file path="/QEngine.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370659100151" ignored="false" />
-    <file path="/AIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370702658984" ignored="false" />
+    <file path="/AIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370744902117" ignored="false" />
+    <file path="/BasicAIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370779038270" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
       <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="55" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
+            <state line="401" column="0" selection-start="15510" selection-end="15510" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,7 +103,7 @@
       <file leaf-file-name="BasicAIController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Engine/Logic/BasicAIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="38" selection-start="381" selection-end="381" vertical-scroll-proportion="0.5586854">
+            <state line="49" column="52" selection-start="1096" selection-end="1096" vertical-scroll-proportion="-0.43661973">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -776,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.04197531">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="47" selection-start="1846" selection-end="1846" vertical-scroll-proportion="0.32159624">
@@ -800,6 +795,13 @@
     <entry file="file://$PROJECT_DIR$/Engine/Logic/QEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="797" column="5" selection-start="32894" selection-end="32894" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="25" selection-start="763" selection-end="763" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
@@ -822,14 +824,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="55" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
+        <state line="401" column="0" selection-start="15510" selection-end="15510" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Engine/Logic/BasicAIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="38" selection-start="381" selection-end="381" vertical-scroll-proportion="0.5586854">
+        <state line="49" column="52" selection-start="1096" selection-end="1096" vertical-scroll-proportion="-0.43661973">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

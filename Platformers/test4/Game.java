@@ -116,9 +116,9 @@ public class Game
 		tempCharacter.setWidth(40);
 		tempCharacter.setHeight(35);
 		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(3.9);
+		tempCharacter.setMaxSpeed(1);
 		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.5);
+		tempCharacter.setAcceleration(0.2);
 		tempCharacter.setGroundFriction(0.2);
 		tempCharacter.setAirFriction(0.2);
 		tempCharacter.setJump(1, 100);
@@ -129,19 +129,49 @@ public class Game
 		tempCharacter.addWalk(extractor.getImage(3, 48, 40, 35));
 		tempCharacter.addWalk(extractor.getImage(53, 48, 40, 35));
 		tempCharacter.addWalk(extractor.getImage(104, 48, 40, 35));
+		BasicAIController computer = new BasicAIController(tempCharacter);
+		computer.setActivity(90);
+		computers.add(computer);
+		ai.add(tempCharacter);
+
+		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+
+		tempCharacter = new BasicCharacter();
+		tempCharacter.setX(150);
+		tempCharacter.setY(150);
+		tempCharacter.setWidth(40);
+		tempCharacter.setHeight(35);
+		tempCharacter.setGravity(0.2);
+		tempCharacter.setMaxSpeed(0.8);
+		tempCharacter.setJump(6);
+		tempCharacter.setAcceleration(0.1);
+		tempCharacter.setGroundFriction(0.2);
+		tempCharacter.setAirFriction(0.2);
+		tempCharacter.setJump(1, 100);
+		tempCharacter.addJump(extractor.getImage(3, 3, 40, 35));
+		tempCharacter.setStand(1, 100);
+		tempCharacter.addStand(extractor.getImage(3, 3, 40, 35));
+		tempCharacter.setWalk(3, 20);
+		tempCharacter.addWalk(extractor.getImage(3, 48, 40, 35));
+		tempCharacter.addWalk(extractor.getImage(53, 48, 40, 35));
+		tempCharacter.addWalk(extractor.getImage(104, 48, 40, 35));
+		computer = new BasicAIController(tempCharacter);
+		computer.setActivity(95);
+		computer.setChoiceDuration(20, 70);
+		computers.add(computer);
 		ai.add(tempCharacter);
 
 		extractor = new QImageExtractor("Images/Characters/redsnail.png");
 
 		tempCharacter = new BasicCharacter();
-		tempCharacter.setX(400);
-		tempCharacter.setY(150);
+		tempCharacter.setX(900);
+		tempCharacter.setY(250);
 		tempCharacter.setWidth(40);
 		tempCharacter.setHeight(35);
 		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(3.9);
+		tempCharacter.setMaxSpeed(1.3);
 		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.5);
+		tempCharacter.setAcceleration(0.3);
 		tempCharacter.setGroundFriction(0.2);
 		tempCharacter.setAirFriction(0.2);
 		tempCharacter.setJump(1, 100);
@@ -150,17 +180,22 @@ public class Game
 		tempCharacter.addStand(extractor.getImage(3, 3, 40, 35));
 		tempCharacter.setWalk(3, 20);
 		tempCharacter.addWalk(extractor.getImage(3, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(53, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(104, 48, 40, 35));
+		tempCharacter.addWalk(extractor.getImage(47, 48, 40, 35));
+		tempCharacter.addWalk(extractor.getImage(99, 48, 40, 35));
+		computer = new BasicAIController(tempCharacter);
+		computer.setRange(595, 360);
+		computers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+		extractor = new QImageExtractor("Images/Characters/redsnail.png");
 		animation = new Animation(3, 20);
 		animation.addImage(extractor.getImage(3, 48, 40, 35));
-		animation.addImage(extractor.getImage(53, 48, 40, 35));
-		animation.addImage(extractor.getImage(104, 48, 40, 35));
+		animation.addImage(extractor.getImage(47, 48, 40, 35));
+		animation.addImage(extractor.getImage(99, 48, 40, 35));
 
-
+		/****************************************************************************/
+		/********************************** GROUND **********************************/
+		/****************************************************************************/
 		NormalPlatformGenerator generator = new NormalPlatformGenerator();
 		/************ LEFTMOST WALL **************/
 		QBPlatform tempPlatform = new QBPlatform();
@@ -227,6 +262,9 @@ public class Game
 			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(5)));
 		grounds.add(tempPlatform);
 
+		/****************************************************************************/
+		/******************************** PLATFORMS *********************************/
+		/****************************************************************************/
 		/************ 4 JUMPING PLATFORMS **************/
 		tempPlatform = new QBPlatform();
 		tempPlatform.setX(50);
@@ -456,6 +494,11 @@ public class Game
 
 			x += character.getCenterX();
 			y += character.getCenterY();
+		}
+
+		for(BasicAIController computer : computers)
+		{
+			computer.randomNoJump();
 		}
 
 		for(BasicCharacter character : ai)
