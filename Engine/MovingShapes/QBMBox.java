@@ -1,12 +1,11 @@
 package MovingShapes;
-
-import BasicShapes.QBBox;
-
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
  * @since       1.6
  */
+
+import BasicShapes.QBBox;
 
 /**
  * Bounding box with vector qualities

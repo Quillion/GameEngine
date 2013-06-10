@@ -1,5 +1,4 @@
 package Logic;
-
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
@@ -612,7 +611,7 @@ public class QEngine
     /**
      * Checks to see if the objects have already collided
      * @param character moving object that will be used in collision checking
-     * @param wall2 wall object that will be used in collision checking
+     * @param wall wall object that will be used in collision checking
      * @return true if the object have collided and false if they didn't
      */
     public static boolean collision(QMBox character, QBox wall)
@@ -624,7 +623,7 @@ public class QEngine
     /**
      * Checks to see if the objects have already collided
      * @param character moving object that will be used in collision checking
-     * @param wall2 wall object that will be used in collision checking
+     * @param wall wall object that will be used in collision checking
      * @return true if the object have collided and false if they didn't
      */
     public static boolean collision(QBMBox character, QBox wall)
@@ -636,7 +635,7 @@ public class QEngine
     /**
      * Checks to see if the objects have already collided
      * @param character moving object that will be used in collision checking
-     * @param wall2 wall object that will be used in collision checking
+     * @param wall wall object that will be used in collision checking
      * @return true if the object have collided and false if they didn't
      */
     public static boolean collision(QBMBox character, QBBox wall)
@@ -812,6 +811,14 @@ public class QEngine
 /***********************************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
 
+	/**
+	 * Returns a random number using Math.random method.
+	 * Using Random class is better,
+	 * but if it is just one time occurrence and you do not want to create a class then use this method.
+	 * @param min The minimum number you want.
+	 * @param max The maximum number you want.
+	 * @return Random number between the ranges of min and max.
+	 */
     public static int random(int min, int max)
     {
         return (min+(int)(Math.random() * ((max - min) + 1)));

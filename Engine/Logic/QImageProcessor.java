@@ -1,15 +1,14 @@
 package Logic;
-
-import java.awt.*;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
-
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
  * @since       1.6
  */
+
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
 
 /**
  * Class for gluing images together, and more image manipulation stuff.
@@ -54,11 +53,25 @@ public class QImageProcessor
 		return combined;
 	}
 
+	/**
+	 * Extracts a given part from a given image.
+	 * @param image Image from which you would like to extract a part.
+	 * @param x the x coordinate of the newly extracted image.
+	 * @param y the y coordinate of the newly extracted image within the given image.
+	 * @param width The width of the newly extracted image.
+	 * @param height The height of the newly extracted image.
+	 * @return The extracted image that you desired.
+	 */
 	public static BufferedImage extractImage(BufferedImage image, int x, int y, int width, int height)
 	{
 		return image.getSubimage(x, y, width, height);
 	}
 
+	/**
+	 * Flips the image around its y axis.
+	 * @param image The image that you want flipped.
+	 * @return The new image that is a copy of given image flipped around its y axis.
+	 */
 	public static BufferedImage flipVertically(BufferedImage image)
 	{
 		AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
@@ -67,6 +80,11 @@ public class QImageProcessor
 		return op.filter(image, null);
 	}
 
+	/**
+	 * Flips the image around its x axis.
+	 * @param image The image that you want flipped.
+	 * @return The new image that is a copy of given image flipped around its x axis.
+	 */
 	public static BufferedImage flipHorizontally(BufferedImage image)
 	{
 		AffineTransform tx = AffineTransform.getScaleInstance(1, -1);

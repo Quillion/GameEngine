@@ -2,7 +2,6 @@ package test4;
 
 import BasicShapes.Animation;
 import BasicSprite.QBPlatform;
-import BasicSprite.QMCharacter;
 import Constants.QConstants;
 import Logic.*;
 import Platformer.BasicCharacter;
@@ -26,7 +25,8 @@ public class Game
 
 	private QCamera camera;
 
-	private List<BasicAIController> computers;
+	private List<BasicAIController> docileComputers;
+	private List<BasicAIController> jumpingComputers;
 
 	QImageExtractor extractor;
 	Animation animation;
@@ -41,7 +41,8 @@ public class Game
 
 		characters = new ArrayList<BasicCharacter>();
 		ai = new ArrayList<BasicCharacter>();
-		computers = new ArrayList<BasicAIController>();
+		docileComputers = new ArrayList<BasicAIController>();
+		jumpingComputers = new ArrayList<BasicAIController>();
 
 		/****************************************************************************/
 		/******************************** CHARACTERS ********************************/
@@ -82,6 +83,8 @@ public class Game
 		tempCharacter.setY(150);
 		tempCharacter.setWidth(43);
 		tempCharacter.setHeight(55);
+		tempCharacter.setHorizontalOffset(3);
+		tempCharacter.setVerticalOffset(4);
 		tempCharacter.setGravity(0.2);
 		tempCharacter.setMaxSpeed(3.9);
 		tempCharacter.setJump(6);
@@ -115,6 +118,7 @@ public class Game
 		tempCharacter.setY(150);
 		tempCharacter.setWidth(40);
 		tempCharacter.setHeight(35);
+		tempCharacter.setHorizontalOffset(3);
 		tempCharacter.setGravity(0.2);
 		tempCharacter.setMaxSpeed(1);
 		tempCharacter.setJump(6);
@@ -131,7 +135,7 @@ public class Game
 		tempCharacter.addWalk(extractor.getImage(104, 48, 40, 35));
 		BasicAIController computer = new BasicAIController(tempCharacter);
 		computer.setActivity(90);
-		computers.add(computer);
+		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
 		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
@@ -141,6 +145,8 @@ public class Game
 		tempCharacter.setY(150);
 		tempCharacter.setWidth(40);
 		tempCharacter.setHeight(35);
+		tempCharacter.setHorizontalOffset(3);
+		tempCharacter.setVerticalOffset(4);
 		tempCharacter.setGravity(0.2);
 		tempCharacter.setMaxSpeed(0.8);
 		tempCharacter.setJump(6);
@@ -158,7 +164,7 @@ public class Game
 		computer = new BasicAIController(tempCharacter);
 		computer.setActivity(95);
 		computer.setChoiceDuration(20, 70);
-		computers.add(computer);
+		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
 		extractor = new QImageExtractor("Images/Characters/redsnail.png");
@@ -168,6 +174,8 @@ public class Game
 		tempCharacter.setY(250);
 		tempCharacter.setWidth(40);
 		tempCharacter.setHeight(35);
+		tempCharacter.setHorizontalOffset(3);
+		tempCharacter.setVerticalOffset(4);
 		tempCharacter.setGravity(0.2);
 		tempCharacter.setMaxSpeed(1.3);
 		tempCharacter.setJump(6);
@@ -183,15 +191,74 @@ public class Game
 		tempCharacter.addWalk(extractor.getImage(47, 48, 40, 35));
 		tempCharacter.addWalk(extractor.getImage(99, 48, 40, 35));
 		computer = new BasicAIController(tempCharacter);
-		computer.setRange(595, 360);
-		computers.add(computer);
+		computer.setRange(595, 400);
+		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Characters/redsnail.png");
-		animation = new Animation(3, 20);
-		animation.addImage(extractor.getImage(3, 48, 40, 35));
-		animation.addImage(extractor.getImage(47, 48, 40, 35));
-		animation.addImage(extractor.getImage(99, 48, 40, 35));
+		extractor = new QImageExtractor("Images/Characters/zombiemushroom.png");
+
+		tempCharacter = new BasicCharacter();
+		tempCharacter.setX(400);
+		tempCharacter.setY(0);
+		tempCharacter.setWidth(65);
+		tempCharacter.setHeight(70);
+		tempCharacter.setHorizontalOffset(4);
+		tempCharacter.setVerticalOffset(3);
+		tempCharacter.setGravity(0.2);
+		tempCharacter.setMaxSpeed(3.2);
+		tempCharacter.setJump(7);
+		tempCharacter.setAcceleration(1);
+		tempCharacter.setGroundFriction(0.2);
+		tempCharacter.setAirFriction(0.2);
+		tempCharacter.setJump(1, 12);
+		tempCharacter.addJump(extractor.getImage(5, 154, 65, 70));
+		tempCharacter.setStand(2, 12);
+		tempCharacter.addStand(extractor.getImage(5, 5, 65, 70));
+		tempCharacter.addStand(extractor.getImage(78, 5, 65, 70));
+		tempCharacter.setWalk(4, 12);
+		tempCharacter.addWalk(extractor.getImage(5, 81, 65, 70));
+		tempCharacter.addWalk(extractor.getImage(78, 81, 65, 70));
+		tempCharacter.addWalk(extractor.getImage(149, 81, 65, 70));
+		tempCharacter.addWalk(extractor.getImage(221, 81, 65, 70));
+		computer = new BasicAIController(tempCharacter);
+		computer.setRange(350, 400);
+		computer.setActivity(90);
+		computer.setChoiceDuration(40, 190);
+		jumpingComputers.add(computer);
+		ai.add(tempCharacter);
+
+		extractor = new QImageExtractor("Images/Characters/zombiemushroom.png");
+
+		tempCharacter = new BasicCharacter();
+		tempCharacter.setX(1400);
+		tempCharacter.setY(0);
+		tempCharacter.setWidth(65);
+		tempCharacter.setHeight(70);
+		tempCharacter.setHorizontalOffset(4);
+		tempCharacter.setVerticalOffset(3);
+		tempCharacter.setGravity(0.2);
+		tempCharacter.setMaxSpeed(3.2);
+		tempCharacter.setJump(7);
+		tempCharacter.setAcceleration(1);
+		tempCharacter.setGroundFriction(0.2);
+		tempCharacter.setAirFriction(0.2);
+		tempCharacter.setJump(1, 12);
+		tempCharacter.addJump(extractor.getImage(5, 154, 65, 70));
+		tempCharacter.setStand(2, 12);
+		tempCharacter.addStand(extractor.getImage(5, 5, 65, 70));
+		tempCharacter.addStand(extractor.getImage(78, 5, 65, 70));
+		tempCharacter.setWalk(4, 12);
+		tempCharacter.addWalk(extractor.getImage(5, 81, 65, 70));
+		tempCharacter.addWalk(extractor.getImage(78, 81, 65, 70));
+		tempCharacter.addWalk(extractor.getImage(149, 81, 65, 70));
+		tempCharacter.addWalk(extractor.getImage(221, 81, 65, 70));
+		computer = new BasicAIController(tempCharacter);
+		computer.setRange(1350, 400);
+		computer.setActivity(80);
+		computer.setChoiceDuration(40, 190);
+		computer.setJumpFParameters(45, 3);
+		jumpingComputers.add(computer);
+		ai.add(tempCharacter);
 
 		/****************************************************************************/
 		/********************************** GROUND **********************************/
@@ -384,6 +451,13 @@ public class Game
 		platforms.add(tempPlatform);
 
 		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
+
+		extractor = new QImageExtractor("Images/Characters/zombiemushroom.png");
+		animation = new Animation(4, 20);
+		animation.addImage(extractor.getImage(5, 81, 65, 70));
+		animation.addImage(extractor.getImage(78, 81, 65, 70));
+		animation.addImage(extractor.getImage(149, 81, 65, 70));
+		animation.addImage(extractor.getImage(221, 81, 65, 70));
     }
 
     public void draw(Graphics2D g)
@@ -402,12 +476,6 @@ public class Game
 
 		for(QBPlatform ground : grounds)
 			camera.draw(g, ground);
-/*
-		QImageExtractor extractor = new QImageExtractor("Images/Characters/cat.png");
-		g.drawImage(extractor.getImage(3, 111, 40, 35), null, 10, 10);
-		g.drawImage(extractor.getImage(), null, 10, 130);
-		g.setColor(Color.WHITE);
-		g.drawRect(10, 10, 43, 55);*/
     }
 
     public void update()
@@ -496,9 +564,14 @@ public class Game
 			y += character.getCenterY();
 		}
 
-		for(BasicAIController computer : computers)
+		for(BasicAIController computer : docileComputers)
 		{
 			computer.randomNoJump();
+		}
+
+		for(BasicAIController computer : jumpingComputers)
+		{
+			computer.random();
 		}
 
 		for(BasicCharacter character : ai)

@@ -1,13 +1,12 @@
 package ExtendedShapes;
-
-import Constants.QConstants;
-import MovingShapes.QMBox;
-
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
  * @since       1.6
  */
+
+import Constants.QConstants;
+import MovingShapes.QMBox;
 
 /**
  * Controls for the bounding box with vector qualities
@@ -17,6 +16,11 @@ public class QMControls extends QMBox
     private boolean left_, right_, standing_;
     private int LEFT, RIGHT, JUMP;
 
+	/**
+	 * Creates the QBMControls.
+	 * By default left, right and standing are false.
+	 * And arrow keys are set to defaults stated in QConstants.
+	 */
     public QMControls()
     {
         super();
