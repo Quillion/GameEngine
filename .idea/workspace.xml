@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/Animation.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Animation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Platformer/Background.java" afterPath="$PROJECT_DIR$/Engine/Platformer/Background.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/BasicAIController.java" afterPath="$PROJECT_DIR$/Engine/Logic/BasicAIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Platformer/BasicCharacter.java" afterPath="$PROJECT_DIR$/Engine/Platformer/BasicCharacter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test4/Game.java" afterPath="$PROJECT_DIR$/Platformers/test4/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/MovingShapes/QBMBox.java" afterPath="$PROJECT_DIR$/Engine/MovingShapes/QBMBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/ExtendedShapes/QBMControls.java" afterPath="$PROJECT_DIR$/Engine/ExtendedShapes/QBMControls.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" afterPath="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/QBox.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/QBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Constants/QConstants.java" afterPath="$PROJECT_DIR$/Engine/Constants/QConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/QEngine.java" afterPath="$PROJECT_DIR$/Engine/Logic/QEngine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" afterPath="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/MovingShapes/QMBox.java" afterPath="$PROJECT_DIR$/Engine/MovingShapes/QMBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicSprite/QMCharacter.java" afterPath="$PROJECT_DIR$/Engine/BasicSprite/QMCharacter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/ExtendedShapes/QMControls.java" afterPath="$PROJECT_DIR$/Engine/ExtendedShapes/QMControls.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370598834927" ignored="false" />
-    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370819442945" ignored="false" />
+    <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370912710185" ignored="false" />
+    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370911823548" ignored="false" />
     <file path="/QBCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784250279" ignored="false" />
     <file path="/QBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784584470" ignored="false" />
     <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370302208441" ignored="false" />
@@ -32,18 +23,18 @@
     <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370092946737" ignored="false" />
     <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370053687306" ignored="false" />
     <file path="/Field.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370212402941" ignored="false" />
-    <file path="/.gitignore" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370190166819" ignored="false" />
-    <file path="/QImageProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370830030637" ignored="false" />
+    <file path="/.gitignore" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370912819415" ignored="false" />
+    <file path="/QImageProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370911702647" ignored="false" />
     <file path="/QCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370657486016" ignored="false" />
     <file path="/Board.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370212203081" ignored="false" />
     <file path="/QConstants.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370564453835" ignored="false" />
     <file path="/SimBoard.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370211352670" ignored="false" />
-    <file path="/Background.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370221272445" ignored="false" />
+    <file path="/Background.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370913344431" ignored="false" />
     <file path="/Animation.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370829410538" ignored="false" />
     <file path="/BasicCharacter.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370831278716" ignored="false" />
     <file path="/QEngine.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370829796658" ignored="false" />
     <file path="/AIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370744902117" ignored="false" />
-    <file path="/BasicAIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370819156627" ignored="false" />
+    <file path="/BasicAIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370911249329" ignored="false" />
     <file path="/QBBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370828339813" ignored="false" />
     <file path="/QBMControls.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370829608192" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,7 +51,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -97,6 +87,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -109,30 +100,8 @@
       <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="256" column="0" selection-start="9655" selection-end="9655" vertical-scroll-proportion="0.0">
+            <state line="468" column="0" selection-start="18355" selection-end="18355" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicAIController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/Logic/BasicAIController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="50" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicCharacter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/Platformer/BasicCharacter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="63" selection-start="3739" selection-end="3739" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -140,9 +109,25 @@
       <file leaf-file-name="Background.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Engine/Platformer/Background.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="235" selection-end="235" vertical-scroll-proportion="0.35915494">
+            <state line="35" column="5" selection-start="886" selection-end="886" vertical-scroll-proportion="0.85211265">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QImageProcessor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="97" column="87" selection-start="3244" selection-end="3244" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="japan.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Images/Backgrounds/japan.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -164,10 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Engine/Logic/AIController.java" />
-        <option value="$PROJECT_DIR$/Engine/Logic/BasicAIController.java" />
-        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
-        <option value="$PROJECT_DIR$/Engine/BasicShapes/Animation.java" />
         <option value="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
         <option value="$PROJECT_DIR$/Engine/BasicShapes/QBox.java" />
         <option value="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
@@ -176,10 +157,14 @@
         <option value="$PROJECT_DIR$/Engine/ExtendedShapes/QBMControls.java" />
         <option value="$PROJECT_DIR$/Engine/ExtendedShapes/QMControls.java" />
         <option value="$PROJECT_DIR$/Engine/Logic/QEngine.java" />
-        <option value="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" />
         <option value="$PROJECT_DIR$/Engine/MovingShapes/QBMBox.java" />
         <option value="$PROJECT_DIR$/Engine/MovingShapes/QMBox.java" />
         <option value="$PROJECT_DIR$/Engine/Platformer/BasicCharacter.java" />
+        <option value="$PROJECT_DIR$/Engine/Logic/BasicAIController.java" />
+        <option value="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" />
+        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Engine/Platformer/Background.java" />
       </list>
     </option>
   </component>
@@ -243,6 +228,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -544,7 +530,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -559,12 +544,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -595,19 +580,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -633,6 +605,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -713,7 +698,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -728,7 +713,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.770017" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.770017" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22998296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -814,27 +799,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QMCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="351" selection-end="351" vertical-scroll-proportion="0.40078586">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Constants/QConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/ExtendedShapes/QBMControls.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.30058938">
@@ -846,15 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="7" selection-start="529" selection-end="529" vertical-scroll-proportion="0.50098234">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Logic/BasicAIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -875,13 +830,6 @@
     <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="13" selection-start="376" selection-end="376" vertical-scroll-proportion="-1.6385069">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="126" selection-end="126" vertical-scroll-proportion="0.16699411">
           <folding />
         </state>
       </provider>
@@ -916,16 +864,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Engine/Platformer/BasicCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="63" selection-start="3739" selection-end="3739" vertical-scroll-proportion="0.0">
+        <state line="164" column="0" selection-start="4360" selection-end="4360" vertical-scroll-proportion="1.8015717">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/BasicAIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="19" selection-start="4596" selection-end="4596" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Backgrounds/japan.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/QImageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="87" selection-start="3244" selection-end="3244" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="468" column="0" selection-start="18355" selection-end="18355" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="333" selection-end="333" vertical-scroll-proportion="0.7631579">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/Platformer/Background.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="235" selection-end="235" vertical-scroll-proportion="0.35915494">
+        <state line="35" column="5" selection-start="886" selection-end="886" vertical-scroll-proportion="0.85211265">
           <folding />
         </state>
       </provider>

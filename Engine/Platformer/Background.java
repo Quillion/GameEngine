@@ -5,6 +5,8 @@ package Platformer;
  * @since       1.6
  */
 
+import Logic.QCamera;
+
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ public class Background
 	private int worldHeight_, worldWidth_;
 	private int screenHeight_, screenWidth_;
 
-	public Background(int worldWidth, int worldHeight, int screenWidth, int screenHeight)
+	public Background(QCamera camera, int x, int y, int worldWidth, int worldHeight, int screenWidth, int screenHeight)
 	{
 		foregroundObjects_ = new ArrayList<BufferedImage>();
 

@@ -22,6 +22,10 @@ public class BasicAIController
 	private int jumpFrequency_, jumpChance_;
 	private BasicCharacter character_;
 
+	/**
+	 * Well we can't have AI without specifying which character it is for after all.
+	 * @param character Character who will be controlled by AI.
+	 */
 	public BasicAIController(BasicCharacter character)
 	{
 		fate_ = new Random();
@@ -34,6 +38,9 @@ public class BasicAIController
 		this.rangeSet_ = false;
 	}
 
+	/**
+	 * Basic AI movement without any jumping involved.
+	 */
 	public void randomNoJump()
 	{
 		if(this.count_++ < this.duration_)
@@ -89,6 +96,9 @@ public class BasicAIController
 		}
 	}
 
+	/**
+	 * Basic random AI movement, with jumping involved.
+	 */
 	public void random()
 	{
 		if(this.count_++ < this.duration_)
@@ -148,26 +158,56 @@ public class BasicAIController
 		}
 	}
 
+	/**
+	 * Must be in range from 1 to 100, the higher the range, the more active the character.
+	 * @param activity The rate of activity of the given character.
+	 */
 	public void setActivity(int activity)
 	{
-		this.activity_ = activity;
+		if(activity > 0 && activity < 101)
+			this.activity_ = activity;
 	}
 
+	/**
+	 * The duration of actions that character will take.
+	 * Smaller range will result in more rapidly changing and seizurelike character.
+	 * Make sure that minimum choice duration is smaller than max choice duration.
+	 * @param minChoiceDuration Minimum duration to hold the action.
+	 * @param maxChoiceDuration Maximum duration to hold the action.
+	 */
 	public void setChoiceDuration(int minChoiceDuration, int maxChoiceDuration)
 	{
+		if(minChoiceDuration > maxChoiceDuration)
+			return;
 		this.minChoiceDuration_ = minChoiceDuration;
 		this.choiceRange_ = maxChoiceDuration - minChoiceDuration;
 	}
 
+	/**
+	 * The range within which the character can move.
+	 * Very useful to keep character on the platform.
+	 * @param minRange The left side range for the character. The left x.
+	 * @param range The range from the left side, the width.
+	 */
 	public void setRange(int minRange, int range)
 	{
+		if(range <= 0)
+			return;
 		this.rangeSet_ = true;
 		this.minRange_ = minRange;
 		this.maxRange_ = minRange + range;
 	}
 
+	/**
+	 * Sets up jumping behaviour.
+	 * For truly random jumping I would recommend setting frequency to low and chance to high.
+	 * @param jumpFrequency How frequently the character will jump.
+	 * @param jumpChance The chance of jumping. The higher the number the less likely the character is to jump.
+	 */
 	public void setJumpFParameters(int jumpFrequency, int jumpChance)
 	{
+		if (jumpFrequency <= 0 || jumpChance <= 0)
+			return;
 		this.jumpFrequency_ = jumpFrequency;
 		this.jumpChance_ = jumpChance;
 	}

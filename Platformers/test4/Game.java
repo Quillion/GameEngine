@@ -452,7 +452,7 @@ public class Game
 
 		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
 
-		extractor = new QImageExtractor("Images/Characters/zombiemushroom.png");
+		extractor = new QImageExtractor("Images/Backgrounds/japan.png");
 		animation = new Animation(4, 20);
 		animation.addImage(extractor.getImage(5, 81, 65, 70));
 		animation.addImage(extractor.getImage(78, 81, 65, 70));
@@ -464,6 +464,8 @@ public class Game
     {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
+
+		g.drawImage(QImageProcessor.resize(extractor.getImage(), 100, 100), null, 10, 10);
 
 		for(QBPlatform platform : platforms)
 			camera.draw(g, platform);

@@ -14,8 +14,25 @@ local.properties
 .classpath
 .settings/
 .loadpath
-workspace.xml
-.idea/workspace.xml
+
+#################
+## IDEA
+#################
+.idea/*.xml
+.idea/libraries
+.idea/.name
+.idea/scopes
+.idea/copyright
+.idea/dictionaries
+
+!.idea/runConfigurations/*
+!.idea/vcs.xml
+
+*.iml
+*.run
+*.lck
+*.log
+*.log.*
 
 # External tool builders
 .externalToolBuilders/
