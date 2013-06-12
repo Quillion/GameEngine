@@ -93,6 +93,13 @@ public class QImageProcessor
 		return op.filter(image, null);
 	}
 
+	/**
+	 * Resizes image to the specified width and height. The original image is not touched so you are safe.
+	 * @param image The image you want resized.
+	 * @param width The new width of the image.
+	 * @param height The new height of the image.
+	 * @return Newly resized image.
+	 */
 	public static BufferedImage resize(BufferedImage image, int width, int height)
 	{
 		int type = image.getType() == 0? BufferedImage.TYPE_INT_ARGB : image.getType();
