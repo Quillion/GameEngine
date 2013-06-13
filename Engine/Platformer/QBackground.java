@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Background
+public class QBackground
 {
 	private BufferedImage background_;
 	private BufferedImage midground_;
@@ -25,21 +25,17 @@ public class Background
 	private int worldHeight_, worldWidth_;
 	private int backgroundShift_, midgroundShift_;
 
-	private QCamera camera;
-
-	public Background(QCamera camera, int x, int y, int worldWidth, int worldHeight)
+	public QBackground(int x, int y, int worldWidth, int worldHeight, int screenWidth, int screenHeight)
 	{
 		this.foregroundObjects_ = new ArrayList<BufferedImage>();
 		this.setBackgroundShift(3);
 		this.setMidgroundShift(2);
 
-		this.camera = camera;
-
 		this.x_ = x;
 		this.y_ = y;
 
-		this.worldWidth_ = worldWidth;
-		this.worldHeight_ = worldHeight;
+		this.worldWidth_ = worldWidth + screenWidth*2;
+		this.worldHeight_ = worldHeight + screenHeight;
 	}
 
 	public void setBackground(BufferedImage background)
@@ -59,16 +55,18 @@ public class Background
 
 	public void generateBackground(int density)
 	{
-		int width = this.worldWidth_ - this.x_;
-		int height = this.worldHeight_ - this.y_;
+		this.background_ = QImageProcessor.resize(this.background_,
+													this.worldWidth_/this.backgroundShift_,
+													this.worldHeight_/this.backgroundShift_);
 
-		this.background_ = QImageProcessor.resize(this.background_, width/this.backgroundShift_, height/this.backgroundShift_);
-
-		while(this.midground_.getWidth() < width/this.midgroundShift_)
-			this.midground_ = QImageProcessor.constructHorizontal(this.midground_, this.midground_);
+		// temp manipulation
+		this.foreground_ = this.midground_;
+		while(this.foreground_.getWidth() < this.worldWidth_/this.midgroundShift_)
+			this.foreground_ = QImageProcessor.constructHorizontal(this.foreground_, this.midground_);
+		this.midground_ = this.foreground_;
 
 		Random fate = new Random();
-		int type = this.midground_.getType() == 0? BufferedImage.TYPE_INT_ARGB : this.midground_.getType();
+		int type = this.foreground_.getType() == 0? BufferedImage.TYPE_INT_ARGB : this.foreground_.getType();
 		this.foreground_ = new BufferedImage(this.worldWidth_, this.worldHeight_, type);
 		Graphics g = this.foreground_.getGraphics();
 
@@ -93,11 +91,12 @@ public class Background
 		this.midgroundShift_ = midgroundShift;
 	}
 
-	public void draw(Graphics2D g)
+	public void draw(Graphics2D g, QCamera camera)
 	{
-		int x = this.camera.getCenterX() - this.x_;
-		int y = this.camera.getCenterY() - this.y_;
+		int x = this.x_ - camera.getX();
+		int y = this.y_ - camera.getY() + this.worldHeight_;
 		g.drawImage(this.background_, x/this.backgroundShift_, y/this.backgroundShift_, null);
 		g.drawImage(this.midground_, x/this.midgroundShift_, y/this.midgroundShift_, null);
+		g.drawImage(this.foreground_, x, 0-camera.getY(), null);
 	}
 }

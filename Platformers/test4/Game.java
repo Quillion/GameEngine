@@ -6,6 +6,7 @@ import Constants.QConstants;
 import Logic.*;
 import Platformer.BasicCharacter;
 import TooGeneral.NormalPlatformGenerator;
+import Platformer.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -25,13 +26,15 @@ public class Game
 
 	private QCamera camera;
 
+	private QBackground background;
+
 	private List<BasicAIController> docileComputers;
 	private List<BasicAIController> jumpingComputers;
 
 	QImageExtractor extractor;
 	Animation animation;
 
-    public Game(int WIDTH, int HEIGHT)
+	public Game(int WIDTH, int HEIGHT)
     {
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
@@ -452,20 +455,20 @@ public class Game
 
 		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
 
+		background = new QBackground(89, 110, 2138, 279, WIDTH, HEIGHT);
 		extractor = new QImageExtractor("Images/Backgrounds/japan.png");
-		animation = new Animation(4, 20);
-		animation.addImage(extractor.getImage(5, 81, 65, 70));
-		animation.addImage(extractor.getImage(78, 81, 65, 70));
-		animation.addImage(extractor.getImage(149, 81, 65, 70));
-		animation.addImage(extractor.getImage(221, 81, 65, 70));
+		background.setBackground(extractor.getImage(30, 10, 930, 350));
+		background.setMidGround(extractor.getImage(25, 995, 360, 250));
+		background.addForegroundObject(extractor.getImage(425, 860, 350, 485));
+		background.generateBackground(15);
     }
 
     public void draw(Graphics2D g)
     {
-        g.setColor(Color.BLACK);
+        g.setColor(Color.BLUE);
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
-		g.drawImage(QImageProcessor.resize(extractor.getImage(), 100, 100), null, 10, 10);
+		background.draw(g, camera);
 
 		for(QBPlatform platform : platforms)
 			camera.draw(g, platform);
