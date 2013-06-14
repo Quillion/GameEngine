@@ -31,8 +31,7 @@ public class Game
 	private List<BasicAIController> docileComputers;
 	private List<BasicAIController> jumpingComputers;
 
-	QImageExtractor extractor;
-	Animation animation;
+	private QImageExtractor extractor;
 
 	public Game(int WIDTH, int HEIGHT)
     {
@@ -58,11 +57,11 @@ public class Game
 		tempCharacter.setWidth(43);
 		tempCharacter.setHeight(43);
 		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(3.9);
+		tempCharacter.setMaxSpeed(3.87);
 		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.5);
+		tempCharacter.setAcceleration(0.53);
 		tempCharacter.setGroundFriction(0.2);
-		tempCharacter.setAirFriction(0.2);
+		tempCharacter.setAirFriction(0.23);
 		tempCharacter.setLeftKey(KeyEvent.VK_LEFT);
 		tempCharacter.setRightKey(KeyEvent.VK_RIGHT);
 		tempCharacter.setJumpKey(KeyEvent.VK_UP);
@@ -89,11 +88,11 @@ public class Game
 		tempCharacter.setHorizontalOffset(3);
 		tempCharacter.setVerticalOffset(4);
 		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(3.9);
+		tempCharacter.setMaxSpeed(3.97);
 		tempCharacter.setJump(6);
 		tempCharacter.setAcceleration(0.5);
 		tempCharacter.setGroundFriction(0.2);
-		tempCharacter.setAirFriction(0.2);
+		tempCharacter.setAirFriction(0.19);
 		tempCharacter.setLeftKey(KeyEvent.VK_A);
 		tempCharacter.setRightKey(KeyEvent.VK_D);
 		tempCharacter.setJumpKey(KeyEvent.VK_W);
@@ -468,7 +467,7 @@ public class Game
         g.setColor(Color.BLUE);
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
-		background.draw(g, camera);
+		background.draw(g, camera.getX(), camera.getY());
 
 		for(QBPlatform platform : platforms)
 			camera.draw(g, platform);
@@ -646,6 +645,9 @@ public class Game
     {
 		for(BasicCharacter character : characters)
 			QEngine.keyReleased(e.getKeyCode(), character);
+		System.out.println("Char: "+e.getKeyChar());
+		System.out.println("Code: "+e.getKeyCode());
+		System.out.println("------------");
     }
 
     public void mouseEntered(MouseEvent e) 
