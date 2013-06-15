@@ -1,5 +1,9 @@
 package test2;
-
+/**
+ * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version     Version 1
+ * @since       1.6
+ */
 
 import javax.swing.*;
 import java.awt.*;

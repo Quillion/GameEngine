@@ -1,4 +1,9 @@
 package test3;
+/**
+ * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version     Version 1
+ * @since       1.6
+ */
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

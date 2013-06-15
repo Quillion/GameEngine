@@ -1,4 +1,4 @@
-package test1;
+package dungeon1;
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
@@ -63,6 +63,9 @@ public class Main implements Runnable
     {
         public void keyPressed(KeyEvent e)
         {
+            // TELL GAME OBJECT WHAT WE PRESSED
+            game.keyPressed(e);
+
             // USER PRESSED ESC
             if(e.getKeyCode()==27)
             {
@@ -74,9 +77,6 @@ public class Main implements Runnable
                 }
                 System.exit(0);
             }
-
-            // TELL GAME OBJECT WHAT WE PRESSED
-            game.keyPressed(e);
         }
 
         public void keyReleased(KeyEvent e)

@@ -1,3 +1,10 @@
+package dungeon1;
+/**
+ * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version     Version 1
+ * @since       1.6
+ */
+
 import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
