@@ -1,6 +1,5 @@
 package test4;
 
-import BasicShapes.Animation;
 import BasicSprite.QBPlatform;
 import Constants.QConstants;
 import Logic.*;
@@ -645,9 +644,6 @@ public class Game
     {
 		for(BasicCharacter character : characters)
 			QEngine.keyReleased(e.getKeyCode(), character);
-		System.out.println("Char: "+e.getKeyChar());
-		System.out.println("Code: "+e.getKeyCode());
-		System.out.println("------------");
     }
 
     public void mouseEntered(MouseEvent e) 
