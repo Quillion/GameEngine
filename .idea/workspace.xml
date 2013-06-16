@@ -2,22 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine.iml" afterPath="$PROJECT_DIR$/Engine.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test2/Game.java" afterPath="$PROJECT_DIR$/Platformers/test2/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Game.java" afterPath="$PROJECT_DIR$/Platformers/test3/Game.java" />
+      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Backgrounds\japan.png" afterPath="$PROJECT_DIR$/Images/Platformer/Backgrounds/japan.png" />
+      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\bluesnail.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/bluesnail.png" />
+      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\cat.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/cat.png" />
+      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\lucida.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/lucida.png" />
+      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\redsnail.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/redsnail.png" />
+      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\zombiemushroom.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/zombiemushroom.png" />
+      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Platforms\dragonroadtiles.png" afterPath="$PROJECT_DIR$/Images/Platformer/Platforms/dragonroadtiles.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test4/Game.java" afterPath="$PROJECT_DIR$/Platformers/test4/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template/Game.java" afterPath="$PROJECT_DIR$/Template/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test1/Main.java" afterPath="$PROJECT_DIR$/Platformers/test1/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test2/Main.java" afterPath="$PROJECT_DIR$/Platformers/test2/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Main.java" afterPath="$PROJECT_DIR$/Platformers/test3/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test4/Main.java" afterPath="$PROJECT_DIR$/Platformers/test4/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template/Main.java" afterPath="$PROJECT_DIR$/Template/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" afterPath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371297606523" ignored="false" />
-    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371208559662" ignored="false" />
+    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371345167234" ignored="false" />
     <file path="/QBCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784250279" ignored="false" />
     <file path="/QBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784584470" ignored="false" />
     <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371265076235" ignored="false" />
@@ -26,7 +26,7 @@
     <file path="/QImgaeProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369963662176" ignored="false" />
     <file path="/QPlatform.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369997838329" ignored="false" />
     <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370092946737" ignored="false" />
-    <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370053687306" ignored="false" />
+    <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371343705839" ignored="false" />
     <file path="/Field.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370212402941" ignored="false" />
     <file path="/.gitignore" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370912819415" ignored="false" />
     <file path="/QImageProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371078217050" ignored="false" />
@@ -43,6 +43,7 @@
     <file path="/QBBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370828339813" ignored="false" />
     <file path="/QBMControls.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370829608192" ignored="false" />
     <file path="/QBackground.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371167409160" ignored="false" />
+    <file path="/a.dummy" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371343720188" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +104,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DungeonCrawler/dungeon1/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.030909091">
+            <state line="17" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="615" column="56" selection-start="22244" selection-end="22244" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QBBox.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/QBBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="115" column="0" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.76765376">
               <folding />
             </state>
           </provider>
@@ -139,14 +158,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Engine/Logic/QImageProcessor.java" />
-        <option value="$PROJECT_DIR$/Engine/Platformer/Background.java" />
         <option value="$PROJECT_DIR$/Engine/Platformer/QBackground.java" />
         <option value="$PROJECT_DIR$/DungeonCrawler/test1/Main.java" />
         <option value="$PROJECT_DIR$/DungeonCrawler/test1/Game.java" />
-        <option value="$PROJECT_DIR$/DungeonCrawler/dungeon1/Main.java" />
         <option value="$PROJECT_DIR$/DungeonCrawler/dungeon1/Game.java" />
-        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
         <option value="$PROJECT_DIR$/Platformers/test4/Main.java" />
         <option value="$PROJECT_DIR$/Platformers/test3/Main.java" />
         <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
@@ -155,14 +170,18 @@
         <option value="$PROJECT_DIR$/Platformers/test1/Main.java" />
         <option value="$PROJECT_DIR$/Template/Main.java" />
         <option value="$PROJECT_DIR$/Template/Game.java" />
+        <option value="$PROJECT_DIR$/DungeonCrawler/dungeon1/Main.java" />
+        <option value="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
+        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
+        <option value="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1358" />
+    <option name="y" value="-668" />
     <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -263,6 +282,104 @@
               <option name="myItemId" value="Platformers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platforms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Characters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backgrounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -329,13 +446,14 @@
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\Engine\Platformers\test2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Platformer" />
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Engine" />
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine" />
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\Engine\Platformers" />
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\Engine\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Dungeon 1">
+  <component name="RunManager" selected="Application.Platformer 4">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -468,27 +586,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-668" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32750398" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4855196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30683625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.7416268" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2583732" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2583732" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30683625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
@@ -570,16 +688,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Engine/Sim/SimBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="5" selection-start="4205" selection-end="4205" vertical-scroll-proportion="6.299107" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Platformer/QBackground.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="3" selection-start="377" selection-end="377" vertical-scroll-proportion="0.4174107" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/Platformer/BasicCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="309" selection-end="309" vertical-scroll-proportion="0.53125" />
@@ -588,13 +696,6 @@
     <entry file="file://$PROJECT_DIR$/Engine/MovingShapes/QMBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="220" selection-end="220" vertical-scroll-proportion="-8.752233" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.23234624">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Platformers/test4/Main.java">
@@ -671,9 +772,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="59" selection-start="571" selection-end="571" vertical-scroll-proportion="0.3324937">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DungeonCrawler/dungeon1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.030909091">
+        <state line="17" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="615" column="56" selection-start="22244" selection-end="22244" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/QBBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="0" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.76765376">
           <folding />
         </state>
       </provider>

@@ -53,7 +53,7 @@ public class Game
 		/****************************************************************************/
 		/******************************** CHARACTERS ********************************/
 		/****************************************************************************/
-		extractor = new QImageExtractor("Images/Characters/cat.png");
+		extractor = new QImageExtractor("Images/Platformer/Characters/cat.png");
 
 		BasicCharacter tempCharacter = new BasicCharacter();
 		tempCharacter.setX(150);
@@ -82,7 +82,7 @@ public class Game
 		tempCharacter.addWalk(extractor.getImage(111, 3, 43, 43));
 		characters.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Characters/lucida.png");
+		extractor = new QImageExtractor("Images/Platformer/Characters/lucida.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(350);
@@ -117,7 +117,7 @@ public class Game
 		/****************************************************************************/
 		/************************************ AI ************************************/
 		/****************************************************************************/
-		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+		extractor = new QImageExtractor("Images/Platformer/Characters/bluesnail.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(300);
@@ -144,7 +144,7 @@ public class Game
 		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Characters/bluesnail.png");
+		extractor = new QImageExtractor("Images/Platformer/Characters/bluesnail.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(150);
@@ -173,7 +173,7 @@ public class Game
 		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Characters/redsnail.png");
+		extractor = new QImageExtractor("Images/Platformer/Characters/redsnail.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(900);
@@ -201,7 +201,7 @@ public class Game
 		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Characters/zombiemushroom.png");
+		extractor = new QImageExtractor("Images/Platformer/Characters/zombiemushroom.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(400);
@@ -233,7 +233,7 @@ public class Game
 		jumpingComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Characters/zombiemushroom.png");
+		extractor = new QImageExtractor("Images/Platformer/Characters/zombiemushroom.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(1400);
@@ -459,7 +459,7 @@ public class Game
 		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
 
 		background = new QBackground(89, 110, 2138, 279, WIDTH, HEIGHT);
-		extractor = new QImageExtractor("Images/Backgrounds/japan.png");
+		extractor = new QImageExtractor("Images/Platformer/Backgrounds/japan.png");
 		background.setBackground(extractor.getImage(30, 10, 930, 350));
 		background.setMidGround(extractor.getImage(25, 995, 360, 250));
 		background.addForegroundObject(extractor.getImage(425, 860, 350, 485));
@@ -490,10 +490,12 @@ public class Game
     {
 		int x = 0;
 		int y = 0;
+		// CHARACTERS
 		for(BasicCharacter character : characters)
 		{
 			QEngine.preUpdate(character);
 			character.setStanding(false);
+			// VS AI
 			for(BasicCharacter comp : ai)
 			{
 				int vert = QEngine.verticalCollision(character, comp);
@@ -519,6 +521,7 @@ public class Game
 					character.setYVector(-character.getJump());
 				}
 			}
+			// VS GROUND
 			for(QBPlatform ground : grounds)
 			{
 				int vert = QEngine.verticalCollision(character, ground);
@@ -527,13 +530,13 @@ public class Game
 				if(hort == QConstants.RIGHT)
 				{
 					character.setRight(false);
-					character.setX(ground.getLeftX() - character.getWidth());
+					character.setX(ground.getLeftX() - character.getWidth() + character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 				else if(hort == QConstants.LEFT)
 				{
 					character.setLeft(false);
-					character.setX(ground.getRightX());
+					character.setX(ground.getRightX() - character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 
@@ -541,18 +544,18 @@ public class Game
 				{
 					if(character.getGravity() < 0)
 						character.setStanding(true);
-					character.setY(ground.getBottomY());
+					character.setY(ground.getBottomY() - character.getVerticalOffset());
 					character.setYVector(0);
 				}
 				else if(vert == QConstants.DOWN)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
-					character.setY(ground.getTopY()-character.getHeight());
+					character.setY(ground.getTopY() - character.getHeight() + character.getVerticalOffset());
 					character.setYVector(0);
 				}
 			}
-
+			// VS PLATFORMS
 			for(QBPlatform platform : platforms)
 			{
 				int vert = QEngine.verticalCollision(character, platform);
@@ -561,7 +564,7 @@ public class Game
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
-					character.setY(platform.getTopY()-character.getHeight());
+					character.setY(platform.getTopY() - character.getHeight() + character.getVerticalOffset());
 					character.setYVector(0);
 				}
 			}
@@ -582,10 +585,12 @@ public class Game
 			computer.random();
 		}
 
+		// COMPUTERS
 		for(BasicCharacter character : ai)
 		{
 			QEngine.preUpdate(character);
 			character.setStanding(false);
+			// VS GROUND
 			for(QBPlatform ground : grounds)
 			{
 				int vert = QEngine.verticalCollision(character, ground);
@@ -594,13 +599,13 @@ public class Game
 				if(hort == QConstants.RIGHT)
 				{
 					character.setRight(false);
-					character.setX(ground.getLeftX() - character.getWidth());
+					character.setX(ground.getLeftX() - character.getWidth() + character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 				else if(hort == QConstants.LEFT)
 				{
 					character.setLeft(false);
-					character.setX(ground.getRightX());
+					character.setX(ground.getRightX() - character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 
@@ -608,18 +613,18 @@ public class Game
 				{
 					if(character.getGravity() < 0)
 						character.setStanding(true);
-					character.setY(ground.getBottomY());
+					character.setY(ground.getBottomY() - character.getVerticalOffset());
 					character.setYVector(0);
 				}
 				else if(vert == QConstants.DOWN)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
-					character.setY(ground.getTopY()-character.getHeight());
+					character.setY(ground.getTopY() - character.getHeight() + character.getVerticalOffset());
 					character.setYVector(0);
 				}
 			}
-
+			// VS PLATFORMS
 			for(QBPlatform platform : platforms)
 			{
 				int vert = QEngine.verticalCollision(character, platform);
@@ -628,7 +633,7 @@ public class Game
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
-					character.setY(platform.getTopY()-character.getHeight());
+					character.setY(platform.getTopY() - character.getHeight() + character.getVerticalOffset());
 					character.setYVector(0);
 				}
 			}

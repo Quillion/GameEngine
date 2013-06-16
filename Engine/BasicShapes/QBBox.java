@@ -112,25 +112,4 @@ public class QBBox extends QBox
         g.setColor(Color.BLACK);
         g.drawRect(this.getLeftX(), this.getTopY(), (this.getRightX() - this.getLeftX()), (this.getBottomY() - this.getTopY()));
     }
-
-	/**
-	 * This make setting x easier due to the whole offset thing and so forth.
-	 * So enjoy this ovverride, it is useful trust me.
-	 * @param x the value to which x will be set to, considering the offset.
-	 */
-	@Override
-	public void setX(double x)
-	{
-		super.setX(x+this.getHorizontalOffset());
-	}
-
-	/**
-	 * This will help you set y and consider the offset. It is bothersome anyways.
-	 * @param y the value to which y will be set to. taking offset into consideration.
-	 */
-	@Override
-	public void setY(double y)
-	{
-		super.setY(y+this.getVerticalOffset());
-	}
 }

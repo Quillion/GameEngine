@@ -24,7 +24,7 @@ public class NormalPlatformGenerator
 	 */
 	public NormalPlatformGenerator()
 	{
-		extractor = new QImageExtractor("Images/Platforms/dragonroadtiles.png");
+		extractor = new QImageExtractor("Images/Platformer/Platforms/dragonroadtiles.png");
 		fate = new Random();
 	}
 
