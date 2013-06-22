@@ -12,17 +12,27 @@ import java.util.Random;
  * @since       1.6
  */
 
+/**
+ * Class for drawing a platform for the platformer.
+ */
 public class NormalPlatformGenerator
 {
 	private QImageExtractor extractor;
 	private Random fate;
 
+	/**
+	 * Simple constructor, you do not have to do anything.
+	 */
 	public NormalPlatformGenerator()
 	{
 		extractor = new QImageExtractor("Images/Platforms/dragonroadtiles.png");
 		fate = new Random();
 	}
 
+	/**
+	 * Returns one of the 4 random images for the top of the platform.
+	 * @return The top of the platform image.
+	 */
 	public BufferedImage getPlatformTop()
 	{
 		int choice = fate.nextInt(4);
@@ -41,6 +51,10 @@ public class NormalPlatformGenerator
 		}
 	}
 
+	/**
+	 * Returns one of the 4 random images for the middile of the platform.
+	 * @return The middle of the platform image.
+	 */
 	public BufferedImage getPlatformMiddle()
 	{
 		int choice = fate.nextInt(4);
@@ -59,6 +73,10 @@ public class NormalPlatformGenerator
 		}
 	}
 
+	/**
+	 * Returns one of the 3 images for the bottom of the platform.
+	 * @return The image for the bottom of platform.
+	 */
 	public BufferedImage getPlatformBottom()
 	{
 		int choice = fate.nextInt(3);
@@ -75,6 +93,11 @@ public class NormalPlatformGenerator
 		}
 	}
 
+	/**
+	 * Returns an image for the top of a wall.
+	 * I personally don't like the image too much.
+	 * @return The image for the top of the wall.
+	 */
 	public BufferedImage getWallTop()
 	{
 		int choice = fate.nextInt(2);
@@ -89,6 +112,11 @@ public class NormalPlatformGenerator
 		}
 	}
 
+	/**
+	 * Returns one of the 2 images for the bottom of the wall.
+	 * Again I dislike the image.
+	 * @return The image for the bottom of the wall.
+	 */
 	public BufferedImage getWallBottom()
 	{
 		int choice = fate.nextInt(2);
@@ -103,6 +131,10 @@ public class NormalPlatformGenerator
 		}
 	}
 
+	/**
+	 * Return one of the 2 images for the left side of the wall.
+	 * @return The image for the left of the wall.
+	 */
 	public BufferedImage getWallLeft()
 	{
 		int choice = fate.nextInt(2);
@@ -117,6 +149,10 @@ public class NormalPlatformGenerator
 		}
 	}
 
+	/**
+	 * Returns one of the two images for the right of the wall.
+	 * @return The image for the right of the wall.
+	 */
 	public BufferedImage getWallRight()
 	{
 		int choice = fate.nextInt(2);
@@ -131,6 +167,11 @@ public class NormalPlatformGenerator
 		}
 	}
 
+	/**
+	 * Return the image for the ground.
+	 * It is composed of platform top, platform middle and platform bottom.
+	 * @return Image for the ground.
+	 */
 	public BufferedImage getGround()
 	{
 	    return QImageProcessor.constructVertical(
@@ -138,11 +179,21 @@ public class NormalPlatformGenerator
 				this.getPlatformBottom());
 	}
 
+	/**
+	 * Returns the image for the platform.
+	 * It consists of a combination of platform top and platform bottom.
+	 * @return Image for the platform.
+	 */
 	public BufferedImage getPlatform()
 	{
 		return QImageProcessor.constructVertical(this.getPlatformTop(), this.getPlatformBottom());
 	}
 
+	/**
+	 * Returns image for the wall.
+	 * It is composed of wall left and wall right.
+	 * @return Image for the wall.
+	 */
 	public BufferedImage getWall()
 	{
 		return QImageProcessor.constructHorizontal(this.getWallLeft(), this.getWallRight());
