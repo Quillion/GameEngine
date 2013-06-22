@@ -1,5 +1,4 @@
 package BasicSprite;
-
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1

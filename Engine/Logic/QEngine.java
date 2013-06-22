@@ -1,5 +1,4 @@
 package Logic;
-
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
@@ -15,6 +14,7 @@ import ExtendedShapes.QBMControls;
 import ExtendedShapes.QMControls;
 import MovingShapes.QBMBox;
 import MovingShapes.QMBox;
+import Platformer.BasicCharacter;
 
 public class QEngine
 {
@@ -611,7 +611,7 @@ public class QEngine
     /**
      * Checks to see if the objects have already collided
      * @param character moving object that will be used in collision checking
-     * @param wall2 wall object that will be used in collision checking
+     * @param wall wall object that will be used in collision checking
      * @return true if the object have collided and false if they didn't
      */
     public static boolean collision(QMBox character, QBox wall)
@@ -623,7 +623,7 @@ public class QEngine
     /**
      * Checks to see if the objects have already collided
      * @param character moving object that will be used in collision checking
-     * @param wall2 wall object that will be used in collision checking
+     * @param wall wall object that will be used in collision checking
      * @return true if the object have collided and false if they didn't
      */
     public static boolean collision(QBMBox character, QBox wall)
@@ -635,7 +635,7 @@ public class QEngine
     /**
      * Checks to see if the objects have already collided
      * @param character moving object that will be used in collision checking
-     * @param wall2 wall object that will be used in collision checking
+     * @param wall wall object that will be used in collision checking
      * @return true if the object have collided and false if they didn't
      */
     public static boolean collision(QBMBox character, QBBox wall)
@@ -760,12 +760,65 @@ public class QEngine
         }
     }
 
+	/**
+	 * Actions for key presses
+	 * Changes boolean values according to key presses to do things
+	 * @param key what key was pressed
+	 * @param character object whose key press to look out for
+	 */
+	public static void keyPressed(int key, BasicCharacter character)
+	{
+		if(key == character.getLeftKey())
+		{
+			character.setLeft(true);
+			character.setRight(false);
+			character.setLeftPressed(true);
+		}
+		else if(key == character.getRightKey())
+		{
+			character.setLeft(false);
+			character.setRight(true);
+			character.setLeftPressed(false);
+		}
+
+		if(key == character.getJumpKey())
+		{
+			QEngine.jump(character);
+		}
+	}
+
+	/**
+	 * Actions for key releases
+	 * Changes boolean values according to key presses to do things
+	 * @param key what key was released
+	 * @param character object whose key release to look out for
+	 */
+	public static void keyReleased(int key, BasicCharacter character)
+	{
+		if(key == character.getLeftKey())
+		{
+			character.setLeft(false);
+		}
+		else if(key == character.getRightKey())
+		{
+			character.setRight(false);
+		}
+	}
+
 /***********************************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
 /******  EVENTS  *******************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
 
+	/**
+	 * Returns a random number using Math.random method.
+	 * Using Random class is better,
+	 * but if it is just one time occurrence and you do not want to create a class then use this method.
+	 * @param min The minimum number you want.
+	 * @param max The maximum number you want.
+	 * @return Random number between the ranges of min and max.
+	 */
     public static int random(int min, int max)
     {
         return (min+(int)(Math.random() * ((max - min) + 1)));
