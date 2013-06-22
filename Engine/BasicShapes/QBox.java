@@ -1,5 +1,4 @@
 package BasicShapes;
-
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1

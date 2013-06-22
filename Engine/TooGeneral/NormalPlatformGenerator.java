@@ -1,16 +1,15 @@
 package TooGeneral;
+/**
+ * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version     Version 1
+ * @since       1.6
+ */
 
 import Logic.QImageExtractor;
 import Logic.QImageProcessor;
 
 import java.awt.image.BufferedImage;
 import java.util.Random;
-
-/**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
- */
 
 /**
  * Class for drawing a platform for the platformer.
@@ -177,6 +176,23 @@ public class NormalPlatformGenerator
 	    return QImageProcessor.constructVertical(
 	            QImageProcessor.constructVertical(this.getPlatformTop(), this.getPlatformMiddle()),
 				this.getPlatformBottom());
+	}
+
+	/**
+	 * Return the image for the ground.
+	 * The ground is as deep as you specify it to be.
+	 * It is composed of platform top, platform middle and platform bottom.
+	 * @param depth How deep the platform should be.
+	 * @return Image for the ground.
+	 */
+	public BufferedImage getGround(int depth)
+	{
+		BufferedImage image = QImageProcessor.constructVertical(this.getPlatformTop(), this.getPlatformMiddle());
+		for(int i = 0; i < depth; i++)
+		{
+			image = QImageProcessor.constructVertical(image, this.getPlatformMiddle());
+		}
+		return QImageProcessor.constructVertical(image, this.getPlatformBottom());
 	}
 
 	/**

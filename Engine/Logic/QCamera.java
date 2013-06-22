@@ -17,6 +17,7 @@ import ExtendedShapes.QBMControls;
 import ExtendedShapes.QMControls;
 import MovingShapes.QBMBox;
 import MovingShapes.QMBox;
+import Platformer.BasicCharacter;
 
 /**
  * Class for attaching camera to the game screen.
@@ -374,4 +375,17 @@ public class QCamera
 					box.getWidth(),
 					box.getHeight());
     }
+
+	/**
+	 * Draws the character. There is very little logic here, main logic is in getImage done by Character.
+	 * @param g the graphics to which to draw to.
+	 * @param character The character you want to be drawn.
+	 */
+	public void draw(Graphics2D g, BasicCharacter character)
+	{
+		g.drawImage(character.getImage(),
+					null,
+					character.getX()-this.getX()+this.getCenterX(),
+					character.getY()-this.getY()+this.getCenterY());
+	}
 }
