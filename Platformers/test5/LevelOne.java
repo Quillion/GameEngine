@@ -1,7 +1,7 @@
 package test5;
 
 import BasicShapes.Item;
-import BasicShapes.Level;
+import Objects.Level;
 import BasicSprite.QBPlatform;
 import Constants.QConstants;
 import Logic.*;
@@ -52,6 +52,11 @@ public class LevelOne extends Level
 		background = new QBackground(89, 110, 2138, 279, 640, 480);
 
 		flag = new Item();
+	}
+
+	@Override
+	public void setup()
+	{
 	}
 
 	@Override

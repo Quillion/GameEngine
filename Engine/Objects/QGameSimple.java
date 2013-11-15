@@ -1,44 +1,59 @@
-package test5;
-
-import Objects.Level;
+package Objects;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Game
+/**
+ * User: Edgar
+ * Date: 11/14/13
+ * Time: 9:55 PM
+ */
+public abstract class QGameSimple extends QGame
 {
-	private int WIDTH, HEIGHT;
+	private List<Level> levels;
 
-	private ArrayList<Level> levels;
-
-	public Game(int WIDTH, int HEIGHT)
+	public QGameSimple()
 	{
-		this.WIDTH = WIDTH;
-		this.HEIGHT = HEIGHT;
-
+		super();
 		levels = new ArrayList<Level>();
-		levels.add(new LevelOne());
-		levels.add(new LevelTwo());
+	}
+
+	@Override
+	protected void setup()
+	{
+		for(Level level : levels)
+			level.setup();
 
 		levels.get(0).setActive(true);
 	}
 
-	public void draw(Graphics2D g)
+	@Override
+	protected void render(Graphics2D g)
 	{
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 
 		for (Level level : levels)
+		{
 			if (level.isActive())
+			{
 				if (level.isLoaded())
+				{
 					level.draw(g);
+				}
 				else
+				{
 					g.drawString("Loading", 100, 100);
+				}
+			}
+		}
 	}
 
-	public void update()
+	@Override
+	protected void update(int deltaTime)
 	{
 		for (int i = 0; i < levels.size(); i++)
 		{
@@ -62,6 +77,7 @@ public class Game
 		}
 	}
 
+	@Override
 	public void keyPressed(KeyEvent e)
 	{
 		for (Level level : levels)
@@ -69,6 +85,7 @@ public class Game
 				level.keyPressed(e);
 	}
 
+	@Override
 	public void keyReleased(KeyEvent e)
 	{
 		for (Level level : levels)
@@ -76,6 +93,7 @@ public class Game
 				level.keyReleased(e);
 	}
 
+	@Override
 	public void mouseEntered(MouseEvent e)
 	{
 		for (Level level : levels)
@@ -83,6 +101,7 @@ public class Game
 				level.mouseEntered(e);
 	}
 
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		for (Level level : levels)
@@ -90,6 +109,7 @@ public class Game
 				level.mousePressed(e);
 	}
 
+	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		for (Level level : levels)
@@ -97,13 +117,8 @@ public class Game
 				level.mouseMoved(e);
 	}
 
-	public int getWIDTH()
+	public void addLevel(Level level)
 	{
-		return WIDTH;
-	}
-
-	public int getHEIGHT()
-	{
-		return HEIGHT;
+		levels.add(level);
 	}
 }

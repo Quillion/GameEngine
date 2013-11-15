@@ -1,4 +1,4 @@
-package BasicShapes;
+package Objects;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -39,6 +39,8 @@ public abstract class Level
 	{
 		this.loaded = loaded;
 	}
+
+	public abstract void setup();
 
 	public abstract void load();
 
