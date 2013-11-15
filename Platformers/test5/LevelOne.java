@@ -1,16 +1,13 @@
-package test4;
-/**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
- */
+package test5;
 
+import BasicShapes.Item;
+import Objects.Level;
 import BasicSprite.QBPlatform;
 import Constants.QConstants;
 import Logic.*;
 import Platformer.BasicCharacter;
+import Platformer.QBackground;
 import TooGeneral.NormalPlatformGenerator;
-import Platformer.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -18,10 +15,13 @@ import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
-public class Game
+/**
+ * User: Edgar
+ * Date: 11/11/13
+ * Time: 6:31 PM
+ */
+public class LevelOne extends Level
 {
-    private int WIDTH, HEIGHT;
-
 	private List<QBPlatform> grounds;
 	private List<QBPlatform> platforms;
 
@@ -35,13 +35,10 @@ public class Game
 	private List<BasicAIController> docileComputers;
 	private List<BasicAIController> jumpingComputers;
 
-	private QImageExtractor extractor;
+	private Item flag;
 
-	public Game(int WIDTH, int HEIGHT)
-    {
-        this.WIDTH = WIDTH;
-        this.HEIGHT = HEIGHT;
-
+	public LevelOne()
+	{
 		grounds = new ArrayList<QBPlatform>();
 		platforms = new ArrayList<QBPlatform>();
 
@@ -50,39 +47,27 @@ public class Game
 		docileComputers = new ArrayList<BasicAIController>();
 		jumpingComputers = new ArrayList<BasicAIController>();
 
+		camera = new QCamera(11, 111, 640/2, 480/2);
+
+		background = new QBackground(89, 110, 2138, 279, 640, 480);
+
+		flag = new Item();
+	}
+
+	@Override
+	public void setup()
+	{
+	}
+
+	@Override
+	public void load()
+	{
 		/****************************************************************************/
 		/******************************** CHARACTERS ********************************/
 		/****************************************************************************/
-		extractor = new QImageExtractor("Images/Platformer/Characters/cat.png");
+		BasicCharacter tempCharacter;
 
-		BasicCharacter tempCharacter = new BasicCharacter();
-		tempCharacter.setX(150);
-		tempCharacter.setY(150);
-		tempCharacter.setWidth(43);
-		tempCharacter.setHeight(43);
-		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(3.87);
-		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.53);
-		tempCharacter.setGroundFriction(0.2);
-		tempCharacter.setAirFriction(0.23);
-		tempCharacter.setLeftKey(KeyEvent.VK_LEFT);
-		tempCharacter.setRightKey(KeyEvent.VK_RIGHT);
-		tempCharacter.setJumpKey(KeyEvent.VK_UP);
-		tempCharacter.setJump(1, 100);
-		tempCharacter.addJump(extractor.getImage(3, 3, 43, 43));
-		tempCharacter.setStand(4, 21);
-		tempCharacter.addStand(extractor.getImage(3, 59, 43, 43));
-		tempCharacter.addStand(extractor.getImage(3, 59, 43, 43));
-		tempCharacter.addStand(extractor.getImage(54, 58, 43, 43));
-		tempCharacter.addStand(extractor.getImage(109, 58, 43, 43));
-		tempCharacter.setWalk(3, 12);
-		tempCharacter.addWalk(extractor.getImage(3, 3, 43, 43));
-		tempCharacter.addWalk(extractor.getImage(53, 3, 43, 43));
-		tempCharacter.addWalk(extractor.getImage(111, 3, 43, 43));
-		characters.add(tempCharacter);
-
-		extractor = new QImageExtractor("Images/Platformer/Characters/lucida.png");
+		QImageExtractor extractor = new QImageExtractor("Images/Platformer/Characters/lucida.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(350);
@@ -97,9 +82,9 @@ public class Game
 		tempCharacter.setAcceleration(0.5);
 		tempCharacter.setGroundFriction(0.2);
 		tempCharacter.setAirFriction(0.19);
-		tempCharacter.setLeftKey(KeyEvent.VK_A);
-		tempCharacter.setRightKey(KeyEvent.VK_D);
-		tempCharacter.setJumpKey(KeyEvent.VK_W);
+		tempCharacter.setLeftKey(KeyEvent.VK_LEFT);
+		tempCharacter.setRightKey(KeyEvent.VK_RIGHT);
+		tempCharacter.setJumpKey(KeyEvent.VK_UP);
 		tempCharacter.setJump(1, 100);
 		tempCharacter.addJump(extractor.getImage(6, 190, 43, 55));
 		tempCharacter.setStand(5, 20);
@@ -456,20 +441,34 @@ public class Game
 		tempPlatform.setImage(QImageProcessor.extractImage(tempPlatform.getImage(), 0, 0, 50, 100));
 		platforms.add(tempPlatform);
 
-		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
+		/****************************************************************************/
+		/********************************** FLAG ************************************/
+		/****************************************************************************/
+		extractor = new QImageExtractor("Images/Platformer/Objects/flags.png");
+		flag.setX(1640);
+		flag.setY(310);
+		flag.setAnimation(6, 10);
+		flag.addImage(extractor.getImage(218, 200, 30, 25));
+		flag.addImage(extractor.getImage(251, 200, 30, 25));
+		flag.addImage(extractor.getImage(283, 200, 30, 25));
+		flag.addImage(extractor.getImage(315, 200, 30, 25));
+		flag.addImage(extractor.getImage(347, 200, 30, 25));
+		flag.addImage(extractor.getImage(380, 200, 30, 25));
 
-		background = new QBackground(89, 110, 2138, 279, WIDTH, HEIGHT);
 		extractor = new QImageExtractor("Images/Platformer/Backgrounds/japan.png");
 		background.setBackground(extractor.getImage(30, 10, 930, 350));
 		background.setMidGround(extractor.getImage(25, 995, 360, 250));
 		background.addForegroundObject(extractor.getImage(425, 860, 350, 485));
 		background.generateBackground(15);
-    }
 
-    public void draw(Graphics2D g)
-    {
-        g.setColor(Color.BLUE);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
+		setLoaded(true);
+	}
+
+	@Override
+	public void draw(Graphics2D g)
+	{
+		g.setColor(Color.BLUE);
+		g.fillRect(0, 0, 640, 480);
 
 		background.draw(g, camera.getX(), camera.getY());
 
@@ -484,10 +483,13 @@ public class Game
 
 		for(QBPlatform ground : grounds)
 			camera.draw(g, ground);
-    }
 
-    public void update()
-    {
+		camera.draw(g, flag);
+	}
+
+	@Override
+	public void update()
+	{
 		int x = 0;
 		int y = 0;
 		// CHARACTERS
@@ -569,6 +571,8 @@ public class Game
 				}
 			}
 
+			setActive(!QEngine.collision(character, flag));
+
 			QEngine.postUpdate(character);
 
 			x += character.getCenterX();
@@ -642,39 +646,34 @@ public class Game
 		}
 
 		camera.updateCamera(x/characters.size(), y/characters.size());
-    }
+	}
 
-    public void keyPressed(KeyEvent e)
-    {
+	@Override
+	public void keyPressed(KeyEvent e)
+	{
 		for(BasicCharacter character : characters)
 			QEngine.keyPressed(e.getKeyCode(), character);
-    }
+	}
 
-    public void keyReleased(KeyEvent e)
-    {
+	@Override
+	public void keyReleased(KeyEvent e)
+	{
 		for(BasicCharacter character : characters)
 			QEngine.keyReleased(e.getKeyCode(), character);
-    }
+	}
 
-    public void mouseEntered(MouseEvent e)
-    {
-    }
+	@Override
+	public void mouseEntered(MouseEvent e)
+	{
+	}
 
-    public void mousePressed(MouseEvent e)
-    {
-    }
+	@Override
+	public void mousePressed(MouseEvent e)
+	{
+	}
 
-    public void mouseMoved(MouseEvent e)
-    {
-    }
-
-    public int getWIDTH ()
-    {
-        return WIDTH;
-    }
-
-    public int getHEIGHT ()
-    {
-        return HEIGHT;
-    }
+	@Override
+	public void mouseMoved(MouseEvent e)
+	{
+	}
 }

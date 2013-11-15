@@ -1,4 +1,9 @@
 package test2;
+/**
+ * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version     Version 1
+ * @since       1.6
+ */
 
 import BasicSprite.QMCharacter;
 import BasicSprite.QPlatform;
@@ -177,7 +182,7 @@ public class Game
 		QEngine.keyReleased(e.getKeyCode(), character);
     }
 
-    public void mouseEntered(MouseEvent e) 
+    public void mouseEntered(MouseEvent e)
     {
     }
 

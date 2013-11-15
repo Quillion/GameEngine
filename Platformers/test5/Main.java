@@ -1,15 +1,9 @@
-package test1;
-/**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
- */
-
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.*;
+package test5;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.BufferStrategy;
 
 public class Main implements Runnable
 {
@@ -63,6 +57,9 @@ public class Main implements Runnable
     {
         public void keyPressed(KeyEvent e)
         {
+            // TELL GAME OBJECT WHAT WE PRESSED
+            game.keyPressed(e);
+
             // USER PRESSED ESC
             if(e.getKeyCode()==27)
             {
@@ -74,9 +71,6 @@ public class Main implements Runnable
                 }
                 System.exit(0);
             }
-
-            // TELL GAME OBJECT WHAT WE PRESSED
-            game.keyPressed(e);
         }
 
         public void keyReleased(KeyEvent e)

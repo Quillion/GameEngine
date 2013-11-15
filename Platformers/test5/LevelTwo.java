@@ -1,27 +1,27 @@
-package test4;
-/**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
- */
+package test5;
 
+import BasicShapes.Item;
+import Objects.Level;
 import BasicSprite.QBPlatform;
 import Constants.QConstants;
 import Logic.*;
 import Platformer.BasicCharacter;
+import Platformer.QBackground;
 import TooGeneral.NormalPlatformGenerator;
-import Platformer.*;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.util.*;
-import java.util.List;
 
-public class Game
+/**
+ * User: Edgar
+ * Date: 11/11/13
+ * Time: 6:44 PM
+ */
+public class LevelTwo extends Level
 {
-    private int WIDTH, HEIGHT;
-
 	private List<QBPlatform> grounds;
 	private List<QBPlatform> platforms;
 
@@ -35,13 +35,10 @@ public class Game
 	private List<BasicAIController> docileComputers;
 	private List<BasicAIController> jumpingComputers;
 
-	private QImageExtractor extractor;
+	private Item flag;
 
-	public Game(int WIDTH, int HEIGHT)
-    {
-        this.WIDTH = WIDTH;
-        this.HEIGHT = HEIGHT;
-
+	public LevelTwo()
+	{
 		grounds = new ArrayList<QBPlatform>();
 		platforms = new ArrayList<QBPlatform>();
 
@@ -50,19 +47,36 @@ public class Game
 		docileComputers = new ArrayList<BasicAIController>();
 		jumpingComputers = new ArrayList<BasicAIController>();
 
+		camera = new QCamera(11, 111, 640/2, 480/2);
+
+		background = new QBackground(89, 110, 2138, 279, 640, 480);
+
+		flag = new Item();
+	}
+
+	@Override
+	public void setup()
+	{
+	}
+
+	@Override
+	public void load()
+	{
 		/****************************************************************************/
 		/******************************** CHARACTERS ********************************/
 		/****************************************************************************/
-		extractor = new QImageExtractor("Images/Platformer/Characters/cat.png");
+		BasicCharacter tempCharacter;
 
-		BasicCharacter tempCharacter = new BasicCharacter();
+		QImageExtractor extractor = new QImageExtractor("Images/Platformer/Characters/cat.png");
+
+		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(150);
 		tempCharacter.setY(150);
 		tempCharacter.setWidth(43);
 		tempCharacter.setHeight(43);
 		tempCharacter.setGravity(0.2);
 		tempCharacter.setMaxSpeed(3.87);
-		tempCharacter.setJump(6);
+		tempCharacter.setJump(7);
 		tempCharacter.setAcceleration(0.53);
 		tempCharacter.setGroundFriction(0.2);
 		tempCharacter.setAirFriction(0.23);
@@ -82,125 +96,9 @@ public class Game
 		tempCharacter.addWalk(extractor.getImage(111, 3, 43, 43));
 		characters.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Platformer/Characters/lucida.png");
-
-		tempCharacter = new BasicCharacter();
-		tempCharacter.setX(350);
-		tempCharacter.setY(150);
-		tempCharacter.setWidth(43);
-		tempCharacter.setHeight(55);
-		tempCharacter.setHorizontalOffset(3);
-		tempCharacter.setVerticalOffset(4);
-		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(3.97);
-		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.5);
-		tempCharacter.setGroundFriction(0.2);
-		tempCharacter.setAirFriction(0.19);
-		tempCharacter.setLeftKey(KeyEvent.VK_A);
-		tempCharacter.setRightKey(KeyEvent.VK_D);
-		tempCharacter.setJumpKey(KeyEvent.VK_W);
-		tempCharacter.setJump(1, 100);
-		tempCharacter.addJump(extractor.getImage(6, 190, 43, 55));
-		tempCharacter.setStand(5, 20);
-		tempCharacter.addStand(extractor.getImage(3, 3, 43, 55));
-		tempCharacter.addStand(extractor.getImage(3, 3, 43, 55));
-		tempCharacter.addStand(extractor.getImage(3, 3, 43, 55));
-		tempCharacter.addStand(extractor.getImage(59, 3, 43, 55));
-		tempCharacter.addStand(extractor.getImage(114, 3, 43, 55));
-		tempCharacter.setWalk(3, 15);
-		tempCharacter.addWalk(extractor.getImage(3, 68, 43, 55));
-		tempCharacter.addWalk(extractor.getImage(59, 68, 43, 55));
-		tempCharacter.addWalk(extractor.getImage(114, 68, 43, 55));
-		characters.add(tempCharacter);
-
 		/****************************************************************************/
 		/************************************ AI ************************************/
 		/****************************************************************************/
-		extractor = new QImageExtractor("Images/Platformer/Characters/bluesnail.png");
-
-		tempCharacter = new BasicCharacter();
-		tempCharacter.setX(300);
-		tempCharacter.setY(150);
-		tempCharacter.setWidth(40);
-		tempCharacter.setHeight(35);
-		tempCharacter.setHorizontalOffset(3);
-		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(1);
-		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.2);
-		tempCharacter.setGroundFriction(0.2);
-		tempCharacter.setAirFriction(0.2);
-		tempCharacter.setJump(1, 100);
-		tempCharacter.addJump(extractor.getImage(3, 3, 40, 35));
-		tempCharacter.setStand(1, 100);
-		tempCharacter.addStand(extractor.getImage(3, 3, 40, 35));
-		tempCharacter.setWalk(3, 20);
-		tempCharacter.addWalk(extractor.getImage(3, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(53, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(104, 48, 40, 35));
-		BasicAIController computer = new BasicAIController(tempCharacter);
-		computer.setActivity(90);
-		docileComputers.add(computer);
-		ai.add(tempCharacter);
-
-		extractor = new QImageExtractor("Images/Platformer/Characters/bluesnail.png");
-
-		tempCharacter = new BasicCharacter();
-		tempCharacter.setX(150);
-		tempCharacter.setY(150);
-		tempCharacter.setWidth(40);
-		tempCharacter.setHeight(35);
-		tempCharacter.setHorizontalOffset(3);
-		tempCharacter.setVerticalOffset(4);
-		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(0.8);
-		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.1);
-		tempCharacter.setGroundFriction(0.2);
-		tempCharacter.setAirFriction(0.2);
-		tempCharacter.setJump(1, 100);
-		tempCharacter.addJump(extractor.getImage(3, 3, 40, 35));
-		tempCharacter.setStand(1, 100);
-		tempCharacter.addStand(extractor.getImage(3, 3, 40, 35));
-		tempCharacter.setWalk(3, 20);
-		tempCharacter.addWalk(extractor.getImage(3, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(53, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(104, 48, 40, 35));
-		computer = new BasicAIController(tempCharacter);
-		computer.setActivity(95);
-		computer.setChoiceDuration(20, 70);
-		docileComputers.add(computer);
-		ai.add(tempCharacter);
-
-		extractor = new QImageExtractor("Images/Platformer/Characters/redsnail.png");
-
-		tempCharacter = new BasicCharacter();
-		tempCharacter.setX(900);
-		tempCharacter.setY(250);
-		tempCharacter.setWidth(40);
-		tempCharacter.setHeight(35);
-		tempCharacter.setHorizontalOffset(3);
-		tempCharacter.setVerticalOffset(4);
-		tempCharacter.setGravity(0.2);
-		tempCharacter.setMaxSpeed(1.3);
-		tempCharacter.setJump(6);
-		tempCharacter.setAcceleration(0.3);
-		tempCharacter.setGroundFriction(0.2);
-		tempCharacter.setAirFriction(0.2);
-		tempCharacter.setJump(1, 100);
-		tempCharacter.addJump(extractor.getImage(3, 3, 40, 35));
-		tempCharacter.setStand(1, 100);
-		tempCharacter.addStand(extractor.getImage(3, 3, 40, 35));
-		tempCharacter.setWalk(3, 20);
-		tempCharacter.addWalk(extractor.getImage(3, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(47, 48, 40, 35));
-		tempCharacter.addWalk(extractor.getImage(99, 48, 40, 35));
-		computer = new BasicAIController(tempCharacter);
-		computer.setRange(595, 400);
-		docileComputers.add(computer);
-		ai.add(tempCharacter);
-
 		extractor = new QImageExtractor("Images/Platformer/Characters/zombiemushroom.png");
 
 		tempCharacter = new BasicCharacter();
@@ -226,8 +124,8 @@ public class Game
 		tempCharacter.addWalk(extractor.getImage(78, 81, 65, 70));
 		tempCharacter.addWalk(extractor.getImage(149, 81, 65, 70));
 		tempCharacter.addWalk(extractor.getImage(221, 81, 65, 70));
-		computer = new BasicAIController(tempCharacter);
-		computer.setRange(350, 400);
+		BasicAIController computer = new BasicAIController(tempCharacter);
+		computer.setRange(350, 500);
 		computer.setActivity(90);
 		computer.setChoiceDuration(40, 190);
 		jumpingComputers.add(computer);
@@ -259,11 +157,39 @@ public class Game
 		tempCharacter.addWalk(extractor.getImage(149, 81, 65, 70));
 		tempCharacter.addWalk(extractor.getImage(221, 81, 65, 70));
 		computer = new BasicAIController(tempCharacter);
-		computer.setRange(1350, 400);
+		computer.setRange(450, 800);
 		computer.setActivity(80);
 		computer.setChoiceDuration(40, 190);
-		computer.setJumpFParameters(45, 3);
+		computer.setJumpFParameters(35, 9);
 		jumpingComputers.add(computer);
+		ai.add(tempCharacter);
+
+		extractor = new QImageExtractor("Images/Platformer/Characters/redsnail.png");
+
+		tempCharacter = new BasicCharacter();
+		tempCharacter.setX(950);
+		tempCharacter.setY(250);
+		tempCharacter.setWidth(40);
+		tempCharacter.setHeight(35);
+		tempCharacter.setHorizontalOffset(3);
+		tempCharacter.setVerticalOffset(4);
+		tempCharacter.setGravity(0.2);
+		tempCharacter.setMaxSpeed(1.3);
+		tempCharacter.setJump(6);
+		tempCharacter.setAcceleration(0.3);
+		tempCharacter.setGroundFriction(0.2);
+		tempCharacter.setAirFriction(0.2);
+		tempCharacter.setJump(1, 100);
+		tempCharacter.addJump(extractor.getImage(3, 3, 40, 35));
+		tempCharacter.setStand(1, 100);
+		tempCharacter.addStand(extractor.getImage(3, 3, 40, 35));
+		tempCharacter.setWalk(3, 20);
+		tempCharacter.addWalk(extractor.getImage(3, 48, 40, 35));
+		tempCharacter.addWalk(extractor.getImage(47, 48, 40, 35));
+		tempCharacter.addWalk(extractor.getImage(99, 48, 40, 35));
+		computer = new BasicAIController(tempCharacter);
+		computer.setRange(595, 400);
+		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
 		/****************************************************************************/
@@ -284,19 +210,19 @@ public class Game
 
 		/************ THE GAP **************/
 		tempPlatform = new QBPlatform();
-		tempPlatform.setX(1100);
-		tempPlatform.setY(330);
+		tempPlatform.setX(1420);
+		tempPlatform.setY(300);
 		tempPlatform.setHorizontalOffset(9);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
-		for(int i = 0; i < 2; i++)
-			tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
-		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWallBottom()));
+		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
+		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
+		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
 		grounds.add(tempPlatform);
 
 		tempPlatform = new QBPlatform();
 		tempPlatform.setX(1130);
-		tempPlatform.setY(390);
+		tempPlatform.setY(400);
 		tempPlatform.setHorizontalOffset(9);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
@@ -336,140 +262,33 @@ public class Game
 		grounds.add(tempPlatform);
 
 		/****************************************************************************/
-		/******************************** PLATFORMS *********************************/
+		/********************************** FLAG ************************************/
 		/****************************************************************************/
-		/************ 4 JUMPING PLATFORMS **************/
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(50);
-		tempPlatform.setY(430);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		platforms.add(tempPlatform);
+		extractor = new QImageExtractor("Images/Platformer/Objects/flags.png");
+		flag.setX(2140);
+		flag.setY(170);
+		flag.setAnimation(6, 10);
+		flag.addImage(extractor.getImage(218, 200, 30, 25));
+		flag.addImage(extractor.getImage(251, 200, 30, 25));
+		flag.addImage(extractor.getImage(283, 200, 30, 25));
+		flag.addImage(extractor.getImage(315, 200, 30, 25));
+		flag.addImage(extractor.getImage(347, 200, 30, 25));
+		flag.addImage(extractor.getImage(380, 200, 30, 25));
 
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(50);
-		tempPlatform.setY(290);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(50);
-		tempPlatform.setY(200);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(50);
-		tempPlatform.setY(110);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		platforms.add(tempPlatform);
-
-		/************ 3 BIG PLATFORMS **************/
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(415);
-		tempPlatform.setY(234);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getGround(3));
-		for(int i = 0; i < 5; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
-		platforms.add(tempPlatform);
-
-		/************ SMALL LEDGE **************/
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(505);
-		tempPlatform.setY(292);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(235);
-		tempPlatform.setY(350);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getGround(3));
-		for(int i = 0; i < 5; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(595);
-		tempPlatform.setY(408);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getGround(2));
-		for(int i = 0; i < 4; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(2)));
-		platforms.add(tempPlatform);
-
-		/************ SMALL LEDGE **************/
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(325);
-		tempPlatform.setY(466);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatformTop());
-		platforms.add(tempPlatform);
-
-		/************ TOP ACCESS **************/
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(350);
-		tempPlatform.setY(130);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		for(int i = 0; i < 4; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(930);
-		tempPlatform.setY(110);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		for(int i = 0; i < 1; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(1350);
-		tempPlatform.setY(120);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(generator.getPlatform());
-		for(int i = 0; i < 4; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(1440);
-		tempPlatform.setY(344);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructHorizontal(generator.getGround(3), generator.getGround(3)));
-		for(int i = 0; i < 2; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
-		platforms.add(tempPlatform);
-
-		tempPlatform = new QBPlatform();
-		tempPlatform.setX(1300);
-		tempPlatform.setY(450);
-		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
-		tempPlatform.setImage(QImageProcessor.extractImage(tempPlatform.getImage(), 0, 0, 50, 100));
-		platforms.add(tempPlatform);
-
-		camera = new QCamera(11, 111, WIDTH/2, HEIGHT/2);
-
-		background = new QBackground(89, 110, 2138, 279, WIDTH, HEIGHT);
 		extractor = new QImageExtractor("Images/Platformer/Backgrounds/japan.png");
 		background.setBackground(extractor.getImage(30, 10, 930, 350));
 		background.setMidGround(extractor.getImage(25, 995, 360, 250));
 		background.addForegroundObject(extractor.getImage(425, 860, 350, 485));
 		background.generateBackground(15);
-    }
 
-    public void draw(Graphics2D g)
-    {
-        g.setColor(Color.BLUE);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
+		setLoaded(true);
+	}
+
+	@Override
+	public void draw(Graphics2D g)
+	{
+		g.setColor(Color.BLUE);
+		g.fillRect(0, 0, 640, 480);
 
 		background.draw(g, camera.getX(), camera.getY());
 
@@ -484,10 +303,13 @@ public class Game
 
 		for(QBPlatform ground : grounds)
 			camera.draw(g, ground);
-    }
 
-    public void update()
-    {
+		camera.draw(g, flag);
+	}
+
+	@Override
+	public void update()
+	{
 		int x = 0;
 		int y = 0;
 		// CHARACTERS
@@ -569,6 +391,8 @@ public class Game
 				}
 			}
 
+			setActive(!QEngine.collision(character, flag));
+
 			QEngine.postUpdate(character);
 
 			x += character.getCenterX();
@@ -642,39 +466,34 @@ public class Game
 		}
 
 		camera.updateCamera(x/characters.size(), y/characters.size());
-    }
+	}
 
-    public void keyPressed(KeyEvent e)
-    {
+	@Override
+	public void keyPressed(KeyEvent e)
+	{
 		for(BasicCharacter character : characters)
 			QEngine.keyPressed(e.getKeyCode(), character);
-    }
+	}
 
-    public void keyReleased(KeyEvent e)
-    {
+	@Override
+	public void keyReleased(KeyEvent e)
+	{
 		for(BasicCharacter character : characters)
 			QEngine.keyReleased(e.getKeyCode(), character);
-    }
+	}
 
-    public void mouseEntered(MouseEvent e)
-    {
-    }
+	@Override
+	public void mouseEntered(MouseEvent e)
+	{
+	}
 
-    public void mousePressed(MouseEvent e)
-    {
-    }
+	@Override
+	public void mousePressed(MouseEvent e)
+	{
+	}
 
-    public void mouseMoved(MouseEvent e)
-    {
-    }
-
-    public int getWIDTH ()
-    {
-        return WIDTH;
-    }
-
-    public int getHEIGHT ()
-    {
-        return HEIGHT;
-    }
+	@Override
+	public void mouseMoved(MouseEvent e)
+	{
+	}
 }

@@ -8,6 +8,7 @@ package Logic;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+import BasicShapes.Item;
 import BasicShapes.QBBox;
 import BasicShapes.QBox;
 import BasicSprite.QBPlatform;
@@ -387,5 +388,13 @@ public class QCamera
 					null,
 					character.getX()-this.getX()+this.getCenterX(),
 					character.getY()-this.getY()+this.getCenterY());
+	}
+
+	public void draw(Graphics2D g, Item item)
+	{
+		g.drawImage(item.getImage(),
+				null,
+				item.getX()-this.getX()+this.getCenterX(),
+				item.getY()-this.getY()+this.getCenterY());
 	}
 }
