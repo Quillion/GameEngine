@@ -182,7 +182,7 @@ public class Game
 		QEngine.keyReleased(e.getKeyCode(), character);
     }
 
-    public void mouseEntered(MouseEvent e) 
+    public void mouseEntered(MouseEvent e)
     {
     }
 

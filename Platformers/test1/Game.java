@@ -485,7 +485,7 @@ public class Game
             button_press = 0;
     }
 
-    public void mouseEntered(MouseEvent e) 
+    public void mouseEntered(MouseEvent e)
     {
     }
 

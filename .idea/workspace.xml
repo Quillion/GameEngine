@@ -2,48 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Backgrounds\japan.png" afterPath="$PROJECT_DIR$/Images/Platformer/Backgrounds/japan.png" />
-      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\bluesnail.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/bluesnail.png" />
-      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\cat.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/cat.png" />
-      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\lucida.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/lucida.png" />
-      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\redsnail.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/redsnail.png" />
-      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Characters\zombiemushroom.png" afterPath="$PROJECT_DIR$/Images/Platformer/Characters/zombiemushroom.png" />
-      <change type="MOVED" beforePath="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Platforms\dragonroadtiles.png" afterPath="$PROJECT_DIR$/Images/Platformer/Platforms/dragonroadtiles.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/Platformer/Objects/flags.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/Platformer/Platforms/haloweentiles.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Platformers/test5/Game.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Item.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Level.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Platformers/test5/LevelOne.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Platformers/test5/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Platformer_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine.iml" afterPath="$PROJECT_DIR$/Engine.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test1/Game.java" afterPath="$PROJECT_DIR$/Platformers/test1/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test2/Game.java" afterPath="$PROJECT_DIR$/Platformers/test2/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Game.java" afterPath="$PROJECT_DIR$/Platformers/test3/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test4/Game.java" afterPath="$PROJECT_DIR$/Platformers/test4/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" afterPath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Template/Game.java" afterPath="$PROJECT_DIR$/Template/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Logic/QCamera.java" afterPath="$PROJECT_DIR$/Engine/Logic/QCamera.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371297606523" ignored="false" />
-    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371345167234" ignored="false" />
-    <file path="/QBCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784250279" ignored="false" />
-    <file path="/QBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369784584470" ignored="false" />
-    <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371265076235" ignored="false" />
-    <file path="/QImageExtractor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370196197943" ignored="false" />
-    <file path="/NormalPlatformGenerator.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370305576416" ignored="false" />
-    <file path="/QImgaeProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369963662176" ignored="false" />
-    <file path="/QPlatform.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1369997838329" ignored="false" />
-    <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370092946737" ignored="false" />
-    <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371343705839" ignored="false" />
-    <file path="/Field.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370212402941" ignored="false" />
-    <file path="/.gitignore" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370912819415" ignored="false" />
-    <file path="/QImageProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371078217050" ignored="false" />
-    <file path="/QCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370657486016" ignored="false" />
-    <file path="/Board.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370212203081" ignored="false" />
-    <file path="/QConstants.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370564453835" ignored="false" />
-    <file path="/SimBoard.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370211352670" ignored="false" />
-    <file path="/Background.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371081456412" ignored="false" />
-    <file path="/Animation.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370829410538" ignored="false" />
-    <file path="/BasicCharacter.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370831278716" ignored="false" />
-    <file path="/QEngine.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370829796658" ignored="false" />
-    <file path="/AIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370744902117" ignored="false" />
-    <file path="/BasicAIController.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370911249329" ignored="false" />
-    <file path="/QBBox.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370828339813" ignored="false" />
-    <file path="/QBMControls.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1370829608192" ignored="false" />
-    <file path="/QBackground.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371167409160" ignored="false" />
-    <file path="/a.dummy" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1371343720188" ignored="false" />
+    <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384481752298" ignored="false" />
+    <file path="/QGame.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1383997959269" ignored="false" />
+    <file path="$PROJECT_DIR$/../Engine/src/interfaces/Level.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384050672051" ignored="false" />
+    <file path="/Level.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384212818958" ignored="false" />
+    <file path="$PROJECT_DIR$/../Engine/src/Basic/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384139298063" ignored="false" />
+    <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384475438603" ignored="false" />
+    <file path="$PROJECT_DIR$/../Engine/src/test/Test.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384139308782" ignored="false" />
+    <file path="/Test.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384135408971" ignored="false" />
+    <file path="/a.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384125638799" ignored="false" />
+    <file path="/sample.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384125691261" ignored="false" />
+    <file path="/LevelOne.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384342956370" ignored="false" />
+    <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384213874215" ignored="false" />
+    <file path="/LevelTwo.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384387533303" ignored="false" />
+    <file path="/Item.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384309856618" ignored="false" />
+    <file path="/QCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384309927513" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +55,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -95,6 +91,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -104,10 +101,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DungeonCrawler/dungeon1/Main.java">
+      <file leaf-file-name="LevelOne.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelOne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+            <state line="451" column="0" selection-start="17582" selection-end="17582" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,26 +113,28 @@
       <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="615" column="56" selection-start="22244" selection-end="22244" vertical-scroll-proportion="0.0">
+            <state line="57" column="60" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QBBox.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/QBBox.java">
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Platformers/test5/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="0" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.76765376">
+            <state line="56" column="13" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.4515689">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DungeonCrawler/dungeon1/Game.java">
+      <file leaf-file-name="LevelTwo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="271" column="0" selection-start="10832" selection-end="10832" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,6 +147,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
@@ -158,30 +158,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Engine/Platformer/QBackground.java" />
-        <option value="$PROJECT_DIR$/DungeonCrawler/test1/Main.java" />
-        <option value="$PROJECT_DIR$/DungeonCrawler/test1/Game.java" />
-        <option value="$PROJECT_DIR$/DungeonCrawler/dungeon1/Game.java" />
-        <option value="$PROJECT_DIR$/Platformers/test4/Main.java" />
-        <option value="$PROJECT_DIR$/Platformers/test3/Main.java" />
-        <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
-        <option value="$PROJECT_DIR$/Platformers/test2/Main.java" />
-        <option value="$PROJECT_DIR$/Platformers/test2/Game.java" />
-        <option value="$PROJECT_DIR$/Platformers/test1/Main.java" />
-        <option value="$PROJECT_DIR$/Template/Main.java" />
-        <option value="$PROJECT_DIR$/Template/Game.java" />
         <option value="$PROJECT_DIR$/DungeonCrawler/dungeon1/Main.java" />
         <option value="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
-        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
         <option value="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
+        <option value="$PROJECT_DIR$/Game/QGame.java" />
+        <option value="$PROJECT_DIR$/Platformers/test1/Game.java" />
+        <option value="$PROJECT_DIR$/Platformers/test1/Main.java" />
+        <option value="$PROJECT_DIR$/Platformers/test2/Game.java" />
+        <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
+        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
+        <option value="$PROJECT_DIR$/Template/Game.java" />
+        <option value="$PROJECT_DIR$/Engine/BasicShapes/Level.java" />
+        <option value="$PROJECT_DIR$/Engine/Logic/QCamera.java" />
+        <option value="$PROJECT_DIR$/Engine/BasicShapes/Item.java" />
+        <option value="$PROJECT_DIR$/Platformers/test5/LevelOne.java" />
+        <option value="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" />
+        <option value="$PROJECT_DIR$/Platformers/test5/Game.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1358" />
-    <option name="y" value="-668" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="y" value="-470" />
+    <option name="width" value="1616" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -194,6 +194,9 @@
             <id>Android Lint</id>
           </State>
           <State>
+            <id>General</id>
+          </State>
+          <State>
             <id>IntelliJ IDEA Platform Inspections</id>
           </State>
           <State>
@@ -202,10 +205,16 @@
           <State>
             <id>Plugin DevKit</id>
           </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Abstraction issues</id>
+            <id>Convert2Diamond</id>
           </State>
         </selected-state>
       </profile-state>
@@ -237,6 +246,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,6 +277,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,6 +370,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Characters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -394,6 +445,10 @@
               <option name="myItemId" value="Engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TooGeneral" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -405,29 +460,133 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="Engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dungeon1" />
+              <option name="myItemId" value="Sim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Platformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovingShapes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Constants" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicSprite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicShapes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="SDKs" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="appearance" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="preferences.intentionPowerPack" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -435,15 +594,16 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Dropbox\Programming\Java\GameEngine\Images\Platformer\Objects" />
+      <recent name="E:\Dropbox\Programming\Java\GameEngine\Images\Platformer\Platforms" />
+      <recent name="E:\Dropbox\Programming\Java\GameEngine\Platformers\test5" />
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Platformers\test4" />
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine" />
-      <recent name="C:\Users\Edgar\Dropbox\Programming\Java\Engine\Platformers\test3" />
-      <recent name="C:\Users\Edgar\Dropbox\Programming\Java\Engine\Platformers\test2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\GameEngine\Images\Platformer" />
@@ -453,11 +613,29 @@
       <recent name="C:\Users\Edgar\Dropbox\Programming\Java\Engine\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Platformer 4">
+  <component name="RunManager" selected="Application.Platformer 5">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -542,12 +720,29 @@
       <patterns />
       <method />
     </configuration>
-    <list size="5">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Platformer 1" />
       <item index="1" class="java.lang.String" itemvalue="Application.Platformer 2" />
       <item index="2" class="java.lang.String" itemvalue="Application.Platformer 3" />
       <item index="3" class="java.lang.String" itemvalue="Application.Platformer 4" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Dungeon 1" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Platformer 5" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Dungeon 1" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -586,27 +781,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-668" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <frame x="1358" y="-470" width="1616" height="916" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32750398" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4855196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30683625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31620553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2060606" sideWeight="0.7416268" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2583732" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18404119" sideWeight="0.68379444" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2806324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
@@ -653,7 +851,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level interface seems to work. Now to simplify things some more." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -667,6 +865,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Level interface seems to work. Now to simplify things some more." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -688,114 +887,110 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Images/Platformer/Platforms/dragonroadtiles.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/QBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="214" selection-end="214" vertical-scroll-proportion="0.37433156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Engine/Platformer/BasicCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="309" selection-end="309" vertical-scroll-proportion="0.53125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/MovingShapes/QMBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="220" selection-end="220" vertical-scroll-proportion="-8.752233" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test4/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="126" selection-end="126" vertical-scroll-proportion="0.19953051">
+        <state line="124" column="33" selection-start="3767" selection-end="3775" vertical-scroll-proportion="-7.12">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test3/Main.java">
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Animation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="126" selection-end="126" vertical-scroll-proportion="0.19953051">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test3/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.23234624">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test2/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="126" selection-end="126" vertical-scroll-proportion="0.19953051">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test2/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.23234624">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test1/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="126" selection-end="126" vertical-scroll-proportion="0.19953051">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test1/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="424" selection-end="424" vertical-scroll-proportion="0.35915494">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Template/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DungeonCrawler/dungeon1/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="59" selection-start="571" selection-end="571" vertical-scroll-proportion="0.3324937">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DungeonCrawler/dungeon1/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="615" column="56" selection-start="22244" selection-end="22244" vertical-scroll-proportion="0.0">
+        <state line="29" column="0" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/QBBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="0" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.76765376">
+        <state line="109" column="16" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.49635038">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.040852576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/QCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="394" column="0" selection-start="11523" selection-end="11523" vertical-scroll-proportion="0.3313433">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.4051724">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="78" selection-start="590" selection-end="590" vertical-scroll-proportion="0.37454545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Platformer/Characters/cat.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Platformer/Characters/lucida.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/Logic/BasicAIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="75" selection-start="2590" selection-end="2590" vertical-scroll-proportion="0.38208956">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="271" column="0" selection-start="10832" selection-end="10832" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelOne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="451" column="0" selection-start="17582" selection-end="17582" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="60" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test5/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="13" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.4515689">
           <folding />
         </state>
       </provider>
@@ -840,7 +1035,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7 (1)</last-edited>
+          <last-edited>1.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -857,7 +1052,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

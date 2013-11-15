@@ -31,7 +31,7 @@ public class Game
     {
     }
 
-    public void mouseEntered(MouseEvent e) 
+    public void mouseEntered(MouseEvent e)
     {
     }
 
