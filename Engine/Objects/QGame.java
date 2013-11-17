@@ -161,7 +161,8 @@ public abstract class QGame implements Runnable
 				try
 				{
 					Thread.sleep((desiredDeltaLoop - deltaLoop) / (1000 * 1000));
-				} catch (InterruptedException e)
+				}
+				catch (InterruptedException e)
 				{
 					//Do nothing, is it even possible for me to fail at putting thread to sleep?
 				}
@@ -170,15 +171,15 @@ public abstract class QGame implements Runnable
 	}
 
 	// FULL SCREEN OR NOT
-	private static boolean FULL_SCREEN = false;
+	private boolean FULL_SCREEN;
 
 	// SCREEN MEASUREMENTS AND REFRESH
-	public static final int WIDTH = 640;
-	public static final int HEIGHT = 480;
+	private int WIDTH;
+	private int HEIGHT;
 	private long desiredFPS = 60;
 
 	// NAME OF WINDOW
-	private String title = "Base";
+	private String title;
 
 	// INITIALIZING SOME FRAME RATE THINGS
 	private long desiredDeltaLoop = (1000 * 1000 * 1000) / desiredFPS;
@@ -193,7 +194,7 @@ public abstract class QGame implements Runnable
 	private DisplayMode originalDisplayMode;
 
 	// WILL HAVE THREE DISPLAY MODES, 32 bit, 16bit and 8 bit
-	private static DisplayMode[] MODES = new DisplayMode[]
+	private DisplayMode[] MODES = new DisplayMode[]
 			{
 					new DisplayMode(WIDTH, HEIGHT, 32, 0), new DisplayMode(WIDTH, HEIGHT, 16, 0),
 					new DisplayMode(WIDTH, HEIGHT, 8, 0)
@@ -220,9 +221,59 @@ public abstract class QGame implements Runnable
 	 */
 	public QGame()
 	{
+		WIDTH = 640;
+		HEIGHT = 480;
+		FULL_SCREEN = false;
+		title = "QGame";
+	}
+
+	/*
+	 * Let's see which display mode is suitable for our computer
+	 */
+	private DisplayMode getBestDisplayMode(GraphicsDevice device)
+	{
+		// LOOP THROUGH 32 THEN 16 THEN 8 BIT DISPLAY MODES AND SEE WHICH IS THE FIRST ONE WE CAN HANDLE
+		for (DisplayMode MODE : MODES)
+		{
+			DisplayMode[] modes = device.getDisplayModes();
+			for (DisplayMode mode : modes)
+			{
+				if (mode.getWidth() == MODE.getWidth() && mode.getHeight() == MODE.getHeight() && mode.getBitDepth() == MODE.getBitDepth())
+				{
+					return MODE;
+				}
+			}
+		}
+		return null;
+	}
+
+	public void setScreen(int width, int height, boolean fullScreen)
+	{
+		WIDTH =  width;
+		HEIGHT = height;
+		FULL_SCREEN = fullScreen;
+	}
+
+	public int getWidth()
+	{
+		return WIDTH;
+	}
+
+	public int getHeight()
+	{
+		return HEIGHT;
+	}
+
+	public void setTitle(String title)
+	{
+		frame.setTitle(title);
+	}
+
+	public void init()
+	{
 		// REMOVE ThIS If YOU DO NOT WANT TO ASK FOR SCREEN MODES
 		/* No full screen asking anymore, this annoys me
-        int answer = JOptionPane.showConfirmDialog(null, "Do you want to play in full screen", "Full screen?", 0);
+		int answer = JOptionPane.showConfirmDialog(null, "Do you want to play in full screen", "Full screen?", 0);
         if(answer == 0)
         {
             FULL_SCREEN = true;
@@ -290,25 +341,5 @@ public abstract class QGame implements Runnable
 		bufferStrategy = canvas.getBufferStrategy();
 		// FOCUS ON THE WINDOW
 		canvas.requestFocus();
-	}
-
-	/*
-	 * Let's see which display mode is suitable for our computer
-	 */
-	private static DisplayMode getBestDisplayMode(GraphicsDevice device)
-	{
-		// LOOP THROUGH 32 THEN 16 THEN 8 BIT DISPLAY MODES AND SEE WHICH IS THE FIRST ONE WE CAN HANDLE
-		for (DisplayMode MODE : MODES)
-		{
-			DisplayMode[] modes = device.getDisplayModes();
-			for (DisplayMode mode : modes)
-			{
-				if (mode.getWidth() == MODE.getWidth() && mode.getHeight() == MODE.getHeight() && mode.getBitDepth() == MODE.getBitDepth())
-				{
-					return MODE;
-				}
-			}
-		}
-		return null;
 	}
 }

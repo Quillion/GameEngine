@@ -13,11 +13,13 @@ public abstract class Level
 {
 	private boolean active;
 	private boolean loaded;
+	private QGame game;
 
-	public Level()
+	public Level(QGame game)
 	{
 		active = false;
 		loaded = false;
+		this.game = game;
 	}
 
 	public boolean isActive()
@@ -40,6 +42,11 @@ public abstract class Level
 		this.loaded = loaded;
 	}
 
+	public QGame getGame()
+	{
+		return game;
+	}
+
 	public abstract void setup();
 
 	public abstract void load();
@@ -57,4 +64,6 @@ public abstract class Level
 	public abstract void mousePressed(MouseEvent e);
 
 	public abstract void mouseMoved(MouseEvent e);
+
+	public abstract void delete();
 }

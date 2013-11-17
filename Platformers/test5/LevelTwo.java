@@ -1,19 +1,20 @@
 package test5;
 
 import BasicShapes.Item;
-import Objects.Level;
 import BasicSprite.QBPlatform;
 import Constants.QConstants;
 import Logic.*;
+import Objects.Level;
+import Objects.QGame;
 import Platformer.BasicCharacter;
 import Platformer.QBackground;
 import TooGeneral.NormalPlatformGenerator;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: Edgar
@@ -37,8 +38,10 @@ public class LevelTwo extends Level
 
 	private Item flag;
 
-	public LevelTwo()
+	public LevelTwo(QGame game)
 	{
+		super(game);
+
 		grounds = new ArrayList<QBPlatform>();
 		platforms = new ArrayList<QBPlatform>();
 
@@ -47,9 +50,9 @@ public class LevelTwo extends Level
 		docileComputers = new ArrayList<BasicAIController>();
 		jumpingComputers = new ArrayList<BasicAIController>();
 
-		camera = new QCamera(11, 111, 640/2, 480/2);
+		camera = new QCamera(11, 111, game.getWidth()/2, game.getHeight()/2);
 
-		background = new QBackground(89, 110, 2138, 279, 640, 480);
+		background = new QBackground(89, 110, 2138, 279, game.getWidth(), game.getHeight());
 
 		flag = new Item();
 	}
@@ -288,7 +291,7 @@ public class LevelTwo extends Level
 	public void draw(Graphics2D g)
 	{
 		g.setColor(Color.BLUE);
-		g.fillRect(0, 0, 640, 480);
+		g.fillRect(0, 0, getGame().getWidth(), getGame().getHeight());
 
 		background.draw(g, camera.getX(), camera.getY());
 
@@ -494,6 +497,11 @@ public class LevelTwo extends Level
 
 	@Override
 	public void mouseMoved(MouseEvent e)
+	{
+	}
+
+	@Override
+	public void delete()
 	{
 	}
 }

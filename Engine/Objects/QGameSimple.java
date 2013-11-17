@@ -34,7 +34,7 @@ public abstract class QGameSimple extends QGame
 	protected void render(Graphics2D g)
 	{
 		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, WIDTH, HEIGHT);
+		g.fillRect(0, 0, getWidth(), getHeight());
 
 		for (Level level : levels)
 		{
