@@ -1,4 +1,4 @@
-package Logic;
+package logic;
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1

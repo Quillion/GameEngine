@@ -5,8 +5,8 @@ package TooGeneral;
  * @since       1.6
  */
 
-import Logic.QImageExtractor;
-import Logic.QImageProcessor;
+import logic.QImageExtractor;
+import logic.QImageProcessor;
 
 import java.awt.image.BufferedImage;
 import java.util.Random;

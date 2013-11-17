@@ -67,7 +67,7 @@ public class Field
 	 * Creates connection between supplied field and this field.
 	 * Will not work if you try to add field that is already connected to it.
 	 * Also will not work if you try to add this field to itself.
-	 * @param field, field object to which to connect this object.
+	 * @param field field object to which to connect this object.
 	 * @return true if the fields connected, false otherwise.
 	 */
 	public boolean addField(Field field)

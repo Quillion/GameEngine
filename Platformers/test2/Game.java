@@ -5,11 +5,11 @@ package test2;
  * @since       1.6
  */
 
-import BasicSprite.QMCharacter;
+import platformer.BasicSprite.QMCharacter;
 import BasicSprite.QPlatform;
 import Constants.QConstants;
-import Logic.QCamera;
-import Logic.QEngine;
+import logic.QCamera;
+import logic.QEngine;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

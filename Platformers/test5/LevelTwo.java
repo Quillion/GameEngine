@@ -3,12 +3,13 @@ package test5;
 import BasicShapes.Item;
 import BasicSprite.QBPlatform;
 import Constants.QConstants;
-import Logic.*;
-import Objects.Level;
-import Objects.QGame;
-import Platformer.BasicCharacter;
-import Platformer.QBackground;
+import logic.*;
+import abstracts.Level;
+import abstracts.QGame;
+import platformer.BasicCharacter;
+import platformer.QBackground;
 import TooGeneral.NormalPlatformGenerator;
+import logic.platformer.BasicAIController;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

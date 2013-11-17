@@ -7,10 +7,11 @@ package test4;
 
 import BasicSprite.QBPlatform;
 import Constants.QConstants;
-import Logic.*;
-import Platformer.BasicCharacter;
+import logic.*;
+import platformer.BasicCharacter;
 import TooGeneral.NormalPlatformGenerator;
-import Platformer.*;
+import platformer.*;
+import logic.platformer.BasicAIController;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

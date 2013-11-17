@@ -1,4 +1,4 @@
-package Platformer;
+package platformer;
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
@@ -7,8 +7,8 @@ package Platformer;
 
 import BasicShapes.Animation;
 import Constants.QConstants;
-import ExtendedShapes.QBMControls;
-import Logic.QImageProcessor;
+import platformer.ExtendedShapes.QBMControls;
+import logic.QImageProcessor;
 
 import java.awt.image.BufferedImage;
 
@@ -79,7 +79,6 @@ public class BasicCharacter extends QBMControls
 	/**
 	 * Adds an image to the jumping animation.
 	 * @param image image that you would like added to the jumping animation.
-	 * @return True if the image was added, false otherwise.
 	 */
 	public void addJump(BufferedImage image)
 	{
@@ -90,7 +89,6 @@ public class BasicCharacter extends QBMControls
 	/**
 	 * Adds an image to the standing animation.
 	 * @param image image that you would like added to the standing animation.
-	 * @return True if the image was added, false otherwise.
 	 */
 	public void addStand(BufferedImage image)
 	{

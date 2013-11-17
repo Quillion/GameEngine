@@ -12,11 +12,11 @@ import java.util.*;
 import java.util.List;
 
 import BasicSprite.QBPlatform;
-import BasicSprite.QMCharacter;
+import platformer.BasicSprite.QMCharacter;
 import Constants.QConstants;
-import Logic.QCamera;
-import Logic.QEngine;
-import Logic.QImageProcessor;
+import logic.QCamera;
+import logic.QEngine;
+import logic.QImageProcessor;
 import TooGeneral.NormalPlatformGenerator;
 
 public class Game

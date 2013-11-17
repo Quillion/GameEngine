@@ -1,35 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="9" />
+    <option name="CUSTOM_SCOPE_NAME" value="Selected Files" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Platformers\test5\Game.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Objects/Level.java" afterPath="$PROJECT_DIR$/Engine/Objects/Level.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QBMControls.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QMControls.java" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\ExtendedShapes\QBMControls.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\ExtendedShapes\QMControls.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/Animation.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Animation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/Field.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Field.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test1/Game.java" afterPath="$PROJECT_DIR$/Platformers/test1/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test2/Game.java" afterPath="$PROJECT_DIR$/Platformers/test2/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Game.java" afterPath="$PROJECT_DIR$/Platformers/test3/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test4/Game.java" afterPath="$PROJECT_DIR$/Platformers/test4/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/Item.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Item.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test5/LevelOne.java" afterPath="$PROJECT_DIR$/Platformers/test5/LevelOne.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" afterPath="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Objects/QGame.java" afterPath="$PROJECT_DIR$/Engine/Objects/QGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Objects/QGameSimple.java" afterPath="$PROJECT_DIR$/Engine/Objects/QGameSimple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test5/Main.java" afterPath="$PROJECT_DIR$/Platformers/test5/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" afterPath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
+      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\QBackground.java" afterPath="$PROJECT_DIR$/Engine/platformer/QBackground.java" />
+      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\QCamera.java" afterPath="$PROJECT_DIR$/Engine/logic/QCamera.java" />
+      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\QEngine.java" afterPath="$PROJECT_DIR$/Engine/logic/QEngine.java" />
+      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\QImageProcessor.java" afterPath="$PROJECT_DIR$/Engine/logic/QImageProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Platformers\test6\Main.java" afterPath="$PROJECT_DIR$/Platformers/test5/Main.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicSprite\QMCharacter.java" afterPath="$PROJECT_DIR$/Engine/platformer/BasicSprite/QMCharacter.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\MovingShapes\QBMBox.java" afterPath="$PROJECT_DIR$/Engine/platformer/MovingShapes/QBMBox.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\MovingShapes\QMBox.java" afterPath="$PROJECT_DIR$/Engine/platformer/MovingShapes/QMBox.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Objects\Level.java" afterPath="$PROJECT_DIR$/Engine/abstracts/Level.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Objects\QGame.java" afterPath="$PROJECT_DIR$/Engine/abstracts/QGame.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Objects\QGameSimple.java" afterPath="$PROJECT_DIR$/Engine/abstracts/QGameSimple.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\BasicAIController.java" afterPath="$PROJECT_DIR$/Engine/logic/platformer/BasicAIController.java" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384604563089" ignored="false" />
-    <file path="/QGame.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384697605933" ignored="false" />
+    <file path="/QGame.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384725646690" ignored="false" />
     <file path="$PROJECT_DIR$/../Engine/src/interfaces/Level.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384050672051" ignored="false" />
-    <file path="/Level.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384698795618" ignored="false" />
+    <file path="/Level.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384728191075" ignored="false" />
     <file path="$PROJECT_DIR$/../Engine/src/Basic/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384139298063" ignored="false" />
     <file path="/Game.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384698170256" ignored="false" />
     <file path="$PROJECT_DIR$/../Engine/src/test/Test.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384139308782" ignored="false" />
     <file path="/Test.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384135408971" ignored="false" />
-    <file path="/a.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384125638799" ignored="false" />
-    <file path="/sample.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384125691261" ignored="false" />
+    <file path="/a.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384725194841" ignored="false" />
+    <file path="/sample.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384725226205" ignored="false" />
     <file path="/LevelOne.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384698637207" ignored="false" />
     <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384699913953" ignored="false" />
     <file path="/LevelTwo.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384698771287" ignored="false" />
     <file path="/Item.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384309856618" ignored="false" />
     <file path="/QCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384309927513" ignored="false" />
     <file path="/Main.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384698259661" ignored="false" />
-    <file path="/QGameSimple.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384697614958" ignored="false" />
+    <file path="/QGameSimple.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384728240332" ignored="false" />
+    <file path="/README.md" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384705904200" ignored="false" />
+    <file path="/Animation.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384707730224" ignored="false" />
+    <file path="/QImageExtractor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384728405675" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,62 +116,7 @@
     <favorites_list name="Engine" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Level.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/Objects/Level.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QGame.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/Objects/QGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="265" column="0" selection-start="5919" selection-end="5919" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QGameSimple.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/Objects/QGameSimple.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Platformers/test5/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="28" selection-start="384" selection-end="384" vertical-scroll-proportion="0.5957821">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LevelOne.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelOne.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="474" column="0" selection-start="18206" selection-end="18206" vertical-scroll-proportion="-13.96">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LevelTwo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelTwo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="294" column="0" selection-start="11448" selection-end="11448" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -163,22 +135,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
-        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
-        <option value="$PROJECT_DIR$/Template/Game.java" />
-        <option value="$PROJECT_DIR$/Engine/BasicShapes/Level.java" />
-        <option value="$PROJECT_DIR$/Engine/Logic/QCamera.java" />
-        <option value="$PROJECT_DIR$/Engine/BasicShapes/Item.java" />
-        <option value="$PROJECT_DIR$/Engine/Objects/Game.java" />
-        <option value="$PROJECT_DIR$/Engine/Objects/QGame.java" />
-        <option value="$PROJECT_DIR$/Engine/Objects/QGameSimple.java" />
-        <option value="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" />
-        <option value="$PROJECT_DIR$/Platformers/test5/LevelOne.java" />
-        <option value="$PROJECT_DIR$/Platformers/test5/Game.java" />
-        <option value="$PROJECT_DIR$/Platformers/test6/Main.java" />
-        <option value="$PROJECT_DIR$/Platformers/test6/LevelOne.java" />
         <option value="$PROJECT_DIR$/Platformers/test6/LevelTwo.java" />
         <option value="$PROJECT_DIR$/Engine/Objects/Level.java" />
+        <option value="$PROJECT_DIR$/Engine/BasicShapes/Item.java" />
+        <option value="$PROJECT_DIR$/Engine/Platformer/ExtendedShapes/QMControls.java" />
+        <option value="$PROJECT_DIR$/Engine/Logic/BasicAIController.java" />
+        <option value="$PROJECT_DIR$/Engine/logic/BasicAIController.java" />
+        <option value="$PROJECT_DIR$/Engine/logic/platformer/BasicAIController.java" />
+        <option value="$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QMControls.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Engine/BasicShapes/Animation.java" />
+        <option value="$PROJECT_DIR$/Engine/abstracts/Level.java" />
+        <option value="$PROJECT_DIR$/Engine/abstracts/QGameSimple.java" />
+        <option value="$PROJECT_DIR$/Engine/platformer/BasicCharacter.java" />
+        <option value="$PROJECT_DIR$/Engine/logic/QImageExtractor.java" />
+        <option value="$PROJECT_DIR$/Engine/BasicShapes/Field.java" />
+        <option value="$PROJECT_DIR$/Engine/abstracts/QGame.java" />
       </list>
     </option>
   </component>
@@ -521,7 +493,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Platformer" />
+              <option name="myItemId" value="platformer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,21 +511,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Objects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GameEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GameEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="platformer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -572,6 +530,76 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="platformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtendedShapes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="platformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BasicSprite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="platformer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -629,6 +657,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abstracts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -643,7 +689,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.intentionPowerPack" />
+    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -849,11 +895,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-470" width="1616" height="916" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253833" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4855196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -864,14 +911,13 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15572716" sideWeight="0.7839262" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15572716" sideWeight="0.7839262" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21607378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
@@ -954,89 +1000,114 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Images/Platformer/Characters/cat.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/Platformer/Characters/lucida.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Logic/BasicAIController.java">
+    <entry file="file://$PROJECT_DIR$/Engine/logic/platformer/BasicAIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="75" selection-start="2590" selection-end="2590" vertical-scroll-proportion="0.38208956">
+        <state line="13" column="13" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test1/Game.java">
+    <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="424" selection-end="424" vertical-scroll-proportion="-19.2643">
+        <state line="17" column="13" selection-start="329" selection-end="329" vertical-scroll-proportion="-0.4706685">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test2/Game.java">
+    <entry file="file://$PROJECT_DIR$/Engine/logic/QCamera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="5" selection-start="4589" selection-end="4589" vertical-scroll-proportion="0.0">
+        <state line="68" column="0" selection-start="2158" selection-end="2158" vertical-scroll-proportion="-9.60573">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
+    <entry file="file://$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QMControls.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="60" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.1326923">
+        <state line="9" column="0" selection-start="215" selection-end="215" vertical-scroll-proportion="0.2510232">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Objects/QGameSimple.java">
+    <entry file="file://$PROJECT_DIR$/Engine/platformer/BasicSprite/QMCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
+        <state line="15" column="37" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0313779">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Platformer/QBackground.java">
+    <entry file="file://$PROJECT_DIR$/Engine/logic/QEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="11" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.33333334">
+        <state line="18" column="13" selection-start="448" selection-end="448" vertical-scroll-proportion="-10.733334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Objects/Level.java">
+    <entry file="file://$PROJECT_DIR$/Engine/logic/QImageProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
+        <state line="15" column="13" selection-start="357" selection-end="357" vertical-scroll-proportion="-2.5143247">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Objects/QGame.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="0" selection-start="5919" selection-end="5919" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelTwo.java">
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="0" selection-start="11448" selection-end="11448" vertical-scroll-proportion="0.0">
+        <state line="9" column="13" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelOne.java">
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Animation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="474" column="0" selection-start="18206" selection-end="18206" vertical-scroll-proportion="-13.96">
+        <state line="2" column="29" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Platformers/test5/Main.java">
+    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="384" selection-end="384" vertical-scroll-proportion="0.5957821">
+        <state line="69" column="19" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.3321617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/logic/QImageExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="73" selection-start="1596" selection-end="1596" vertical-scroll-proportion="0.2513181">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/platformer/BasicCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="78" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.17047451">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/abstracts/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="48" selection-start="2721" selection-end="2721" vertical-scroll-proportion="0.04042179">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/abstracts/QGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="369" selection-end="369" vertical-scroll-proportion="0.04042179">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Engine/abstracts/QGameSimple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="0" selection-start="3426" selection-end="3426" vertical-scroll-proportion="0.04042179">
           <folding />
         </state>
       </provider>
@@ -1116,6 +1187,17 @@
         </settings>
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>
             <option name="proportions">

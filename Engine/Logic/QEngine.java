@@ -1,4 +1,4 @@
-package Logic;
+package logic;
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
@@ -10,11 +10,11 @@ import java.lang.Math;
 import BasicShapes.QBBox;
 import BasicShapes.QBox;
 import Constants.QConstants;
-import ExtendedShapes.QBMControls;
-import ExtendedShapes.QMControls;
-import MovingShapes.QBMBox;
-import MovingShapes.QMBox;
-import Platformer.BasicCharacter;
+import platformer.ExtendedShapes.QBMControls;
+import platformer.ExtendedShapes.QMControls;
+import platformer.MovingShapes.QBMBox;
+import platformer.MovingShapes.QMBox;
+import platformer.BasicCharacter;
 
 public class QEngine
 {

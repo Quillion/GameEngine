@@ -12,10 +12,10 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-import BasicSprite.QMCharacter;
+import platformer.BasicSprite.QMCharacter;
 import BasicSprite.QPlatform;
 import Constants.QConstants;
-import Logic.QEngine;
+import logic.QEngine;
 
 public class Game
 {

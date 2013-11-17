@@ -1,4 +1,4 @@
-package Logic;
+package logic;
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
@@ -12,13 +12,13 @@ import BasicShapes.Item;
 import BasicShapes.QBBox;
 import BasicShapes.QBox;
 import BasicSprite.QBPlatform;
-import BasicSprite.QMCharacter;
+import platformer.BasicSprite.QMCharacter;
 import BasicSprite.QPlatform;
-import ExtendedShapes.QBMControls;
-import ExtendedShapes.QMControls;
-import MovingShapes.QBMBox;
-import MovingShapes.QMBox;
-import Platformer.BasicCharacter;
+import platformer.ExtendedShapes.QBMControls;
+import platformer.ExtendedShapes.QMControls;
+import platformer.MovingShapes.QBMBox;
+import platformer.MovingShapes.QMBox;
+import platformer.BasicCharacter;
 
 /**
  * Class for attaching camera to the game screen.

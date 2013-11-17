@@ -1,12 +1,12 @@
-package Platformer;
+package platformer;
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
  * @since       1.6
  */
 
-import Logic.QCamera;
-import Logic.QImageProcessor;
+import logic.QCamera;
+import logic.QImageProcessor;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

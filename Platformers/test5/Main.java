@@ -1,6 +1,6 @@
 package test5;
 
-import Objects.QGameSimple;
+import abstracts.QGameSimple;
 
 /**
  * User: Edgar
