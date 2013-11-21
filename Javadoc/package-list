@@ -10,3 +10,4 @@ platformer
 platformer.BasicSprite
 platformer.ExtendedShapes
 platformer.MovingShapes
+utils

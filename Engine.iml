@@ -10,9 +10,11 @@
       <sourceFolder url="file://$MODULE_DIR$/DungeonCrawler" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Game" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PlatformerEngine" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/joystick" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="library" name="Joystick" level="project" />
   </component>
 </module>
 

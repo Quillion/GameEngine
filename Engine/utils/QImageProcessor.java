@@ -1,14 +1,16 @@
-package logic;
+package utils;
 /**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
  */
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 
 /**
  * Class for gluing images together, and more image manipulation stuff.
@@ -17,7 +19,8 @@ public class QImageProcessor
 {
 	/**
 	 * Will attach both images Top to bottom.
-	 * @param top The top of the image you want.
+	 *
+	 * @param top    The top of the image you want.
 	 * @param bottom The bottom of the image you want.
 	 * @return Attached image.
 	 */
@@ -25,7 +28,7 @@ public class QImageProcessor
 	{
 		BufferedImage combined = new BufferedImage(
 				top.getWidth(),
-				top.getHeight()+bottom.getHeight(),
+				top.getHeight() + bottom.getHeight(),
 				BufferedImage.TYPE_INT_ARGB
 		);
 		Graphics g = combined.getGraphics();
@@ -36,14 +39,15 @@ public class QImageProcessor
 
 	/**
 	 * Will attach both images side by side.
-	 * @param left The left side of the image you want.
+	 *
+	 * @param left  The left side of the image you want.
 	 * @param right The right side of the image you want.
 	 * @return Two images attached side by side.
 	 */
 	public static BufferedImage constructHorizontal(BufferedImage left, BufferedImage right)
 	{
 		BufferedImage combined = new BufferedImage(
-				left.getWidth()+right.getWidth(),
+				left.getWidth() + right.getWidth(),
 				left.getHeight(),
 				BufferedImage.TYPE_INT_ARGB
 		);
@@ -55,10 +59,11 @@ public class QImageProcessor
 
 	/**
 	 * Extracts a given part from a given image.
-	 * @param image Image from which you would like to extract a part.
-	 * @param x the x coordinate of the newly extracted image.
-	 * @param y the y coordinate of the newly extracted image within the given image.
-	 * @param width The width of the newly extracted image.
+	 *
+	 * @param image  Image from which you would like to extract a part.
+	 * @param x      the x coordinate of the newly extracted image.
+	 * @param y      the y coordinate of the newly extracted image within the given image.
+	 * @param width  The width of the newly extracted image.
 	 * @param height The height of the newly extracted image.
 	 * @return The extracted image that you desired.
 	 */
@@ -69,6 +74,7 @@ public class QImageProcessor
 
 	/**
 	 * Flips the image around its y axis.
+	 *
 	 * @param image The image that you want flipped.
 	 * @return The new image that is a copy of given image flipped around its y axis.
 	 */
@@ -82,6 +88,7 @@ public class QImageProcessor
 
 	/**
 	 * Flips the image around its x axis.
+	 *
 	 * @param image The image that you want flipped.
 	 * @return The new image that is a copy of given image flipped around its x axis.
 	 */
@@ -95,14 +102,15 @@ public class QImageProcessor
 
 	/**
 	 * Resizes image to the specified width and height. The original image is not touched so you are safe.
-	 * @param image The image you want resized.
-	 * @param width The new width of the image.
+	 *
+	 * @param image  The image you want resized.
+	 * @param width  The new width of the image.
 	 * @param height The new height of the image.
 	 * @return Newly resized image.
 	 */
 	public static BufferedImage resize(BufferedImage image, int width, int height)
 	{
-		int type = image.getType() == 0? BufferedImage.TYPE_INT_ARGB : image.getType();
+		int type = image.getType() == 0 ? BufferedImage.TYPE_INT_ARGB : image.getType();
 		BufferedImage resizedImage = new BufferedImage(width, height, type);
 		Graphics2D g = resizedImage.createGraphics();
 		g.drawImage(image, 0, 0, width, height, null);
@@ -117,5 +125,27 @@ public class QImageProcessor
 				RenderingHints.VALUE_ANTIALIAS_ON);
 
 		return resizedImage;
+	}
+
+	/**
+	 * Load the image from a given path.
+	 *
+	 * @return true if image loaded successfully, false otherwise.
+	 */
+	public static BufferedImage loadImage(String path)
+	{
+		URL url = QImageProcessor.class.getResource(path);
+
+		BufferedImage image;
+		try
+		{
+			image = ImageIO.read(url);
+		}
+		catch (Exception e)
+		{
+			return null;
+		}
+
+		return image;
 	}
 }

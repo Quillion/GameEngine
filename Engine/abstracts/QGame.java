@@ -169,7 +169,7 @@ public abstract class QGame implements Runnable
 
 		// START THE GAME THIS IS OUR GAME LOOP. RUNNING WILL NEVER BE FALSE I HAD THIS HERE BEFORE WHEN I HAD LEVELS
 		// BUt LONG SINCE MOVED IT TO THE GAME OBJECT
-		while (running)
+		while (true)
 		{
 			// WE TAKE THE TIME
 			beginLoopTime = System.nanoTime();
@@ -186,13 +186,8 @@ public abstract class QGame implements Runnable
 			endLoopTime = System.nanoTime();
 			deltaLoop = endLoopTime - beginLoopTime;
 
-			// IF WE ENTER THIS IF STATEMENT THEN WE ARE KIND OF SCREWED OUR GAME LAGS
-			if (deltaLoop > desiredDeltaLoop)
-			{
-				//Do nothing. We are already late. I honestly don't even know why I have this if here :)
-			}
 			// WE UPDATED AND DREW THINGS QUICK ENOUGH SO THEREFORE WE WILL WAIT IN ORDER TO MAKE THE GAME SMOOTH
-			else
+			if (deltaLoop <= desiredDeltaLoop)
 			{
 				try
 				{
@@ -219,15 +214,14 @@ public abstract class QGame implements Runnable
 
 	// INITIALIZING SOME FRAME RATE THINGS
 	private long desiredDeltaLoop = (1000 * 1000 * 1000) / desiredFPS;
-	private boolean running = true;
 
 	// INITIALIZING SOME JAVA THINGS
 	private JFrame frame;
-	private Canvas canvas;
 	private BufferStrategy bufferStrategy;
 
 	private GraphicsDevice graphicsDevice;
 	private DisplayMode originalDisplayMode;
+	private Font graphicsFont;
 
 	// WILL HAVE THREE DISPLAY MODES, 32 bit, 16bit and 8 bit
 	private DisplayMode[] MODES = new DisplayMode[]
@@ -246,6 +240,7 @@ public abstract class QGame implements Runnable
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		// MAKE THE PICTURE WHERE WE WILL PAINT EVERYTHING AT ONCE
 		g.clearRect(0, 0, WIDTH, HEIGHT);
+		g.setFont(graphicsFont);
 		// PAINT ANYTHING WE NEED HERE
 		render(g);
 		g.dispose();
@@ -263,6 +258,7 @@ public abstract class QGame implements Runnable
 		HEIGHT = 480;
 		FULL_SCREEN = false;
 		title = "QGame";
+		graphicsFont = new Font("TimesRoman", Font.BOLD, 90);
 	}
 
 	/**
@@ -362,15 +358,13 @@ public abstract class QGame implements Runnable
 			frame.setSize(WIDTH, HEIGHT);
 		}
 
-		Rectangle bounds = frame.getBounds();
-
 		// CREATE NEW JPanel WITH SPECIFIED WIDTH AND HEIGHT
 		JPanel panel = (JPanel) frame.getContentPane();
 		// I had to add the -9 to readjust window size
 		panel.setPreferredSize(new Dimension(WIDTH - 9, HEIGHT - 9));
 		panel.setLayout(null);
 		// CREATE A Canvas INSIDE JPanel WITH SPECIFIED WIDTH AND HEIGHT
-		canvas = new Canvas();
+		Canvas canvas = new Canvas();
 		// once again I add 1 because java is stupid that's why
 		canvas.setBounds(0, 0, WIDTH + 1, HEIGHT + 1);
 		//canvas.setBounds(bounds);
@@ -382,7 +376,7 @@ public abstract class QGame implements Runnable
 		canvas.addMouseListener(new MouseControl(this));
 		canvas.addMouseMotionListener(new MouseMotion(this));
 		// INITIALIZE THE WINDOW
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setResizable(false);
 		frame.setVisible(true);

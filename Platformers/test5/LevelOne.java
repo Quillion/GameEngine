@@ -10,6 +10,7 @@ import platformer.BasicCharacter;
 import platformer.QBackground;
 import TooGeneral.NormalPlatformGenerator;
 import logic.platformer.BasicAIController;
+import utils.QImageProcessor;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -159,6 +160,7 @@ public class LevelOne extends Level
 		computer = new BasicAIController(tempCharacter);
 		computer.setActivity(95);
 		computer.setChoiceDuration(20, 70);
+		computer.setRange(300, 200);
 		docileComputers.add(computer);
 		ai.add(tempCharacter);
 

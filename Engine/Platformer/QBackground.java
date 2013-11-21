@@ -6,7 +6,7 @@ package platformer;
  */
 
 import logic.QCamera;
-import logic.QImageProcessor;
+import utils.QImageProcessor;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

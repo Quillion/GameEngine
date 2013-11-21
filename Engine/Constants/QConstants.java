@@ -6,7 +6,7 @@ package Constants;
  */
 
 /**
- * Constant value to be used for the game
+ * Constant values to be used for the game.
  */
 public class QConstants
 {

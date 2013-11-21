@@ -73,7 +73,8 @@ public abstract class Level
 	}
 
 	/**
-	 * Returns the game that this level is attached to. This will be used in the child classes that extend this class.
+	 * Returns the game that this level is attached to.
+	 * This will be used in the child classes that extend this class.
 	 *
 	 * @return QGame that this level is attached to.
 	 */
@@ -140,7 +141,8 @@ public abstract class Level
 	public abstract void mouseMoved(MouseEvent e);
 
 	/**
-	 * Remove all the variables here. And make sure to set everything to null so that level can be deleted and done with.
+	 * Remove all the variables here.
+	 * And make sure to set everything to null so that level can be deleted and done with.
 	 */
 	public abstract void delete();
 }

@@ -10,6 +10,7 @@ import platformer.BasicCharacter;
 import platformer.QBackground;
 import TooGeneral.NormalPlatformGenerator;
 import logic.platformer.BasicAIController;
+import utils.QImageProcessor;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

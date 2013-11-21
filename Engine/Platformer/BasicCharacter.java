@@ -1,22 +1,28 @@
 package platformer;
 /**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
  */
 
 import BasicShapes.Animation;
 import Constants.QConstants;
 import platformer.ExtendedShapes.QBMControls;
-import logic.QImageProcessor;
+import utils.QImageProcessor;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * This is a very basic character.
+ * It has very basic, walk, stand and jump images.
+ * And that is all.
+ * You can use it and enjoy it and see how this engine works.
+ */
 public class BasicCharacter extends QBMControls
 {
-	private Animation [] walk_;
-	private Animation [] jump_;
-	private Animation [] stand_;
+	private Animation[] walk_;
+	private Animation[] jump_;
+	private Animation[] stand_;
 	private boolean left_;
 
 	/**
@@ -34,7 +40,8 @@ public class BasicCharacter extends QBMControls
 
 	/**
 	 * Sets the walk animation frame size and frame refresh rate.
-	 * @param size Number of frames for the walking animation.
+	 *
+	 * @param size        Number of frames for the walking animation.
 	 * @param refreshRate The refresh rate for the animation.
 	 */
 	public void setWalk(int size, int refreshRate)
@@ -45,7 +52,8 @@ public class BasicCharacter extends QBMControls
 
 	/**
 	 * Sets the jumping animation frame size and frame refresh rate.
-	 * @param size Number of frames for the jumping animation.
+	 *
+	 * @param size        Number of frames for the jumping animation.
 	 * @param refreshRate The refresh rate for the animation.
 	 */
 	public void setJump(int size, int refreshRate)
@@ -56,7 +64,8 @@ public class BasicCharacter extends QBMControls
 
 	/**
 	 * Sets the standing animation frame size and frame refresh rate.
-	 * @param size Number of frames for the standing animation.
+	 *
+	 * @param size        Number of frames for the standing animation.
 	 * @param refreshRate The refresh rate for the animation.
 	 */
 	public void setStand(int size, int refreshRate)
@@ -67,6 +76,7 @@ public class BasicCharacter extends QBMControls
 
 	/**
 	 * Adds an image to the walking animation.
+	 *
 	 * @param image image that you would like added to the walking animation.
 	 * @return True if the image was added, false otherwise.
 	 */
@@ -78,6 +88,7 @@ public class BasicCharacter extends QBMControls
 
 	/**
 	 * Adds an image to the jumping animation.
+	 *
 	 * @param image image that you would like added to the jumping animation.
 	 */
 	public void addJump(BufferedImage image)
@@ -88,6 +99,7 @@ public class BasicCharacter extends QBMControls
 
 	/**
 	 * Adds an image to the standing animation.
+	 *
 	 * @param image image that you would like added to the standing animation.
 	 */
 	public void addStand(BufferedImage image)
@@ -99,6 +111,7 @@ public class BasicCharacter extends QBMControls
 	/**
 	 * Let's you notify this character if the left button was last button pressed or not.
 	 * I chose left just because.
+	 *
 	 * @param left true if the left key was pressed, false otherwise (right key was pressed).
 	 */
 	public void setLeftPressed(boolean left)
@@ -109,6 +122,7 @@ public class BasicCharacter extends QBMControls
 	/**
 	 * Tells you if the left button was last pressed or not.
 	 * This is not always correct value, but this is what this character believes is the case.
+	 *
 	 * @return True if this character thinks left button was last button pressed, false otherwise.
 	 */
 	public boolean getLeftPressed()
@@ -118,15 +132,16 @@ public class BasicCharacter extends QBMControls
 
 	/**
 	 * Returns image in accordance with what the character is currently doing.
+	 *
 	 * @return Image that represents character's current state.
 	 */
 	public BufferedImage getImage()
 	{
-		if(this.getLeftPressed())
+		if (this.getLeftPressed())
 		{
-			if(super.isStanding())
+			if (super.isStanding())
 			{
-				if(super.getXVector() != 0)
+				if (super.getXVector() != 0)
 				{
 					return walk_[QConstants.LEFT].getImage();
 				}
@@ -142,9 +157,9 @@ public class BasicCharacter extends QBMControls
 		}
 		else
 		{
-			if(super.isStanding())
+			if (super.isStanding())
 			{
-				if(super.getXVector() != 0)
+				if (super.getXVector() != 0)
 				{
 					return walk_[QConstants.RIGHT].getImage();
 				}

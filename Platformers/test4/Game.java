@@ -12,6 +12,7 @@ import platformer.BasicCharacter;
 import TooGeneral.NormalPlatformGenerator;
 import platformer.*;
 import logic.platformer.BasicAIController;
+import utils.QImageProcessor;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

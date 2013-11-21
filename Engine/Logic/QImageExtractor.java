@@ -16,7 +16,6 @@ import java.io.File;
 public class QImageExtractor
 {
 	private BufferedImage image_;
-	private File file_;
 
 	/**
 	 * Specify the path to the image and it will be loaded.
@@ -31,7 +30,7 @@ public class QImageExtractor
 
 	/**
 	 * Attach the given Buffered image to this object.
-	 * Why would you want this method is beoynd me, but enjoy.
+	 * Why would you want this method is beyond me, but enjoy.
 	 *
 	 * @param image The image that you want to have sliced and diced.
 	 */
@@ -49,7 +48,7 @@ public class QImageExtractor
 	 */
 	public boolean loadImage(String image)
 	{
-		file_ = new File(image);
+		File file_ = new File(image);
 		if (file_.exists())
 		{
 			try

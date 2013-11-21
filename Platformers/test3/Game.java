@@ -16,7 +16,7 @@ import platformer.BasicSprite.QMCharacter;
 import Constants.QConstants;
 import logic.QCamera;
 import logic.QEngine;
-import logic.QImageProcessor;
+import utils.QImageProcessor;
 import TooGeneral.NormalPlatformGenerator;
 
 public class Game

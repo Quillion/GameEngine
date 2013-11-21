@@ -1,16 +1,20 @@
 package logic.platformer;
 /**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
  */
 
 import Constants.QConstants;
-import platformer.BasicCharacter;
 import logic.QEngine;
+import platformer.BasicCharacter;
 
 import java.util.Random;
 
+/**
+ * This will controls the behaviour of the specified character the way you want to.
+ * It will perform whatever actions you specify at a specified frequency.
+ */
 public class BasicAIController
 {
 	private Random fate_;
@@ -25,6 +29,7 @@ public class BasicAIController
 
 	/**
 	 * Well we can't have AI without specifying which character it is for after all.
+	 *
 	 * @param character Character who will be controlled by AI.
 	 */
 	public BasicAIController(BasicCharacter character)
@@ -44,15 +49,15 @@ public class BasicAIController
 	 */
 	public void randomNoJump()
 	{
-		if(this.count_++ < this.duration_)
+		if (this.count_++ < this.duration_)
 		{
-			if(this.rangeSet_)
+			if (this.rangeSet_)
 			{
-				if(character_.getLeftX() < this.minRange_+10)
+				if (character_.getLeftX() < this.minRange_ + 10)
 				{
 					choice_ = character_.getRightKey();
 				}
-				else if (character_.getRightX() > this.maxRange_-10)
+				else if (character_.getRightX() > this.maxRange_ - 10)
 				{
 					choice_ = character_.getLeftKey();
 				}
@@ -66,15 +71,15 @@ public class BasicAIController
 			this.choice_ = QConstants.NONE;
 
 			// DO SOMETHING
-			if(this.activity_ > fate_.nextInt(100))
+			if (this.activity_ > fate_.nextInt(100))
 			{
-				if(this.rangeSet_)
+				if (this.rangeSet_)
 				{
-					if(character_.getLeftX() < this.minRange_+10)
+					if (character_.getLeftX() < this.minRange_ + 10)
 					{
 						this.choice_ = character_.getRightKey();
 					}
-					else if (character_.getRightX() > this.maxRange_-10)
+					else if (character_.getRightX() > this.maxRange_ - 10)
 					{
 						this.choice_ = character_.getLeftKey();
 					}
@@ -102,21 +107,21 @@ public class BasicAIController
 	 */
 	public void random()
 	{
-		if(this.count_++ < this.duration_)
+		if (this.count_++ < this.duration_)
 		{
-			if(this.rangeSet_)
+			if (this.rangeSet_)
 			{
-				if(character_.getLeftX() < this.minRange_+10)
+				if (character_.getLeftX() < this.minRange_ + 10)
 				{
 					choice_ = character_.getRightKey();
 				}
-				else if (character_.getRightX() > this.maxRange_-10)
+				else if (character_.getRightX() > this.maxRange_ - 10)
 				{
 					choice_ = character_.getLeftKey();
 				}
 			}
 			QEngine.keyPressed(choice_, character_);
-			if (this.count_%this.jumpFrequency_ == 0 && fate_.nextInt(this.jumpChance_) == 1)
+			if (this.count_ % this.jumpFrequency_ == 0 && fate_.nextInt(this.jumpChance_) == 1)
 			{
 				QEngine.keyPressed(character_.getJumpKey(), character_);
 			}
@@ -128,15 +133,15 @@ public class BasicAIController
 			this.choice_ = QConstants.NONE;
 
 			// DO SOMETHING
-			if(this.activity_ > fate_.nextInt(100))
+			if (this.activity_ > fate_.nextInt(100))
 			{
-				if(this.rangeSet_)
+				if (this.rangeSet_)
 				{
-					if(character_.getLeftX() < this.minRange_+10)
+					if (character_.getLeftX() < this.minRange_ + 10)
 					{
 						this.choice_ = character_.getRightKey();
 					}
-					else if (character_.getRightX() > this.maxRange_-10)
+					else if (character_.getRightX() > this.maxRange_ - 10)
 					{
 						this.choice_ = character_.getLeftKey();
 					}
@@ -161,11 +166,12 @@ public class BasicAIController
 
 	/**
 	 * Must be in range from 1 to 100, the higher the range, the more active the character.
+	 *
 	 * @param activity The rate of activity of the given character.
 	 */
 	public void setActivity(int activity)
 	{
-		if(activity > 0 && activity < 101)
+		if (activity > 0 && activity < 101)
 			this.activity_ = activity;
 	}
 
@@ -173,12 +179,13 @@ public class BasicAIController
 	 * The duration of actions that character will take.
 	 * Smaller range will result in more rapidly changing and seizurelike character.
 	 * Make sure that minimum choice duration is smaller than max choice duration.
+	 *
 	 * @param minChoiceDuration Minimum duration to hold the action.
 	 * @param maxChoiceDuration Maximum duration to hold the action.
 	 */
 	public void setChoiceDuration(int minChoiceDuration, int maxChoiceDuration)
 	{
-		if(minChoiceDuration > maxChoiceDuration)
+		if (minChoiceDuration > maxChoiceDuration)
 			return;
 		this.minChoiceDuration_ = minChoiceDuration;
 		this.choiceRange_ = maxChoiceDuration - minChoiceDuration;
@@ -187,12 +194,13 @@ public class BasicAIController
 	/**
 	 * The range within which the character can move.
 	 * Very useful to keep character on the platform.
+	 *
 	 * @param minRange The left side range for the character. The left x.
-	 * @param range The range from the left side, the width.
+	 * @param range    The range from the left side, the width.
 	 */
 	public void setRange(int minRange, int range)
 	{
-		if(range <= 0)
+		if (range <= 0)
 			return;
 		this.rangeSet_ = true;
 		this.minRange_ = minRange;
@@ -202,8 +210,9 @@ public class BasicAIController
 	/**
 	 * Sets up jumping behaviour.
 	 * For truly random jumping I would recommend setting frequency to low and chance to high.
+	 *
 	 * @param jumpFrequency How frequently the character will jump.
-	 * @param jumpChance The chance of jumping. The higher the number the less likely the character is to jump.
+	 * @param jumpChance    The chance of jumping. The higher the number the less likely the character is to jump.
 	 */
 	public void setJumpFParameters(int jumpFrequency, int jumpChance)
 	{
