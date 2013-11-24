@@ -11,12 +11,12 @@ import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
-import BasicSprite.QBPlatform;
-import platformer.BasicSprite.QMCharacter;
-import Constants.QConstants;
-import logic.QCamera;
-import logic.QEngine;
-import utils.QImageProcessor;
+import BasicSprite.BPlatform;
+import logic.Camera;
+import logic.Engine;
+import platformer.BasicSprite.MCharacter;
+import Constants.Constants;
+import utils.ImageProcessor;
 import TooGeneral.NormalPlatformGenerator;
 
 public class Game
@@ -25,12 +25,12 @@ public class Game
 
 	private NormalPlatformGenerator generator;
 
-	private List<QBPlatform> platforms;
-	private QBPlatform temp_platform;
+	private List<BPlatform> platforms;
+	private BPlatform temp_platform;
 
-	private QMCharacter character;
+	private MCharacter character;
 
-	private QCamera camera;
+	private Camera camera;
 
     public Game(int WIDTH, int HEIGHT)
     {
@@ -39,24 +39,24 @@ public class Game
 
 		generator = new NormalPlatformGenerator();
 
-		platforms = new ArrayList<QBPlatform>();
+		platforms = new ArrayList<BPlatform>();
 
 		/************ 3 JUMPING PLATFORMS **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(50);
 		temp_platform.setY(430);
 		temp_platform.setVerticalOffset(5);
 		temp_platform.setImage(generator.getPlatform());
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(235);
 		temp_platform.setY(350);
 		temp_platform.setVerticalOffset(5);
 		temp_platform.setImage(generator.getPlatform());
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(50);
 		temp_platform.setY(270);
 		temp_platform.setVerticalOffset(5);
@@ -64,17 +64,17 @@ public class Game
 		platforms.add(temp_platform);
 
 		/************ LONG PLATFORM **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(220);
 		temp_platform.setY(190);
 		temp_platform.setVerticalOffset(5);
 		temp_platform.setImage(generator.getPlatform());
 		for(int i = 0; i < 5; i++)
-			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
+			temp_platform.setImage(ImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
 		platforms.add(temp_platform);
 
 		/************ UPPER PLATFORM **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(820);
 		temp_platform.setY(110);
 		temp_platform.setVerticalOffset(5);
@@ -82,14 +82,14 @@ public class Game
 		platforms.add(temp_platform);
 
 		/************ 2 LOWER PLATFORMS **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(780);
 		temp_platform.setY(370);
 		temp_platform.setVerticalOffset(5);
 		temp_platform.setImage(generator.getPlatform());
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(910);
 		temp_platform.setY(410);
 		temp_platform.setVerticalOffset(5);
@@ -97,33 +97,33 @@ public class Game
 		platforms.add(temp_platform);
 
 		/************ DEAD END **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1600);
 		temp_platform.setY(0);
 		temp_platform.setHorizontalOffset(9);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
+		temp_platform.setImage(ImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1300);
 		temp_platform.setY(100);
 		temp_platform.setVerticalOffset(5);
 		temp_platform.setImage(generator.getPlatform());
 		for(int i = 0; i < 3; i++)
-			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
+			temp_platform.setImage(ImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getPlatform()));
 		platforms.add(temp_platform);
 
 		/************ TWO PLATFORMS **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1250);
 		temp_platform.setY(430);
 		temp_platform.setVerticalOffset(5);
 		temp_platform.setImage(generator.getPlatform());
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1400);
 		temp_platform.setY(340);
 		temp_platform.setVerticalOffset(5);
@@ -131,93 +131,93 @@ public class Game
 		platforms.add(temp_platform);
 
 		/************ LEFTMOST WALL **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(0);
 		temp_platform.setY(0);
 		temp_platform.setHorizontalOffset(9);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
 		for(int i = 0; i < 7; i++)
-			temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
+			temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
 		platforms.add(temp_platform);
 
 		/************ THE GAP **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1100);
 		temp_platform.setY(330);
 		temp_platform.setHorizontalOffset(9);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
 		for(int i = 0; i < 2; i++)
-			temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
+			temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1130);
 		temp_platform.setY(390);
 		temp_platform.setHorizontalOffset(9);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1100);
 		temp_platform.setY(90);
 		temp_platform.setHorizontalOffset(9);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
+		temp_platform.setImage(ImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
 		platforms.add(temp_platform);
 
 		/************ MID WALL **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1660);
 		temp_platform.setY(330);
 		temp_platform.setHorizontalOffset(9);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
+		temp_platform.setImage(ImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
 		platforms.add(temp_platform);
 
 		/************ RIGHTMOST WALL **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(2250);
 		temp_platform.setY(0);
 		temp_platform.setHorizontalOffset(9);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
 		for(int i = 0; i < 3; i++)
-			temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
-		temp_platform.setImage(QImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
+			temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWall()));
+		temp_platform.setImage(ImageProcessor.constructVertical(temp_platform.getImage(), generator.getWallBottom()));
 		platforms.add(temp_platform);
 
 		/************ GROUND **************/
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(0);
 		temp_platform.setY(518);
 		temp_platform.setHorizontalOffset(5);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
+		temp_platform.setImage(ImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
 		for(int i = 0; i < 17; i++)
-			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getGround()));
+			temp_platform.setImage(ImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getGround()));
 		platforms.add(temp_platform);
 
-		temp_platform = new QBPlatform();
+		temp_platform = new BPlatform();
 		temp_platform.setX(1680);
 		temp_platform.setY(250);
 		temp_platform.setHorizontalOffset(5);
 		temp_platform.setVerticalOffset(5);
-		temp_platform.setImage(QImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
+		temp_platform.setImage(ImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
 		for(int i = 0; i < 5; i++)
-			temp_platform.setImage(QImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getGround()));
+			temp_platform.setImage(ImageProcessor.constructHorizontal(temp_platform.getImage(), generator.getGround()));
 		platforms.add(temp_platform);
 
-		character = new QMCharacter();
+		character = new MCharacter();
 		character.setX(400);
 		character.setY(300);
 		character.setWidth(30);
@@ -233,7 +233,7 @@ public class Game
 		character.setJumpKey(KeyEvent.VK_UP);
 		character.setColor(Color.ORANGE);
 
-		camera = new QCamera(111, 111, WIDTH/2, HEIGHT/2);
+		camera = new Camera(111, 111, WIDTH/2, HEIGHT/2);
     }
 
     public void draw(Graphics2D g)
@@ -243,7 +243,7 @@ public class Game
 
 		camera.draw(g, character);
 
-		for(QBPlatform platform : platforms)
+		for(BPlatform platform : platforms)
 		{
 			camera.draw(g, platform);
 		}
@@ -258,34 +258,34 @@ public class Game
 
     public void update()
     {
-		QEngine.preUpdate(character);
+		Engine.preUpdate(character);
 		character.setStanding(false);
-		for(QBPlatform platform : platforms)
+		for(BPlatform platform : platforms)
 		{
-			int vert = QEngine.verticalCollision(character, platform);
-			int hort = QEngine.horizontalCollision(character, platform);
+			int vert = Engine.verticalCollision(character, platform);
+			int hort = Engine.horizontalCollision(character, platform);
 
-			if(hort == QConstants.RIGHT)
+			if(hort == Constants.RIGHT)
 			{
 				character.setRight(false);
 				character.setX(platform.getLeftX() - character.getWidth());
 				character.setXVector(0);
 			}
-			else if(hort == QConstants.LEFT)
+			else if(hort == Constants.LEFT)
 			{
 				character.setLeft(false);
 				character.setX(platform.getRightX());
 				character.setXVector(0);
 			}
 
-			if(vert == QConstants.UP)
+			if(vert == Constants.UP)
 			{
 				if(character.getGravity() < 0)
 					character.setStanding(true);
 				character.setY(platform.getBottomY());
 				character.setYVector(0);
 			}
-			else if(vert == QConstants.DOWN)
+			else if(vert == Constants.DOWN)
 			{
 				if(character.getGravity() > 0)
 					character.setStanding(true);
@@ -293,19 +293,19 @@ public class Game
 				character.setYVector(0);
 			}
 		}
-		QEngine.postUpdate(character);
+		Engine.postUpdate(character);
 
 		camera.updateCamera(character.getCenterX(), character.getCenterY());
     }
 
     public void keyPressed(KeyEvent e)
     {
-		QEngine.keyPressed(e.getKeyCode(), character);
+		Engine.keyPressed(e.getKeyCode(), character);
     }
 
     public void keyReleased(KeyEvent e)
     {
-		QEngine.keyReleased(e.getKeyCode(), character);
+		Engine.keyReleased(e.getKeyCode(), character);
     }
 
     public void mouseEntered(MouseEvent e)

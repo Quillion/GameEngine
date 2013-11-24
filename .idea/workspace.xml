@@ -6,171 +6,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00859b45-d460-44d3-9ad2-726ccc1a93a3" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\Animation.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\Field.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\Item.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\QBBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\QBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\class-use\Animation.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\class-use\Field.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\class-use\Item.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\class-use\QBBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\class-use\QBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicShapes\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\QBPlatform.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\QPlatform.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\class-use\QBPlatform.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\class-use\QPlatform.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\BasicSprite\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Constants\QConstants.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Constants\class-use\QConstants.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Constants\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Constants\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Constants\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Constants\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Sim\SimBoard.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Sim\class-use\SimBoard.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Sim\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Sim\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Sim\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\Sim\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\TooGeneral\NormalPlatformGenerator.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\TooGeneral\class-use\NormalPlatformGenerator.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\TooGeneral\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\TooGeneral\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\TooGeneral\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\TooGeneral\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\Level.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\QGame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\QGameSimple.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\class-use\Level.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\class-use\QGame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\class-use\QGameSimple.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\abstracts\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\allclasses-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\allclasses-noframe.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\constant-values.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\deprecated-list.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\help-doc.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-1.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-10.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-11.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-12.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-13.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-14.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-15.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-16.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-17.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-18.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-19.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-2.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-20.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-21.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-3.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-4.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-5.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-6.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-7.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-8.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index-files\index-9.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\index.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\QCamera.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\QEngine.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\QImageExtractor.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\QImageProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\class-use\QCamera.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\class-use\QEngine.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\class-use\QImageExtractor.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\class-use\QImageProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\platformer\BasicAIController.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\platformer\class-use\BasicAIController.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\platformer\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\platformer\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\platformer\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\logic\platformer\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\overview-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\overview-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\overview-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\package-list" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\BasicCharacter.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\BasicSprite\QMCharacter.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\BasicSprite\class-use\QMCharacter.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\BasicSprite\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\BasicSprite\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\BasicSprite\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\BasicSprite\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\QBMControls.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\QMControls.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\class-use\QBMControls.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\class-use\QMControls.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\ExtendedShapes\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\QBMBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\QMBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\class-use\QBMBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\class-use\QMBox.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\MovingShapes\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\QBackground.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\class-use\BasicCharacter.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\class-use\QBackground.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\platformer\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\resources\background.gif" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\resources\tab.gif" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\resources\titlebar.gif" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\resources\titlebar_end.gif" afterPath="" />
-      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Javadoc\stylesheet.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\platformer\BasicAIController.java" afterPath="$PROJECT_DIR$/Engine/logic/platformer/BasicAIController.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\BasicCharacter.java" afterPath="$PROJECT_DIR$/Engine/platformer/BasicCharacter.java" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicSprite\QBPlatform.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicSprite\QPlatform.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Constants\QConstants.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Logic\QCamera.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Logic\QEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Logic\QImageExtractor.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Platformer\BasicSprite\QMCharacter.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\abstracts\QGame.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\abstracts\QGameSimple.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/BasicCharacter.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/BasicCharacter.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine.iml" afterPath="$PROJECT_DIR$/Engine.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/Field.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Field.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test1/Game.java" afterPath="$PROJECT_DIR$/Platformers/test1/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test2/Game.java" afterPath="$PROJECT_DIR$/Platformers/test2/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test3/Game.java" afterPath="$PROJECT_DIR$/Platformers/test3/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test4/Game.java" afterPath="$PROJECT_DIR$/Platformers/test4/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/Item.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/abstracts/Level.java" afterPath="$PROJECT_DIR$/Engine/abstracts/Level.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicShapes/Item.html" afterPath="$PROJECT_DIR$/Javadoc/BasicShapes/Item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/abstracts/Level.html" afterPath="$PROJECT_DIR$/Javadoc/abstracts/Level.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test5/LevelOne.java" afterPath="$PROJECT_DIR$/Platformers/test5/LevelOne.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" afterPath="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" afterPath="$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\MovingShapes\QBMBox.java" afterPath="$PROJECT_DIR$/Engine/platformer/MovingShapes/QBMBox.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\ExtendedShapes\QBMControls.java" afterPath="$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QBMControls.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" afterPath="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\QBackground.java" afterPath="$PROJECT_DIR$/Engine/platformer/QBackground.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicShapes/QBox.java" afterPath="$PROJECT_DIR$/Engine/BasicShapes/QBox.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\QCamera.java" afterPath="$PROJECT_DIR$/Engine/logic/QCamera.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Constants/QConstants.java" afterPath="$PROJECT_DIR$/Engine/Constants/QConstants.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\QEngine.java" afterPath="$PROJECT_DIR$/Engine/logic/QEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/abstracts/QGame.java" afterPath="$PROJECT_DIR$/Engine/abstracts/QGame.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\QImageExtractor.java" afterPath="$PROJECT_DIR$/Engine/logic/QImageExtractor.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\MovingShapes\QMBox.java" afterPath="$PROJECT_DIR$/Engine/platformer/MovingShapes/QMBox.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\BasicSprite\QMCharacter.java" afterPath="$PROJECT_DIR$/Engine/platformer/BasicSprite/QMCharacter.java" />
-      <change type="MODIFICATION" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\platformer\ExtendedShapes\QMControls.java" afterPath="$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QMControls.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java" afterPath="$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Engine/Sim/SimBoard.java" afterPath="$PROJECT_DIR$/Engine/Sim/SimBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Platformers/test5/Main.java" afterPath="$PROJECT_DIR$/Platformers/test5/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicShapes/QBBox.html" afterPath="$PROJECT_DIR$/Javadoc/BasicShapes/QBBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicShapes/class-use/QBBox.html" afterPath="$PROJECT_DIR$/Javadoc/BasicShapes/class-use/QBBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/QBMBox.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/QBMBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/class-use/QBMBox.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/class-use/QBMBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/ExtendedShapes/QBMControls.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/ExtendedShapes/QBMControls.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicSprite/QBPlatform.html" afterPath="$PROJECT_DIR$/Javadoc/BasicSprite/QBPlatform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicSprite/class-use/QBPlatform.html" afterPath="$PROJECT_DIR$/Javadoc/BasicSprite/class-use/QBPlatform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/QBackground.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/QBackground.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicShapes/QBox.html" afterPath="$PROJECT_DIR$/Javadoc/BasicShapes/QBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicShapes/class-use/QBox.html" afterPath="$PROJECT_DIR$/Javadoc/BasicShapes/class-use/QBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/logic/QCamera.html" afterPath="$PROJECT_DIR$/Javadoc/logic/QCamera.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/logic/class-use/QCamera.html" afterPath="$PROJECT_DIR$/Javadoc/logic/class-use/QCamera.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/Constants/QConstants.html" afterPath="$PROJECT_DIR$/Javadoc/Constants/QConstants.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/Constants/class-use/QConstants.html" afterPath="$PROJECT_DIR$/Javadoc/Constants/class-use/QConstants.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/logic/QEngine.html" afterPath="$PROJECT_DIR$/Javadoc/logic/QEngine.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/logic/class-use/QEngine.html" afterPath="$PROJECT_DIR$/Javadoc/logic/class-use/QEngine.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/abstracts/QGame.html" afterPath="$PROJECT_DIR$/Javadoc/abstracts/QGame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/abstracts/class-use/QGame.html" afterPath="$PROJECT_DIR$/Javadoc/abstracts/class-use/QGame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/abstracts/QGameSimple.html" afterPath="$PROJECT_DIR$/Javadoc/abstracts/QGameSimple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/abstracts/class-use/QGameSimple.html" afterPath="$PROJECT_DIR$/Javadoc/abstracts/class-use/QGameSimple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/logic/QImageExtractor.html" afterPath="$PROJECT_DIR$/Javadoc/logic/QImageExtractor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/logic/class-use/QImageExtractor.html" afterPath="$PROJECT_DIR$/Javadoc/logic/class-use/QImageExtractor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/QMBox.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/QMBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/class-use/QMBox.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/MovingShapes/class-use/QMBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/BasicSprite/QMCharacter.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/BasicSprite/QMCharacter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/BasicSprite/class-use/QMCharacter.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/BasicSprite/class-use/QMCharacter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/platformer/ExtendedShapes/QMControls.html" afterPath="$PROJECT_DIR$/Javadoc/platformer/ExtendedShapes/QMControls.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicSprite/QPlatform.html" afterPath="$PROJECT_DIR$/Javadoc/BasicSprite/QPlatform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/BasicSprite/class-use/QPlatform.html" afterPath="$PROJECT_DIR$/Javadoc/BasicSprite/class-use/QPlatform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-21.html" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-21.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\logic\QImageProcessor.java" afterPath="$PROJECT_DIR$/Engine/utils/QImageProcessor.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicShapes\Animation.java" afterPath="$PROJECT_DIR$/QEngine/BasicShapes/Animation.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicShapes\Field.java" afterPath="$PROJECT_DIR$/QEngine/BasicShapes/Field.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicShapes\Item.java" afterPath="$PROJECT_DIR$/QEngine/BasicShapes/Item.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicShapes\QBBox.java" afterPath="$PROJECT_DIR$/QEngine/BasicShapes/BBox.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicShapes\QBox.java" afterPath="$PROJECT_DIR$/QEngine/BasicShapes/Box.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicSprite\QBPlatform.java" afterPath="$PROJECT_DIR$/QEngine/BasicSprite/BPlatform.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\BasicSprite\QPlatform.java" afterPath="$PROJECT_DIR$/QEngine/BasicSprite/Platform.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Constants\QConstants.java" afterPath="$PROJECT_DIR$/QEngine/Constants/Constants.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Logic\QCamera.java" afterPath="$PROJECT_DIR$/QEngine/logic/Camera.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Logic\QEngine.java" afterPath="$PROJECT_DIR$/QEngine/logic/Engine.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Logic\QImageExtractor.java" afterPath="$PROJECT_DIR$/QEngine/logic/ImageExtractor.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Logic\platformer\BasicAIController.java" afterPath="$PROJECT_DIR$/QEngine/logic/platformer/BasicAIController.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Platformer\BasicCharacter.java" afterPath="$PROJECT_DIR$/QEngine/platformer/BasicCharacter.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Platformer\ExtendedShapes\QBMControls.java" afterPath="$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MBControls.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Platformer\ExtendedShapes\QMControls.java" afterPath="$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MControls.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Platformer\MovingShapes\QBMBox.java" afterPath="$PROJECT_DIR$/QEngine/platformer/MovingShapes/MBBox.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Platformer\MovingShapes\QMBox.java" afterPath="$PROJECT_DIR$/QEngine/platformer/MovingShapes/MBox.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Platformer\QBackground.java" afterPath="$PROJECT_DIR$/QEngine/platformer/Background.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\Sim\SimBoard.java" afterPath="$PROJECT_DIR$/QEngine/Sim/SimBoard.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\TooGeneral\NormalPlatformGenerator.java" afterPath="$PROJECT_DIR$/QEngine/TooGeneral/NormalPlatformGenerator.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\abstracts\Level.java" afterPath="$PROJECT_DIR$/QEngine/abstracts/Level.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\abstracts\QGame.java" afterPath="$PROJECT_DIR$/QEngine/abstracts/Game.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\abstracts\QGameSimple.java" afterPath="$PROJECT_DIR$/QEngine/abstracts/GameSimple.java" />
+      <change type="MOVED" beforePath="E:\Dropbox\Programming\Java\GameEngine\Engine\utils\QImageProcessor.java" afterPath="$PROJECT_DIR$/QEngine/utils/ImageProcessor.java" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -185,7 +99,7 @@
     <file path="/a.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384725194841" ignored="false" />
     <file path="/sample.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384725226205" ignored="false" />
     <file path="/LevelOne.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384736200817" ignored="false" />
-    <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384699913953" ignored="false" />
+    <file path="/fragment.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1385065843716" ignored="false" />
     <file path="/LevelTwo.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384698771287" ignored="false" />
     <file path="/Item.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1385034920734" ignored="false" />
     <file path="/QCamera.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1384309927513" ignored="false" />
@@ -209,6 +123,7 @@
     <file path="/QMCharacter.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1385063177619" ignored="false" />
     <file path="/BasicCharacter.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1385063538345" ignored="false" />
     <file path="/QImageProcessor.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1385064862464" ignored="false" />
+    <file path="/Engine.java" changelist="00859b45-d460-44d3-9ad2-726ccc1a93a3" time="1385305100729" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,10 +184,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QMCharacter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/platformer/BasicSprite/QMCharacter.java">
+      <file leaf-file-name="MCharacter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QEngine/platformer/BasicSprite/MCharacter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="20" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.0">
+            <state line="68" column="20" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -280,40 +195,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QImageProcessor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/utils/QImageProcessor.java">
+      <file leaf-file-name="ImageProcessor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QEngine/utils/ImageProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="0" selection-start="4378" selection-end="4378" vertical-scroll-proportion="0.0">
+            <state line="137" column="0" selection-start="4376" selection-end="4376" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QImageExtractor.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Engine/logic/QImageExtractor.java">
+      <file leaf-file-name="ImageExtractor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QEngine/logic/ImageExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="19" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.3109405">
+            <state line="6" column="0" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QBPlatform.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java">
+      <file leaf-file-name="Camera.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QEngine/logic/Camera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="0" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QPlatform.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="20" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.0">
+            <state line="81" column="0" selection-start="2399" selection-end="2399" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MControls.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MControls.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="42" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MBControls.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MBControls.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Platformers/test2/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="161" column="37" selection-start="4133" selection-end="4133" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimBoard.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/QEngine/Sim/SimBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="65" column="0" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.5654762">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -337,30 +283,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Engine/BasicShapes/QBBox.java" />
-        <option value="$PROJECT_DIR$/Engine/Constants/QConstants.java" />
-        <option value="$PROJECT_DIR$/Engine/logic/platformer/BasicAIController.java" />
-        <option value="$PROJECT_DIR$/Engine/logic/QCamera.java" />
-        <option value="$PROJECT_DIR$/Engine/logic/QEngine.java" />
-        <option value="$PROJECT_DIR$/Engine/logic/QImageExtractor.java" />
-        <option value="$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QBMControls.java" />
-        <option value="$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QMControls.java" />
-        <option value="$PROJECT_DIR$/Engine/platformer/MovingShapes/QBMBox.java" />
-        <option value="$PROJECT_DIR$/Engine/platformer/MovingShapes/QMBox.java" />
-        <option value="$PROJECT_DIR$/Engine/platformer/BasicCharacter.java" />
-        <option value="$PROJECT_DIR$/Engine/Sim/SimBoard.java" />
-        <option value="$PROJECT_DIR$/Engine/utils/QImageProcessor.java" />
-        <option value="$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java" />
         <option value="$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java" />
         <option value="$PROJECT_DIR$/Engine/platformer/BasicSprite/QMCharacter.java" />
+        <option value="$PROJECT_DIR$/QEngine/logic/QCamera.java" />
+        <option value="$PROJECT_DIR$/QEngine/logic/Camera.java" />
+        <option value="$PROJECT_DIR$/Platformers/test5/LevelTwo.java" />
+        <option value="$PROJECT_DIR$/Platformers/test1/Game.java" />
+        <option value="$PROJECT_DIR$/QEngine/logic/platformer/BasicAIController.java" />
+        <option value="$PROJECT_DIR$/QEngine/logic/Engine.java" />
+        <option value="$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MControls.java" />
+        <option value="$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MBControls.java" />
+        <option value="$PROJECT_DIR$/QEngine/platformer/BasicCharacter.java" />
+        <option value="$PROJECT_DIR$/Platformers/test5/LevelOne.java" />
+        <option value="$PROJECT_DIR$/Platformers/test3/Game.java" />
+        <option value="$PROJECT_DIR$/Platformers/test4/Game.java" />
+        <option value="$PROJECT_DIR$/Platformers/test2/Game.java" />
+        <option value="$PROJECT_DIR$/QEngine/Sim/SimBoard.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1358" />
-    <option name="y" value="-470" />
-    <option name="width" value="1616" />
-    <option name="height" value="916" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -456,7 +402,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -474,7 +420,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -492,7 +438,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -510,7 +456,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -528,7 +474,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -550,7 +496,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -572,7 +518,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -594,7 +540,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -612,7 +558,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -634,7 +580,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -652,7 +598,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -670,7 +616,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -688,7 +634,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
+              <option name="myItemId" value="QEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -870,8 +816,8 @@
       <item index="1" class="java.lang.String" itemvalue="Application.Platformer 2" />
       <item index="2" class="java.lang.String" itemvalue="Application.Platformer 3" />
       <item index="3" class="java.lang.String" itemvalue="Application.Platformer 4" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Dungeon 1" />
-      <item index="5" class="java.lang.String" itemvalue="Application.Platformer 5" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Platformer 5" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Dungeon 1" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -915,25 +861,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-470" width="1616" height="916" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32279316" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32197616" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4855196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31620553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31516185" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15572716" sideWeight="0.7206851" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27931488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18333334" sideWeight="0.63884157" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36115843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1021,128 +967,130 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Engine/logic/platformer/BasicAIController.java">
+    <entry file="file://$PROJECT_DIR$/QEngine/BasicSprite/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="235" selection-end="235" vertical-scroll-proportion="-6.001825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/logic/QCamera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2089" selection-end="2089" vertical-scroll-proportion="-13.857664">
+        <state line="83" column="20" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/logic/QEngine.java">
+    <entry file="file://$PROJECT_DIR$/QEngine/platformer/BasicSprite/MCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="849" column="0" selection-start="29860" selection-end="29860" vertical-scroll-proportion="0.11861314">
+        <state line="68" column="20" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QMControls.java">
+    <entry file="file://$PROJECT_DIR$/QEngine/logic/ImageExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="0" selection-start="3018" selection-end="3018" vertical-scroll-proportion="0.42701226">
+        <state line="6" column="0" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test1/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="0" selection-start="9080" selection-end="9080" vertical-scroll-proportion="0.016528925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="460" column="36" selection-start="15722" selection-end="15722" vertical-scroll-proportion="-0.44352618">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/platformer/ExtendedShapes/QBMControls.java">
+    <entry file="file://$PROJECT_DIR$/QEngine/logic/platformer/BasicAIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="44" selection-start="3199" selection-end="3199" vertical-scroll-proportion="0.53342426">
+        <state line="132" column="36" selection-start="3027" selection-end="3027" vertical-scroll-proportion="0.6831956">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QEngine/logic/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="607" column="24" selection-start="21132" selection-end="21132" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/TooGeneral/NormalPlatformGenerator.java">
+    <entry file="file://$PROJECT_DIR$/QEngine/logic/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="51" selection-start="312" selection-end="312" vertical-scroll-proportion="0.2701228">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/Sim/SimBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="308" selection-end="308" vertical-scroll-proportion="-4.1773534">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/platformer/BasicCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="61" selection-start="463" selection-end="463" vertical-scroll-proportion="-4.1773534">
+        <state line="81" column="0" selection-start="2399" selection-end="2399" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/platformer/MovingShapes/QBMBox.java">
+    <entry file="file://$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MControls.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="0" selection-start="5741" selection-end="5741" vertical-scroll-proportion="0.62346524">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/platformer/MovingShapes/QMBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="0" selection-start="5728" selection-end="5728" vertical-scroll-proportion="0.43519783">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/BasicShapes/Animation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="226" selection-end="226" vertical-scroll-proportion="0.21555252">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/utils/QImageProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="0" selection-start="4378" selection-end="4378" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QBPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/BasicSprite/QPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="20" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.0">
+        <state line="30" column="42" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/platformer/BasicSprite/QMCharacter.java">
+    <entry file="file://$PROJECT_DIR$/Platformers/test5/LevelOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="20" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.0">
+        <state line="641" column="36" selection-start="22486" selection-end="22486" vertical-scroll-proportion="-1.8187134">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QEngine/platformer/BasicCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="172" column="38" selection-start="4416" selection-end="4416" vertical-scroll-proportion="0.8218085">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Engine/logic/QImageExtractor.java">
+    <entry file="file://$PROJECT_DIR$/Platformers/test4/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="19" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.3109405">
+        <state line="633" column="36" selection-start="22692" selection-end="22692" vertical-scroll-proportion="-1.3083942">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test3/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="287" column="37" selection-start="10069" selection-end="10069" vertical-scroll-proportion="-1.1405109">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QEngine/platformer/ExtendedShapes/MBControls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Platformers/test2/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="37" selection-start="4133" selection-end="4133" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QEngine/Sim/SimBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="0" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.5654762">
           <folding />
         </state>
       </provider>

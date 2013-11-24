@@ -5,11 +5,11 @@ package test2;
  * @since       1.6
  */
 
-import platformer.BasicSprite.QMCharacter;
-import BasicSprite.QPlatform;
-import Constants.QConstants;
-import logic.QCamera;
-import logic.QEngine;
+import BasicSprite.Platform;
+import Constants.Constants;
+import logic.Camera;
+import logic.Engine;
+import platformer.BasicSprite.MCharacter;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -21,21 +21,21 @@ public class Game
 {
     private int WIDTH, HEIGHT;
 
-	private List<QPlatform> platforms;
-	private QPlatform temp_platform;
+	private List<Platform> platforms;
+	private Platform temp_platform;
 
-	private QMCharacter character;
+	private MCharacter character;
 
-	private QCamera camera;
+	private Camera camera;
 
     public Game(int WIDTH, int HEIGHT)
     {
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
 
-		platforms = new ArrayList<QPlatform>();
+		platforms = new ArrayList<Platform>();
 
-		temp_platform = new QPlatform();
+		temp_platform = new Platform();
 		temp_platform.setX(0);
 		temp_platform.setY(430);
 		temp_platform.setWidth(640);
@@ -43,7 +43,7 @@ public class Game
 		temp_platform.setColor(Color.GREEN);
 		platforms.add(temp_platform);
 
-		temp_platform = new QPlatform();
+		temp_platform = new Platform();
 		temp_platform.setX(0);
 		temp_platform.setY(0);
 		temp_platform.setWidth(10);
@@ -51,7 +51,7 @@ public class Game
 		temp_platform.setColor(Color.GREEN);
 		platforms.add(temp_platform);
 
-		temp_platform = new QPlatform();
+		temp_platform = new Platform();
 		temp_platform.setX(630);
 		temp_platform.setY(0);
 		temp_platform.setWidth(10);
@@ -59,7 +59,7 @@ public class Game
 		temp_platform.setColor(Color.GREEN);
 		platforms.add(temp_platform);
 
-		temp_platform = new QPlatform();
+		temp_platform = new Platform();
 		temp_platform.setX(10);
 		temp_platform.setY(0);
 		temp_platform.setWidth(620);
@@ -67,7 +67,7 @@ public class Game
 		temp_platform.setColor(Color.GREEN);
 		platforms.add(temp_platform);
 
-		temp_platform = new QPlatform();
+		temp_platform = new Platform();
 		temp_platform.setX(10);
 		temp_platform.setY(370);
 		temp_platform.setWidth(70);
@@ -75,7 +75,7 @@ public class Game
 		temp_platform.setColor(Color.CYAN);
 		platforms.add(temp_platform);
 
-		temp_platform = new QPlatform();
+		temp_platform = new Platform();
 		temp_platform.setX(140);
 		temp_platform.setY(300);
 		temp_platform.setWidth(70);
@@ -83,7 +83,7 @@ public class Game
 		temp_platform.setColor(Color.BLUE);
 		platforms.add(temp_platform);
 
-		temp_platform = new QPlatform();
+		temp_platform = new Platform();
 		temp_platform.setX(10);
 		temp_platform.setY(230);
 		temp_platform.setWidth(70);
@@ -91,7 +91,7 @@ public class Game
 		temp_platform.setColor(Color.RED);
 		platforms.add(temp_platform);
 
-		character = new QMCharacter();
+		character = new MCharacter();
 		character.setX(WIDTH/2);
 		character.setY(HEIGHT/2);
 		character.setWidth(30);
@@ -107,7 +107,7 @@ public class Game
 		character.setJumpKey(KeyEvent.VK_UP);
 		character.setColor(Color.ORANGE);
 
-		camera = new QCamera(111, 111, WIDTH/2, HEIGHT/2);
+		camera = new Camera(111, 111, WIDTH/2, HEIGHT/2);
     }
 
     public void draw(Graphics2D g)
@@ -117,7 +117,7 @@ public class Game
 
 		camera.draw(g, character);
 
-		for(QPlatform platform : platforms)
+		for(Platform platform : platforms)
 		{
 			camera.draw(g, platform);
 		}
@@ -132,34 +132,34 @@ public class Game
 
     public void update()
     {
-		QEngine.preUpdate(character);
+		Engine.preUpdate(character);
 		character.setStanding(false);
-		for(QPlatform platform : platforms)
+		for(Platform platform : platforms)
 		{
-			int vert = QEngine.verticalCollision(character, platform);
-			int hort = QEngine.horizontalCollision(character, platform);
+			int vert = Engine.verticalCollision(character, platform);
+			int hort = Engine.horizontalCollision(character, platform);
 
-			if(hort == QConstants.RIGHT)
+			if(hort == Constants.RIGHT)
 			{
 				character.setRight(false);
 				character.setX(platform.getLeftX() - character.getWidth());
 				character.setXVector(0);
 			}
-			else if(hort == QConstants.LEFT)
+			else if(hort == Constants.LEFT)
 			{
 				character.setLeft(false);
 				character.setX(platform.getRightX());
 				character.setXVector(0);
 			}
 
-			if(vert == QConstants.UP)
+			if(vert == Constants.UP)
 			{
 				if(character.getGravity() < 0)
 					character.setStanding(true);
 				character.setY(platform.getBottomY());
 				character.setYVector(0);
 			}
-			else if(vert == QConstants.DOWN)
+			else if(vert == Constants.DOWN)
 			{
 				if(character.getGravity() > 0)
 					character.setStanding(true);
@@ -167,19 +167,19 @@ public class Game
 				character.setYVector(0);
 			}
 		}
-		QEngine.postUpdate(character);
+		Engine.postUpdate(character);
 
 		camera.updateCamera(character.getCenterX(), character.getCenterY());
     }
 
     public void keyPressed(KeyEvent e)
     {
-		QEngine.keyPressed(e.getKeyCode(), character);
+		Engine.keyPressed(e.getKeyCode(), character);
     }
 
     public void keyReleased(KeyEvent e)
     {
-		QEngine.keyReleased(e.getKeyCode(), character);
+		Engine.keyReleased(e.getKeyCode(), character);
     }
 
     public void mouseEntered(MouseEvent e)

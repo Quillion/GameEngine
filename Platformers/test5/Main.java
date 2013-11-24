@@ -1,13 +1,13 @@
 package test5;
 
-import abstracts.QGameSimple;
+import abstracts.GameSimple;
 
 /**
  * User: Edgar
  * Date: 11/14/13
  * Time: 9:27 PM
  */
-public class Main extends QGameSimple
+public class Main extends GameSimple
 {
 	public static void main(String [] args)
 	{

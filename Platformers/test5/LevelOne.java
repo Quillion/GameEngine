@@ -1,16 +1,16 @@
 package test5;
 
 import BasicShapes.Item;
-import BasicSprite.QBPlatform;
-import Constants.QConstants;
+import BasicSprite.BPlatform;
+import Constants.Constants;
+import abstracts.Game;
 import logic.*;
 import abstracts.Level;
-import abstracts.QGame;
 import platformer.BasicCharacter;
-import platformer.QBackground;
+import platformer.Background;
 import TooGeneral.NormalPlatformGenerator;
 import logic.platformer.BasicAIController;
-import utils.QImageProcessor;
+import utils.ImageProcessor;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -25,36 +25,36 @@ import java.util.List;
  */
 public class LevelOne extends Level
 {
-	private List<QBPlatform> grounds;
-	private List<QBPlatform> platforms;
+	private List<BPlatform> grounds;
+	private List<BPlatform> platforms;
 
 	private List<BasicCharacter> characters;
 	private List<BasicCharacter> ai;
 
-	private QCamera camera;
+	private Camera camera;
 
-	private QBackground background;
+	private Background background;
 
 	private List<BasicAIController> docileComputers;
 	private List<BasicAIController> jumpingComputers;
 
 	private Item flag;
 
-	public LevelOne(QGame game)
+	public LevelOne(Game game)
 	{
 		super(game);
 
-		grounds = new ArrayList<QBPlatform>();
-		platforms = new ArrayList<QBPlatform>();
+		grounds = new ArrayList<BPlatform>();
+		platforms = new ArrayList<BPlatform>();
 
 		characters = new ArrayList<BasicCharacter>();
 		ai = new ArrayList<BasicCharacter>();
 		docileComputers = new ArrayList<BasicAIController>();
 		jumpingComputers = new ArrayList<BasicAIController>();
 
-		camera = new QCamera(11, 111, game.getWidth()/2, game.getHeight()/2);
+		camera = new Camera(11, 111, game.getWidth()/2, game.getHeight()/2);
 
-		background = new QBackground(89, 110, 2138, 279, game.getWidth(), game.getHeight());
+		background = new Background(89, 110, 2138, 279, game.getWidth(), game.getHeight());
 
 		flag = new Item();
 	}
@@ -72,7 +72,7 @@ public class LevelOne extends Level
 		/****************************************************************************/
 		BasicCharacter tempCharacter;
 
-		QImageExtractor extractor = new QImageExtractor("Images/Platformer/Characters/lucida.png");
+		ImageExtractor extractor = new ImageExtractor("Images/Platformer/Characters/lucida.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(350);
@@ -107,7 +107,7 @@ public class LevelOne extends Level
 		/****************************************************************************/
 		/************************************ AI ************************************/
 		/****************************************************************************/
-		extractor = new QImageExtractor("Images/Platformer/Characters/bluesnail.png");
+		extractor = new ImageExtractor("Images/Platformer/Characters/bluesnail.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(300);
@@ -134,7 +134,7 @@ public class LevelOne extends Level
 		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Platformer/Characters/bluesnail.png");
+		extractor = new ImageExtractor("Images/Platformer/Characters/bluesnail.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(150);
@@ -164,7 +164,7 @@ public class LevelOne extends Level
 		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Platformer/Characters/redsnail.png");
+		extractor = new ImageExtractor("Images/Platformer/Characters/redsnail.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(900);
@@ -192,7 +192,7 @@ public class LevelOne extends Level
 		docileComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Platformer/Characters/zombiemushroom.png");
+		extractor = new ImageExtractor("Images/Platformer/Characters/zombiemushroom.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(400);
@@ -224,7 +224,7 @@ public class LevelOne extends Level
 		jumpingComputers.add(computer);
 		ai.add(tempCharacter);
 
-		extractor = new QImageExtractor("Images/Platformer/Characters/zombiemushroom.png");
+		extractor = new ImageExtractor("Images/Platformer/Characters/zombiemushroom.png");
 
 		tempCharacter = new BasicCharacter();
 		tempCharacter.setX(1400);
@@ -262,96 +262,96 @@ public class LevelOne extends Level
 		/****************************************************************************/
 		NormalPlatformGenerator generator = new NormalPlatformGenerator();
 		/************ LEFTMOST WALL **************/
-		QBPlatform tempPlatform = new QBPlatform();
+		BPlatform tempPlatform = new BPlatform();
 		tempPlatform.setX(0);
 		tempPlatform.setY(0);
 		tempPlatform.setHorizontalOffset(9);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(generator.getWallTop(), generator.getWall()));
 		for(int i = 0; i < 7; i++)
-			tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
-		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWallBottom()));
+			tempPlatform.setImage(ImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWallBottom()));
 		grounds.add(tempPlatform);
 
 		/************ THE GAP **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(1100);
 		tempPlatform.setY(330);
 		tempPlatform.setHorizontalOffset(9);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
 		for(int i = 0; i < 2; i++)
-			tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
-		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWallBottom()));
+			tempPlatform.setImage(ImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWallBottom()));
 		grounds.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(1130);
 		tempPlatform.setY(390);
 		tempPlatform.setHorizontalOffset(9);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
-		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
 		grounds.add(tempPlatform);
 
 		/************ RIGHTMOST WALL **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(2250);
 		tempPlatform.setY(0);
 		tempPlatform.setHorizontalOffset(9);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(generator.getWall(), generator.getWall()));
 		for(int i = 0; i < 3; i++)
-			tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
-		tempPlatform.setImage(QImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWallBottom()));
+			tempPlatform.setImage(ImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWall()));
+		tempPlatform.setImage(ImageProcessor.constructVertical(tempPlatform.getImage(), generator.getWallBottom()));
 		grounds.add(tempPlatform);
 
 		/************ GROUND **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(0);
 		tempPlatform.setY(518);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
+		tempPlatform.setImage(ImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
 		for(int i = 0; i < 17; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround()));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround()));
 		grounds.add(tempPlatform);
 
 		/************ HIGHER GROUND **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(1710);
 		tempPlatform.setY(228);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructHorizontal(generator.getGround(5), generator.getGround(5)));
+		tempPlatform.setImage(ImageProcessor.constructHorizontal(generator.getGround(5), generator.getGround(5)));
 		for(int i = 0; i < 5; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(5)));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(5)));
 		grounds.add(tempPlatform);
 
 		/****************************************************************************/
 		/******************************** PLATFORMS *********************************/
 		/****************************************************************************/
 		/************ 4 JUMPING PLATFORMS **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(50);
 		tempPlatform.setY(430);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getPlatform());
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(50);
 		tempPlatform.setY(290);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getPlatform());
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(50);
 		tempPlatform.setY(200);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getPlatform());
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(50);
 		tempPlatform.setY(110);
 		tempPlatform.setVerticalOffset(5);
@@ -359,43 +359,43 @@ public class LevelOne extends Level
 		platforms.add(tempPlatform);
 
 		/************ 3 BIG PLATFORMS **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(415);
 		tempPlatform.setY(234);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getGround(3));
 		for(int i = 0; i < 5; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
 		platforms.add(tempPlatform);
 
 		/************ SMALL LEDGE **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(505);
 		tempPlatform.setY(292);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getPlatform());
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(235);
 		tempPlatform.setY(350);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getGround(3));
 		for(int i = 0; i < 5; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(595);
 		tempPlatform.setY(408);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getGround(2));
 		for(int i = 0; i < 4; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(2)));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(2)));
 		platforms.add(tempPlatform);
 
 		/************ SMALL LEDGE **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(325);
 		tempPlatform.setY(466);
 		tempPlatform.setVerticalOffset(5);
@@ -403,54 +403,54 @@ public class LevelOne extends Level
 		platforms.add(tempPlatform);
 
 		/************ TOP ACCESS **************/
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(350);
 		tempPlatform.setY(130);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getPlatform());
 		for(int i = 0; i < 4; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(930);
 		tempPlatform.setY(110);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getPlatform());
 		for(int i = 0; i < 1; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(1350);
 		tempPlatform.setY(120);
 		tempPlatform.setVerticalOffset(5);
 		tempPlatform.setImage(generator.getPlatform());
 		for(int i = 0; i < 4; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getPlatform()));
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(1440);
 		tempPlatform.setY(344);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructHorizontal(generator.getGround(3), generator.getGround(3)));
+		tempPlatform.setImage(ImageProcessor.constructHorizontal(generator.getGround(3), generator.getGround(3)));
 		for(int i = 0; i < 2; i++)
-			tempPlatform.setImage(QImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
+			tempPlatform.setImage(ImageProcessor.constructHorizontal(tempPlatform.getImage(), generator.getGround(3)));
 		platforms.add(tempPlatform);
 
-		tempPlatform = new QBPlatform();
+		tempPlatform = new BPlatform();
 		tempPlatform.setX(1300);
 		tempPlatform.setY(450);
 		tempPlatform.setVerticalOffset(5);
-		tempPlatform.setImage(QImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
-		tempPlatform.setImage(QImageProcessor.extractImage(tempPlatform.getImage(), 0, 0, 50, 100));
+		tempPlatform.setImage(ImageProcessor.constructHorizontal(generator.getGround(), generator.getGround()));
+		tempPlatform.setImage(ImageProcessor.extractImage(tempPlatform.getImage(), 0, 0, 50, 100));
 		platforms.add(tempPlatform);
 
 		/****************************************************************************/
 		/********************************** FLAG ************************************/
 		/****************************************************************************/
-		extractor = new QImageExtractor("Images/Platformer/Objects/flags.png");
+		extractor = new ImageExtractor("Images/Platformer/Objects/flags.png");
 		flag.setX(1640);
 		flag.setY(310);
 		flag.setAnimation(6, 10);
@@ -461,7 +461,7 @@ public class LevelOne extends Level
 		flag.addImage(extractor.getImage(347, 200, 30, 25));
 		flag.addImage(extractor.getImage(380, 200, 30, 25));
 
-		extractor = new QImageExtractor("Images/Platformer/Backgrounds/japan.png");
+		extractor = new ImageExtractor("Images/Platformer/Backgrounds/japan.png");
 		background.setBackground(extractor.getImage(30, 10, 930, 350));
 		background.setMidGround(extractor.getImage(25, 995, 360, 250));
 		background.addForegroundObject(extractor.getImage(425, 860, 350, 485));
@@ -478,7 +478,7 @@ public class LevelOne extends Level
 
 		background.draw(g, camera.getX(), camera.getY());
 
-		for(QBPlatform platform : platforms)
+		for(BPlatform platform : platforms)
 			camera.draw(g, platform);
 
 		for (BasicCharacter character : characters)
@@ -487,7 +487,7 @@ public class LevelOne extends Level
 		for (BasicCharacter character : ai)
 			camera.draw(g, character);
 
-		for(QBPlatform ground : grounds)
+		for(BPlatform ground : grounds)
 			camera.draw(g, ground);
 
 		camera.draw(g, flag);
@@ -501,61 +501,61 @@ public class LevelOne extends Level
 		// CHARACTERS
 		for(BasicCharacter character : characters)
 		{
-			QEngine.preUpdate(character);
+			Engine.preUpdate(character);
 			character.setStanding(false);
 			// VS AI
 			for(BasicCharacter comp : ai)
 			{
-				int vert = QEngine.verticalCollision(character, comp);
-				int hort = QEngine.horizontalCollision(character, comp);
+				int vert = Engine.verticalCollision(character, comp);
+				int hort = Engine.horizontalCollision(character, comp);
 
-				if(hort == QConstants.RIGHT)
+				if(hort == Constants.RIGHT)
 				{
 					character.setXVector(-character.getJump());
 					character.setYVector(-character.getJump() / 2);
 				}
-				else if(hort == QConstants.LEFT)
+				else if(hort == Constants.LEFT)
 				{
 					character.setXVector(character.getJump());
 					character.setYVector(-character.getJump() / 2);
 				}
 
-				if(vert == QConstants.UP)
+				if(vert == Constants.UP)
 				{
 					character.setYVector(character.getJump());
 				}
-				else if(vert == QConstants.DOWN)
+				else if(vert == Constants.DOWN)
 				{
 					character.setYVector(-character.getJump());
 				}
 			}
 			// VS GROUND
-			for(QBPlatform ground : grounds)
+			for(BPlatform ground : grounds)
 			{
-				int vert = QEngine.verticalCollision(character, ground);
-				int hort = QEngine.horizontalCollision(character, ground);
+				int vert = Engine.verticalCollision(character, ground);
+				int hort = Engine.horizontalCollision(character, ground);
 
-				if(hort == QConstants.RIGHT)
+				if(hort == Constants.RIGHT)
 				{
 					character.setRight(false);
 					character.setX(ground.getLeftX() - character.getWidth() + character.getHorizontalOffset());
 					character.setXVector(0);
 				}
-				else if(hort == QConstants.LEFT)
+				else if(hort == Constants.LEFT)
 				{
 					character.setLeft(false);
 					character.setX(ground.getRightX() - character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 
-				if(vert == QConstants.UP)
+				if(vert == Constants.UP)
 				{
 					if(character.getGravity() < 0)
 						character.setStanding(true);
 					character.setY(ground.getBottomY() - character.getVerticalOffset());
 					character.setYVector(0);
 				}
-				else if(vert == QConstants.DOWN)
+				else if(vert == Constants.DOWN)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
@@ -564,11 +564,11 @@ public class LevelOne extends Level
 				}
 			}
 			// VS PLATFORMS
-			for(QBPlatform platform : platforms)
+			for(BPlatform platform : platforms)
 			{
-				int vert = QEngine.verticalCollision(character, platform);
+				int vert = Engine.verticalCollision(character, platform);
 
-				if(vert == QConstants.DOWN)
+				if(vert == Constants.DOWN)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
@@ -577,9 +577,9 @@ public class LevelOne extends Level
 				}
 			}
 
-			setActive(!QEngine.collision(character, flag));
+			setActive(!Engine.collision(character, flag));
 
-			QEngine.postUpdate(character);
+			Engine.postUpdate(character);
 
 			x += character.getCenterX();
 			y += character.getCenterY();
@@ -598,35 +598,35 @@ public class LevelOne extends Level
 		// COMPUTERS
 		for(BasicCharacter character : ai)
 		{
-			QEngine.preUpdate(character);
+			Engine.preUpdate(character);
 			character.setStanding(false);
 			// VS GROUND
-			for(QBPlatform ground : grounds)
+			for(BPlatform ground : grounds)
 			{
-				int vert = QEngine.verticalCollision(character, ground);
-				int hort = QEngine.horizontalCollision(character, ground);
+				int vert = Engine.verticalCollision(character, ground);
+				int hort = Engine.horizontalCollision(character, ground);
 
-				if(hort == QConstants.RIGHT)
+				if(hort == Constants.RIGHT)
 				{
 					character.setRight(false);
 					character.setX(ground.getLeftX() - character.getWidth() + character.getHorizontalOffset());
 					character.setXVector(0);
 				}
-				else if(hort == QConstants.LEFT)
+				else if(hort == Constants.LEFT)
 				{
 					character.setLeft(false);
 					character.setX(ground.getRightX() - character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 
-				if(vert == QConstants.UP)
+				if(vert == Constants.UP)
 				{
 					if(character.getGravity() < 0)
 						character.setStanding(true);
 					character.setY(ground.getBottomY() - character.getVerticalOffset());
 					character.setYVector(0);
 				}
-				else if(vert == QConstants.DOWN)
+				else if(vert == Constants.DOWN)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
@@ -635,11 +635,11 @@ public class LevelOne extends Level
 				}
 			}
 			// VS PLATFORMS
-			for(QBPlatform platform : platforms)
+			for(BPlatform platform : platforms)
 			{
-				int vert = QEngine.verticalCollision(character, platform);
+				int vert = Engine.verticalCollision(character, platform);
 
-				if(vert == QConstants.DOWN)
+				if(vert == Constants.DOWN)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
@@ -648,7 +648,7 @@ public class LevelOne extends Level
 				}
 			}
 
-			QEngine.postUpdate(character);
+			Engine.postUpdate(character);
 		}
 
 		camera.updateCamera(x/characters.size(), y/characters.size());
@@ -658,14 +658,14 @@ public class LevelOne extends Level
 	public void keyPressed(KeyEvent e)
 	{
 		for(BasicCharacter character : characters)
-			QEngine.keyPressed(e.getKeyCode(), character);
+			Engine.keyPressed(e.getKeyCode(), character);
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e)
 	{
 		for(BasicCharacter character : characters)
-			QEngine.keyReleased(e.getKeyCode(), character);
+			Engine.keyReleased(e.getKeyCode(), character);
 	}
 
 	@Override

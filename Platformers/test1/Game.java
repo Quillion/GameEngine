@@ -12,19 +12,19 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-import platformer.BasicSprite.QMCharacter;
-import BasicSprite.QPlatform;
-import Constants.QConstants;
-import logic.QEngine;
+import BasicSprite.Platform;
+import Constants.Constants;
+import logic.Engine;
+import platformer.BasicSprite.MCharacter;
 
 public class Game
 {
     private int WIDTH, HEIGHT;
 
-    private List<QMCharacter> characters;
+    private List<MCharacter> characters;
 
-	private List<QPlatform> platforms;
-    private QPlatform temp_platform;
+	private List<Platform> platforms;
+    private Platform temp_platform;
 
     private int choice[];
     private static int button_press = 0;
@@ -39,9 +39,9 @@ public class Game
         choice[1] = 0;
         choice[2] = 0;
 
-        platforms = new ArrayList<QPlatform>();
+        platforms = new ArrayList<Platform>();
 
-        temp_platform = new QPlatform();
+        temp_platform = new Platform();
         temp_platform.setX(0);
         temp_platform.setY(430);
         temp_platform.setWidth(640);
@@ -49,7 +49,7 @@ public class Game
         temp_platform.setColor(Color.GREEN);
         platforms.add(temp_platform);
 
-        temp_platform = new QPlatform();
+        temp_platform = new Platform();
         temp_platform.setX(0);
         temp_platform.setY(0);
         temp_platform.setWidth(10);
@@ -57,7 +57,7 @@ public class Game
         temp_platform.setColor(Color.GREEN);
         platforms.add(temp_platform);
 
-        temp_platform = new QPlatform();
+        temp_platform = new Platform();
         temp_platform.setX(630);
         temp_platform.setY(0);
         temp_platform.setWidth(10);
@@ -65,7 +65,7 @@ public class Game
         temp_platform.setColor(Color.GREEN);
         platforms.add(temp_platform);
 
-        temp_platform = new QPlatform();
+        temp_platform = new Platform();
         temp_platform.setX(10);
         temp_platform.setY(0);
         temp_platform.setWidth(620);
@@ -73,9 +73,9 @@ public class Game
         temp_platform.setColor(Color.GREEN);
         platforms.add(temp_platform);
 
-        characters = new ArrayList<QMCharacter>();
+        characters = new ArrayList<MCharacter>();
 
-		QMCharacter temp_character = new QMCharacter();
+		MCharacter temp_character = new MCharacter();
         temp_character.setX(150);
         temp_character.setY(150);
         temp_character.setWidth(30);
@@ -92,7 +92,7 @@ public class Game
         temp_character.setColor(Color.ORANGE);
         characters.add(temp_character);
 
-        temp_character = new QMCharacter();
+        temp_character = new MCharacter();
         temp_character.setX(350);
         temp_character.setY(150);
         temp_character.setWidth(30);
@@ -114,7 +114,7 @@ public class Game
     {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
-		for (QPlatform platform : platforms)
+		for (Platform platform : platforms)
 		{
 			platform.draw(g);
 			platform.drawBox(g);
@@ -162,33 +162,33 @@ public class Game
     {
         for(int j = 0; j < characters.size(); j++)
         {
-            QEngine.preUpdate(characters.get(j));
+            Engine.preUpdate(characters.get(j));
             // character is always falling until proven otherwise
             characters.get(j).setStanding(false);
-			for (QPlatform platform : platforms)
+			for (Platform platform : platforms)
 			{
-				int vert = QEngine.verticalCollision(characters.get(j), platform);
-				int hort = QEngine.horizontalCollision(characters.get(j), platform);
+				int vert = Engine.verticalCollision(characters.get(j), platform);
+				int hort = Engine.horizontalCollision(characters.get(j), platform);
 
-				if (hort == QConstants.RIGHT)
+				if (hort == Constants.RIGHT)
 				{
 					characters.get(j).setRight(false);
 					characters.get(j).setX(platform.getLeftX() - characters.get(j).getWidth());
 					characters.get(j).setXVector(0);
-				} else if (hort == QConstants.LEFT)
+				} else if (hort == Constants.LEFT)
 				{
 					characters.get(j).setLeft(false);
 					characters.get(j).setX(platform.getRightX());
 					characters.get(j).setXVector(0);
 				}
 
-				if (vert == QConstants.UP)
+				if (vert == Constants.UP)
 				{
 					if (characters.get(j).getGravity() < 0)
 						characters.get(j).setStanding(true);
 					characters.get(j).setY(platform.getBottomY());
 					characters.get(j).setYVector(0);
-				} else if (vert == QConstants.DOWN)
+				} else if (vert == Constants.DOWN)
 				{
 					if (characters.get(j).getGravity() > 0)
 						characters.get(j).setStanding(true);
@@ -201,30 +201,30 @@ public class Game
             {
                 if(i != j)
                 {
-                    int vert = QEngine.verticalCollision(characters.get(j), characters.get(i));
-                    int hort = QEngine.horizontalCollision(characters.get(j), characters.get(i));
+                    int vert = Engine.verticalCollision(characters.get(j), characters.get(i));
+                    int hort = Engine.horizontalCollision(characters.get(j), characters.get(i));
 
-                    if(hort == QConstants.RIGHT)
+                    if(hort == Constants.RIGHT)
                     {
                         characters.get(j).setRight(false);
                         characters.get(j).setX(characters.get(i).getLeftX() - characters.get(j).getWidth());
                         characters.get(j).setXVector(0);
                     }
-                    else if(hort == QConstants.LEFT)
+                    else if(hort == Constants.LEFT)
                     {
                         characters.get(j).setLeft(false);
                         characters.get(j).setX(characters.get(i).getRightX());
                         characters.get(j).setXVector(0);
                     }
 
-                    if(vert == QConstants.UP)
+                    if(vert == Constants.UP)
                     {
                         if(characters.get(j).getGravity() < 0)
                             characters.get(j).setStanding(true);
                         characters.get(j).setY(characters.get(i).getBottomY());
                         characters.get(j).setYVector(0);
                     }
-                    else if(vert == QConstants.DOWN)
+                    else if(vert == Constants.DOWN)
                     {
                         if(characters.get(j).getGravity() > 0)
                             characters.get(j).setStanding(true);
@@ -233,15 +233,15 @@ public class Game
                     }
                 }
             }
-            QEngine.postUpdate(characters.get(j));
+            Engine.postUpdate(characters.get(j));
         }
     }
 
     public void keyPressed(KeyEvent e)
     {
-		for (QMCharacter character : characters)
+		for (MCharacter character : characters)
 		{
-			QEngine.keyPressed(e.getKeyCode(), character);
+			Engine.keyPressed(e.getKeyCode(), character);
 		}
 
         if(e.getKeyCode() == KeyEvent.VK_I)
@@ -332,17 +332,17 @@ public class Game
 
         if(e.getKeyCode() == KeyEvent.VK_B)
         {
-            int x = QEngine.random(10, 620);
-            int y = QEngine.random(30, 420);
-            int width = QEngine.random(10, 630 - x);
-            int height = QEngine.random(10, 430 - y);
+            int x = Engine.random(10, 620);
+            int y = Engine.random(30, 420);
+            int width = Engine.random(10, 630 - x);
+            int height = Engine.random(10, 430 - y);
 
-            temp_platform = new QPlatform();
+            temp_platform = new Platform();
             temp_platform.setX(x);
             temp_platform.setY(y);
             temp_platform.setWidth(width);
             temp_platform.setHeight(height);
-            temp_platform.setColor(new Color(QEngine.random(0, 255), QEngine.random(0,255), QEngine.random(0,255)));
+            temp_platform.setColor(new Color(Engine.random(0, 255), Engine.random(0, 255), Engine.random(0, 255)));
             platforms.add(temp_platform);
 
             choice[2] = platforms.size()-1;
@@ -470,9 +470,9 @@ public class Game
 
     public void keyReleased(KeyEvent e)
     {
-		for (QMCharacter character : characters)
+		for (MCharacter character : characters)
 		{
-			QEngine.keyReleased(e.getKeyCode(), character);
+			Engine.keyReleased(e.getKeyCode(), character);
 		}
         if(e.getKeyCode() == KeyEvent.VK_Z ||
            e.getKeyCode() == KeyEvent.VK_X ||
