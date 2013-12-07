@@ -25,7 +25,7 @@ public abstract class GameSimple extends Game
 	public GameSimple()
 	{
 		super();
-		levels = new ArrayList<Level>();
+		this.levels = new ArrayList<Level>();
 	}
 
 	/**
@@ -34,11 +34,11 @@ public abstract class GameSimple extends Game
 	@Override
 	protected void setup()
 	{
-		for (Level level : levels)
+		for (Level level : this.levels)
 			level.setup();
 
-		if (levels.size() > 0)
-			levels.get(0).setActive(true);
+		if (this.levels.size() > 0)
+			this.levels.get(0).setActive(true);
 	}
 
 	/**
@@ -49,7 +49,7 @@ public abstract class GameSimple extends Game
 	@Override
 	protected void render(Graphics2D g)
 	{
-		for (Level level : levels)
+		for (Level level : this.levels)
 		{
 			if (level.isActive())
 			{
@@ -75,21 +75,21 @@ public abstract class GameSimple extends Game
 	@Override
 	protected void update(int deltaTime)
 	{
-		for (int i = 0; i < levels.size(); i++)
+		for (int i = 0; i < this.levels.size(); i++)
 		{
-			if (levels.get(i).isActive())
+			if (this.levels.get(i).isActive())
 			{
-				if (levels.get(i).isLoaded())
-					levels.get(i).update();
+				if (this.levels.get(i).isLoaded())
+					this.levels.get(i).update();
 				else
-					levels.get(i).load();
+					this.levels.get(i).load();
 				break;
 			}
-			else if (i < levels.size() - 1)
+			else if (i < this.levels.size() - 1)
 			{
-				levels.get(i + 1).setActive(true);
-				levels.get(i).delete();
-				levels.remove(i);
+				this.levels.get(i + 1).setActive(true);
+				this.levels.get(i).delete();
+				this.levels.remove(i);
 			}
 			else
 			{
@@ -106,7 +106,7 @@ public abstract class GameSimple extends Game
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
-		for (Level level : levels)
+		for (Level level : this.levels)
 		{
 			if (level.isActive() && level.isLoaded())
 			{
@@ -125,7 +125,7 @@ public abstract class GameSimple extends Game
 	@Override
 	public void keyReleased(KeyEvent e)
 	{
-		for (Level level : levels)
+		for (Level level : this.levels)
 		{
 			if (level.isActive() && level.isLoaded())
 			{
@@ -144,7 +144,7 @@ public abstract class GameSimple extends Game
 	@Override
 	public void mouseEntered(MouseEvent e)
 	{
-		for (Level level : levels)
+		for (Level level : this.levels)
 		{
 			if (level.isActive() && level.isLoaded())
 			{
@@ -163,7 +163,7 @@ public abstract class GameSimple extends Game
 	@Override
 	public void mousePressed(MouseEvent e)
 	{
-		for (Level level : levels)
+		for (Level level : this.levels)
 		{
 			if (level.isActive() && level.isLoaded())
 			{
@@ -182,7 +182,7 @@ public abstract class GameSimple extends Game
 	@Override
 	public void mouseMoved(MouseEvent e)
 	{
-		for (Level level : levels)
+		for (Level level : this.levels)
 		{
 			if (level.isActive() && level.isLoaded())
 			{
@@ -201,6 +201,6 @@ public abstract class GameSimple extends Game
 	 */
 	public void addLevel(Level level)
 	{
-		levels.add(level);
+		this.levels.add(level);
 	}
 }

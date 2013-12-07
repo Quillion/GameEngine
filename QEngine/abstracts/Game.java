@@ -100,12 +100,12 @@ public abstract class Game implements Runnable
 				System.exit(0);
 			}
 
-			game.keyPressed(e);
+			this.game.keyPressed(e);
 		}
 
 		public void keyReleased(KeyEvent e)
 		{
-			game.keyReleased(e);
+			this.game.keyReleased(e);
 		}
 	}
 
@@ -123,12 +123,12 @@ public abstract class Game implements Runnable
 
 		public void mouseEntered(MouseEvent e)
 		{
-			game.mouseEntered(e);
+			this.game.mouseEntered(e);
 		}
 
 		public void mousePressed(MouseEvent e)
 		{
-			game.mousePressed(e);
+			this.game.mousePressed(e);
 		}
 	}
 
@@ -146,7 +146,7 @@ public abstract class Game implements Runnable
 
 		public void mouseMoved(MouseEvent e)
 		{
-			game.mouseMoved(e);
+			this.game.mouseMoved(e);
 		}
 	}
 
@@ -187,11 +187,11 @@ public abstract class Game implements Runnable
 			deltaLoop = endLoopTime - beginLoopTime;
 
 			// WE UPDATED AND DREW THINGS QUICK ENOUGH SO THEREFORE WE WILL WAIT IN ORDER TO MAKE THE GAME SMOOTH
-			if (deltaLoop <= desiredDeltaLoop)
+			if (deltaLoop <= this.desiredDeltaLoop)
 			{
 				try
 				{
-					Thread.sleep((desiredDeltaLoop - deltaLoop) / (1000 * 1000));
+					Thread.sleep((this.desiredDeltaLoop - deltaLoop) / (1000 * 1000));
 				}
 				catch (InterruptedException e)
 				{
@@ -226,8 +226,8 @@ public abstract class Game implements Runnable
 	// WILL HAVE THREE DISPLAY MODES, 32 bit, 16bit and 8 bit
 	private DisplayMode[] MODES = new DisplayMode[]
 			{
-					new DisplayMode(WIDTH, HEIGHT, 32, 0), new DisplayMode(WIDTH, HEIGHT, 16, 0),
-					new DisplayMode(WIDTH, HEIGHT, 8, 0)
+					new DisplayMode(this.WIDTH, this.HEIGHT, 32, 0), new DisplayMode(this.WIDTH, this.HEIGHT, 16, 0),
+					new DisplayMode(this.WIDTH, this.HEIGHT, 8, 0)
 			};
 
 	/**
@@ -237,15 +237,15 @@ public abstract class Game implements Runnable
 	private void render()
 	{
 		// CREATE THE GRAPHICS
-		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
+		Graphics2D g = (Graphics2D) this.bufferStrategy.getDrawGraphics();
 		// MAKE THE PICTURE WHERE WE WILL PAINT EVERYTHING AT ONCE
-		g.clearRect(0, 0, WIDTH, HEIGHT);
-		g.setFont(graphicsFont);
+		g.clearRect(0, 0, this.WIDTH, this.HEIGHT);
+		g.setFont(this.graphicsFont);
 		// PAINT ANYTHING WE NEED HERE
 		render(g);
 		g.dispose();
 		// SHOW THE WHOLE IMAGE RATHER THAN PAINTING ONE OBJECT AT A TIME
-		bufferStrategy.show();
+		this.bufferStrategy.show();
 	}
 
 	/**
@@ -254,11 +254,11 @@ public abstract class Game implements Runnable
 	 */
 	public Game()
 	{
-		WIDTH = 640;
-		HEIGHT = 480;
-		FULL_SCREEN = false;
-		title = "Game";
-		graphicsFont = new Font("TimesRoman", Font.BOLD, 90);
+		this.WIDTH = 640;
+		this.HEIGHT = 480;
+		this.FULL_SCREEN = false;
+		this.title = "Game";
+		this.graphicsFont = new Font("TimesRoman", Font.BOLD, 90);
 	}
 
 	/**
@@ -294,9 +294,9 @@ public abstract class Game implements Runnable
 	 */
 	public void setScreen(int width, int height, boolean fullScreen)
 	{
-		WIDTH = width;
-		HEIGHT = height;
-		FULL_SCREEN = fullScreen;
+		this.WIDTH = width;
+		this.HEIGHT = height;
+		this.FULL_SCREEN = fullScreen;
 	}
 
 	/**
@@ -306,7 +306,7 @@ public abstract class Game implements Runnable
 	 */
 	public int getWidth()
 	{
-		return WIDTH;
+		return this.WIDTH;
 	}
 
 	/**
@@ -326,7 +326,7 @@ public abstract class Game implements Runnable
 	 */
 	public void setTitle(String title)
 	{
-		frame.setTitle(title);
+		this.frame.setTitle(title);
 	}
 
 	/**
@@ -337,36 +337,36 @@ public abstract class Game implements Runnable
 	{
 		// SET UP THE WINDOW AND GRAPHICS
 		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
-		originalDisplayMode = graphicsDevice.getDisplayMode();
+		this.graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
+		this.originalDisplayMode = this.graphicsDevice.getDisplayMode();
 
 		// CREATE NEW Frame
-		frame = new JFrame(title);
+		this.frame = new JFrame(this.title);
 
 		if (FULL_SCREEN)
 		{
-			frame.setUndecorated(true);
+			this.frame.setUndecorated(true);
 
-			graphicsDevice.setFullScreenWindow(frame);
-			if (graphicsDevice.isDisplayChangeSupported())
+			this.graphicsDevice.setFullScreenWindow(this.frame);
+			if (this.graphicsDevice.isDisplayChangeSupported())
 			{
-				graphicsDevice.setDisplayMode(getBestDisplayMode(graphicsDevice));
+				this.graphicsDevice.setDisplayMode(getBestDisplayMode(this.graphicsDevice));
 			}
 		}
 		else
 		{
-			frame.setSize(WIDTH, HEIGHT);
+			this.frame.setSize(this.WIDTH, this.HEIGHT);
 		}
 
 		// CREATE NEW JPanel WITH SPECIFIED WIDTH AND HEIGHT
-		JPanel panel = (JPanel) frame.getContentPane();
+		JPanel panel = (JPanel) this.frame.getContentPane();
 		// I had to add the -9 to readjust window size
-		panel.setPreferredSize(new Dimension(WIDTH - 9, HEIGHT - 9));
+		panel.setPreferredSize(new Dimension(this.WIDTH - 9, this.HEIGHT - 9));
 		panel.setLayout(null);
 		// CREATE A Canvas INSIDE JPanel WITH SPECIFIED WIDTH AND HEIGHT
 		Canvas canvas = new Canvas();
 		// once again I add 1 because java is stupid that's why
-		canvas.setBounds(0, 0, WIDTH + 1, HEIGHT + 1);
+		canvas.setBounds(0, 0, this.WIDTH + 1, this.HEIGHT + 1);
 		//canvas.setBounds(bounds);
 		canvas.setIgnoreRepaint(true);
 
@@ -376,14 +376,14 @@ public abstract class Game implements Runnable
 		canvas.addMouseListener(new MouseControl(this));
 		canvas.addMouseMotionListener(new MouseMotion(this));
 		// INITIALIZE THE WINDOW
-		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		frame.pack();
-		frame.setResizable(false);
-		frame.setVisible(true);
+		this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		this.frame.pack();
+		this.frame.setResizable(false);
+		this.frame.setVisible(true);
 
 		// SET GRAPHICS DEVICE
 		canvas.createBufferStrategy(2);
-		bufferStrategy = canvas.getBufferStrategy();
+		this.bufferStrategy = canvas.getBufferStrategy();
 		// FOCUS ON THE WINDOW
 		canvas.requestFocus();
 	}

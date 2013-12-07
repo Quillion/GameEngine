@@ -5,7 +5,7 @@ package logic.platformer;
  * @since 1.6
  */
 
-import Constants.Constants;
+import constants.Constants;
 import logic.Engine;
 import platformer.BasicCharacter;
 
@@ -17,15 +17,15 @@ import java.util.Random;
  */
 public class BasicAIController
 {
-	private Random fate_;
-	private int activity_;
-	private int minChoiceDuration_, choiceRange_, duration_;
-	private int choice_;
-	private boolean rangeSet_;
-	private int minRange_, maxRange_;
-	private int count_;
-	private int jumpFrequency_, jumpChance_;
-	private BasicCharacter character_;
+	private Random fate;
+	private int activity;
+	private int minChoiceDuration, choiceRange, duration;
+	private int choice;
+	private boolean rangeSet;
+	private int minRange, maxRange;
+	private int count;
+	private int jumpFrequency, jumpChance;
+	private BasicCharacter character;
 
 	/**
 	 * Well we can't have AI without specifying which character it is for after all.
@@ -34,14 +34,14 @@ public class BasicAIController
 	 */
 	public BasicAIController(BasicCharacter character)
 	{
-		fate_ = new Random();
-		this.character_ = character;
-		this.count_ = 0;
-		this.duration_ = 0;
+		this.fate = new Random();
+		this.character = character;
+		this.count = 0;
+		this.duration = 0;
 		this.setJumpFParameters(30, 3);
 		this.setActivity(30);
 		this.setChoiceDuration(100, 300);
-		this.rangeSet_ = false;
+		this.rangeSet = false;
 	}
 
 	/**
@@ -49,55 +49,55 @@ public class BasicAIController
 	 */
 	public void randomNoJump()
 	{
-		if (this.count_++ < this.duration_)
+		if (this.count++ < this.duration)
 		{
-			if (this.rangeSet_)
+			if (this.rangeSet)
 			{
-				if (character_.getLeftX() < this.minRange_ + 10)
+				if (this.character.getLeftX() < this.minRange + 10)
 				{
-					choice_ = character_.getRightKey();
+					this.choice = this.character.getRightKey();
 				}
-				else if (character_.getRightX() > this.maxRange_ - 10)
+				else if (this.character.getRightX() > this.maxRange - 10)
 				{
-					choice_ = character_.getLeftKey();
+					this.choice = this.character.getLeftKey();
 				}
 			}
-			Engine.keyPressed(choice_, character_);
+			Engine.keyPressed(this.choice, this.character);
 		}
 		else
 		{
-			this.count_ = 0;
-			this.duration_ = fate_.nextInt(this.choiceRange_) + this.minChoiceDuration_;
-			this.choice_ = Constants.NONE;
+			this.count = 0;
+			this.duration = this.fate.nextInt(this.choiceRange) + this.minChoiceDuration;
+			this.choice = Constants.NONE;
 
 			// DO SOMETHING
-			if (this.activity_ > fate_.nextInt(100))
+			if (this.activity > this.fate.nextInt(100))
 			{
-				if (this.rangeSet_)
+				if (this.rangeSet)
 				{
-					if (character_.getLeftX() < this.minRange_ + 10)
+					if (this.character.getLeftX() < this.minRange + 10)
 					{
-						this.choice_ = character_.getRightKey();
+						this.choice = this.character.getRightKey();
 					}
-					else if (character_.getRightX() > this.maxRange_ - 10)
+					else if (this.character.getRightX() > this.maxRange - 10)
 					{
-						this.choice_ = character_.getLeftKey();
+						this.choice = this.character.getLeftKey();
 					}
 					else
 					{
-						this.choice_ = fate_.nextInt(2);
+						this.choice = this.fate.nextInt(2);
 					}
 				}
 				else
 				{
-					this.choice_ = fate_.nextInt(2);
+					this.choice = this.fate.nextInt(2);
 				}
 			}
 			// DO NOTHING
 			else
 			{
-				character_.setLeft(false);
-				character_.setRight(false);
+				this.character.setLeft(false);
+				this.character.setRight(false);
 			}
 		}
 	}
@@ -107,59 +107,59 @@ public class BasicAIController
 	 */
 	public void random()
 	{
-		if (this.count_++ < this.duration_)
+		if (this.count++ < this.duration)
 		{
-			if (this.rangeSet_)
+			if (this.rangeSet)
 			{
-				if (character_.getLeftX() < this.minRange_ + 10)
+				if (this.character.getLeftX() < this.minRange + 10)
 				{
-					choice_ = character_.getRightKey();
+					this.choice = this.character.getRightKey();
 				}
-				else if (character_.getRightX() > this.maxRange_ - 10)
+				else if (this.character.getRightX() > this.maxRange - 10)
 				{
-					choice_ = character_.getLeftKey();
+					this.choice = this.character.getLeftKey();
 				}
 			}
-			Engine.keyPressed(choice_, character_);
-			if (this.count_ % this.jumpFrequency_ == 0 && fate_.nextInt(this.jumpChance_) == 1)
+			Engine.keyPressed(this.choice, this.character);
+			if (this.count % this.jumpFrequency == 0 && this.fate.nextInt(this.jumpChance) == 1)
 			{
-				Engine.keyPressed(character_.getJumpKey(), character_);
+				Engine.keyPressed(this.character.getJumpKey(), this.character);
 			}
 		}
 		else
 		{
-			this.count_ = 0;
-			this.duration_ = fate_.nextInt(this.choiceRange_) + this.minChoiceDuration_;
-			this.choice_ = Constants.NONE;
+			this.count = 0;
+			this.duration = this.fate.nextInt(this.choiceRange) + this.minChoiceDuration;
+			this.choice = Constants.NONE;
 
 			// DO SOMETHING
-			if (this.activity_ > fate_.nextInt(100))
+			if (this.activity > this.fate.nextInt(100))
 			{
-				if (this.rangeSet_)
+				if (this.rangeSet)
 				{
-					if (character_.getLeftX() < this.minRange_ + 10)
+					if (this.character.getLeftX() < this.minRange + 10)
 					{
-						this.choice_ = character_.getRightKey();
+						this.choice = this.character.getRightKey();
 					}
-					else if (character_.getRightX() > this.maxRange_ - 10)
+					else if (this.character.getRightX() > this.maxRange - 10)
 					{
-						this.choice_ = character_.getLeftKey();
+						this.choice = this.character.getLeftKey();
 					}
 					else
 					{
-						this.choice_ = fate_.nextInt(2);
+						this.choice = this.fate.nextInt(2);
 					}
 				}
 				else
 				{
-					this.choice_ = fate_.nextInt(2);
+					this.choice = this.fate.nextInt(2);
 				}
 			}
 			// DO NOTHING
 			else
 			{
-				character_.setLeft(false);
-				character_.setRight(false);
+				this.character.setLeft(false);
+				this.character.setRight(false);
 			}
 		}
 	}
@@ -172,7 +172,7 @@ public class BasicAIController
 	public void setActivity(int activity)
 	{
 		if (activity > 0 && activity < 101)
-			this.activity_ = activity;
+			this.activity = activity;
 	}
 
 	/**
@@ -187,8 +187,8 @@ public class BasicAIController
 	{
 		if (minChoiceDuration > maxChoiceDuration)
 			return;
-		this.minChoiceDuration_ = minChoiceDuration;
-		this.choiceRange_ = maxChoiceDuration - minChoiceDuration;
+		this.minChoiceDuration = minChoiceDuration;
+		this.choiceRange = maxChoiceDuration - minChoiceDuration;
 	}
 
 	/**
@@ -202,9 +202,9 @@ public class BasicAIController
 	{
 		if (range <= 0)
 			return;
-		this.rangeSet_ = true;
-		this.minRange_ = minRange;
-		this.maxRange_ = minRange + range;
+		this.rangeSet = true;
+		this.minRange = minRange;
+		this.maxRange = minRange + range;
 	}
 
 	/**
@@ -218,7 +218,7 @@ public class BasicAIController
 	{
 		if (jumpFrequency <= 0 || jumpChance <= 0)
 			return;
-		this.jumpFrequency_ = jumpFrequency;
-		this.jumpChance_ = jumpChance;
+		this.jumpFrequency = jumpFrequency;
+		this.jumpChance = jumpChance;
 	}
 }

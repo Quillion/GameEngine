@@ -6,8 +6,9 @@ package test2;
  */
 
 import BasicSprite.Platform;
-import Constants.Constants;
+import constants.Constants;
 import logic.Camera;
+import logic.CollisionEngine;
 import logic.Engine;
 import platformer.BasicSprite.MCharacter;
 
@@ -136,30 +137,30 @@ public class Game
 		character.setStanding(false);
 		for(Platform platform : platforms)
 		{
-			int vert = Engine.verticalCollision(character, platform);
-			int hort = Engine.horizontalCollision(character, platform);
+			Constants.Direction vert = CollisionEngine.verticalCollision(character, platform);
+			Constants.Direction hort = CollisionEngine.horizontalCollision(character, platform);
 
-			if(hort == Constants.RIGHT)
+			if(hort == Constants.Direction.Right)
 			{
 				character.setRight(false);
 				character.setX(platform.getLeftX() - character.getWidth());
 				character.setXVector(0);
 			}
-			else if(hort == Constants.LEFT)
+			else if(hort == Constants.Direction.Left)
 			{
 				character.setLeft(false);
 				character.setX(platform.getRightX());
 				character.setXVector(0);
 			}
 
-			if(vert == Constants.UP)
+			if(vert == Constants.Direction.Up)
 			{
 				if(character.getGravity() < 0)
 					character.setStanding(true);
 				character.setY(platform.getBottomY());
 				character.setYVector(0);
 			}
-			else if(vert == Constants.DOWN)
+			else if(vert == Constants.Direction.Down)
 			{
 				if(character.getGravity() > 0)
 					character.setStanding(true);

@@ -5,7 +5,7 @@ package BasicSprite;
  * @since 1.6
  */
 
-import BasicShapes.BBox;
+import BasicObjects.BBox;
 import utils.ImageProcessor;
 
 import java.awt.*;
@@ -17,7 +17,7 @@ import java.awt.image.BufferedImage;
  */
 public class BPlatform extends BBox
 {
-	private BufferedImage image_;
+	private BufferedImage image;
 
 	/**
 	 * Constructor for the platform, originally contains no image.
@@ -25,7 +25,7 @@ public class BPlatform extends BBox
 	public BPlatform()
 	{
 		super();
-		image_ = null;
+		this.image = null;
 	}
 
 	/**
@@ -35,9 +35,9 @@ public class BPlatform extends BBox
 	 */
 	public void setImage(BufferedImage image)
 	{
-		this.image_ = image;
-		super.setWidth(image_.getWidth());
-		super.setHeight(image_.getHeight());
+		this.image = image;
+		super.setWidth(image.getWidth());
+		super.setHeight(image.getHeight());
 	}
 
 	/**
@@ -47,13 +47,13 @@ public class BPlatform extends BBox
 	 */
 	public boolean loadImage(String path)
 	{
-		this.image_ = ImageProcessor.loadImage(path);
+		this.image = ImageProcessor.loadImage(path);
 
-		if(this.image_ == null)
+		if (this.image == null)
 			return false;
 
-		super.setWidth(image_.getWidth());
-		super.setHeight(image_.getHeight());
+		super.setWidth(this.image.getWidth());
+		super.setHeight(this.image.getHeight());
 
 		return true;
 	}
@@ -65,7 +65,7 @@ public class BPlatform extends BBox
 	 */
 	public BufferedImage getImage()
 	{
-		return this.image_;
+		return this.image;
 	}
 
 	/**

@@ -5,9 +5,8 @@ package logic;
  * @since 1.6
  */
 
-import BasicShapes.Box;
-import BasicShapes.Item;
-import BasicShapes.BBox;
+import BasicObjects.*;
+import BasicObjects.Point;
 import BasicSprite.BPlatform;
 import BasicSprite.Platform;
 import platformer.BasicCharacter;
@@ -19,14 +18,15 @@ import platformer.MovingShapes.MBox;
 
 import java.awt.*;
 
+
 /**
  * Class for attaching camera to the game screen.
  */
 public class Camera
 {
-	private int x_, y_;
-	private int horizontalBoundary_, verticalBoundary_;
-	private int centerX_, centerY_;
+	private Point coordinates;
+	private Dimensions boundaries;
+	private Point center;
 
 	/**
 	 * We can't have a camera without few parameters first right?
@@ -39,10 +39,9 @@ public class Camera
 	 */
 	public Camera(int leftRightBoundary, int topBottomBoundary, int centerX, int centerY)
 	{
-		this.setBoundaries(leftRightBoundary, topBottomBoundary);
-		this.setCenter(centerX, centerY);
-		this.setX(0);
-		this.setY(0);
+		this.boundaries = new Dimensions(topBottomBoundary, leftRightBoundary);
+		this.center = new Point(centerX, centerY);
+		this.coordinates = new Point(0, 0);
 	}
 
 	/**
@@ -53,8 +52,8 @@ public class Camera
 	 */
 	public void setBoundaries(int leftRightBoundary, int topBottomBoundary)
 	{
-		this.horizontalBoundary_ = leftRightBoundary;
-		this.verticalBoundary_ = topBottomBoundary;
+		this.boundaries.setHorizontal(leftRightBoundary);
+		this.boundaries.setVertical(topBottomBoundary);
 	}
 
 	/**
@@ -65,8 +64,7 @@ public class Camera
 	 */
 	public void setCenter(int x, int y)
 	{
-		this.centerX_ = x;
-		this.centerY_ = y;
+		this.center.changeLocation(x, y);
 	}
 
 	/**
@@ -110,7 +108,7 @@ public class Camera
 	 */
 	public int getX()
 	{
-		return this.x_;
+		return (int)this.coordinates.getX();
 	}
 
 	/**
@@ -120,7 +118,7 @@ public class Camera
 	 */
 	public int getY()
 	{
-		return this.y_;
+		return (int)this.coordinates.getY();
 	}
 
 	/**
@@ -130,7 +128,7 @@ public class Camera
 	 */
 	public void setX(int x)
 	{
-		this.x_ = x;
+		this.coordinates.setX(x);
 	}
 
 	/**
@@ -140,7 +138,7 @@ public class Camera
 	 */
 	public void setY(int y)
 	{
-		this.y_ = y;
+		this.coordinates.setY(y);
 	}
 
 	/**
@@ -150,7 +148,7 @@ public class Camera
 	 */
 	public void incrementX(int amount)
 	{
-		this.x_ += amount;
+		this.coordinates.incrementX(amount);
 	}
 
 	/**
@@ -160,7 +158,7 @@ public class Camera
 	 */
 	public void incrementY(int amount)
 	{
-		this.y_ += amount;
+		this.coordinates.incrementY(amount);
 	}
 
 	/**
@@ -170,7 +168,7 @@ public class Camera
 	 */
 	public int getHorizontalBoundary()
 	{
-		return this.horizontalBoundary_;
+		return this.boundaries.getHorizontal();
 	}
 
 	/**
@@ -180,7 +178,7 @@ public class Camera
 	 */
 	public int getVerticalBoundary()
 	{
-		return this.verticalBoundary_;
+		return this.boundaries.getVertical();
 	}
 
 	/**
@@ -190,7 +188,7 @@ public class Camera
 	 */
 	public int getCenterX()
 	{
-		return this.centerX_;
+		return (int)this.center.getX();
 	}
 
 	/**
@@ -200,7 +198,7 @@ public class Camera
 	 */
 	public int getCenterY()
 	{
-		return this.centerY_;
+		return (int)this.center.getY();
 	}
 
 	/**

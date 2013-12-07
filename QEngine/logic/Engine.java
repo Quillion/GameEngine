@@ -5,14 +5,10 @@ package logic;
  * @since 1.6
  */
 
-import BasicShapes.BBox;
-import BasicShapes.Box;
-import Constants.Constants;
+import BasicObjects.Point;
 import platformer.BasicCharacter;
 import platformer.ExtendedShapes.MBControls;
 import platformer.ExtendedShapes.MControls;
-import platformer.MovingShapes.MBBox;
-import platformer.MovingShapes.MBox;
 
 /**
  * All of the collision detections and determining certain actions and such are going here.
@@ -65,8 +61,7 @@ public class Engine
 	 */
 	public static void postUpdate(MControls character)
 	{
-		character.incrementX(character.getXVector());
-		character.incrementY(character.getYVector());
+		character.move();
 	}
 
 	/**
@@ -105,8 +100,7 @@ public class Engine
 	 */
 	public static void postUpdate(MBControls character)
 	{
-		character.incrementX(character.getXVector());
-		character.incrementY(character.getYVector());
+		character.move();
 	}
 
 /***********************************************************************************************************************************************************/
@@ -362,345 +356,6 @@ public class Engine
 
 /***********************************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
-/******  COLLISIONS  ***************************************************************************************************************************************/
-/***********************************************************************************************************************************************************/
-/***********************************************************************************************************************************************************/
-
-	/**
-	 * Checks to see if character's sides have collision with the given wall object.
-	 *
-	 * @param character object which you want to check collision of.
-	 * @param wall      object with which you want to check collision.
-	 * @return LEFT if  character's left side has collided with the wall,
-	 *         RIGHT if character's right side has collided with the wall,
-	 *         NONE if no collision happened.
-	 */
-	public static int horizontalCollision(MBox character, Box wall)
-	{
-		// make sure that the character will be within top and bottom of the wall
-		if ((character.getBottomY() + character.getYVector()) > wall.getTopY() &&
-				(character.getTopY() + character.getYVector()) < wall.getBottomY())
-		{
-			//left collision
-			if ((character.getLeftX() + character.getXVector()) <= wall.getRightX() &&
-					character.getLeftX() >= wall.getRightX())
-			{
-				return Constants.LEFT;
-			}
-			// right collision
-			else if ((character.getRightX() + character.getXVector()) >= wall.getLeftX() &&
-					character.getRightX() <= wall.getLeftX())
-			{
-				return Constants.RIGHT;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Checks to see if character's top and bottom have collision with the given wall object.
-	 *
-	 * @param character object which you want to check collision of.
-	 * @param wall      object with which you want to check collision.
-	 * @return DOWN if  character's bottom side has collided with the wall (he landed),
-	 *         RIGHT if character's top side has collided with the wall (his head hit the ceiling),
-	 *         NONE if no collision happened.
-	 */
-	public static int verticalCollision(MBox character, Box wall)
-	{
-		if ((character.getLeftX() + character.getXVector()) < wall.getRightX() &&
-				(character.getRightX() + character.getXVector()) > wall.getLeftX())
-		{
-			// bottom collision
-			if ((character.getBottomY() + character.getYVector()) >= wall.getTopY() &&
-					character.getBottomY() <= wall.getTopY())
-			{
-				return Constants.DOWN;
-			}
-			// top collision
-			else if ((character.getTopY() + character.getYVector()) <= wall.getBottomY() &&
-					character.getTopY() >= wall.getBottomY())
-			{
-				return Constants.UP;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Checks for collision of character1's sides against character2.
-	 *
-	 * @param character1 movable object whose collision you want to check for.
-	 * @param character2 movable object whose collision you want to check character2 against.
-	 * @return LEFT if chaacter1's left side hits character2,
-	 *         RIGHT if character1's right side hits character2,
-	 *         NONE if no side collision happens.
-	 */
-	public static int horizontalCollision(MBox character1, MBox character2)
-	{
-		if ((character1.getBottomY() + character1.getYVector()) > (character2.getTopY() + character2.getYVector()) &&
-				(character1.getTopY() + character1.getYVector()) < (character2.getBottomY() + character2.getYVector()))
-		{
-			// left collision
-			if ((character1.getLeftX() + character1.getXVector()) <= (character2.getRightX() + character2.getXVector()) &&
-					character1.getLeftX() >= character2.getRightX())
-			{
-				return Constants.LEFT;
-			}
-			// right collision
-			else if ((character1.getRightX() + character1.getXVector()) >= (character2.getLeftX() + character2.getXVector()) &&
-					character1.getRightX() <= character2.getLeftX())
-			{
-				return Constants.RIGHT;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Check for collision of character1's top and bottom against character2.
-	 *
-	 * @param character1 movable object whose collision you want to check.
-	 * @param character2 movable object whose collision you want to check against.
-	 * @return DOWN if character1's feet hit character2's head,
-	 *         UP if character2's feet hit character1's head,
-	 *         NONE if no vertical collision happens.
-	 */
-	public static int verticalCollision(MBox character1, MBox character2)
-	{
-		if ((character1.getLeftX() + character1.getXVector()) < (character2.getRightX() + character2.getXVector()) &&
-				(character1.getRightX() + character1.getXVector()) > (character2.getLeftX() + character2.getXVector()))
-		{
-			// bottom collision
-			if ((character1.getBottomY() + character1.getYVector()) >= (character2.getTopY() + character2.getYVector()) &&
-					character1.getBottomY() <= character2.getTopY())
-			{
-				return Constants.DOWN;
-			}
-			// top collision
-			else if ((character1.getTopY() + character1.getYVector()) <= (character2.getBottomY() + character2.getYVector()) &&
-					character1.getTopY() >= character2.getBottomY())
-			{
-				return Constants.UP;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Checks to see if character's sides have collision with the given wall object.
-	 *
-	 * @param character object which you want to check collision of.
-	 * @param wall      object with which you want to check collision.
-	 * @return LEFT if  character's left side has collided with the wall,
-	 *         RIGHT if character's right side has collided with the wall,
-	 *         NONE if no collision happened.
-	 */
-	public static int horizontalCollision(MBBox character, BBox wall)
-	{
-		// make sure that the character will be within top and bottom of the wall
-		if ((character.getBottomY() + character.getYVector()) > wall.getTopY() &&
-				(character.getTopY() + character.getYVector()) < wall.getBottomY())
-		{
-			//left collision
-			if ((character.getLeftX() + character.getXVector()) <= wall.getRightX() &&
-					character.getLeftX() >= wall.getRightX())
-			{
-				return Constants.LEFT;
-			}
-			// right collision
-			else if ((character.getRightX() + character.getXVector()) >= wall.getLeftX() &&
-					character.getRightX() <= wall.getLeftX())
-			{
-				return Constants.RIGHT;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Checks to see if character's top and bottom have collision with the given wall object.
-	 *
-	 * @param character object which you want to check collision of.
-	 * @param wall      object with which you want to check collision.
-	 * @return DOWN if  character's bottom side has collided with the wall (he landed),
-	 *         RIGHT if character's top side has collided with the wall (his head hit the ceiling),
-	 *         NONE if no collision happened.
-	 */
-	public static int verticalCollision(MBBox character, BBox wall)
-	{
-		if ((character.getLeftX() + character.getXVector()) < wall.getRightX() &&
-				(character.getRightX() + character.getXVector()) > wall.getLeftX())
-		{
-			// bottom collision
-			if ((character.getBottomY() + character.getYVector()) >= wall.getTopY() &&
-					character.getBottomY() <= wall.getTopY())
-			{
-				return Constants.DOWN;
-			}
-			// top collision
-			else if ((character.getTopY() + character.getYVector()) <= wall.getBottomY() &&
-					character.getTopY() >= wall.getBottomY())
-			{
-				return Constants.UP;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Checks for collision of character1's sides against character2.
-	 *
-	 * @param character1 movable object whose collision you want to check for.
-	 * @param character2 movable object whose collision you want to check character2 against.
-	 * @return LEFT if character1's left side hits character2,
-	 *         RIGHT if character1's right side hits character2,
-	 *         NONE if no side collision happens.
-	 */
-	public static int horizontalCollision(MBBox character1, MBBox character2)
-	{
-		if ((character1.getBottomY() + character1.getYVector()) > (character2.getTopY() + character2.getYVector()) &&
-				(character1.getTopY() + character1.getYVector()) < (character2.getBottomY() + character2.getYVector()))
-		{
-			// left collision
-			if ((character1.getLeftX() + character1.getXVector()) <= (character2.getRightX() + character2.getXVector()) &&
-					character1.getLeftX() >= character2.getRightX())
-			{
-				return Constants.LEFT;
-			}
-			// right collision
-			else if ((character1.getRightX() + character1.getXVector()) >= (character2.getLeftX() + character2.getXVector()) &&
-					character1.getRightX() <= character2.getLeftX())
-			{
-				return Constants.RIGHT;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Check for collision of character1's top and bottom against character2.
-	 *
-	 * @param character1 movable object whose collision you want to check.
-	 * @param character2 movable object whose collision you want to check against.
-	 * @return DOWN if character1's feet hit character2's head,
-	 *         UP if character2's feet hit character1's head,
-	 *         NONE if no vertical collision happens.
-	 */
-	public static int verticalCollision(MBBox character1, MBBox character2)
-	{
-		if ((character1.getLeftX() + character1.getXVector()) < (character2.getRightX() + character2.getXVector()) &&
-				(character1.getRightX() + character1.getXVector()) > (character2.getLeftX() + character2.getXVector()))
-		{
-			// bottom collision
-			if ((character1.getBottomY() + character1.getYVector()) >= (character2.getTopY() + character2.getYVector()) &&
-					character1.getBottomY() <= character2.getTopY())
-			{
-				return Constants.DOWN;
-			}
-			// top collision
-			else if ((character1.getTopY() + character1.getYVector()) <= (character2.getBottomY() + character2.getYVector()) &&
-					character1.getTopY() >= character2.getBottomY())
-			{
-				return Constants.UP;
-			}
-		}
-		return Constants.NONE;
-	}
-
-	/**
-	 * Checks to see if the objects have already collided.
-	 *
-	 * @param wall1 first object that will be used in collision checking.
-	 * @param wall2 second object that will be used in collision checking.
-	 * @return true if the object have collided and false if they didn't.
-	 */
-	public static boolean collision(Box wall1, Box wall2)
-	{
-		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
-				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
-	}
-
-	/**
-	 * Checks to see if the objects have already collided.
-	 *
-	 * @param wall1 first object that will be used in collision checking.
-	 * @param wall2 second object that will be used in collision checking.
-	 * @return true if the object have collided and false if they didn't.
-	 */
-	public static boolean collision(BBox wall1, BBox wall2)
-	{
-		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
-				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
-	}
-
-	/**
-	 * Checks to see if the objects have already collided.
-	 *
-	 * @param character moving object that will be used in collision checking.
-	 * @param wall      wall object that will be used in collision checking.
-	 * @return true if the object have collided and false if they didn't.
-	 */
-	public static boolean collision(MBox character, Box wall)
-	{
-		return ((character.getTopY() <= wall.getBottomY()) && (character.getBottomY() >= wall.getTopY()) &&
-				(character.getLeftX() <= wall.getRightX()) && (character.getRightX() >= wall.getLeftX()));
-	}
-
-	/**
-	 * Checks to see if the objects have already collided.
-	 *
-	 * @param character moving object that will be used in collision checking.
-	 * @param wall      wall object that will be used in collision checking.
-	 * @return true if the object have collided and false if they didn't.
-	 */
-	public static boolean collision(MBBox character, Box wall)
-	{
-		return ((character.getTopY() <= wall.getBottomY()) && (character.getBottomY() >= wall.getTopY()) &&
-				(character.getLeftX() <= wall.getRightX()) && (character.getRightX() >= wall.getLeftX()));
-	}
-
-	/**
-	 * Checks to see if the objects have already collided.
-	 *
-	 * @param character moving object that will be used in collision checking.
-	 * @param wall      wall object that will be used in collision checking.
-	 * @return true if the object have collided and false if they didn't.
-	 */
-	public static boolean collision(MBBox character, BBox wall)
-	{
-		return ((character.getTopY() <= wall.getBottomY()) && (character.getBottomY() >= wall.getTopY()) &&
-				(character.getLeftX() <= wall.getRightX()) && (character.getRightX() >= wall.getLeftX()));
-	}
-
-	/**
-	 * Checks to see if the objects have already collided.
-	 *
-	 * @param character1 first moving object that will be used in collision checking.
-	 * @param character2 second moving object that will be used in collision checking.
-	 * @return true if the object have collided and false if they didn't.
-	 */
-	public static boolean collision(MBox character1, MBox character2)
-	{
-		return ((character1.getTopY() <= character2.getBottomY()) && (character1.getBottomY() >= character2.getTopY()) &&
-				(character1.getLeftX() <= character2.getRightX()) && (character1.getRightX() >= character2.getLeftX()));
-	}
-
-	/**
-	 * Checks to see if the objects have already collided.
-	 *
-	 * @param character1 first moving object that will be used in collision checking.
-	 * @param character2 second moving object that will be used in collision checking.
-	 * @return true if the object have collided and false if they didn't.
-	 */
-	public static boolean collision(MBBox character1, MBBox character2)
-	{
-		return ((character1.getTopY() <= character2.getBottomY()) && (character1.getBottomY() >= character2.getTopY()) &&
-				(character1.getLeftX() <= character2.getRightX()) && (character1.getRightX() >= character2.getLeftX()));
-	}
-
-/***********************************************************************************************************************************************************/
-/***********************************************************************************************************************************************************/
 /******  KEY ACTION  ***************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
 /***********************************************************************************************************************************************************/
@@ -860,5 +515,26 @@ public class Engine
 	public static int random(int min, int max)
 	{
 		return (min + (int) (Math.random() * ((max - min) + 1)));
+	}
+
+/***********************************************************************************************************************************************************/
+/***********************************************************************************************************************************************************/
+/*******  MATH  ********************************************************************************************************************************************/
+/***********************************************************************************************************************************************************/
+/***********************************************************************************************************************************************************/
+
+	public static double distance(Point one, Point two)
+	{
+		return Math.sqrt(Math.pow(deltaX(one, two), 2) + Math.pow(deltaY(one, two), 2));
+	}
+
+	public static double deltaY(Point one, Point two)
+	{
+		return one.getY() - two.getY();
+	}
+
+	public static double deltaX(Point one, Point two)
+	{
+		return one.getX() - two.getX();
 	}
 }

@@ -17,8 +17,8 @@ import java.awt.image.BufferedImage;
  */
 public class MCharacter extends MControls
 {
-	private BufferedImage image_;
-	private Color color_;
+	private BufferedImage image;
+	private Color color;
 
 	/**
 	 * Constructor for the character, originally contains no image,
@@ -27,7 +27,7 @@ public class MCharacter extends MControls
 	public MCharacter()
 	{
 		super();
-		image_ = null;
+		this.image = null;
 		this.setColor(Color.BLACK);
 	}
 
@@ -38,7 +38,7 @@ public class MCharacter extends MControls
 	 */
 	public void setColor(Color color)
 	{
-		this.color_ = color;
+		this.color = color;
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class MCharacter extends MControls
 	 */
 	public Color getColor()
 	{
-		return this.color_;
+		return this.color;
 	}
 
 	/**
@@ -58,13 +58,13 @@ public class MCharacter extends MControls
 	 */
 	public boolean loadImage(String path)
 	{
-		this.image_ = ImageProcessor.loadImage(path);
+		this.image = ImageProcessor.loadImage(path);
 
-		if(this.image_ == null)
+		if(this.image == null)
 			return false;
 
-		super.setWidth(image_.getWidth());
-		super.setHeight(image_.getHeight());
+		super.setWidth(this.image.getWidth());
+		super.setHeight(this.image.getHeight());
 
 		return true;
 	}
@@ -76,7 +76,7 @@ public class MCharacter extends MControls
 	 */
 	public BufferedImage getImage()
 	{
-		return this.image_;
+		return this.image;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class MCharacter extends MControls
 	 */
 	public void draw(Graphics2D g)
 	{
-		if (image_ == null)
+		if (this.image == null)
 		{
 			g.setColor(this.getColor());
 			g.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());

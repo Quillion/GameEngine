@@ -1,8 +1,8 @@
 package test5;
 
-import BasicShapes.Item;
+import BasicObjects.Item;
 import BasicSprite.BPlatform;
-import Constants.Constants;
+import constants.Constants;
 import abstracts.Game;
 import logic.*;
 import abstracts.Level;
@@ -506,25 +506,25 @@ public class LevelOne extends Level
 			// VS AI
 			for(BasicCharacter comp : ai)
 			{
-				int vert = Engine.verticalCollision(character, comp);
-				int hort = Engine.horizontalCollision(character, comp);
+				Constants.Direction vert = CollisionEngine.verticalCollision(character, comp);
+				Constants.Direction hort = CollisionEngine.horizontalCollision(character, comp);
 
-				if(hort == Constants.RIGHT)
+				if(hort == Constants.Direction.Right)
 				{
 					character.setXVector(-character.getJump());
 					character.setYVector(-character.getJump() / 2);
 				}
-				else if(hort == Constants.LEFT)
+				else if(hort == Constants.Direction.Left)
 				{
 					character.setXVector(character.getJump());
 					character.setYVector(-character.getJump() / 2);
 				}
 
-				if(vert == Constants.UP)
+				if(vert == Constants.Direction.Up)
 				{
 					character.setYVector(character.getJump());
 				}
-				else if(vert == Constants.DOWN)
+				else if(vert == Constants.Direction.Down)
 				{
 					character.setYVector(-character.getJump());
 				}
@@ -532,30 +532,30 @@ public class LevelOne extends Level
 			// VS GROUND
 			for(BPlatform ground : grounds)
 			{
-				int vert = Engine.verticalCollision(character, ground);
-				int hort = Engine.horizontalCollision(character, ground);
+				Constants.Direction vert = CollisionEngine.verticalCollision(character, ground);
+				Constants.Direction hort = CollisionEngine.horizontalCollision(character, ground);
 
-				if(hort == Constants.RIGHT)
+				if(hort == Constants.Direction.Right)
 				{
 					character.setRight(false);
 					character.setX(ground.getLeftX() - character.getWidth() + character.getHorizontalOffset());
 					character.setXVector(0);
 				}
-				else if(hort == Constants.LEFT)
+				else if(hort == Constants.Direction.Left)
 				{
 					character.setLeft(false);
 					character.setX(ground.getRightX() - character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 
-				if(vert == Constants.UP)
+				if(vert == Constants.Direction.Up)
 				{
 					if(character.getGravity() < 0)
 						character.setStanding(true);
 					character.setY(ground.getBottomY() - character.getVerticalOffset());
 					character.setYVector(0);
 				}
-				else if(vert == Constants.DOWN)
+				else if(vert == Constants.Direction.Down)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
@@ -566,9 +566,9 @@ public class LevelOne extends Level
 			// VS PLATFORMS
 			for(BPlatform platform : platforms)
 			{
-				int vert = Engine.verticalCollision(character, platform);
+				Constants.Direction vert = CollisionEngine.verticalCollision(character, platform);
 
-				if(vert == Constants.DOWN)
+				if(vert == Constants.Direction.Down)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
@@ -577,7 +577,7 @@ public class LevelOne extends Level
 				}
 			}
 
-			setActive(!Engine.collision(character, flag));
+			setActive(!CollisionEngine.collision(character, flag));
 
 			Engine.postUpdate(character);
 
@@ -603,30 +603,30 @@ public class LevelOne extends Level
 			// VS GROUND
 			for(BPlatform ground : grounds)
 			{
-				int vert = Engine.verticalCollision(character, ground);
-				int hort = Engine.horizontalCollision(character, ground);
+				Constants.Direction vert = CollisionEngine.verticalCollision(character, ground);
+				Constants.Direction hort = CollisionEngine.horizontalCollision(character, ground);
 
-				if(hort == Constants.RIGHT)
+				if(hort == Constants.Direction.Right)
 				{
 					character.setRight(false);
 					character.setX(ground.getLeftX() - character.getWidth() + character.getHorizontalOffset());
 					character.setXVector(0);
 				}
-				else if(hort == Constants.LEFT)
+				else if(hort == Constants.Direction.Left)
 				{
 					character.setLeft(false);
 					character.setX(ground.getRightX() - character.getHorizontalOffset());
 					character.setXVector(0);
 				}
 
-				if(vert == Constants.UP)
+				if(vert == Constants.Direction.Up)
 				{
 					if(character.getGravity() < 0)
 						character.setStanding(true);
 					character.setY(ground.getBottomY() - character.getVerticalOffset());
 					character.setYVector(0);
 				}
-				else if(vert == Constants.DOWN)
+				else if(vert == Constants.Direction.Down)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);
@@ -637,9 +637,9 @@ public class LevelOne extends Level
 			// VS PLATFORMS
 			for(BPlatform platform : platforms)
 			{
-				int vert = Engine.verticalCollision(character, platform);
+				Constants.Direction vert = CollisionEngine.verticalCollision(character, platform);
 
-				if(vert == Constants.DOWN)
+				if(vert == Constants.Direction.Down)
 				{
 					if(character.getGravity() > 0)
 						character.setStanding(true);

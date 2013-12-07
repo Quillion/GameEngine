@@ -25,8 +25,8 @@ public abstract class Level
 	 */
 	public Level(Game game)
 	{
-		active = false;
-		loaded = false;
+		this.active = false;
+		this.loaded = false;
 		this.game = game;
 	}
 
@@ -37,7 +37,7 @@ public abstract class Level
 	 */
 	public boolean isActive()
 	{
-		return active;
+		return this.active;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public abstract class Level
 	 */
 	public boolean isLoaded()
 	{
-		return loaded;
+		return this.loaded;
 	}
 
 	/**
@@ -80,7 +80,7 @@ public abstract class Level
 	 */
 	public Game getGame()
 	{
-		return game;
+		return this.game;
 	}
 
 	/**

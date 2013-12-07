@@ -5,7 +5,7 @@ package BasicSprite;
  * @since 1.6
  */
 
-import BasicShapes.Box;
+import BasicObjects.Box;
 import utils.ImageProcessor;
 
 import java.awt.*;
@@ -20,8 +20,8 @@ import java.awt.image.BufferedImage;
  */
 public class Platform extends Box
 {
-	private BufferedImage image_;
-	private Color color_;
+	private BufferedImage image;
+	private Color color;
 
 	/**
 	 * Constructor for the platform, originally contains no image,
@@ -30,7 +30,7 @@ public class Platform extends Box
 	public Platform()
 	{
 		super();
-		image_ = null;
+		this.image = null;
 		this.setColor(Color.BLACK);
 	}
 
@@ -41,7 +41,7 @@ public class Platform extends Box
 	 */
 	public void setColor(Color color)
 	{
-		this.color_ = color;
+		this.color = color;
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class Platform extends Box
 	 */
 	public Color getColor()
 	{
-		return this.color_;
+		return this.color;
 	}
 
 	/**
@@ -61,9 +61,9 @@ public class Platform extends Box
 	 */
 	public void setImage(BufferedImage image)
 	{
-		this.image_ = image;
-		super.setWidth(image_.getWidth());
-		super.setHeight(image_.getHeight());
+		this.image = image;
+		super.setWidth(image.getWidth());
+		super.setHeight(image.getHeight());
 	}
 
 	/**
@@ -73,13 +73,13 @@ public class Platform extends Box
 	 */
 	public boolean loadImage(String path)
 	{
-		this.image_ = ImageProcessor.loadImage(path);
+		this.image = ImageProcessor.loadImage(path);
 
-		if(this.image_ == null)
+		if(this.image == null)
 			return false;
 
-		super.setWidth(image_.getWidth());
-		super.setHeight(image_.getHeight());
+		super.setWidth(this.image.getWidth());
+		super.setHeight(this.image.getHeight());
 
 		return true;
 	}
@@ -91,7 +91,7 @@ public class Platform extends Box
 	 */
 	public BufferedImage getImage()
 	{
-		return this.image_;
+		return this.image;
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class Platform extends Box
 	 */
 	public void draw(Graphics2D g)
 	{
-		if (image_ == null)
+		if (this.image == null)
 		{
 			g.setColor(this.getColor());
 			g.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());

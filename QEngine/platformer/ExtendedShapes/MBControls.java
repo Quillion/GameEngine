@@ -5,7 +5,7 @@ package platformer.ExtendedShapes;
  * @since 1.6
  */
 
-import Constants.Constants;
+import constants.Constants;
 import platformer.MovingShapes.MBBox;
 
 /**
@@ -13,7 +13,7 @@ import platformer.MovingShapes.MBBox;
  */
 public class MBControls extends MBBox
 {
-	private boolean left_, right_, standing_;
+	private boolean left, right, standing;
 	private int LEFT, RIGHT, JUMP;
 
 	/**
@@ -39,7 +39,7 @@ public class MBControls extends MBBox
 	 */
 	public void setLeft(boolean value)
 	{
-		this.left_ = value;
+		this.left = value;
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class MBControls extends MBBox
 	 */
 	public boolean getLeft()
 	{
-		return this.left_;
+		return this.left;
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class MBControls extends MBBox
 	 */
 	public void setRight(boolean value)
 	{
-		this.right_ = value;
+		this.right = value;
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class MBControls extends MBBox
 	 */
 	public boolean getRight()
 	{
-		return this.right_;
+		return this.right;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class MBControls extends MBBox
 	 */
 	public void setStanding(boolean value)
 	{
-		this.standing_ = value;
+		this.standing = value;
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class MBControls extends MBBox
 	 */
 	public boolean isStanding()
 	{
-		return this.standing_;
+		return this.standing;
 	}
 
 	/**

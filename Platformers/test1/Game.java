@@ -13,7 +13,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 import BasicSprite.Platform;
-import Constants.Constants;
+import constants.Constants;
+import logic.CollisionEngine;
 import logic.Engine;
 import platformer.BasicSprite.MCharacter;
 
@@ -167,28 +168,28 @@ public class Game
             characters.get(j).setStanding(false);
 			for (Platform platform : platforms)
 			{
-				int vert = Engine.verticalCollision(characters.get(j), platform);
-				int hort = Engine.horizontalCollision(characters.get(j), platform);
+				Constants.Direction vert = CollisionEngine.verticalCollision(characters.get(j), platform);
+				Constants.Direction hort = CollisionEngine.horizontalCollision(characters.get(j), platform);
 
-				if (hort == Constants.RIGHT)
+				if (hort == Constants.Direction.Right)
 				{
 					characters.get(j).setRight(false);
 					characters.get(j).setX(platform.getLeftX() - characters.get(j).getWidth());
 					characters.get(j).setXVector(0);
-				} else if (hort == Constants.LEFT)
+				} else if (hort == Constants.Direction.Left)
 				{
 					characters.get(j).setLeft(false);
 					characters.get(j).setX(platform.getRightX());
 					characters.get(j).setXVector(0);
 				}
 
-				if (vert == Constants.UP)
+				if (vert == Constants.Direction.Up)
 				{
 					if (characters.get(j).getGravity() < 0)
 						characters.get(j).setStanding(true);
 					characters.get(j).setY(platform.getBottomY());
 					characters.get(j).setYVector(0);
-				} else if (vert == Constants.DOWN)
+				} else if (vert == Constants.Direction.Down)
 				{
 					if (characters.get(j).getGravity() > 0)
 						characters.get(j).setStanding(true);
@@ -201,30 +202,30 @@ public class Game
             {
                 if(i != j)
                 {
-                    int vert = Engine.verticalCollision(characters.get(j), characters.get(i));
-                    int hort = Engine.horizontalCollision(characters.get(j), characters.get(i));
+                    Constants.Direction vert = CollisionEngine.verticalCollision(characters.get(j), characters.get(i));
+                    Constants.Direction hort = CollisionEngine.horizontalCollision(characters.get(j), characters.get(i));
 
-                    if(hort == Constants.RIGHT)
+                    if(hort == Constants.Direction.Right)
                     {
                         characters.get(j).setRight(false);
                         characters.get(j).setX(characters.get(i).getLeftX() - characters.get(j).getWidth());
                         characters.get(j).setXVector(0);
                     }
-                    else if(hort == Constants.LEFT)
+                    else if(hort == Constants.Direction.Left)
                     {
                         characters.get(j).setLeft(false);
                         characters.get(j).setX(characters.get(i).getRightX());
                         characters.get(j).setXVector(0);
                     }
 
-                    if(vert == Constants.UP)
+                    if(vert == Constants.Direction.Up)
                     {
                         if(characters.get(j).getGravity() < 0)
                             characters.get(j).setStanding(true);
                         characters.get(j).setY(characters.get(i).getBottomY());
                         characters.get(j).setYVector(0);
                     }
-                    else if(vert == Constants.DOWN)
+                    else if(vert == Constants.Direction.Down)
                     {
                         if(characters.get(j).getGravity() > 0)
                             characters.get(j).setStanding(true);

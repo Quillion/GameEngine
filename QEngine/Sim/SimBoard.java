@@ -5,8 +5,9 @@ package Sim;
  * @since 1.6
  */
 
-import BasicShapes.Field;
-import Constants.Constants;
+import BasicObjects.Dimensions;
+import BasicObjects.Field;
+import constants.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,10 @@ import java.util.List;
  */
 public class SimBoard
 {
-	private int sides_;
-	private List<Field> board_;
-	private int idCounter_;
-	private int width_, height_;
+	private int sides;
+	private List<Field> board;
+	private int idCounter;
+	private Dimensions size;
 
 	/**
 	 * If we are making a board then we have to specify the width and height of the board,
@@ -46,7 +47,7 @@ public class SimBoard
 	 */
 	public int getSides()
 	{
-		return sides_;
+		return this.sides;
 	}
 
 	/**
@@ -60,7 +61,7 @@ public class SimBoard
 	{
 		if (sides != Constants.FOUR_SIDED && sides != Constants.SIX_SIDED)
 			return false;
-		this.sides_ = sides;
+		this.sides = sides;
 		return true;
 	}
 
@@ -71,7 +72,7 @@ public class SimBoard
 	 */
 	private void setWidth(int width)
 	{
-		this.width_ = width;
+		this.size.setWidth(width);
 	}
 
 	/**
@@ -81,7 +82,7 @@ public class SimBoard
 	 */
 	public int getWidth()
 	{
-		return this.width_;
+		return this.size.getWidth();
 	}
 
 	/**
@@ -91,7 +92,7 @@ public class SimBoard
 	 */
 	private void setHeight(int height)
 	{
-		this.height_ = height;
+		this.size.setHeight(height);
 	}
 
 	/**
@@ -101,7 +102,7 @@ public class SimBoard
 	 */
 	public int getHeight()
 	{
-		return this.height_;
+		return this.size.getHeight();
 	}
 
 	/**
@@ -110,12 +111,12 @@ public class SimBoard
 	 */
 	private void generateBoard()
 	{
-		board_ = new ArrayList<Field>(this.getWidth() * this.getHeight() - 1);
+		this.board = new ArrayList<Field>(this.getWidth() * this.getHeight() - 1);
 		for (int y = 0; y < this.getHeight(); y++)
 		{
 			for (int x = 0; x < this.getWidth(); x++)
 			{
-				Field field = new Field(this.idCounter_++);
+				Field field = new Field(this.idCounter++);
 				if (this.getSides() == Constants.FOUR_SIDED)
 				{
 					// WE ARE NOT LEFTMOST FIELD,
@@ -161,7 +162,7 @@ public class SimBoard
 
 					}
 				}
-				board_.add(field);
+				this.board.add(field);
 			}
 		}
 	}
@@ -185,6 +186,6 @@ public class SimBoard
 	 */
 	public List<Field> getBoard()
 	{
-		return this.board_;
+		return this.board;
 	}
 }

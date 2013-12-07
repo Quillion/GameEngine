@@ -5,16 +5,13 @@ package platformer.MovingShapes;
  * @since 1.6
  */
 
-import BasicShapes.BBox;
-
 /**
  * Bounding box with vector qualities.
  */
-public class MBBox extends BBox
+public class MBBox extends BasicObjects.MBBox
 {
-	private double xVector_, yVector_;
-	private double gravity_, groundFriction_, airFriction_;
-	private double acceleration_, maxSpeed_, jump_;
+	private double gravity, groundFriction, airFriction;
+	private double acceleration, maxSpeed, jump;
 
 	/**
 	 * Constructor, creates box which has vectors,
@@ -24,8 +21,6 @@ public class MBBox extends BBox
 	public MBBox()
 	{
 		super();
-		this.setXVector(0);
-		this.setYVector(0);
 		this.setGravity(0);
 		this.setGroundFriction(0);
 		this.setAirFriction(0);
@@ -35,75 +30,13 @@ public class MBBox extends BBox
 	}
 
 	/**
-	 * Sets the x vector to whatever you want.
-	 * Useful if you want to launch an object at high speed.
-	 *
-	 * @param vector vector value to which x vector will be set to.
-	 */
-	public void setXVector(double vector)
-	{
-		this.xVector_ = vector;
-	}
-
-	/**
-	 * Returns a double which represents x vector.
-	 *
-	 * @return value of x vector.
-	 */
-	public double getXVector()
-	{
-		return this.xVector_;
-	}
-
-	/**
-	 * Increments x vector by a value of vector.
-	 *
-	 * @param vector value by which x vector will be incremented.
-	 */
-	public void incrementXVector(double vector)
-	{
-		this.xVector_ += vector;
-	}
-
-	/**
-	 * Sets the y vector to whatever you want.
-	 * Useful if you want to launch an object at high speed.
-	 *
-	 * @param vector vector value to which y vector will be set to.
-	 */
-	public void setYVector(double vector)
-	{
-		this.yVector_ = vector;
-	}
-
-	/**
-	 * Returns a double which represents y vector.
-	 *
-	 * @return value of y vector.
-	 */
-	public double getYVector()
-	{
-		return this.yVector_;
-	}
-
-	/**
-	 * Increments y vector by a value of vector.
-	 *
-	 * @param vector value by which y vector will be incremented.
-	 */
-	public void incrementYVector(double vector)
-	{
-		this.yVector_ += vector;
-	}
-
-	/**
 	 * Sets gravity to whatever floats your boat.
 	 *
 	 * @param gravity new value to which gravity will be set to.
 	 */
 	public void setGravity(double gravity)
 	{
-		this.gravity_ = gravity;
+		this.gravity = gravity;
 	}
 
 	/**
@@ -113,7 +46,7 @@ public class MBBox extends BBox
 	 */
 	public double getGravity()
 	{
-		return this.gravity_;
+		return this.gravity;
 	}
 
 	/**
@@ -124,7 +57,7 @@ public class MBBox extends BBox
 	 */
 	public void incrementGravity(double value)
 	{
-		this.gravity_ += value;
+		this.gravity += value;
 	}
 
 	/**
@@ -135,7 +68,7 @@ public class MBBox extends BBox
 	 */
 	public void setGroundFriction(double friction)
 	{
-		this.groundFriction_ = friction;
+		this.groundFriction = friction;
 	}
 
 	/**
@@ -145,7 +78,7 @@ public class MBBox extends BBox
 	 */
 	public double getGroundFriction()
 	{
-		return this.groundFriction_;
+		return this.groundFriction;
 	}
 
 	/**
@@ -156,7 +89,7 @@ public class MBBox extends BBox
 	 */
 	public void incrementGroundFriction(double value)
 	{
-		this.groundFriction_ += value;
+		this.groundFriction += value;
 	}
 
 	/**
@@ -167,7 +100,7 @@ public class MBBox extends BBox
 	 */
 	public void setAirFriction(double friction)
 	{
-		this.airFriction_ = friction;
+		this.airFriction = friction;
 	}
 
 	/**
@@ -177,7 +110,7 @@ public class MBBox extends BBox
 	 */
 	public double getAirFriction()
 	{
-		return this.airFriction_;
+		return this.airFriction;
 	}
 
 	/**
@@ -188,7 +121,7 @@ public class MBBox extends BBox
 	 */
 	public void incrementAirFriction(double value)
 	{
-		this.airFriction_ += value;
+		this.airFriction += value;
 	}
 
 	/**
@@ -198,7 +131,7 @@ public class MBBox extends BBox
 	 */
 	public void setAcceleration(double acceleration)
 	{
-		this.acceleration_ = acceleration;
+		this.acceleration = acceleration;
 	}
 
 	/**
@@ -208,7 +141,7 @@ public class MBBox extends BBox
 	 */
 	public double getAcceleration()
 	{
-		return this.acceleration_;
+		return this.acceleration;
 	}
 
 	/**
@@ -219,7 +152,7 @@ public class MBBox extends BBox
 	 */
 	public void incrementAcceleration(double value)
 	{
-		this.acceleration_ += value;
+		this.acceleration += value;
 	}
 
 	/**
@@ -229,7 +162,7 @@ public class MBBox extends BBox
 	 */
 	public void setMaxSpeed(double speed)
 	{
-		this.maxSpeed_ = speed;
+		this.maxSpeed = speed;
 	}
 
 	/**
@@ -239,7 +172,7 @@ public class MBBox extends BBox
 	 */
 	public double getMaxSpeed()
 	{
-		return this.maxSpeed_;
+		return this.maxSpeed;
 	}
 
 	/**
@@ -250,7 +183,7 @@ public class MBBox extends BBox
 	 */
 	public void incrementMaxSpeed(double value)
 	{
-		this.maxSpeed_ += value;
+		this.maxSpeed += value;
 	}
 
 	/**
@@ -261,7 +194,7 @@ public class MBBox extends BBox
 	 */
 	public void setJump(double jump)
 	{
-		this.jump_ = jump;
+		this.jump = jump;
 	}
 
 	/**
@@ -271,7 +204,7 @@ public class MBBox extends BBox
 	 */
 	public double getJump()
 	{
-		return this.jump_;
+		return this.jump;
 	}
 
 	/**
@@ -282,6 +215,6 @@ public class MBBox extends BBox
 	 */
 	public void incrementJump(double value)
 	{
-		this.jump_ += value;
+		this.jump += value;
 	}
 }

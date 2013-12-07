@@ -15,7 +15,7 @@ import java.io.File;
  */
 public class ImageExtractor
 {
-	private BufferedImage image_;
+	private BufferedImage image;
 
 	/**
 	 * Specify the path to the image and it will be loaded.
@@ -36,7 +36,7 @@ public class ImageExtractor
 	 */
 	public ImageExtractor(BufferedImage image)
 	{
-		this.image_ = image;
+		this.image = image;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ImageExtractor
 		{
 			try
 			{
-				image_ = ImageIO.read(file_);
+				this.image = ImageIO.read(file_);
 			}
 			catch (Exception e)
 			{
@@ -73,7 +73,7 @@ public class ImageExtractor
 	 */
 	public BufferedImage getImage()
 	{
-		return this.image_;
+		return this.image;
 	}
 
 	/**
@@ -87,6 +87,6 @@ public class ImageExtractor
 	 */
 	public BufferedImage getImage(int x, int y, int width, int height)
 	{
-		return image_.getSubimage(x, y, width, height);
+		return this.image.getSubimage(x, y, width, height);
 	}
 }

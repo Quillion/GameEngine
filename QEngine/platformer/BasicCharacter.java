@@ -5,8 +5,8 @@ package platformer;
  * @since 1.6
  */
 
-import BasicShapes.Animation;
-import Constants.Constants;
+import BasicObjects.Animation;
+import constants.Constants;
 import platformer.ExtendedShapes.MBControls;
 import utils.ImageProcessor;
 
@@ -20,10 +20,10 @@ import java.awt.image.BufferedImage;
  */
 public class BasicCharacter extends MBControls
 {
-	private Animation[] walk_;
-	private Animation[] jump_;
-	private Animation[] stand_;
-	private boolean left_;
+	private Animation[] walk;
+	private Animation[] jump;
+	private Animation[] stand;
+	private boolean left;
 
 	/**
 	 * Basic Character.
@@ -32,9 +32,9 @@ public class BasicCharacter extends MBControls
 	 */
 	public BasicCharacter()
 	{
-		walk_ = new Animation[2];
-		jump_ = new Animation[2];
-		stand_ = new Animation[2];
+		this.walk = new Animation[2];
+		this.jump = new Animation[2];
+		this.stand = new Animation[2];
 		this.setLeftPressed(true);
 	}
 
@@ -46,8 +46,8 @@ public class BasicCharacter extends MBControls
 	 */
 	public void setWalk(int size, int refreshRate)
 	{
-		walk_[Constants.LEFT] = new Animation(size, refreshRate);
-		walk_[Constants.RIGHT] = new Animation(size, refreshRate);
+		this.walk[Constants.LEFT] = new Animation(size, refreshRate);
+		this.walk[Constants.RIGHT] = new Animation(size, refreshRate);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class BasicCharacter extends MBControls
 	 */
 	public void setJump(int size, int refreshRate)
 	{
-		jump_[Constants.LEFT] = new Animation(size, refreshRate);
-		jump_[Constants.RIGHT] = new Animation(size, refreshRate);
+		this.jump[Constants.LEFT] = new Animation(size, refreshRate);
+		this.jump[Constants.RIGHT] = new Animation(size, refreshRate);
 	}
 
 	/**
@@ -70,8 +70,8 @@ public class BasicCharacter extends MBControls
 	 */
 	public void setStand(int size, int refreshRate)
 	{
-		stand_[Constants.LEFT] = new Animation(size, refreshRate);
-		stand_[Constants.RIGHT] = new Animation(size, refreshRate);
+		this.stand[Constants.LEFT] = new Animation(size, refreshRate);
+		this.stand[Constants.RIGHT] = new Animation(size, refreshRate);
 	}
 
 	/**
@@ -82,8 +82,8 @@ public class BasicCharacter extends MBControls
 	 */
 	public boolean addWalk(BufferedImage image)
 	{
-		walk_[Constants.LEFT].addImage(image);
-		return walk_[Constants.RIGHT].addImage(ImageProcessor.flipVertically(image));
+		this.walk[Constants.LEFT].addImage(image);
+		return this.walk[Constants.RIGHT].addImage(ImageProcessor.flipVertically(image));
 	}
 
 	/**
@@ -93,8 +93,8 @@ public class BasicCharacter extends MBControls
 	 */
 	public void addJump(BufferedImage image)
 	{
-		jump_[Constants.LEFT].addImage(image);
-		jump_[Constants.RIGHT].addImage(ImageProcessor.flipVertically(image));
+		this.jump[Constants.LEFT].addImage(image);
+		this.jump[Constants.RIGHT].addImage(ImageProcessor.flipVertically(image));
 	}
 
 	/**
@@ -104,8 +104,8 @@ public class BasicCharacter extends MBControls
 	 */
 	public void addStand(BufferedImage image)
 	{
-		stand_[Constants.LEFT].addImage(image);
-		stand_[Constants.RIGHT].addImage(ImageProcessor.flipVertically(image));
+		this.stand[Constants.LEFT].addImage(image);
+		this.stand[Constants.RIGHT].addImage(ImageProcessor.flipVertically(image));
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class BasicCharacter extends MBControls
 	 */
 	public void setLeftPressed(boolean left)
 	{
-		this.left_ = left;
+		this.left = left;
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class BasicCharacter extends MBControls
 	 */
 	public boolean getLeftPressed()
 	{
-		return this.left_;
+		return this.left;
 	}
 
 	/**
@@ -143,16 +143,16 @@ public class BasicCharacter extends MBControls
 			{
 				if (super.getXVector() != 0)
 				{
-					return walk_[Constants.LEFT].getImage();
+					return this.walk[Constants.LEFT].getImage();
 				}
 				else
 				{
-					return stand_[Constants.LEFT].getImage();
+					return this.stand[Constants.LEFT].getImage();
 				}
 			}
 			else
 			{
-				return jump_[Constants.LEFT].getImage();
+				return this.jump[Constants.LEFT].getImage();
 			}
 		}
 		else
@@ -161,16 +161,16 @@ public class BasicCharacter extends MBControls
 			{
 				if (super.getXVector() != 0)
 				{
-					return walk_[Constants.RIGHT].getImage();
+					return this.walk[Constants.RIGHT].getImage();
 				}
 				else
 				{
-					return stand_[Constants.RIGHT].getImage();
+					return this.stand[Constants.RIGHT].getImage();
 				}
 			}
 			else
 			{
-				return jump_[Constants.RIGHT].getImage();
+				return this.jump[Constants.RIGHT].getImage();
 			}
 		}
 	}

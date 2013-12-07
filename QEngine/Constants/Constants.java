@@ -1,4 +1,4 @@
-package Constants;
+package constants;
 /**
  * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version     Version 1
@@ -10,6 +10,28 @@ package Constants;
  */
 public class Constants
 {
+	public enum Direction
+	{
+		None(-1), Left(0), Right(1), Up(2), Down(3);
+
+		private int value;
+
+		private Direction(int value)
+		{
+			this.value = value;
+		}
+
+		public int getValue()
+		{
+			return this.value;
+		}
+	}
+
+	public enum Action
+	{
+		None, MoveLeft, MoveRight, MoveUp, MoveDown, Jump
+	}
+
 	// PLATFORMER
     public static int NONE = -1;
     public static int LEFT = 0;
