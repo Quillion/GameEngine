@@ -34,6 +34,7 @@ public class Ball extends Shape
 	 *
 	 * @param x the value to which x will be set to.
 	 */
+	@Override
 	public void setX(double x)
 	{
 		this.center.setX(x);
@@ -45,6 +46,7 @@ public class Ball extends Shape
 	 *
 	 * @return returns the x value of the object.
 	 */
+	@Override
 	public int getX()
 	{
 		return (int) this.center.getX();
@@ -55,6 +57,7 @@ public class Ball extends Shape
 	 *
 	 * @param x the value by which to increment x by.
 	 */
+	@Override
 	public void incrementX(double x)
 	{
 		this.center.incrementX(x);
@@ -65,6 +68,7 @@ public class Ball extends Shape
 	 *
 	 * @param y the value to which y will be set to.
 	 */
+	@Override
 	public void setY(double y)
 	{
 		this.center.setY(y);
@@ -76,6 +80,7 @@ public class Ball extends Shape
 	 *
 	 * @return returns the y value of the object.
 	 */
+	@Override
 	public int getY()
 	{
 		return (int) this.center.getY();
@@ -86,6 +91,7 @@ public class Ball extends Shape
 	 *
 	 * @param y the value by which to increment y by.
 	 */
+	@Override
 	public void incrementY(double y)
 	{
 		this.center.incrementY(y);
@@ -96,6 +102,7 @@ public class Ball extends Shape
 	 *
 	 * @return The center of this ball.
 	 */
+	@Override
 	public Point getCenter()
 	{
 		return this.center;
@@ -106,6 +113,7 @@ public class Ball extends Shape
 	 *
 	 * @param width the value to which shape's width will be set to.
 	 */
+	@Override
 	public void setWidth(int width)
 	{
 		this.setRadius(width);
@@ -116,6 +124,7 @@ public class Ball extends Shape
 	 *
 	 * @return the width of this shape.
 	 */
+	@Override
 	public int getWidth()
 	{
 		return this.getRadius();
@@ -126,6 +135,7 @@ public class Ball extends Shape
 	 *
 	 * @param amount how much to increment this shape's width by.
 	 */
+	@Override
 	public void incrementWidth(int amount)
 	{
 		this.incrementRadius(amount);
@@ -136,6 +146,7 @@ public class Ball extends Shape
 	 *
 	 * @param height the value to which shape's height will be set to.
 	 */
+	@Override
 	public void setHeight(int height)
 	{
 		this.setRadius(height);
@@ -146,6 +157,7 @@ public class Ball extends Shape
 	 *
 	 * @return the width of this shape.
 	 */
+	@Override
 	public int getHeight()
 	{
 		return this.getRadius();
@@ -156,9 +168,21 @@ public class Ball extends Shape
 	 *
 	 * @param amount how much to increment this shape's height by.
 	 */
+	@Override
 	public void incrementHeight(int amount)
 	{
 		this.incrementRadius(amount);
+	}
+
+	/**
+	 * Must I say that a ball must be round and as such will always only have one size?
+	 *
+	 * @param size The new Size for this object.
+	 */
+	@Override
+	public void setSize(Dimensions size)
+	{
+		this.setRadius(size.getWidth());
 	}
 
 	/**
@@ -166,9 +190,21 @@ public class Ball extends Shape
 	 *
 	 * @param vector The vector that should be applied to this box.
 	 */
+	@Override
 	public void move(Point vector)
 	{
 		this.center.move(vector);
+	}
+
+	/**
+	 * Sets the coordinates of this ball. Ball's coordinates have to do with it's center.
+	 *
+	 * @param point The new coordinates of this ball.
+	 */
+	@Override
+	public void setCoordinates(Point point)
+	{
+		this.center.changeLocation(point);
 	}
 
 	/**
@@ -177,6 +213,7 @@ public class Ball extends Shape
 	 *
 	 * @return the shape's left x coordinate.
 	 */
+	@Override
 	public int getLeftX()
 	{
 		return (this.getX() - this.getRadius());
@@ -188,6 +225,7 @@ public class Ball extends Shape
 	 *
 	 * @return the shape's right x coordinate(which is x+width).
 	 */
+	@Override
 	public int getRightX()
 	{
 		return (this.getX() + this.getWidth());
@@ -199,6 +237,7 @@ public class Ball extends Shape
 	 *
 	 * @return the shape's top y coordinate.
 	 */
+	@Override
 	public int getTopY()
 	{
 		return (this.getY() - this.getHeight());
@@ -210,6 +249,7 @@ public class Ball extends Shape
 	 *
 	 * @return the shape's bottom y coordinate(which is y+height).
 	 */
+	@Override
 	public int getBottomY()
 	{
 		return (this.getY() + this.getHeight());
@@ -220,6 +260,7 @@ public class Ball extends Shape
 	 *
 	 * @return Point which represents top left corner of the shape.
 	 */
+	@Override
 	public Point getTopLeft()
 	{
 		return new Point(this.getLeftX(), this.getTopY());
@@ -230,6 +271,7 @@ public class Ball extends Shape
 	 *
 	 * @return Point which represents top right corner of the shape.
 	 */
+	@Override
 	public Point getTopRight()
 	{
 		return new Point(this.getRightX(), this.getTopY());
@@ -240,6 +282,7 @@ public class Ball extends Shape
 	 *
 	 * @return Point which represents bottom left corner of the shape.
 	 */
+	@Override
 	public Point getBottomLeft()
 	{
 		return new Point(this.getLeftX(), this.getBottomY());
@@ -250,6 +293,7 @@ public class Ball extends Shape
 	 *
 	 * @return Point which represents bottom right corner of the shape.
 	 */
+	@Override
 	public Point getBottomRight()
 	{
 		return new Point(this.getRightX(), this.getBottomY());
@@ -261,6 +305,7 @@ public class Ball extends Shape
 	 *
 	 * @return the shape's center x coordinate.
 	 */
+	@Override
 	public int getCenterX()
 	{
 		return this.getX();
@@ -272,6 +317,7 @@ public class Ball extends Shape
 	 *
 	 * @return the shape's center y coordinate.
 	 */
+	@Override
 	public int getCenterY()
 	{
 		return this.getY();
@@ -334,8 +380,22 @@ public class Ball extends Shape
 	 *
 	 * @param g graphics where the box will be drawn into.
 	 */
+	@Override
 	public void draw(Graphics2D g)
 	{
 		this.drawBall(g);
+	}
+
+	/**
+	 * Returns a brand new copy of this Ball and it will have all the same values.
+	 *
+	 * @return A new copy of this ball object.
+	 */
+	public Ball copy()
+	{
+		Ball ball = new Ball();
+		ball.setRadius(this.getRadius());
+		ball.setCoordinates(this.getCenter().copy());
+		return ball;
 	}
 }

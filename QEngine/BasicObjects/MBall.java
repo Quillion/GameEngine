@@ -1,11 +1,14 @@
 package BasicObjects;
+
+import java.awt.*;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-public class MBall extends Ball
+public class MBall extends BBall
 {
 	private Point vector;
 
@@ -47,6 +50,14 @@ public class MBall extends Ball
 	}
 
 	/**
+	 * Reverses the X vector of this ball.
+	 */
+	public void reverseXVector()
+	{
+		this.vector.reverseX();
+	}
+
+	/**
 	 * Sets the y vector to whatever you want.
 	 * Useful if you want to launch an object at high speed.
 	 *
@@ -78,6 +89,14 @@ public class MBall extends Ball
 	}
 
 	/**
+	 * Reverses the y vector of this ball.
+	 */
+	public void reverseYVector()
+	{
+		this.vector.reverseY();
+	}
+
+	/**
 	 * Gives you a Point that represents the vector of this character.
 	 *
 	 * @return Vector of this given character.
@@ -88,10 +107,88 @@ public class MBall extends Ball
 	}
 
 	/**
+	 * Sets the vector of this object to the newly given vector;
+	 *
+	 * @param vector The new Vector to assign to this object.
+	 */
+	public void setVector(Point vector)
+	{
+		this.vector.changeLocation(vector);
+	}
+
+	/**
 	 * Applies this character's vector to itself and moves it by the vector's value.
 	 */
 	public void move()
 	{
 		this.move(this.vector);
+	}
+
+	/**
+	 * Reverses the y and x vector of this ball.
+	 * Would be good to use for bouncing.
+	 */
+	public void reverseVector()
+	{
+		this.vector.reverse();
+	}
+
+	/**
+	 * Draws the box into to the graphics passed,
+	 * box outline will be black color.
+	 * The bounding box will be dark gray color.
+	 * The Vector line will be light gray line.
+	 *
+	 * @param g graphics where the box will be drawn into.
+	 */
+	@Override
+	public void draw(Graphics2D g)
+	{
+		this.drawBall(g);
+		g.setColor(Color.LIGHT_GRAY);
+		g.drawLine(this.getCenterX(),
+				this.getCenterY(),
+				(int) (this.getCenterX() + this.getXVector() * 5),
+				(int) (this.getCenterY() + this.getYVector() * 5));
+	}
+
+	/**
+	 * Draws the box into to the graphics passed,
+	 * box outline will be black color.
+	 * The bounding box will be gray color.
+	 *
+	 * @param g graphics where the bounding box will be drawn into.
+	 */
+	@Override
+	public void drawBall(Graphics2D g)
+	{
+		super.draw(g);
+	}
+
+	/**
+	 * Returns a copy of it's parent which is bounding Box. The copy is brand new object.
+	 *
+	 * @return Brand new bounding box which is a copy of the bounding box this object is built on.
+	 */
+	public BBall getBBall()
+	{
+		return super.copy();
+	}
+
+	/**
+	 * Returns a brand new copy of this Movement Box object. With a new memory location.
+	 *
+	 * @return A new copy of this Movement Box object.
+	 */
+	public MBall copy()
+	{
+		MBall ball = new MBall();
+		ball.setX(this.getX());
+		ball.setY(this.getY());
+		ball.setWidth(this.getWidth());
+		ball.setHeight(this.getHeight());
+		ball.setOffset(this.getOffset());
+		ball.setVector(this.getVector().copy());
+		return ball;
 	}
 }

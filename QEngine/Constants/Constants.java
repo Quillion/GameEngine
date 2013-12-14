@@ -27,6 +27,23 @@ public class Constants
 		}
 	}
 
+	public enum FieldShape
+	{
+		NONE(-1), FOUR_SIDED(4), SIX_SIDED(6);
+
+		private int value;
+
+		private FieldShape(int value)
+		{
+			this.value = value;
+		}
+
+		public int getValue()
+		{
+			return this.value;
+		}
+	}
+
 	public enum Action
 	{
 		None, MoveLeft, MoveRight, MoveUp, MoveDown, Jump

@@ -18,11 +18,11 @@ public class Field
 {
 	private int id;
 	private List<Field> neighbors;
-	private int type;
+	private Constants.FieldShape type;
 
 	// THIS IS GOING TO BE A SUPER USEFUL FIELD WHEN WE WILL HAVE AI
 	// TRAVERSE THE FIELDS FOR OPTIMAL PATHS. I CAN THINK UP OF AT LEAST
-	// THREE OTHER USES FOR THIS VARIABLE, SO LET's KEEP IT, TRUST ME.
+	// THREE OTHER USES FOR THIS VARIABLE, SO LET'S KEEP IT, TRUST ME.
 	public int garbage;
 
 	/**
@@ -36,7 +36,7 @@ public class Field
 	{
 		this.id = id;
 		this.neighbors = new ArrayList<Field>();
-		this.setType(Constants.NONE);
+		this.setType(Constants.FieldShape.NONE);
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class Field
 	 *
 	 * @param type What type of field it is.
 	 */
-	public void setType(int type)
+	public void setType(Constants.FieldShape type)
 	{
 		this.type = type;
 	}
@@ -55,7 +55,7 @@ public class Field
 	 *
 	 * @return The type of field this is.
 	 */
-	public int getType()
+	public Constants.FieldShape getType()
 	{
 		return this.type;
 	}
@@ -90,6 +90,7 @@ public class Field
 			return false;
 		// FIELDS WERE NOT THE SAME, SO ADD THEM
 		this.neighbors.add(field);
+		field.addField(this);
 		return true;
 	}
 
@@ -143,7 +144,12 @@ public class Field
 	{
 		if (index >= this.getNumOfNeighbors() || index < 0)
 			return false;
+		// GET THE NEIGHBOR FIELD
+		Field neighbor = this.getFieldByIndex(index);
+		// REMOVE THE NEIGHBOR FIELD FROM OURSELVES
 		this.neighbors.remove(index);
+		// REMOVE OURSELVES FROM NEIGHBOR FIELD
+		neighbor.removeFieldById(this.getId());
 		return true;
 	}
 

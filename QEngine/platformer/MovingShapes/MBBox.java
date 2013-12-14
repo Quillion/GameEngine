@@ -8,7 +8,7 @@ package platformer.MovingShapes;
 /**
  * Bounding box with vector qualities.
  */
-public class MBBox extends BasicObjects.MBBox
+public class MBBox extends BasicObjects.MBox
 {
 	private double gravity, groundFriction, airFriction;
 	private double acceleration, maxSpeed, jump;

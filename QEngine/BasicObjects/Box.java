@@ -5,8 +5,9 @@ package BasicObjects;
  * @since 1.6
  */
 
-import java.awt.*;
 import abstracts.Shape;
+
+import java.awt.*;
 
 /**
  * A simple Box.
@@ -14,6 +15,9 @@ import abstracts.Shape;
  */
 public class Box extends Shape
 {
+	/**
+	 * A box will always have a point and dimension.
+	 */
 	private Point coordinates;
 	private Dimensions size;
 
@@ -33,6 +37,7 @@ public class Box extends Shape
 	 *
 	 * @param x the value to which x will be set to.
 	 */
+	@Override
 	public void setX(double x)
 	{
 		this.coordinates.setX(x);
@@ -44,6 +49,7 @@ public class Box extends Shape
 	 *
 	 * @return returns the x value of the object.
 	 */
+	@Override
 	public int getX()
 	{
 		return (int) this.coordinates.getX();
@@ -54,6 +60,7 @@ public class Box extends Shape
 	 *
 	 * @param x the value by which to increment x by.
 	 */
+	@Override
 	public void incrementX(double x)
 	{
 		this.coordinates.incrementX(x);
@@ -64,6 +71,7 @@ public class Box extends Shape
 	 *
 	 * @param y the value to which y will be set to.
 	 */
+	@Override
 	public void setY(double y)
 	{
 		this.coordinates.setY(y);
@@ -75,6 +83,7 @@ public class Box extends Shape
 	 *
 	 * @return returns the y value of the object.
 	 */
+	@Override
 	public int getY()
 	{
 		return (int) this.coordinates.getY();
@@ -85,6 +94,7 @@ public class Box extends Shape
 	 *
 	 * @param y the value by which to increment y by.
 	 */
+	@Override
 	public void incrementY(double y)
 	{
 		this.coordinates.incrementY(y);
@@ -95,9 +105,21 @@ public class Box extends Shape
 	 *
 	 * @param vector The vector that should be applied to this box.
 	 */
+	@Override
 	public void move(Point vector)
 	{
 		this.coordinates.move(vector);
+	}
+
+	/**
+	 * Changes the coordinates of this box to specified value.
+	 *
+	 * @param point The new coordinates of this box.
+	 */
+	@Override
+	public void setCoordinates(Point point)
+	{
+		this.coordinates.changeLocation(point);
 	}
 
 	/**
@@ -105,6 +127,7 @@ public class Box extends Shape
 	 *
 	 * @param width the value to which object's width will be set to.
 	 */
+	@Override
 	public void setWidth(int width)
 	{
 		this.size.setWidth(width);
@@ -115,6 +138,7 @@ public class Box extends Shape
 	 *
 	 * @return the width of this object.
 	 */
+	@Override
 	public int getWidth()
 	{
 		return this.size.getWidth();
@@ -125,6 +149,7 @@ public class Box extends Shape
 	 *
 	 * @param amount how much to increment this object's width by.
 	 */
+	@Override
 	public void incrementWidth(int amount)
 	{
 		this.size.incrementWidth(amount);
@@ -135,6 +160,7 @@ public class Box extends Shape
 	 *
 	 * @param height the value to which object's height will be set to.
 	 */
+	@Override
 	public void setHeight(int height)
 	{
 		this.size.setHeight(height);
@@ -145,6 +171,7 @@ public class Box extends Shape
 	 *
 	 * @return the width of this object.
 	 */
+	@Override
 	public int getHeight()
 	{
 		return this.size.getHeight();
@@ -155,9 +182,21 @@ public class Box extends Shape
 	 *
 	 * @param amount how much to increment this object's height by.
 	 */
+	@Override
 	public void incrementHeight(int amount)
 	{
 		this.size.incrementHeight(amount);
+	}
+
+	/**
+	 * Sets the size of this box to the new given Dimensions.
+	 *
+	 * @param size The new Size for this object.
+	 */
+	@Override
+	public void setSize(Dimensions size)
+	{
+		this.size.setDimensions(size);
 	}
 
 	/**
@@ -166,6 +205,7 @@ public class Box extends Shape
 	 *
 	 * @return the object's left x coordinate.
 	 */
+	@Override
 	public int getLeftX()
 	{
 		return this.getX();
@@ -177,6 +217,7 @@ public class Box extends Shape
 	 *
 	 * @return the object's right x coordinate(which is x+width).
 	 */
+	@Override
 	public int getRightX()
 	{
 		return (this.getX() + this.getWidth());
@@ -188,6 +229,7 @@ public class Box extends Shape
 	 *
 	 * @return the object's top y coordinate.
 	 */
+	@Override
 	public int getTopY()
 	{
 		return this.getY();
@@ -199,6 +241,7 @@ public class Box extends Shape
 	 *
 	 * @return the object's bottom y coordinate(which is y+height).
 	 */
+	@Override
 	public int getBottomY()
 	{
 		return (this.getY() + this.getHeight());
@@ -209,6 +252,7 @@ public class Box extends Shape
 	 *
 	 * @return Point which represents top left corner of the box.
 	 */
+	@Override
 	public Point getTopLeft()
 	{
 		return new Point(this.getLeftX(), this.getTopY());
@@ -219,6 +263,7 @@ public class Box extends Shape
 	 *
 	 * @return Point which represents top right corner of the box.
 	 */
+	@Override
 	public Point getTopRight()
 	{
 		return new Point(this.getRightX(), this.getTopY());
@@ -229,6 +274,7 @@ public class Box extends Shape
 	 *
 	 * @return Point which represents bottom left corner of the box.
 	 */
+	@Override
 	public Point getBottomLeft()
 	{
 		return new Point(this.getLeftX(), this.getBottomY());
@@ -239,6 +285,7 @@ public class Box extends Shape
 	 *
 	 * @return Point which represents bottom right corner of the box.
 	 */
+	@Override
 	public Point getBottomRight()
 	{
 		return new Point(this.getRightX(), this.getBottomY());
@@ -250,6 +297,7 @@ public class Box extends Shape
 	 *
 	 * @return the object's center x coordinate.
 	 */
+	@Override
 	public int getCenterX()
 	{
 		return (this.getX() + this.getWidth() / 2);
@@ -261,6 +309,7 @@ public class Box extends Shape
 	 *
 	 * @return the object's center y coordinate.
 	 */
+	@Override
 	public int getCenterY()
 	{
 		return (this.getY() + this.getHeight() / 2);
@@ -271,6 +320,7 @@ public class Box extends Shape
 	 *
 	 * @return Point which represents the center of this box.
 	 */
+	@Override
 	public Point getCenter()
 	{
 		return new Point(this.getCenterX(), this.getCenterY());
@@ -293,8 +343,22 @@ public class Box extends Shape
 	 *
 	 * @param g graphics where the box will be drawn into.
 	 */
+	@Override
 	public void draw(Graphics2D g)
 	{
 		this.drawBox(g);
+	}
+
+	/**
+	 * Copies the box parameters and stores it into new memory location and returns the said box.
+	 *
+	 * @return Newly created Box object that has same values as this current box object.
+	 */
+	public Box copy()
+	{
+		Box box = new Box();
+		box.setCoordinates(this.coordinates.copy());
+		box.setSize(this.size.copy());
+		return box;
 	}
 }

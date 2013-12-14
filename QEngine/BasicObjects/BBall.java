@@ -1,81 +1,39 @@
 package BasicObjects;
+
+import java.awt.*;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import java.awt.*;
-
-/**
- * Bounding Box.
- */
-public class BBox extends Box
+public class BBall extends Ball
 {
 	/**
-	 * A bounding box has vertical and horizontal offsets.
+	 * A bounding ball has vertical and horizontal offsets.
 	 */
-	private Dimensions offsets;
+	private int offset;
 
 	/**
 	 * A constructor for the bounding box
 	 * BBox extends Box so it has same properties
 	 * but has offsets which will be used  in collision detection.
 	 */
-	public BBox()
+	public BBall()
 	{
 		super();
-		this.offsets = new Dimensions(0, 0);
+		this.offset = 0;
 	}
 
-	/**
-	 * Sets the horizontal offset to whatever value is passed.
-	 *
-	 * @param offset value to which horizontal offset will be set to.
-	 */
-	public void setHorizontalOffset(int offset)
+	public int getOffset()
 	{
-		this.offsets.setWidth(offset);
+		return offset;
 	}
 
-	/**
-	 * Returns the horizontal offset of this object.
-	 *
-	 * @return horizontal offset of this object.
-	 */
-	public int getHorizontalOffset()
+	public void setOffset(int offset)
 	{
-		return this.offsets.getWidth();
-	}
-
-	/**
-	 * Sets the vertical offset to whatever value is passed.
-	 *
-	 * @param offset value to which vertical offset will be set to.
-	 */
-	public void setVerticalOffset(int offset)
-	{
-		this.offsets.setHeight(offset);
-	}
-
-	/**
-	 * Returns the vertical offset of this object.
-	 *
-	 * @return vertical offset of this object.
-	 */
-	public int getVerticalOffset()
-	{
-		return this.offsets.getHeight();
-	}
-
-	/**
-	 * Sets the offset pf this Bounding Box to the newly given values.
-	 *
-	 * @param dimensions The new Dimension that will be this Bound Box's offsets.
-	 */
-	public void setOffsets(Dimensions dimensions)
-	{
-		this.offsets.setDimensions(dimensions);
+		this.offset = offset;
 	}
 
 	/**
@@ -87,7 +45,7 @@ public class BBox extends Box
 	@Override
 	public int getLeftX()
 	{
-		return (super.getLeftX() + this.getHorizontalOffset());
+		return (super.getLeftX() + this.getOffset());
 	}
 
 	/**
@@ -99,7 +57,7 @@ public class BBox extends Box
 	@Override
 	public int getRightX()
 	{
-		return (super.getRightX() - this.getHorizontalOffset());
+		return (super.getRightX() - this.getOffset());
 	}
 
 	/**
@@ -111,7 +69,7 @@ public class BBox extends Box
 	@Override
 	public int getTopY()
 	{
-		return (super.getTopY() + this.getVerticalOffset());
+		return (super.getTopY() + this.getOffset());
 	}
 
 	/**
@@ -123,7 +81,7 @@ public class BBox extends Box
 	@Override
 	public int getBottomY()
 	{
-		return (super.getBottomY() - this.getVerticalOffset());
+		return (super.getBottomY() - this.getOffset());
 	}
 
 	/**
@@ -171,6 +129,19 @@ public class BBox extends Box
 	}
 
 	/**
+	 * Draws the box into to the graphics passed, box outline will be black color.
+	 *
+	 * @param g graphics where the box will be drawn into.
+	 */
+	@Override
+	public void draw(Graphics2D g)
+	{
+		this.drawBall(g);
+		g.setColor(Color.GRAY);
+		g.drawOval(this.getLeftX(), this.getTopY(), this.getDiameter() - this.offset * 2, this.getDiameter() - this.offset * 2);
+	}
+
+	/**
 	 * Draws the box into to the graphics passed,
 	 * box outline will be black color.
 	 * The bounding box will be gray color.
@@ -178,20 +149,7 @@ public class BBox extends Box
 	 * @param g graphics where the box will be drawn into.
 	 */
 	@Override
-	public void draw(Graphics2D g)
-	{
-		this.drawBox(g);
-		g.setColor(Color.GRAY);
-		g.drawRect(this.getLeftX(), this.getTopY(), this.getRightX() - this.getLeftX(), this.getBottomY() - this.getTopY());
-	}
-
-	/**
-	 * Draws the box into to the graphics passed, box outline will be black color.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void drawBox(Graphics2D g)
+	public void drawBall(Graphics2D g)
 	{
 		super.draw(g);
 	}
@@ -202,7 +160,7 @@ public class BBox extends Box
 	 *
 	 * @return new Box which is part of this Bounding Box object.
 	 */
-	public Box getBox()
+	public Ball getBall()
 	{
 		return super.copy();
 	}
@@ -213,14 +171,12 @@ public class BBox extends Box
 	 * @return A new Bounding Box object which has same values as this bounding box object.
 	 */
 	@Override
-	public BBox copy()
+	public BBall copy()
 	{
-		BBox box = new BBox();
-		box.setX(this.getX());
-		box.setY(this.getY());
-		box.setWidth(this.getWidth());
-		box.setHeight(this.getHeight());
-		box.setOffsets(this.offsets.copy());
-		return box;
+		BBall ball = new BBall();
+		ball.setRadius(this.getRadius());
+		ball.setCoordinates(this.getCenter().copy());
+		ball.setOffset(this.getOffset());
+		return ball;
 	}
 }

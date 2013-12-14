@@ -5,12 +5,14 @@ package abstracts;
  * @since 1.6
  */
 
+import BasicObjects.Dimensions;
 import BasicObjects.Point;
 
 import java.awt.*;
 
 /**
- * A simple abstract shape that will exist in a 2D world and will as such have 2D properties.
+ * A simple abstract shape that will exist in a
+ * 2D world and will as such have 2D properties.
  */
 public abstract class Shape
 {
@@ -66,6 +68,13 @@ public abstract class Shape
 	public abstract void move(Point vector);
 
 	/**
+	 * Sets the top left corner of this object(coordinates) to the given point.
+	 *
+	 * @param point The new coordinates of this shape.
+	 */
+	public abstract void setCoordinates(Point point);
+
+	/**
 	 * Returns the shape's left x coordinate,
 	 * is used for collision detection checking.
 	 *
@@ -90,7 +99,7 @@ public abstract class Shape
 	public abstract int getTopY();
 
 	/**
-	 * Returns the shape's bottom y coordinate,
+	 * returns the shape's bottom y coordinate,
 	 * is used for collision detection checking.
 	 *
 	 * @return the shape's bottom y coordinate(which is y+height).
@@ -189,6 +198,13 @@ public abstract class Shape
 	 * @param amount how much to increment this shape's height by.
 	 */
 	public abstract void incrementHeight(int amount);
+
+	/**
+	 * Sets the size of this object to the given dimension.
+	 *
+	 * @param size The new Size for this object.
+	 */
+	public abstract void setSize(Dimensions size);
 
 	/**
 	 * Same as drawBox.

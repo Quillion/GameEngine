@@ -6,21 +6,22 @@ package BasicObjects;
  */
 
 /**
- * Basic dimension that stores values either fo size, or some kind of
- * boundaries or offsets. All the values used are int of course unlike Point.
+ * Basic dimension that stores values either fo size,
+ * or some kind of boundaries or offsets.
+ * All the values used are int of course unlike Point.
  */
 public class Dimensions
 {
 	/**
-	 * What kind of dimension will not have width/horizontal and height/vertical.
+	 * What kind of dimension will not have width and height.
 	 */
 	private int width, height;
 
 	/**
 	 * In order to construct dimension we need its two values.
 	 *
-	 * @param width  Width/Horizontal of this dimension.
-	 * @param height Height/vertical of this dimension.
+	 * @param width  Width of this dimension.
+	 * @param height Height of this dimension.
 	 */
 	public Dimensions(int width, int height)
 	{
@@ -29,7 +30,7 @@ public class Dimensions
 	}
 
 	/**
-	 * Returns the width of this dimension. Similar to getHorizontal.
+	 * Returns the width of this dimension.
 	 *
 	 * @return The Width of this dimension.
 	 */
@@ -39,7 +40,7 @@ public class Dimensions
 	}
 
 	/**
-	 * Sets the width of this dimension to given value. Similar to setHorizontal.
+	 * Sets the width of this dimension to given value.
 	 *
 	 * @param width The new width of this dimension.
 	 */
@@ -49,7 +50,7 @@ public class Dimensions
 	}
 
 	/**
-	 * Returns the height of the given dimension. Similar to getVertical.
+	 * Returns the height of the given dimension.
 	 *
 	 * @return Height of this dimension.
 	 */
@@ -59,7 +60,7 @@ public class Dimensions
 	}
 
 	/**
-	 * Sets the height of the dimension to the given value. Similar to setVertical.
+	 * Sets the height of the dimension to the given value.
 	 *
 	 * @param height The new height for this dimension.
 	 */
@@ -89,42 +90,35 @@ public class Dimensions
 	}
 
 	/**
-	 * Returns the vertical of the given dimension. Similar to getHeight.
+	 * Sets this dimension to the newly specified value.
 	 *
-	 * @return vertical of this dimension.
+	 * @param width  The new width of this dimension.
+	 * @param height The new Height of this dimension.
 	 */
-	public int getVertical()
+	public void setDimensions(int width, int height)
 	{
-		return this.height;
+		this.setWidth(width);
+		this.setHeight(height);
 	}
 
 	/**
-	 * Returns the horizontal of this dimension. Similar to getWidth.
+	 * Sets This dimension to the given Dimension.
+	 * Only values get copied over but not the memory location.
 	 *
-	 * @return The horizontal of this dimension.
+	 * @param dimensions The new Dimension whose values to copy.
 	 */
-	public int getHorizontal()
+	public void setDimensions(Dimensions dimensions)
 	{
-		return this.width;
+		this.setDimensions(dimensions.getWidth(), dimensions.getHeight());
 	}
 
 	/**
-	 * Sets the vertical of the dimension to the given value. Similar to setHeight.
+	 * Copies the values of this Dimension and returns you new Dimension object.
 	 *
-	 * @param height The new vertical for this dimension.
+	 * @return New Dimensions object that takes up new memory spot.
 	 */
-	public void setVertical(int vertical)
+	public Dimensions copy()
 	{
-		this.height = vertical;
-	}
-
-	/**
-	 * Sets the horizontal of this dimension to given value. Similar to setWidth.
-	 *
-	 * @param horizontal The new horizontal of this dimension.
-	 */
-	public void setHorizontal(int horizontal)
-	{
-		this.width = horizontal;
+		return new Dimensions(getWidth(), getHeight());
 	}
 }
