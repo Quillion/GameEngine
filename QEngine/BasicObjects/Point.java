@@ -162,4 +162,19 @@ public class Point
 	{
 		return new Point(this.getX(), this.getY());
 	}
+
+	/**
+	 * Returns a string representation tha explains everything about a given Object.
+	 *
+	 * @return String which contains all the info about the object.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("Coordinates:\n");
+		sb.append("x: |").append(getX()).append("|");
+		sb.append(" y: |").append(getY()).append("|");
+		return sb.toString();
+	}
 }

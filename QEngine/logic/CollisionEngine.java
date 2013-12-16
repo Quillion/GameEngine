@@ -11,126 +11,141 @@ import platformer.BasicSprite.MCharacter;
 
 public class CollisionEngine
 {
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param wall first object that will be used in collision checking.
-//	 * @param point second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(Box wall, Point point)
-//	{
-//		return ((wall.getTopY() <= point.getY()) && (wall.getBottomY() >= point.getY()) &&
-//				(wall.getLeftX() <= point.getX()) && (wall.getRightX() >= point.getX()));
-//	}
-//
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param wall first object that will be used in collision checking.
-//	 * @param point second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(BBox wall, Point point)
-//	{
-//		return ((wall.getTopY() <= point.getY()) && (wall.getBottomY() >= point.getY()) &&
-//				(wall.getLeftX() <= point.getX()) && (wall.getRightX() >= point.getX()));
-//	}
-//
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param ball first object that will be used in collision checking.
-//	 * @param point second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(Ball ball, Point point)
-//	{
-//		return MathEngine.distance(ball.getCenter(), point) <= ball.getRadius();
-//	}
-//
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param wall1 first object that will be used in collision checking.
-//	 * @param wall2 second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(Box wall1, Box wall2)
-//	{
-//		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
-//				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
-//	}
-//
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param wall1 first object that will be used in collision checking.
-//	 * @param wall2 second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(Box wall1, BBox wall2)
-//	{
-//		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
-//				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
-//	}
-//
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param wall first object that will be used in collision checking.
-//	 * @param ball second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(Box wall, Ball ball)
-//	{
-//		return collision(wall, ball.getCenter()) ||
-//				collision(ball, wall.getTopLeft()) ||
-//				collision(ball, wall.getTopRight()) ||
-//				collision(ball, wall.getBottomLeft()) ||
-//				collision(ball, wall.getBottomRight());
-//	}
-//
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param wall1 first object that will be used in collision checking.
-//	 * @param wall2 second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(BBox wall1, BBox wall2)
-//	{
-//		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
-//				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
-//	}
-//
-//	/**
-//	 * Checks to see if the objects have already collided.
-//	 *
-//	 * @param wall first object that will be used in collision checking.
-//	 * @param ball second object that will be used in collision checking.
-//	 * @return true if the object have collided and false if they didn't.
-//	 */
-//	public static boolean collision(BBox wall, Ball ball)
-//	{
-//		return collision(wall, ball.getCenter()) ||
-//				collision(ball, wall.getTopLeft()) ||
-//				collision(ball, wall.getTopRight()) ||
-//				collision(ball, wall.getBottomLeft()) ||
-//				collision(ball, wall.getBottomRight());
-//	}
-//
-//	/**
-//	 * Checks for collision between two balls.
-//	 * @param ball1 The first ball.
-//	 * @param ball2 The second ball.
-//	 * @return True if the balls have collided, false otherwise.
-//	 */
-//	public static boolean collision(Ball ball1, Ball ball2)
-//	{
-//		return MathEngine.distance(ball1.getCenter(), ball2.getCenter()) < (ball1.getRadius() + ball2.getRadius());
-//	}
-//
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param wall first object that will be used in collision checking.
+	 * @param point second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(Box wall, Point point)
+	{
+		return ((wall.getTopY() <= point.getY()) && (wall.getBottomY() >= point.getY()) &&
+				(wall.getLeftX() <= point.getX()) && (wall.getRightX() >= point.getX()));
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param wall first object that will be used in collision checking.
+	 * @param point second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(BBox wall, Point point)
+	{
+		return ((wall.getTopY() <= point.getY()) && (wall.getBottomY() >= point.getY()) &&
+				(wall.getLeftX() <= point.getX()) && (wall.getRightX() >= point.getX()));
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param ball first object that will be used in collision checking.
+	 * @param point second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(Ball ball, Point point)
+	{
+		return MathEngine.distance(ball.getCenter(), point) <= ball.getRadius();
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param ball first object that will be used in collision checking.
+	 * @param point second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(BBall ball, Point point)
+	{
+		return MathEngine.distance(ball.getCenter(), point) <= ball.getOffsetRadius();
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param wall1 first object that will be used in collision checking.
+	 * @param wall2 second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(BBox wall1, Box wall2)
+	{
+		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
+				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param wall1 first object that will be used in collision checking.
+	 * @param wall2 second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(BBox wall1, BBox wall2)
+	{
+		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
+				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param wall first object that will be used in collision checking.
+	 * @param ball second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(BBox wall, Ball ball)
+	{
+		return ((wall.getTopY() <= ball.getBottomY()) && (wall.getBottomY() >= ball.getTopY()) &&
+				(wall.getLeftX() <= ball.getRightX()) && (wall.getRightX() >= ball.getLeftX()));
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param wall first object that will be used in collision checking.
+	 * @param ball second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
+	public static boolean collision(BBox wall, BBall ball)
+	{
+		return ((wall.getTopY() <= ball.getBottomY()) && (wall.getBottomY() >= ball.getTopY()) &&
+				(wall.getLeftX() <= ball.getRightX()) && (wall.getRightX() >= ball.getLeftX()));
+	}
+
+	/**
+	 * Checks for collision between two balls.
+	 * @param ball1 The first ball.
+	 * @param ball2 The second ball.
+	 * @return True if the balls have collided, false otherwise.
+	 */
+	public static boolean collision(Ball ball1, Ball ball2)
+	{
+		return MathEngine.distance(ball1.getCenter(), ball2.getCenter()) <= (ball1.getRadius() + ball2.getRadius());
+	}
+
+	/**
+	 * Checks for collision between two balls.
+	 * @param ball1 The first ball.
+	 * @param ball2 The second ball.
+	 * @return True if the balls have collided, false otherwise.
+	 */
+	public static boolean collision(BBall ball1, Ball ball2)
+	{
+		return MathEngine.distance(ball1.getCenter(), ball2.getCenter()) <= (ball1.getOffsetRadius() + ball2.getRadius());
+	}
+
+	/**
+	 * Checks for collision between two balls.
+	 * @param ball1 The first ball.
+	 * @param ball2 The second ball.
+	 * @return True if the balls have collided, false otherwise.
+	 */
+	public static boolean collision(BBall ball1, BBall ball2)
+	{
+		return MathEngine.distance(ball1.getCenter(), ball2.getCenter()) <= (ball1.getOffsetRadius() + ball2.getOffsetRadius());
+	}
+
 //	/**
 //	 * Checks to see if character's sides have collision with the given wall object.
 //	 *

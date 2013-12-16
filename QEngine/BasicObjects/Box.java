@@ -361,4 +361,22 @@ public class Box extends Shape
 		box.setSize(this.size.copy());
 		return box;
 	}
+
+	/**
+	 * Returns a string representation tha explains everything about a given Object.
+	 *
+	 * @return String which contains all the info about the object.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("Coordinates:\n");
+		sb.append("x: |").append(getX()).append("|");
+		sb.append(" y: |").append(getY()).append("|\n");
+		sb.append("Size:\n");
+		sb.append("width: |").append(getWidth()).append("|");
+		sb.append(" height: |").append(getHeight()).append("|");
+		return sb.toString();
+	}
 }

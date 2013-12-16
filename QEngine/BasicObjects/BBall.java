@@ -26,14 +26,37 @@ public class BBall extends Ball
 		this.offset = 0;
 	}
 
+	/**
+	 * Returns the offset of the ball.
+	 * Since it is a round circular ball,
+	 * then offset is constant irregardless of direction.
+	 *
+	 * @return Offset of this ball.
+	 */
 	public int getOffset()
 	{
 		return offset;
 	}
 
+	/**
+	 * Sets the offset of this ball to given value.
+	 * However since it is a ball, offset will always be the same.
+	 *
+	 * @param offset The new offset of this ball.
+	 */
 	public void setOffset(int offset)
 	{
 		this.offset = offset;
+	}
+
+	/**
+	 * Returns you the radius of this BBall with the offset considered.
+	 *
+	 * @return Radius minus the offset of this ball.
+	 */
+	public int getOffsetRadius()
+	{
+		return this.getRadius() - this.getOffset();
 	}
 
 	/**
@@ -45,7 +68,7 @@ public class BBall extends Ball
 	@Override
 	public int getLeftX()
 	{
-		return (super.getLeftX() + this.getOffset());
+		return (this.getX() - this.getOffsetRadius());
 	}
 
 	/**
@@ -57,7 +80,7 @@ public class BBall extends Ball
 	@Override
 	public int getRightX()
 	{
-		return (super.getRightX() - this.getOffset());
+		return (this.getX() + this.getOffsetRadius());
 	}
 
 	/**
@@ -69,7 +92,7 @@ public class BBall extends Ball
 	@Override
 	public int getTopY()
 	{
-		return (super.getTopY() + this.getOffset());
+		return (this.getY() - this.getOffsetRadius());
 	}
 
 	/**
@@ -81,7 +104,7 @@ public class BBall extends Ball
 	@Override
 	public int getBottomY()
 	{
-		return (super.getBottomY() - this.getOffset());
+		return (this.getY() + this.getOffsetRadius());
 	}
 
 	/**
@@ -178,5 +201,19 @@ public class BBall extends Ball
 		ball.setCoordinates(this.getCenter().copy());
 		ball.setOffset(this.getOffset());
 		return ball;
+	}
+
+	/**
+	 * Returns a string representation tha explains everything about a given Object.
+	 *
+	 * @return String which contains all the info about the object.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString()).append("\n");
+		sb.append("Offset: |").append(getOffset()).append("|");
+		return sb.toString();
 	}
 }

@@ -191,4 +191,20 @@ public class MBall extends BBall
 		ball.setVector(this.getVector().copy());
 		return ball;
 	}
+
+	/**
+	 * Returns a string representation tha explains everything about a given Object.
+	 *
+	 * @return String which contains all the info about the object.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString()).append("\n");
+		sb.append("Vector:").append("|\n");
+		sb.append("x: |").append(getXVector()).append("|");
+		sb.append(" y: |").append(getYVector()).append("|");
+		return sb.toString();
+	}
 }

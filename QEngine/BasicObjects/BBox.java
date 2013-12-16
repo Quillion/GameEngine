@@ -223,4 +223,20 @@ public class BBox extends Box
 		box.setOffsets(this.offsets.copy());
 		return box;
 	}
+
+	/**
+	 * Returns a string representation tha explains everything about a given Object.
+	 *
+	 * @return String which contains all the info about the object.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString()).append("\n");
+		sb.append("Offset:\n");
+		sb.append("vertical: |").append(getVerticalOffset()).append("|");
+		sb.append(" horizontal: |").append(getHorizontalOffset()).append("|");
+		return sb.toString();
+	}
 }

@@ -228,7 +228,7 @@ public class Ball extends Shape
 	@Override
 	public int getRightX()
 	{
-		return (this.getX() + this.getWidth());
+		return (this.getX() + this.getRadius());
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class Ball extends Shape
 	@Override
 	public int getTopY()
 	{
-		return (this.getY() - this.getHeight());
+		return (this.getY() - this.getRadius());
 	}
 
 	/**
@@ -252,7 +252,7 @@ public class Ball extends Shape
 	@Override
 	public int getBottomY()
 	{
-		return (this.getY() + this.getHeight());
+		return (this.getY() + this.getRadius());
 	}
 
 	/**
@@ -397,5 +397,21 @@ public class Ball extends Shape
 		ball.setRadius(this.getRadius());
 		ball.setCoordinates(this.getCenter().copy());
 		return ball;
+	}
+
+	/**
+	 * Returns a string representation tha explains everything about a given Object.
+	 *
+	 * @return String which contains all the info about the object.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("Coordinates:\n");
+		sb.append("x: |").append(getX()).append("|");
+		sb.append(" y: |").append(getY()).append("|\n");
+		sb.append("Radius: |").append(getRadius()).append("|");
+		return sb.toString();
 	}
 }

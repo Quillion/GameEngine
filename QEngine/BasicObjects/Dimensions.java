@@ -121,4 +121,19 @@ public class Dimensions
 	{
 		return new Dimensions(getWidth(), getHeight());
 	}
+
+	/**
+	 * Returns a string representation tha explains everything about a given Object.
+	 *
+	 * @return String which contains all the info about the object.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("Size:\n");
+		sb.append("width: |").append(getWidth()).append("|");
+		sb.append(" height: |").append(getHeight()).append("|");
+		return sb.toString();
+	}
 }
