@@ -1,4 +1,9 @@
 package test1;
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
 
 import BasicObjects.*;
 import BasicObjects.Point;
@@ -12,11 +17,6 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * User: Edgar
- * Date: 12/19/13
- * Time: 7:52 PM
- */
 public class LevelOne extends Level
 {
 	private List<Box> boxes;

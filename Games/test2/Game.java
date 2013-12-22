@@ -1,4 +1,4 @@
-package test1;
+package test2;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -9,7 +9,7 @@ import abstracts.GameSimple;
 
 public class Game extends GameSimple
 {
-	public static void main(String [] args)
+	public static void main(String[] args)
 	{
 		Game game = new Game();
 		game.setScreen(900, 500, false);
