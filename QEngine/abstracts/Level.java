@@ -17,6 +17,8 @@ public abstract class Level
 	private boolean active;
 	private boolean loaded;
 	private Game game;
+	private int WIDTH;
+	private int HEIGHT;
 
 	/**
 	 * Game must be given to the level so that the level knows parameters such as screen size and all.
@@ -28,6 +30,8 @@ public abstract class Level
 		this.active = false;
 		this.loaded = false;
 		this.game = game;
+		this.WIDTH = game.getWidth();
+		this.HEIGHT = game.getHeight();
 	}
 
 	/**
@@ -145,4 +149,26 @@ public abstract class Level
 	 * And make sure to set everything to null so that level can be deleted and done with.
 	 */
 	public abstract void delete();
+
+	/**
+	 * Returns the width that this level is registered to.
+	 * Width is relative to game's width, so keep that in mind.
+	 *
+	 * @return Width of the screen for this level.
+	 */
+	public int getWidth()
+	{
+		return WIDTH;
+	}
+
+	/**
+	 * Returns the height that this level is registered to.
+	 * Height is relative to game's height, so keep that in mind.
+	 *
+	 * @return Height of the screen for this level.
+	 */
+	public int getHeight()
+	{
+		return HEIGHT;
+	}
 }

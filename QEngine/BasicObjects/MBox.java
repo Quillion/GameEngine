@@ -126,10 +126,13 @@ public class MBox extends BBox
 
 	/**
 	 * Applies this character's vector to itself and moves it by the vector's value.
+	 *
+	 * @return Returns the instance of this box after it has been moved.
 	 */
-	public void move()
+	public MBox move()
 	{
 		this.move(this.vector);
+		return this;
 	}
 
 	/**

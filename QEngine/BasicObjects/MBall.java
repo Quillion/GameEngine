@@ -118,10 +118,13 @@ public class MBall extends BBall
 
 	/**
 	 * Applies this character's vector to itself and moves it by the vector's value.
+	 *
+	 * @return The instance of this ball after it has been moved.
 	 */
-	public void move()
+	public MBall move()
 	{
 		this.move(this.vector);
+		return this;
 	}
 
 	/**

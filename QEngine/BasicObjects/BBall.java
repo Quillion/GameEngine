@@ -159,7 +159,7 @@ public class BBall extends Ball
 	@Override
 	public void draw(Graphics2D g)
 	{
-		this.drawBall(g);
+		super.drawBall(g);
 		g.setColor(Color.GRAY);
 		g.drawOval(this.getLeftX(), this.getTopY(), this.getDiameter() - this.offset * 2, this.getDiameter() - this.offset * 2);
 	}
@@ -174,7 +174,7 @@ public class BBall extends Ball
 	@Override
 	public void drawBall(Graphics2D g)
 	{
-		super.draw(g);
+		this.drawBall(g);
 	}
 
 	/**

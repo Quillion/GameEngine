@@ -5,16 +5,6 @@ package platformer;
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import logic.Camera;
-import utils.ImageProcessor;
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 /**
  * Background class that will hopefully be useful,
  * I spent too much brainpower on it.

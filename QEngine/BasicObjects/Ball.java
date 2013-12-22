@@ -373,6 +373,7 @@ public class Ball extends Shape
 	{
 		g.setColor(Color.BLACK);
 		g.drawOval(this.getX() - this.getRadius(), this.getY() - this.getRadius(), this.getDiameter(), this.getDiameter());
+		g.drawLine(this.getCenterX() - 1, this.getCenterY() - 1, this.getCenterX() + 1, this.getCenterY() + 1);
 	}
 
 	/**

@@ -5,21 +5,6 @@ package test3;
  * @since       1.6
  */
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.*;
-import java.util.List;
-
-import BasicSprite.BPlatform;
-import logic.Camera;
-import logic.CollisionEngine;
-import logic.Engine;
-import platformer.BasicSprite.MCharacter;
-import constants.Constants;
-import utils.ImageProcessor;
-import TooGeneral.NormalPlatformGenerator;
-
 public class Game
 {
 //    private int WIDTH, HEIGHT;

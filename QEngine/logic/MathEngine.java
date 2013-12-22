@@ -33,6 +33,18 @@ public class MathEngine
 	}
 
 	/**
+	 * Returns a double which is distance between two points.
+	 *
+	 * @param one The point which you want to know distance of from the second point.
+	 * @param two The point which you want to know distance of from the second point.
+	 * @return Distance between two points.
+	 */
+	public static double hypotenuse(Point one, Point two)
+	{
+		return Math.sqrt(Math.pow(deltaX(one, two), 2) + Math.pow(deltaY(one, two), 2));
+	}
+
+	/**
 	 * Returns a point which is a representation of absolute distance between two points.
 	 *
 	 * @param one First point.
@@ -92,5 +104,18 @@ public class MathEngine
 	public static double angleDeg(Point one, Point two)
 	{
 		return Math.toDegrees(angleRad(one, two));
+	}
+
+	/**
+	 * Given Angle, Center point and Radius it will tell you the point at the edge.
+	 *
+	 * @param angle  The angle from center.
+	 * @param center The center of the ball (I am assuming you are using a ball right?).
+	 * @param radius Radius of the ball.
+	 * @return The angle based off of the values you have given.
+	 */
+	public static Point getEdgeAt(double angle, Point center, double radius)
+	{
+		return new Point(center.getX() + radius * Math.sin(angle), center.getY() + radius * Math.cos(angle));
 	}
 }

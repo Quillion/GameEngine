@@ -180,7 +180,7 @@ public class BBox extends Box
 	@Override
 	public void draw(Graphics2D g)
 	{
-		this.drawBox(g);
+		super.drawBox(g);
 		g.setColor(Color.GRAY);
 		g.drawRect(this.getLeftX(), this.getTopY(), this.getRightX() - this.getLeftX(), this.getBottomY() - this.getTopY());
 	}
@@ -193,7 +193,7 @@ public class BBox extends Box
 	@Override
 	public void drawBox(Graphics2D g)
 	{
-		super.draw(g);
+		super.drawBox(g);
 	}
 
 	/**

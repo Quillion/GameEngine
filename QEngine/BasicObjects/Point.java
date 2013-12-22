@@ -112,11 +112,13 @@ public class Point
 	 * Applies the given vector on this point.
 	 *
 	 * @param vector Vector that will determine by how much to move this point.
+	 * @return The instance of the point after it has been moved.
 	 */
-	public void move(Point vector)
+	public Point move(Point vector)
 	{
 		this.incrementX(vector.getX());
 		this.incrementY(vector.getY());
+		return this;
 	}
 
 	/**
