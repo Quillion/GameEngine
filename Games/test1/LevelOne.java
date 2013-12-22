@@ -49,12 +49,12 @@ public class LevelOne extends Level
 	{
 		Box box = new Box();
 		box.setCoordinates(new BasicObjects.Point(0, getHeight() - 30));
-		box.setSize(new Dimensions(getWidth(), 30));
+		box.setSize(new Dimensions(getWidth() / 2, 30));
 		boxes.add(box);
 
 		box = new Box();
 		box.setCoordinates(new BasicObjects.Point(0, 0));
-		box.setSize(new Dimensions(getWidth(), 30));
+		box.setSize(new Dimensions(getWidth() / 2, 30));
 		boxes.add(box);
 
 		BBox bBox = new BBox();
@@ -64,83 +64,83 @@ public class LevelOne extends Level
 		bBoxes.add(bBox);
 
 		bBox = new BBox();
-		bBox.setCoordinates(new Point(getWidth() - 30, 30));
+		bBox.setCoordinates(new Point(getWidth() / 2 - 30, 30));
 		bBox.setSize(new Dimensions(30, getHeight() - 60));
 		bBox.setOffsets(new Dimensions(5, 0));
 		bBoxes.add(bBox);
 
 		bBox = new BBox();
-		bBox.setCoordinates(new Point(200, 200));
+		bBox.setCoordinates(new Point(getWidth() / 4 - 50, getHeight() / 2 - 50));
 		bBox.setSize(new Dimensions(100, 100));
 		bBox.setOffsets(new Dimensions(9, 9));
 		bBoxes.add(bBox);
 
 		MBox mBox = new MBox();
-		mBox.setCoordinates(new Point(150, 150));
+		mBox.setCoordinates(new Point(getWidth() / 3, getHeight() / 3));
 		mBox.setSize(new Dimensions(45, 45));
 		mBox.setOffsets(new Dimensions(7, 7));
 		mBox.setVector(new Point(0, 0));
 		mBoxes.add(mBox);
 
 		Ball ball;
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < 5; i++)
 		{
 			ball = new Ball();
-			ball.setCoordinates(new Point(170 + (i * 80), 70));
-			ball.setRadius(40);
+			ball.setCoordinates(new Point(getWidth() / 2 + 125 + (i * 50), 25));
+			ball.setRadius(25);
 			balls.add(ball);
 
 			ball = new Ball();
-			ball.setCoordinates(new Point(170 + (i * 80), getHeight() - 70));
-			ball.setRadius(40);
+			ball.setCoordinates(new Point(getWidth() / 2 + 125 + (i * 50), getHeight() - 25));
+			ball.setRadius(25);
 			balls.add(ball);
 		}
 
 		for (int i = 0; i < 3; i++)
 		{
 			ball = new Ball();
-			ball.setCoordinates(new Point(70, 170 + (i * 80)));
+			ball.setCoordinates(new Point(getWidth() / 2 + 40, 140 + (i * 110)));
 			ball.setRadius(40);
 			balls.add(ball);
 
 			ball = new Ball();
-			ball.setCoordinates(new Point(getWidth() - 70, 170 + (i * 80)));
+			ball.setCoordinates(new Point(getWidth() - 40, 140 + (i * 110)));
 			ball.setRadius(40);
 			balls.add(ball);
 		}
 
 		BBall bBall = new BBall();
-		bBall.setCoordinates(new Point(80, 80));
+		bBall.setCoordinates(new Point(getWidth() / 2 + 50, 50));
 		bBall.setRadius(50);
 		bBall.setOffset(7);
 		bBalls.add(bBall);
 
 		bBall = new BBall();
-		bBall.setCoordinates(new Point(getWidth() - 80, 80));
+		bBall.setCoordinates(new Point(getWidth() - 50, 50));
 		bBall.setRadius(50);
 		bBall.setOffset(7);
 		bBalls.add(bBall);
 
 		bBall = new BBall();
-		bBall.setCoordinates(new Point(80, getHeight() - 80));
+		bBall.setCoordinates(new Point(getWidth() / 2 + 50, getHeight() - 50));
 		bBall.setRadius(50);
 		bBall.setOffset(7);
 		bBalls.add(bBall);
 
 		bBall = new BBall();
-		bBall.setCoordinates(new Point(getWidth() - 80, getHeight() - 80));
+		bBall.setCoordinates(new Point(getWidth() - 50, getHeight() - 50));
 		bBall.setRadius(50);
 		bBall.setOffset(7);
 		bBalls.add(bBall);
 
 		bBall = new BBall();
-		bBall.setCoordinates(new Point(600, 300));
+		bBall.setCoordinates(new Point(getWidth() * 0.75, getHeight() / 2));
 		bBall.setRadius(50);
 		bBall.setOffset(9);
 		bBalls.add(bBall);
 
 		MBall mBall = new MBall();
-		mBall.setCoordinates(new Point(500, 300));
+		mBall.setCoordinates(new Point(getWidth() * 0.67, getHeight() / 3));
 		mBall.setRadius(23);
 		mBall.setOffset(7);
 		mBalls.add(mBall);
