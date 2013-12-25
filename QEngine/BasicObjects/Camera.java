@@ -10,9 +10,6 @@ import BasicSprite.Platform;
 import platformer.BasicCharacter;
 import platformer.BasicSprite.MCharacter;
 import platformer.ExtendedShapes.MBControls;
-import platformer.ExtendedShapes.MControls;
-import platformer.MovingShapes.MBBox;
-import platformer.MovingShapes.MBox;
 
 import java.awt.*;
 
@@ -43,27 +40,27 @@ public class Camera extends BBox
 	 */
 	public void updateCamera(int x, int y)
 	{
-		int horizontalDifference = this.getX() - x;
-		int verticalDifference = this.getY() - y;
+		int horizontalDifference = x - this.getX();
+		int verticalDifference = y - this.getY();
 
 		// RIGHT SIDE IS PASSED
-		if (horizontalDifference < -this.getHorizontalOffset())
+		if (horizontalDifference > (this.getWidth() - this.getHorizontalOffset()))
 		{
 			this.incrementX(x - this.getRightX());
 		}
 		// LEFT SIDE IS PASSED
-		else if (horizontalDifference > this.getHorizontalOffset())
+		else if (horizontalDifference < this.getHorizontalOffset())
 		{
 			this.incrementX(x - this.getLeftX());
 		}
 
 		// DOWN IS PASSED
-		if (verticalDifference < -this.getVerticalOffset())
+		if (verticalDifference > (this.getHeight() - this.getVerticalOffset()))
 		{
 			this.incrementY(y - this.getBottomY());
 		}
 		// UP IS PASSED
-		else if (verticalDifference > this.getVerticalOffset())
+		else if (verticalDifference < this.getVerticalOffset())
 		{
 			this.incrementY(y - this.getTopY());
 		}
@@ -79,8 +76,8 @@ public class Camera extends BBox
 	public void draw(Graphics2D g, Box box)
 	{
 		g.setColor(Color.BLACK);
-		g.drawRect(box.getX() - this.getX() + this.getCenterX(),
-				box.getY() - this.getY() + this.getCenterY(),
+		g.drawRect(box.getX() - this.getX(),
+				box.getY() - this.getY(),
 				box.getWidth(),
 				box.getHeight());
 	}
@@ -95,10 +92,15 @@ public class Camera extends BBox
 	public void draw(Graphics2D g, BBox box)
 	{
 		g.setColor(Color.BLACK);
-		g.drawRect(box.getX() - this.getX() + this.getCenterX(),
-				box.getY() - this.getY() + this.getCenterY(),
+		g.drawRect(box.getX() - this.getX(),
+				box.getY() - this.getY(),
 				box.getWidth(),
 				box.getHeight());
+		g.setColor(Color.GRAY);
+		g.drawRect(box.getLeftX() - this.getX(),
+				box.getTopY() - this.getY(),
+				box.getRightX() - box.getLeftX(),
+				box.getBottomY() - box.getTopY());
 	}
 
 	/**
@@ -111,26 +113,20 @@ public class Camera extends BBox
 	public void draw(Graphics2D g, MBox box)
 	{
 		g.setColor(Color.BLACK);
-		g.drawRect(box.getX() - this.getX() + this.getCenterX(),
-				box.getY() - this.getY() + this.getCenterY(),
+		g.drawRect(box.getX() - this.getX(),
+				box.getY() - this.getY(),
 				box.getWidth(),
 				box.getHeight());
-	}
-
-	/**
-	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
-	 * Much better than default method of box's drawing with slightly higher cost.
-	 *
-	 * @param g   the graphics to which to draw.
-	 * @param box The box you would like drawn.
-	 */
-	public void draw(Graphics2D g, MBBox box)
-	{
-		g.setColor(Color.BLACK);
-		g.drawRect(box.getX() - this.getX() + this.getCenterX(),
-				box.getY() - this.getY() + this.getCenterY(),
-				box.getWidth(),
-				box.getHeight());
+		g.setColor(Color.GRAY);
+		g.drawRect(box.getLeftX() - this.getX(),
+				box.getTopY() - this.getY(),
+				box.getRightX() - box.getLeftX(),
+				box.getBottomY() - box.getTopY());
+		g.setColor(Color.LIGHT_GRAY);
+		g.drawLine(box.getCenterX() - this.getX(),
+				box.getCenterY() - this.getY(),
+				(int) (box.getCenterX() + box.getXVector() * 5 - this.getX()),
+				(int) (box.getCenterY() + box.getYVector() * 5 - this.getY()));
 	}
 
 	/**
@@ -218,23 +214,6 @@ public class Camera extends BBox
 	}
 
 	/**
-	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
-	 * Much better than default method of box's drawing with slightly higher cost.
-	 * WAY TOO MUCH COPY PASTING WAS DONE FOR THESE COMMENTS. Damn.
-	 *
-	 * @param g   the graphics to which to draw.
-	 * @param box The box you would like drawn.
-	 */
-	public void draw(Graphics2D g, MControls box)
-	{
-		g.setColor(Color.BLACK);
-		g.drawRect(box.getX() - this.getX() + this.getCenterX(),
-				box.getY() - this.getY() + this.getCenterY(),
-				box.getWidth(),
-				box.getHeight());
-	}
-
-	/**
 	 * Draws the character. There is very little logic here, main logic is in getImage done by Character.
 	 *
 	 * @param g         the graphics to which to draw to.
@@ -254,5 +233,23 @@ public class Camera extends BBox
 				null,
 				item.getX() - this.getX() + this.getCenterX(),
 				item.getY() - this.getY() + this.getCenterY());
+	}
+
+	/**
+	 * Well the camera will always be fixed at location 0, 0(not really).
+	 * So we will just draw it there.
+	 *
+	 * @param g graphics where the box will be drawn into.
+	 */
+	@Override
+	public void draw(Graphics2D g)
+	{
+		g.setColor(Color.BLACK);
+		g.drawRect(0, 0, this.getWidth(), this.getHeight());
+		g.setColor(Color.GRAY);
+		g.drawRect(this.getHorizontalOffset(),
+				this.getVerticalOffset(),
+				this.getWidth() - this.getHorizontalOffset() * 2,
+				this.getHeight() - this.getVerticalOffset() * 2);
 	}
 }

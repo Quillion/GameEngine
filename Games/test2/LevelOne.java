@@ -21,7 +21,9 @@ public class LevelOne extends Level
 {
 	private List<Box> boxes;
 	private List<BBox> bBoxes;
-	private List<MBox> mBoxes;
+	private MBox character;
+
+	private FollowingCamera camera;
 
 	public LevelOne(Game game)
 	{
@@ -33,7 +35,10 @@ public class LevelOne extends Level
 	{
 		boxes = new ArrayList<Box>();
 		bBoxes = new ArrayList<BBox>();
-		mBoxes = new ArrayList<MBox>();
+
+		character = new MBox();
+
+		camera = new FollowingCamera(200, 200, character);
 	}
 
 	@Override
@@ -67,12 +72,12 @@ public class LevelOne extends Level
 		bBox.setOffsets(new Dimensions(9, 9));
 		bBoxes.add(bBox);
 
-		MBox mBox = new MBox();
-		mBox.setCoordinates(new Point(getWidth() / 3, getHeight() / 3));
-		mBox.setSize(new Dimensions(45, 45));
-		mBox.setOffsets(new Dimensions(7, 7));
-		mBox.setVector(new Point(0, 0));
-		mBoxes.add(mBox);
+		character.setCoordinates(new Point(getWidth() / 3, getHeight() / 3));
+		character.setSize(new Dimensions(45, 45));
+		character.setOffsets(new Dimensions(7, 7));
+		character.setVector(new Point(0, 0));
+
+		camera.setSize(new Dimensions(getWidth(), getHeight()));
 
 		setLoaded(true);
 	}
@@ -81,97 +86,91 @@ public class LevelOne extends Level
 	public void draw(Graphics2D g)
 	{
 		for (Box box : boxes)
-			box.draw(g);
+			camera.draw(g, box);
 
 		for (BBox box : bBoxes)
-			box.draw(g);
+			camera.draw(g, box);
 
-		for (MBox box : mBoxes)
-			box.draw(g);
+		camera.draw(g, character);
+
+		camera.draw(g);
 	}
 
 	@Override
 	public void update()
 	{
-		for (MBox mbox : mBoxes)
+		for (Box box : boxes)
 		{
-			for (Box box : boxes)
-			{
-				Constants.Direction direction = CollisionEngine.horizontalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Right) && mbox.getXVector() > 0)
-					mbox.setXVector(0);
-				else if (direction.equals(Constants.Direction.Left) && mbox.getXVector() < 0)
-					mbox.setXVector(0);
-				direction = CollisionEngine.verticalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Down) && mbox.getYVector() > 0)
-					mbox.setYVector(0);
-				else if (direction.equals(Constants.Direction.Up) && mbox.getYVector() < 0)
-					mbox.setYVector(0);
-			}
-
-			for (BBox box : bBoxes)
-			{
-				Constants.Direction direction = CollisionEngine.horizontalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Right) && mbox.getXVector() > 0)
-					mbox.setXVector(0);
-				else if (direction.equals(Constants.Direction.Left) && mbox.getXVector() < 0)
-					mbox.setXVector(0);
-				direction = CollisionEngine.verticalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Down) && mbox.getYVector() > 0)
-					mbox.setYVector(0);
-				else if (direction.equals(Constants.Direction.Up) && mbox.getYVector() < 0)
-					mbox.setYVector(0);
-			}
-
-			mbox.move();
+			Constants.Direction direction = CollisionEngine.horizontalCollision(character, box);
+			if (direction.equals(Constants.Direction.Right) && character.getXVector() > 0)
+				character.setXVector(0);
+			else if (direction.equals(Constants.Direction.Left) && character.getXVector() < 0)
+				character.setXVector(0);
+			direction = CollisionEngine.verticalCollision(character, box);
+			if (direction.equals(Constants.Direction.Down) && character.getYVector() > 0)
+				character.setYVector(0);
+			else if (direction.equals(Constants.Direction.Up) && character.getYVector() < 0)
+				character.setYVector(0);
 		}
+
+		for (BBox box : bBoxes)
+		{
+			Constants.Direction direction = CollisionEngine.horizontalCollision(character, box);
+			if (direction.equals(Constants.Direction.Right) && character.getXVector() > 0)
+				character.setXVector(0);
+			else if (direction.equals(Constants.Direction.Left) && character.getXVector() < 0)
+				character.setXVector(0);
+			direction = CollisionEngine.verticalCollision(character, box);
+			if (direction.equals(Constants.Direction.Down) && character.getYVector() > 0)
+				character.setYVector(0);
+			else if (direction.equals(Constants.Direction.Up) && character.getYVector() < 0)
+				character.setYVector(0);
+		}
+
+		character.move();
+
+		camera.updateCamera();
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
-		for (MBox box : mBoxes)
+		if (e.getKeyCode() == KeyEvent.VK_UP)
 		{
-			if (e.getKeyCode() == KeyEvent.VK_UP)
-			{
-				box.setYVector(-3);
-			}
-			else if (e.getKeyCode() == KeyEvent.VK_DOWN)
-			{
-				box.setYVector(3);
-			}
-			else if (e.getKeyCode() == KeyEvent.VK_LEFT)
-			{
-				box.setXVector(-3);
-			}
-			else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-			{
-				box.setXVector(3);
-			}
+			character.setYVector(-3);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_DOWN)
+		{
+			character.setYVector(3);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		{
+			character.setXVector(-3);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+		{
+			character.setXVector(3);
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e)
 	{
-		for (MBox box : mBoxes)
+		if (e.getKeyCode() == KeyEvent.VK_UP)
 		{
-			if (e.getKeyCode() == KeyEvent.VK_UP)
-			{
-				box.setYVector(0);
-			}
-			else if (e.getKeyCode() == KeyEvent.VK_DOWN)
-			{
-				box.setYVector(0);
-			}
-			else if (e.getKeyCode() == KeyEvent.VK_LEFT)
-			{
-				box.setXVector(0);
-			}
-			else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-			{
-				box.setXVector(0);
-			}
+			character.setYVector(0);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_DOWN)
+		{
+			character.setYVector(0);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		{
+			character.setXVector(0);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+		{
+			character.setXVector(0);
 		}
 	}
 
