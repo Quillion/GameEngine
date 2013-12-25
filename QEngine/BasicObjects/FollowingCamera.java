@@ -17,13 +17,10 @@ public class FollowingCamera extends Camera
 	/**
 	 * We have to give following camera bounds and object to follow.
 	 *
-	 * @param leftRightBoundary Vertical offset of camera.
-	 * @param topBottomBoundary Horizontal offset of the camera.
-	 * @param character         The Shape to follow.
+	 * @param character The Shape to follow.
 	 */
-	public FollowingCamera(int leftRightBoundary, int topBottomBoundary, Shape character)
+	public FollowingCamera(Shape character)
 	{
-		super(leftRightBoundary, topBottomBoundary);
 		this.character = character;
 	}
 

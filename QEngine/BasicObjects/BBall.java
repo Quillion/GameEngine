@@ -35,7 +35,7 @@ public class BBall extends Ball
 	 */
 	public int getOffset()
 	{
-		return offset;
+		return this.offset;
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class BBall extends Ball
 	{
 		super.drawBall(g);
 		g.setColor(Color.GRAY);
-		g.drawOval(this.getLeftX(), this.getTopY(), this.getDiameter() - this.offset * 2, this.getDiameter() - this.offset * 2);
+		g.drawOval(this.getLeftX(), this.getTopY(), this.getDiameter() - this.getOffset() * 2, this.getDiameter() - this.getOffset() * 2);
 	}
 
 	/**

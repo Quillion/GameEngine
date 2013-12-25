@@ -38,7 +38,7 @@ public class LevelOne extends Level
 
 		character = new MBox();
 
-		camera = new FollowingCamera(200, 200, character);
+		camera = new FollowingCamera(character);
 	}
 
 	@Override
@@ -78,6 +78,7 @@ public class LevelOne extends Level
 		character.setVector(new Point(0, 0));
 
 		camera.setSize(new Dimensions(getWidth(), getHeight()));
+		camera.setOffsets(new Dimensions(200, 200));
 
 		setLoaded(true);
 	}
