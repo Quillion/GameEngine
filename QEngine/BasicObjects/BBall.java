@@ -174,7 +174,7 @@ public class BBall extends Ball
 	@Override
 	public void drawBall(Graphics2D g)
 	{
-		this.drawBall(g);
+		super.drawBall(g);
 	}
 
 	/**
