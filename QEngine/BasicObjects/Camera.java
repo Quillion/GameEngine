@@ -13,13 +13,16 @@ import platformer.BasicSprite.MCharacter;
 import platformer.ExtendedShapes.MBControls;
 
 import java.awt.*;
-
+import java.awt.image.BufferedImage;
 
 /**
  * Class for attaching camera to the game screen.
  */
 public class Camera extends BBox
 {
+	private BufferedImage view;
+	private Graphics2D g;
+
 	/**
 	 * We can't have a camera without few parameters first right?
 	 * So let's initialize.
@@ -27,6 +30,15 @@ public class Camera extends BBox
 	public Camera()
 	{
 		super();
+	}
+
+	@Override
+	public void setSize(Dimensions size)
+	{
+		super.setSize(size);
+		this.view = new BufferedImage(super.getWidth(), super.getHeight(),
+				BufferedImage.TYPE_INT_ARGB);
+		this.g = (Graphics2D) (view.getGraphics());
 	}
 
 	/**
@@ -63,28 +75,28 @@ public class Camera extends BBox
 		}
 	}
 
-	private void drawBox(Graphics2D g, Box box)
+	private void drawBox(Box box)
 	{
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.drawRect(box.getX() - this.getX(),
 				box.getY() - this.getY(),
 				box.getWidth(),
 				box.getHeight());
 	}
 
-	private void drawBBox(Graphics2D g, BBox box)
+	private void drawBBox(BBox box)
 	{
-		this.drawBox(g, box);
-		g.setColor(Color.GRAY);
+		this.drawBox(box);
+		g.setColor(Color.GREEN);
 		g.drawRect(box.getLeftX() - this.getX(),
 				box.getTopY() - this.getY(),
 				box.getRightX() - box.getLeftX(),
 				box.getBottomY() - box.getTopY());
 	}
 
-	private void drawMBox(Graphics2D g, MBox box)
+	private void drawMBox(MBox box)
 	{
-		this.drawBBox(g, box);
+		this.drawBBox(box);
 		g.setColor(Color.LIGHT_GRAY);
 		g.drawLine(box.getCenterX() - this.getX(),
 				box.getCenterY() - this.getY(),
@@ -92,9 +104,9 @@ public class Camera extends BBox
 				(int) (box.getCenterY() + box.getYVector() * 5 - this.getY()));
 	}
 
-	private void drawBall(Graphics2D g, Ball ball)
+	private void drawBall(Ball ball)
 	{
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.drawOval(ball.getX() - ball.getRadius() - this.getX(),
 				ball.getY() - ball.getRadius() - this.getY(),
 				ball.getDiameter(),
@@ -105,19 +117,19 @@ public class Camera extends BBox
 				3);
 	}
 
-	private void drawBBall(Graphics2D g, BBall ball)
+	private void drawBBall(BBall ball)
 	{
-		this.drawBall(g, ball);
-		g.setColor(Color.GRAY);
+		this.drawBall(ball);
+		g.setColor(Color.GREEN);
 		g.drawOval(ball.getLeftX(),
 				ball.getTopY(),
 				ball.getDiameter() - ball.getOffset() * 2,
 				ball.getDiameter() - ball.getOffset() * 2);
 	}
 
-	private void drawMBall(Graphics2D g, MBall ball)
+	private void drawMBall(MBall ball)
 	{
-		this.drawBBall(g, ball);
+		this.drawBBall(ball);
 		g.setColor(Color.LIGHT_GRAY);
 		g.drawLine(ball.getCenterX(),
 				ball.getCenterY(),
@@ -129,14 +141,13 @@ public class Camera extends BBox
 	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
 	 * Much better than default method of box's drawing with slightly higher cost.
 	 *
-	 * @param g   the graphics to which to draw.
 	 * @param box The box you would like drawn.
 	 */
-	public void draw(Graphics2D g, Box box)
+	public void draw(Box box)
 	{
 		if (CollisionEngine.collision(this, box))
 		{
-			this.drawBox(g, box);
+			this.drawBox(box);
 		}
 	}
 
@@ -144,14 +155,13 @@ public class Camera extends BBox
 	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
 	 * Much better than default method of box's drawing with slightly higher cost.
 	 *
-	 * @param g   the graphics to which to draw.
 	 * @param box The box you would like drawn.
 	 */
-	public void draw(Graphics2D g, BBox box)
+	public void draw(BBox box)
 	{
 		if (CollisionEngine.collision(this, box))
 		{
-			this.drawBBox(g, box);
+			this.drawBBox(box);
 		}
 	}
 
@@ -159,38 +169,37 @@ public class Camera extends BBox
 	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
 	 * Much better than default method of box's drawing with slightly higher cost.
 	 *
-	 * @param g   the graphics to which to draw.
 	 * @param box The box you would like drawn.
 	 */
-	public void draw(Graphics2D g, MBox box)
+	public void draw(MBox box)
 	{
 		if (CollisionEngine.collision(this, box))
 		{
-			this.drawMBox(g, box);
+			this.drawMBox(box);
 		}
 	}
 
-	public void draw(Graphics2D g, Ball ball)
+	public void draw(Ball ball)
 	{
 		if (CollisionEngine.collision(this, ball))
 		{
-			this.drawBall(g, ball);
+			this.drawBall(ball);
 		}
 	}
 
-	public void draw(Graphics2D g, BBall ball)
+	public void draw(BBall ball)
 	{
 		if (CollisionEngine.collision(this, ball))
 		{
-			this.drawBBall(g, ball);
+			this.drawBBall(ball);
 		}
 	}
 
-	public void draw(Graphics2D g, MBall ball)
+	public void draw(MBall ball)
 	{
 		if (CollisionEngine.collision(this, ball))
 		{
-			this.drawMBall(g, ball);
+			this.drawMBall(ball);
 		}
 	}
 
@@ -198,10 +207,9 @@ public class Camera extends BBox
 	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
 	 * Much better than default method of box's drawing with slightly higher cost.
 	 *
-	 * @param g   the graphics to which to draw.
 	 * @param box The box you would like drawn.
 	 */
-	public void draw(Graphics2D g, Platform box)
+	public void draw(Platform box)
 	{
 		if (box.getImage() == null)
 		{
@@ -225,10 +233,9 @@ public class Camera extends BBox
 	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
 	 * Much better than default method of box's drawing with slightly higher cost.
 	 *
-	 * @param g   the graphics to which to draw.
 	 * @param box The box you would like drawn.
 	 */
-	public void draw(Graphics2D g, BPlatform box)
+	public void draw(BPlatform box)
 	{
 		g.drawImage(box.getImage(),
 				null,
@@ -240,10 +247,9 @@ public class Camera extends BBox
 	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
 	 * Much better than default method of box's drawing with slightly higher cost.
 	 *
-	 * @param g   the graphics to which to draw.
 	 * @param box The box you would like drawn.
 	 */
-	public void draw(Graphics2D g, MCharacter box)
+	public void draw(MCharacter box)
 	{
 		if (box.getImage() == null)
 		{
@@ -266,12 +272,11 @@ public class Camera extends BBox
 	 * Draws given box with its coordinates shifted, so that it is in accordance with the camera.
 	 * Much better than default method of box's drawing with slightly higher cost.
 	 *
-	 * @param g   the graphics to which to draw.
 	 * @param box The box you would like drawn.
 	 */
-	public void draw(Graphics2D g, MBControls box)
+	public void draw(MBControls box)
 	{
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.drawRect(box.getX() - this.getX() + this.getCenterX(),
 				box.getY() - this.getY() + this.getCenterY(),
 				box.getWidth(),
@@ -281,10 +286,9 @@ public class Camera extends BBox
 	/**
 	 * Draws the character. There is very little logic here, main logic is in getImage done by Character.
 	 *
-	 * @param g         the graphics to which to draw to.
 	 * @param character The character you want to be drawn.
 	 */
-	public void draw(Graphics2D g, BasicCharacter character)
+	public void draw(BasicCharacter character)
 	{
 		g.drawImage(character.getImage(),
 				null,
@@ -292,7 +296,7 @@ public class Camera extends BBox
 				character.getY() - this.getY() + this.getCenterY());
 	}
 
-	public void draw(Graphics2D g, Item item)
+	public void draw(Item item)
 	{
 		g.drawImage(item.getImage(),
 				null,
@@ -309,9 +313,21 @@ public class Camera extends BBox
 	@Override
 	public void draw(Graphics2D g)
 	{
-		g.setColor(Color.BLACK);
+		g.drawImage(view, null, 0, 0);
+		this.g.clearRect(0, 0, getWidth(), getHeight());
+	}
+
+	/**
+	 * Well the camera will always be fixed at location 0, 0(not really).
+	 * So we will just draw it there.
+	 *
+	 * @param g graphics where the box will be drawn into.
+	 */
+	public void drawCamera(Graphics2D g)
+	{
+		g.setColor(Color.WHITE);
 		g.drawRect(0, 0, this.getWidth(), this.getHeight());
-		g.setColor(Color.GRAY);
+		g.setColor(Color.GREEN);
 		g.drawRect(this.getHorizontalOffset(),
 				this.getVerticalOffset(),
 				this.getWidth() - this.getHorizontalOffset() * 2,
@@ -327,7 +343,7 @@ public class Camera extends BBox
 	@Override
 	public int getLeftX()
 	{
-		return (this.getX() - this.getHorizontalOffset());
+		return (this.getX());
 	}
 
 	/**
@@ -339,7 +355,7 @@ public class Camera extends BBox
 	@Override
 	public int getRightX()
 	{
-		return (this.getX() + this.getWidth() + this.getHorizontalOffset());
+		return (this.getX() + this.getWidth());
 	}
 
 	/**
@@ -351,7 +367,7 @@ public class Camera extends BBox
 	@Override
 	public int getTopY()
 	{
-		return (this.getY() - this.getVerticalOffset());
+		return (this.getY());
 	}
 
 	/**
@@ -363,7 +379,7 @@ public class Camera extends BBox
 	@Override
 	public int getBottomY()
 	{
-		return (this.getY() + this.getHeight() + this.getVerticalOffset());
+		return (this.getY() + this.getHeight());
 	}
 
 	/**

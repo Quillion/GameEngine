@@ -112,12 +112,13 @@ public class LevelOne extends Level
 	public void draw(Graphics2D g)
 	{
 		for (BBox box : walls)
-			camera.draw(g, box);
+			camera.draw(box);
 
-		camera.draw(g, character1);
-		camera.draw(g, character2);
+		camera.draw(character1);
+		camera.draw(character2);
 
 		camera.draw(g);
+		camera.drawCamera(g);
 	}
 
 	@Override

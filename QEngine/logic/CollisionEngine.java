@@ -67,6 +67,19 @@ public class CollisionEngine
 	 * @param wall2 second object that will be used in collision checking.
 	 * @return true if the object have collided and false if they didn't.
 	 */
+	public static boolean collision(Box wall1, Box wall2)
+	{
+		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
+				(wall1.getLeftX() <= wall2.getRightX()) && (wall1.getRightX() >= wall2.getLeftX()));
+	}
+
+	/**
+	 * Checks to see if the objects have already collided.
+	 *
+	 * @param wall1 first object that will be used in collision checking.
+	 * @param wall2 second object that will be used in collision checking.
+	 * @return true if the object have collided and false if they didn't.
+	 */
 	public static boolean collision(BBox wall1, Box wall2)
 	{
 		return ((wall1.getTopY() <= wall2.getBottomY()) && (wall1.getBottomY() >= wall2.getTopY()) &&
@@ -310,7 +323,7 @@ public class CollisionEngine
 	 * Checks for collision of character1's sides against character2.
 	 *
 	 * @param character1 movable object whose collision you want to check for.
-	 * @param character2      character2 in relation to which this objects' orientation will be checked.
+	 * @param character2 character2 in relation to which this objects' orientation will be checked.
 	 * @return LEFT if character1's left side hits character2,
 	 *         RIGHT if character1's right side hits character2,
 	 *         NONE if no side collision happens.
