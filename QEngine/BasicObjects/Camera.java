@@ -77,7 +77,7 @@ public class Camera extends BBox
 
 	private void drawBox(Box box)
 	{
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLUE);
 		g.drawRect(box.getX() - this.getX(),
 				box.getY() - this.getY(),
 				box.getWidth(),
@@ -106,7 +106,7 @@ public class Camera extends BBox
 
 	private void drawBall(Ball ball)
 	{
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLUE);
 		g.drawOval(ball.getX() - ball.getRadius() - this.getX(),
 				ball.getY() - ball.getRadius() - this.getY(),
 				ball.getDiameter(),
@@ -276,7 +276,7 @@ public class Camera extends BBox
 	 */
 	public void draw(MBControls box)
 	{
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLUE);
 		g.drawRect(box.getX() - this.getX() + this.getCenterX(),
 				box.getY() - this.getY() + this.getCenterY(),
 				box.getWidth(),
@@ -314,7 +314,45 @@ public class Camera extends BBox
 	public void draw(Graphics2D g)
 	{
 		g.drawImage(view, null, 0, 0);
+	}
+
+	public void drawClear(Graphics2D g)
+	{
+		g.drawImage(view, null, 0, 0);
 		this.g.clearRect(0, 0, getWidth(), getHeight());
+	}
+
+	public void drawWhite(Graphics2D g)
+	{
+		g.drawImage(view, null, 0, 0);
+		this.g.setColor(Color.WHITE);
+		this.g.fillRect(0, 0, getWidth(), getHeight());
+	}
+
+	/**
+	 * Well the camera will always be fixed at location 0, 0(not really).
+	 * So we will just draw it there.
+	 *
+	 * @param g graphics where the box will be drawn into.
+	 * @param x the x coordinate where you want to draw this camera onto the given graphics.
+	 * @param y the y coordinate where you want to draw this camera onto the given graphics.
+	 */
+	public void draw(Graphics2D g, int x, int y)
+	{
+		g.drawImage(view, null, x, y);
+	}
+
+	public void drawClear(Graphics2D g, int x, int y)
+	{
+		g.drawImage(view, null, x, y);
+		this.g.clearRect(0, 0, getWidth(), getHeight());
+	}
+
+	public void drawWhite(Graphics2D g, int x, int y)
+	{
+		g.drawImage(view, null, x, y);
+		this.g.setColor(Color.WHITE);
+		this.g.fillRect(0, 0, getWidth(), getHeight());
 	}
 
 	/**
@@ -325,7 +363,7 @@ public class Camera extends BBox
 	 */
 	public void drawCamera(Graphics2D g)
 	{
-		g.setColor(Color.WHITE);
+		g.setColor(Color.CYAN);
 		g.drawRect(0, 0, this.getWidth(), this.getHeight());
 		g.setColor(Color.GREEN);
 		g.drawRect(this.getHorizontalOffset(),
@@ -343,7 +381,7 @@ public class Camera extends BBox
 	@Override
 	public int getLeftX()
 	{
-		return (this.getX());
+		return (this.getX() - this.getHorizontalOffset());
 	}
 
 	/**
@@ -355,7 +393,7 @@ public class Camera extends BBox
 	@Override
 	public int getRightX()
 	{
-		return (this.getX() + this.getWidth());
+		return (this.getX() + this.getWidth() + this.getHorizontalOffset());
 	}
 
 	/**
@@ -367,7 +405,7 @@ public class Camera extends BBox
 	@Override
 	public int getTopY()
 	{
-		return (this.getY());
+		return (this.getY() - this.getVerticalOffset());
 	}
 
 	/**
@@ -379,7 +417,7 @@ public class Camera extends BBox
 	@Override
 	public int getBottomY()
 	{
-		return (this.getY() + this.getHeight());
+		return (this.getY() + this.getHeight() + this.getVerticalOffset());
 	}
 
 	/**

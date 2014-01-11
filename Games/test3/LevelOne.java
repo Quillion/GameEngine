@@ -23,7 +23,7 @@ public class LevelOne extends Level
 	private MBox character1;
 	private MBox character2;
 
-	private FollowingCamera camera;
+	private MultiplayerCamera camera;
 
 	public LevelOne(Game game)
 	{
@@ -38,7 +38,7 @@ public class LevelOne extends Level
 		character1 = new MBox();
 		character2 = new MBox();
 
-		camera = new FollowingCamera(character1);
+		camera = new MultiplayerCamera(character1, character2);
 	}
 
 	@Override
@@ -102,8 +102,7 @@ public class LevelOne extends Level
 		character2.setOffsets(new Dimensions(7, 7));
 		character2.setVector(new Point(0, 0));
 
-		camera.setSize(new Dimensions(getWidth(), getHeight()));
-		camera.setOffsets(new Dimensions(getWidth() / 2 - 70, getHeight() / 2 - 70));
+		camera.setSize(new Dimensions(getWidth(), getHeight()), new Dimensions(getWidth() / 2 - 70, getHeight() / 2 - 70));
 
 		setLoaded(true);
 	}
@@ -117,7 +116,7 @@ public class LevelOne extends Level
 		camera.draw(character1);
 		camera.draw(character2);
 
-		camera.draw(g);
+		camera.drawClear(g);
 		camera.drawCamera(g);
 	}
 
