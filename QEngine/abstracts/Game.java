@@ -13,7 +13,7 @@ import java.awt.image.BufferStrategy;
 /**
  * Simple thread. Creates everything necessary to run the game, and makes you implement things that are only needed.
  */
-public abstract class Game implements Runnable
+public abstract class Game extends JFrame implements Runnable
 {
 	/**
 	 * Initialise all of your Objects in here
@@ -89,7 +89,7 @@ public abstract class Game implements Runnable
 		public void keyPressed(KeyEvent e)
 		{
 			// USER PRESSED ESC
-			if (e.getKeyCode() == 27)
+			if (e.getKeyCode() == KeyEvent.VK_ESCAPE && EXIT_ON_ESC)
 			{
 				// IF WE ARE FULL SCREEN IT IS BETTER FOR US TO CLEAR THINGS UP
 				if (FULL_SCREEN)
@@ -203,20 +203,17 @@ public abstract class Game implements Runnable
 
 	// FULL SCREEN OR NOT
 	private boolean FULL_SCREEN;
+	private boolean EXIT_ON_ESC;
 
 	// SCREEN MEASUREMENTS AND REFRESH
 	private int WIDTH;
 	private int HEIGHT;
 	private long desiredFPS = 60;
 
-	// NAME OF WINDOW
-	private String title;
-
 	// INITIALIZING SOME FRAME RATE THINGS
 	private long desiredDeltaLoop = (1000 * 1000 * 1000) / desiredFPS;
 
 	// INITIALIZING SOME JAVA THINGS
-	private JFrame frame;
 	private BufferStrategy bufferStrategy;
 
 	private GraphicsDevice graphicsDevice;
@@ -257,7 +254,8 @@ public abstract class Game implements Runnable
 		this.WIDTH = 640;
 		this.HEIGHT = 480;
 		this.FULL_SCREEN = false;
-		this.title = "Game";
+		this.EXIT_ON_ESC = true;
+		this.setTitle("Game");
 		this.graphicsFont = new Font("TimesRoman", Font.BOLD, 90);
 	}
 
@@ -320,13 +318,13 @@ public abstract class Game implements Runnable
 	}
 
 	/**
-	 * Sets the title of this game window to what you specify,
+	 * Specifies whether or not to set up ESC button to automatically close the program.
 	 *
-	 * @param title Title of this game window/program.
+	 * @param exitOnEsc True if you want game to close eon ESC, false otherwise.
 	 */
-	public void setTitle(String title)
+	public void exitOnEsc(boolean exitOnEsc)
 	{
-		this.frame.setTitle(title);
+		this.EXIT_ON_ESC = exitOnEsc;
 	}
 
 	/**
@@ -340,14 +338,11 @@ public abstract class Game implements Runnable
 		this.graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
 		this.originalDisplayMode = this.graphicsDevice.getDisplayMode();
 
-		// CREATE NEW Frame
-		this.frame = new JFrame(this.title);
-
 		if (FULL_SCREEN)
 		{
-			this.frame.setUndecorated(true);
+			this.setUndecorated(true);
 
-			this.graphicsDevice.setFullScreenWindow(this.frame);
+			this.graphicsDevice.setFullScreenWindow(this);
 			if (this.graphicsDevice.isDisplayChangeSupported())
 			{
 				this.graphicsDevice.setDisplayMode(getBestDisplayMode(this.graphicsDevice));
@@ -355,11 +350,11 @@ public abstract class Game implements Runnable
 		}
 		else
 		{
-			this.frame.setSize(this.WIDTH, this.HEIGHT);
+			this.setSize(this.WIDTH, this.HEIGHT);
 		}
 
 		// CREATE NEW JPanel WITH SPECIFIED WIDTH AND HEIGHT
-		JPanel panel = (JPanel) this.frame.getContentPane();
+		JPanel panel = (JPanel) this.getContentPane();
 		// I had to add the -9 to readjust window size
 		panel.setPreferredSize(new Dimension(this.WIDTH - 9, this.HEIGHT - 9));
 		panel.setLayout(null);
@@ -376,10 +371,10 @@ public abstract class Game implements Runnable
 		canvas.addMouseListener(new MouseControl(this));
 		canvas.addMouseMotionListener(new MouseMotion(this));
 		// INITIALIZE THE WINDOW
-		this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		this.frame.pack();
-		this.frame.setResizable(false);
-		this.frame.setVisible(true);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		this.pack();
+		this.setResizable(false);
+		this.setVisible(true);
 
 		// SET GRAPHICS DEVICE
 		canvas.createBufferStrategy(2);

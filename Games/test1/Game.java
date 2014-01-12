@@ -13,6 +13,8 @@ public class Game extends GameSimple
 	{
 		Game game = new Game();
 		game.setScreen(900, 500, false);
+		game.setTitle("Test 1");
+		game.exitOnEsc(true);
 		game.init();
 		LevelOne lvl1 = new LevelOne(game);
 		game.addLevel(lvl1);
