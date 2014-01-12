@@ -1,6 +1,7 @@
 package BasicObjects;
 
 import abstracts.Shape;
+import logic.MathEngine;
 
 import java.awt.*;
 
@@ -17,6 +18,7 @@ public class MultiplayerCamera
 	}
 
 	private Mode mode;
+	private Mode subMode;
 
 	private FollowingCamera horizontal1;
 	private FollowingCamera horizontal2;
@@ -42,6 +44,7 @@ public class MultiplayerCamera
 		this.camera = new Camera();
 
 		this.mode = Mode.Horizontal;
+		this.subMode = Mode.One;
 		this.size = new Dimensions(0, 0);
 	}
 
@@ -79,8 +82,43 @@ public class MultiplayerCamera
 		}
 		else if (this.mode.equals(Mode.Vertical))
 		{
-			this.horizontal1.updateCamera();
-			this.horizontal2.updateCamera();
+			this.vertical1.updateCamera();
+			this.vertical2.updateCamera();
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.updateCamera(
+					(this.player1.getCenterX() + this.player2.getCenterX()) / 2,
+					(this.player1.getCenterY() + this.player2.getCenterY()) / 2);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			double x = Math.abs(MathEngine.deltaX(this.player1.getCenter(), this.player2.getCenter()));
+			double y = Math.abs(MathEngine.deltaY(this.player1.getCenter(), this.player2.getCenter()));
+			double cameraX = camera.getWidth() - camera.getHorizontalOffset() * 2;
+			double cameraY = camera.getHeight() - camera.getVerticalOffset() * 2;
+			if ((x < cameraX) && (y < cameraY))
+			{
+				this.subMode = Mode.One;
+				this.camera.updateCamera(
+						(this.player1.getCenterX() + this.player2.getCenterX()) / 2,
+						(this.player1.getCenterY() + this.player2.getCenterY()) / 2);
+			}
+			else
+			{
+				if (x < y)
+				{
+					this.subMode = Mode.Horizontal;
+					this.horizontal1.updateCamera();
+					this.horizontal2.updateCamera();
+				}
+				else
+				{
+					this.subMode = Mode.Vertical;
+					this.vertical1.updateCamera();
+					this.vertical2.updateCamera();
+				}
+			}
 		}
 	}
 
@@ -91,6 +129,32 @@ public class MultiplayerCamera
 			this.horizontal1.draw(box);
 			this.horizontal2.draw(box);
 		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.draw(box);
+			this.vertical2.draw(box);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.draw(box);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.draw(box);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				this.horizontal1.draw(box);
+				this.horizontal2.draw(box);
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				this.vertical1.draw(box);
+				this.vertical2.draw(box);
+			}
+		}
 	}
 
 	public void draw(BBox box)
@@ -99,6 +163,32 @@ public class MultiplayerCamera
 		{
 			this.horizontal1.draw(box);
 			this.horizontal2.draw(box);
+		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.draw(box);
+			this.vertical2.draw(box);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.draw(box);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.draw(box);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				this.horizontal1.draw(box);
+				this.horizontal2.draw(box);
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				this.vertical1.draw(box);
+				this.vertical2.draw(box);
+			}
 		}
 	}
 
@@ -109,6 +199,32 @@ public class MultiplayerCamera
 			this.horizontal1.draw(box);
 			this.horizontal2.draw(box);
 		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.draw(box);
+			this.vertical2.draw(box);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.draw(box);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.draw(box);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				this.horizontal1.draw(box);
+				this.horizontal2.draw(box);
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				this.vertical1.draw(box);
+				this.vertical2.draw(box);
+			}
+		}
 	}
 
 	public void draw(Ball ball)
@@ -117,6 +233,32 @@ public class MultiplayerCamera
 		{
 			this.horizontal1.draw(ball);
 			this.horizontal2.draw(ball);
+		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.draw(ball);
+			this.vertical2.draw(ball);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.draw(ball);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.draw(ball);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				this.horizontal1.draw(ball);
+				this.horizontal2.draw(ball);
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				this.vertical1.draw(ball);
+				this.vertical2.draw(ball);
+			}
 		}
 	}
 
@@ -127,6 +269,32 @@ public class MultiplayerCamera
 			this.horizontal1.draw(ball);
 			this.horizontal2.draw(ball);
 		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.draw(ball);
+			this.vertical2.draw(ball);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.draw(ball);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.draw(ball);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				this.horizontal1.draw(ball);
+				this.horizontal2.draw(ball);
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				this.vertical1.draw(ball);
+				this.vertical2.draw(ball);
+			}
+		}
 	}
 
 	public void draw(MBall ball)
@@ -135,6 +303,32 @@ public class MultiplayerCamera
 		{
 			this.horizontal1.draw(ball);
 			this.horizontal2.draw(ball);
+		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.draw(ball);
+			this.vertical2.draw(ball);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.draw(ball);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.draw(ball);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				this.horizontal1.draw(ball);
+				this.horizontal2.draw(ball);
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				this.vertical1.draw(ball);
+				this.vertical2.draw(ball);
+			}
 		}
 	}
 
@@ -145,6 +339,48 @@ public class MultiplayerCamera
 			this.horizontal1.draw(g, 0, 0);
 			this.horizontal2.draw(g, 0, this.horizontal1.getHeight());
 		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.draw(g, 0, 0);
+			this.vertical2.draw(g, this.vertical1.getWidth(), 0);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.draw(g);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.draw(g);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				if (this.player1.getY() < this.player2.getY())
+				{
+					this.horizontal1.draw(g, 0, 0);
+					this.horizontal2.draw(g, 0, this.horizontal1.getHeight());
+				}
+				else
+				{
+					this.horizontal1.draw(g, 0, this.horizontal2.getHeight());
+					this.horizontal2.draw(g, 0, 0);
+				}
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				if (this.player1.getX() < this.player2.getX())
+				{
+					this.vertical1.draw(g, 0, 0);
+					this.vertical2.draw(g, this.vertical1.getWidth(), 0);
+				}
+				else
+				{
+					this.vertical1.draw(g, this.vertical2.getWidth(), 0);
+					this.vertical2.draw(g, 0, 0);
+				}
+			}
+		}
 	}
 
 	public void drawClear(Graphics2D g)
@@ -153,6 +389,48 @@ public class MultiplayerCamera
 		{
 			this.horizontal1.drawClear(g, 0, 0);
 			this.horizontal2.drawClear(g, 0, this.horizontal1.getHeight());
+		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.drawClear(g, 0, 0);
+			this.vertical2.drawClear(g, this.vertical1.getWidth(), 0);
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.drawClear(g);
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.drawClear(g);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				if (this.player1.getY() < this.player2.getY())
+				{
+					this.horizontal1.drawClear(g, 0, 0);
+					this.horizontal2.drawClear(g, 0, this.horizontal1.getHeight());
+				}
+				else
+				{
+					this.horizontal1.drawClear(g, 0, this.horizontal2.getHeight());
+					this.horizontal2.drawClear(g, 0, 0);
+				}
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				if (this.player1.getX() < this.player2.getX())
+				{
+					this.vertical1.drawClear(g, 0, 0);
+					this.vertical2.drawClear(g, this.vertical1.getWidth(), 0);
+				}
+				else
+				{
+					this.vertical1.drawClear(g, this.vertical2.getWidth(), 0);
+					this.vertical2.drawClear(g, 0, 0);
+				}
+			}
 		}
 	}
 
@@ -163,32 +441,47 @@ public class MultiplayerCamera
 			this.horizontal1.drawWhite(g, 0, 0);
 			this.horizontal2.drawWhite(g, 0, this.horizontal1.getHeight());
 		}
-	}
-
-	public void draw(Graphics2D g, int x, int y)
-	{
-		if (this.mode.equals(Mode.Horizontal))
+		else if (this.mode.equals(Mode.Vertical))
 		{
-			this.horizontal1.draw(g, x, y);
-			this.horizontal2.draw(g, x, y);
+			this.vertical1.drawWhite(g, 0, 0);
+			this.vertical2.drawWhite(g, this.vertical1.getWidth(), 0);
 		}
-	}
-
-	public void drawClear(Graphics2D g, int x, int y)
-	{
-		if (this.mode.equals(Mode.Horizontal))
+		else if (this.mode.equals(Mode.One))
 		{
-			this.horizontal1.drawClear(g, x, y);
-			this.horizontal2.drawClear(g, x, y);
+			this.camera.drawWhite(g);
 		}
-	}
-
-	public void drawWhite(Graphics2D g, int x, int y)
-	{
-		if (this.mode.equals(Mode.Horizontal))
+		else if (this.mode.equals(Mode.Smart))
 		{
-			this.horizontal1.drawWhite(g, x, y);
-			this.horizontal2.drawWhite(g, x, y);
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.drawWhite(g);
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				if (this.player1.getY() < this.player2.getY())
+				{
+					this.horizontal1.drawWhite(g, 0, 0);
+					this.horizontal2.drawWhite(g, 0, this.horizontal1.getHeight());
+				}
+				else
+				{
+					this.horizontal1.drawWhite(g, 0, this.horizontal2.getHeight());
+					this.horizontal2.drawWhite(g, 0, 0);
+				}
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				if (this.player1.getX() < this.player2.getX())
+				{
+					this.vertical1.drawWhite(g, 0, 0);
+					this.vertical2.drawWhite(g, this.vertical1.getWidth(), 0);
+				}
+				else
+				{
+					this.vertical1.drawWhite(g, this.vertical2.getWidth(), 0);
+					this.vertical2.drawWhite(g, 0, 0);
+				}
+			}
 		}
 	}
 
@@ -196,8 +489,42 @@ public class MultiplayerCamera
 	{
 		if (this.mode.equals(Mode.Horizontal))
 		{
-			this.horizontal1.drawCamera(g);
-			this.horizontal2.drawCamera(g);
+			this.horizontal1.drawCamera();
+			this.horizontal2.drawCamera();
+		}
+		else if (this.mode.equals(Mode.Vertical))
+		{
+			this.vertical1.drawCamera();
+			this.vertical2.drawCamera();
+		}
+		else if (this.mode.equals(Mode.One))
+		{
+			this.camera.drawCamera();
+			this.camera.draw(new Point(
+					(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
+					(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
+			));
+		}
+		else if (this.mode.equals(Mode.Smart))
+		{
+			if (this.subMode.equals(Mode.One))
+			{
+				this.camera.drawCamera();
+				this.camera.draw(new Point(
+						(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
+						(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
+				));
+			}
+			else if (this.subMode.equals(Mode.Horizontal))
+			{
+				this.horizontal1.drawCamera();
+				this.horizontal2.drawCamera();
+			}
+			else if (this.subMode.equals(Mode.Vertical))
+			{
+				this.vertical1.drawCamera();
+				this.vertical2.drawCamera();
+			}
 		}
 	}
 }

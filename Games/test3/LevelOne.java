@@ -25,6 +25,10 @@ public class LevelOne extends Level
 
 	private MultiplayerCamera camera;
 
+	private MultiplayerCamera.Mode mode;
+
+	private boolean black;
+
 	public LevelOne(Game game)
 	{
 		super(game);
@@ -39,6 +43,11 @@ public class LevelOne extends Level
 		character2 = new MBox();
 
 		camera = new MultiplayerCamera(character1, character2);
+
+		mode = MultiplayerCamera.Mode.Horizontal;
+		camera.setMode(mode);
+
+		black = true;
 	}
 
 	@Override
@@ -116,8 +125,13 @@ public class LevelOne extends Level
 		camera.draw(character1);
 		camera.draw(character2);
 
-		camera.drawClear(g);
 		camera.drawCamera(g);
+		if (black)
+			camera.drawClear(g);
+		else
+			camera.drawWhite(g);
+
+		g.drawString(String.valueOf(mode), 0, 70);
 	}
 
 	@Override
@@ -227,6 +241,32 @@ public class LevelOne extends Level
 		else if (e.getKeyCode() == KeyEvent.VK_D)
 		{
 			character2.setXVector(0);
+		}
+
+		if (e.getKeyCode() == KeyEvent.VK_M)
+		{
+			if (mode.equals(MultiplayerCamera.Mode.Horizontal))
+			{
+				mode = MultiplayerCamera.Mode.Vertical;
+			}
+			else if (mode.equals(MultiplayerCamera.Mode.Vertical))
+			{
+				mode = MultiplayerCamera.Mode.One;
+			}
+			else if (mode.equals(MultiplayerCamera.Mode.One))
+			{
+				mode = MultiplayerCamera.Mode.Smart;
+			}
+			else
+			{
+				mode = MultiplayerCamera.Mode.Horizontal;
+			}
+			camera.setMode(mode);
+		}
+
+		if (e.getKeyCode() == KeyEvent.VK_C)
+		{
+			black = !black;
 		}
 	}
 

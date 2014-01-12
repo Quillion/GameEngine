@@ -94,8 +94,8 @@ public class LevelOne extends Level
 
 		camera.draw(character);
 
+		camera.drawCamera();
 		camera.drawWhite(g);
-		camera.drawCamera(g);
 	}
 
 	@Override

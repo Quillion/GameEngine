@@ -75,6 +75,12 @@ public class Camera extends BBox
 		}
 	}
 
+	private void drawPoint(Point point)
+	{
+		g.setColor(Color.GREEN);
+		g.drawRect((int) (point.getX() - 1) - this.getX(), (int) (point.getY() - 1) - this.getY(), 2, 2);
+	}
+
 	private void drawBox(Box box)
 	{
 		g.setColor(Color.BLUE);
@@ -135,6 +141,14 @@ public class Camera extends BBox
 				ball.getCenterY(),
 				(int) (ball.getCenterX() + ball.getXVector() * 5),
 				(int) (ball.getCenterY() + ball.getYVector() * 5));
+	}
+
+	public void draw(Point point)
+	{
+		if (CollisionEngine.collision(this, point))
+		{
+			this.drawPoint(point);
+		}
 	}
 
 	/**
@@ -358,15 +372,13 @@ public class Camera extends BBox
 	/**
 	 * Well the camera will always be fixed at location 0, 0(not really).
 	 * So we will just draw it there.
-	 *
-	 * @param g graphics where the box will be drawn into.
 	 */
-	public void drawCamera(Graphics2D g)
+	public void drawCamera()
 	{
-		g.setColor(Color.CYAN);
-		g.drawRect(0, 0, this.getWidth(), this.getHeight());
-		g.setColor(Color.GREEN);
-		g.drawRect(this.getHorizontalOffset(),
+		this.g.setColor(Color.CYAN);
+		this.g.drawRect(0, 0, this.getWidth(), this.getHeight());
+		this.g.setColor(Color.GREEN);
+		this.g.drawRect(this.getHorizontalOffset(),
 				this.getVerticalOffset(),
 				this.getWidth() - this.getHorizontalOffset() * 2,
 				this.getHeight() - this.getVerticalOffset() * 2);
