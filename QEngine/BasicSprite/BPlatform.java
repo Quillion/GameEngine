@@ -5,7 +5,7 @@ package BasicSprite;
  * @since 1.6
  */
 
-import BasicObjects.BBox;
+import BasicObjects.Shapes.BBox;
 import utils.ImageProcessor;
 
 import java.awt.*;

@@ -1,4 +1,5 @@
 import BasicObjects.*;
+import BasicObjects.Shapes.*;
 import constants.Constants;
 import junit.framework.Assert;
 import logic.CollisionEngine;

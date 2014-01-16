@@ -5,6 +5,8 @@ package BasicObjects;
  * @since 1.6
  */
 
+import BasicObjects.Shapes.BBox;
+
 import java.awt.image.BufferedImage;
 
 /**

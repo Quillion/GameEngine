@@ -4,7 +4,7 @@
  * @since 1.6
  */
 
-import BasicObjects.Field;
+import BasicObjects.Shapes.Field;
 import constants.Constants;
 import junit.framework.Assert;
 import org.junit.Test;

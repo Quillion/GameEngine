@@ -1,4 +1,11 @@
-package BasicObjects;
+package BasicObjects.Shapes;
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
+
+import BasicObjects.Point;
 
 import java.awt.*;
 
@@ -7,7 +14,6 @@ import java.awt.*;
  * @version Version 1
  * @since 1.6
  */
-
 public class BBall extends Ball
 {
 	/**

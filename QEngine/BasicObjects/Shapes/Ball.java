@@ -1,10 +1,12 @@
-package BasicObjects;
+package BasicObjects.Shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
+import BasicObjects.Dimensions;
+import BasicObjects.Point;
 import abstracts.Shape;
 
 import java.awt.*;
@@ -44,7 +46,7 @@ public class Ball extends Shape
 	 * Return x value of the object.
 	 * I return int because it is easier to use for collision detection.
 	 *
-	 * @return returns the x value of the object.
+	 * @return the x coordinate of the object.
 	 */
 	@Override
 	public int getX()
@@ -78,7 +80,7 @@ public class Ball extends Shape
 	 * Return y value of the object.
 	 * I return int because it is easier to use for collision detection.
 	 *
-	 * @return returns the y value of the object.
+	 * @return the y coordinate of the object.
 	 */
 	@Override
 	public int getY()
@@ -116,7 +118,7 @@ public class Ball extends Shape
 	@Override
 	public void setWidth(int width)
 	{
-		this.setRadius(width);
+		this.setDiameter(width);
 	}
 
 	/**
@@ -127,7 +129,7 @@ public class Ball extends Shape
 	@Override
 	public int getWidth()
 	{
-		return this.getRadius();
+		return this.getDiameter();
 	}
 
 	/**
@@ -138,7 +140,7 @@ public class Ball extends Shape
 	@Override
 	public void incrementWidth(int amount)
 	{
-		this.incrementRadius(amount);
+		this.incrementRadius(amount / 2);
 	}
 
 	/**
@@ -149,29 +151,30 @@ public class Ball extends Shape
 	@Override
 	public void setHeight(int height)
 	{
-		this.setRadius(height);
+		this.setRadius(height / 2);
 	}
 
 	/**
-	 * returns the shape's height.
+	 * Returns the shape's height.
 	 *
 	 * @return the width of this shape.
 	 */
 	@Override
 	public int getHeight()
 	{
-		return this.getRadius();
+		return this.getDiameter();
 	}
 
 	/**
 	 * Increments the shape's height by a set amount.
+	 * Keep in mind this is a circle. So height and width is same.
 	 *
 	 * @param amount how much to increment this shape's height by.
 	 */
 	@Override
 	public void incrementHeight(int amount)
 	{
-		this.incrementRadius(amount);
+		this.incrementRadius(amount / 2);
 	}
 
 	/**
@@ -182,7 +185,8 @@ public class Ball extends Shape
 	@Override
 	public void setSize(Dimensions size)
 	{
-		this.setRadius(size.getWidth());
+		if (size.getWidth() == size.getHeight())
+			this.setRadius(size.getWidth() / 2);
 	}
 
 	/**
@@ -330,7 +334,7 @@ public class Ball extends Shape
 	 */
 	public int getRadius()
 	{
-		return radius;
+		return this.radius;
 	}
 
 	/**
@@ -361,6 +365,16 @@ public class Ball extends Shape
 	public int getDiameter()
 	{
 		return this.getRadius() * 2;
+	}
+
+	/**
+	 * Sets the diameter of this circle to whatever you would like to
+	 *
+	 * @param diameter The diameter for this circle.
+	 */
+	public void setDiameter(int diameter)
+	{
+		this.setRadius(diameter / 2);
 	}
 
 	/**

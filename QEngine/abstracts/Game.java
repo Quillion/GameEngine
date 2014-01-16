@@ -88,7 +88,7 @@ public abstract class Game extends JFrame implements Runnable
 
 		public void keyPressed(KeyEvent e)
 		{
-			// USER PRESSED ESC
+			// USER PRESSED ESC AND WE WANT TO CLOSE ON ESC
 			if (e.getKeyCode() == KeyEvent.VK_ESCAPE && EXIT_ON_ESC)
 			{
 				// IF WE ARE FULL SCREEN IT IS BETTER FOR US TO CLEAR THINGS UP
@@ -362,7 +362,6 @@ public abstract class Game extends JFrame implements Runnable
 		Canvas canvas = new Canvas();
 		// once again I add 1 because java is stupid that's why
 		canvas.setBounds(0, 0, this.WIDTH + 1, this.HEIGHT + 1);
-		//canvas.setBounds(bounds);
 		canvas.setIgnoreRepaint(true);
 
 		panel.add(canvas);

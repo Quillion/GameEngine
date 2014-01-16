@@ -4,7 +4,7 @@
  * @since 1.6
  */
 
-import BasicObjects.Box;
+import BasicObjects.Shapes.Box;
 import BasicObjects.Dimensions;
 import BasicObjects.Point;
 import junit.framework.Assert;

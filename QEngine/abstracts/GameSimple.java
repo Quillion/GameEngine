@@ -18,6 +18,7 @@ import java.util.List;
 public abstract class GameSimple extends Game
 {
 	private List<Level> levels;
+	private boolean deleteFinishedLevel;
 
 	/**
 	 * Starts the class. Nothing important here.
@@ -26,6 +27,17 @@ public abstract class GameSimple extends Game
 	{
 		super();
 		this.levels = new ArrayList<Level>();
+		this.deleteFinishedLevel = true;
+	}
+
+	/**
+	 * If you do not want level that is completed to be deleted from the memory then set this to false.
+	 *
+	 * @param delete False if you want finished level to be kept in memory, true otherwise.
+	 */
+	public void deleteFinishedLevel(boolean delete)
+	{
+		this.deleteFinishedLevel = delete;
 	}
 
 	/**
@@ -89,7 +101,8 @@ public abstract class GameSimple extends Game
 			{
 				this.levels.get(i + 1).setActive(true);
 				this.levels.get(i).delete();
-				this.levels.remove(i);
+				if (this.deleteFinishedLevel)
+					this.levels.remove(i);
 			}
 			else
 			{

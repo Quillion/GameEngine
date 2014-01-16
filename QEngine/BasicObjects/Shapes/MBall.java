@@ -1,26 +1,24 @@
-package BasicObjects;
+package BasicObjects.Shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
+import BasicObjects.Point;
+
 import java.awt.*;
 
 /**
- * A movement box will have vectors so that it can move around and about.
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
  */
-public class MBox extends BBox
+public class MBall extends BBall
 {
-	/**
-	 * Since this is movement box we will add vectors.
-	 */
 	private Point vector;
 
-	/**
-	 * Basic Movement box with speed of zero.
-	 */
-	public MBox()
+	public MBall()
 	{
 		super();
 		this.vector = new Point(0, 0);
@@ -58,7 +56,7 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Reverses the x vector of this moving box.
+	 * Reverses the X vector of this ball.
 	 */
 	public void reverseXVector()
 	{
@@ -97,7 +95,7 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Reverses the y vector of this object.
+	 * Reverses the y vector of this ball.
 	 */
 	public void reverseYVector()
 	{
@@ -127,31 +125,21 @@ public class MBox extends BBox
 	/**
 	 * Applies this character's vector to itself and moves it by the vector's value.
 	 *
-	 * @return Returns the instance of this box after it has been moved.
+	 * @return The instance of this ball after it has been moved.
 	 */
-	public MBox move()
+	public MBall move()
 	{
 		this.move(this.vector);
 		return this;
 	}
 
 	/**
-	 * Reverses y and x vector of this given object.
-	 * Can be used for bouncing I guess.
+	 * Reverses the y and x vector of this ball.
+	 * Would be good to use for bouncing.
 	 */
 	public void reverseVector()
 	{
 		this.vector.reverse();
-	}
-
-	/**
-	 * Returns a copy of it's parent which is bounding Box. The copy is brand new object.
-	 *
-	 * @return Brand new bounding box which is a copy of the bounding box this object is built on.
-	 */
-	public BBox getBBox()
-	{
-		return super.copy();
 	}
 
 	/**
@@ -165,7 +153,7 @@ public class MBox extends BBox
 	@Override
 	public void draw(Graphics2D g)
 	{
-		this.drawBox(g);
+		this.drawBall(g);
 		g.setColor(Color.LIGHT_GRAY);
 		g.drawLine(this.getCenterX(),
 				this.getCenterY(),
@@ -181,9 +169,19 @@ public class MBox extends BBox
 	 * @param g graphics where the bounding box will be drawn into.
 	 */
 	@Override
-	public void drawBox(Graphics2D g)
+	public void drawBall(Graphics2D g)
 	{
 		super.draw(g);
+	}
+
+	/**
+	 * Returns a copy of it's parent which is bounding Box. The copy is brand new object.
+	 *
+	 * @return Brand new bounding box which is a copy of the bounding box this object is built on.
+	 */
+	public BBall getBBall()
+	{
+		return super.copy();
 	}
 
 	/**
@@ -191,17 +189,16 @@ public class MBox extends BBox
 	 *
 	 * @return A new copy of this Movement Box object.
 	 */
-	public MBox copy()
+	public MBall copy()
 	{
-		MBox box = new MBox();
-		box.setX(this.getX());
-		box.setY(this.getY());
-		box.setWidth(this.getWidth());
-		box.setHeight(this.getHeight());
-		box.setHorizontalOffset(this.getHorizontalOffset());
-		box.setVerticalOffset(this.getVerticalOffset());
-		box.setVector(this.getVector().copy());
-		return box;
+		MBall ball = new MBall();
+		ball.setX(this.getX());
+		ball.setY(this.getY());
+		ball.setWidth(this.getWidth());
+		ball.setHeight(this.getHeight());
+		ball.setOffset(this.getOffset());
+		ball.setVector(this.getVector().copy());
+		return ball;
 	}
 
 	/**

@@ -6,7 +6,10 @@ package test3;
  */
 
 import BasicObjects.*;
+import BasicObjects.Camera.MultiplayerCamera;
 import BasicObjects.Point;
+import BasicObjects.Shapes.BBox;
+import BasicObjects.Shapes.MBox;
 import abstracts.Level;
 import constants.Constants;
 import logic.CollisionEngine;

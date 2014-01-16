@@ -15,6 +15,7 @@ public class Game extends GameSimple
 		game.setScreen(900, 500, false);
 		game.setTitle("Test 1");
 		game.exitOnEsc(true);
+		game.deleteFinishedLevel(true);
 		game.init();
 		LevelOne lvl1 = new LevelOne(game);
 		game.addLevel(lvl1);

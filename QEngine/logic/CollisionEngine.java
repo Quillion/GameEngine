@@ -6,6 +6,7 @@ package logic;
  */
 
 import BasicObjects.*;
+import BasicObjects.Shapes.*;
 import constants.Constants;
 
 public class CollisionEngine

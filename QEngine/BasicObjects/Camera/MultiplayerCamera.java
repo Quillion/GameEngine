@@ -1,5 +1,7 @@
-package BasicObjects;
+package BasicObjects.Camera;
 
+import BasicObjects.*;
+import BasicObjects.Shapes.*;
 import abstracts.Shape;
 import logic.MathEngine;
 
@@ -500,7 +502,7 @@ public class MultiplayerCamera
 		else if (this.mode.equals(Mode.One))
 		{
 			this.camera.drawCamera();
-			this.camera.draw(new Point(
+			this.camera.draw(new BasicObjects.Point(
 					(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
 					(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
 			));
@@ -510,7 +512,7 @@ public class MultiplayerCamera
 			if (this.subMode.equals(Mode.One))
 			{
 				this.camera.drawCamera();
-				this.camera.draw(new Point(
+				this.camera.draw(new BasicObjects.Point(
 						(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
 						(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
 				));
