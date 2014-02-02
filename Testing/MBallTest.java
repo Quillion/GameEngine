@@ -4,9 +4,9 @@
  * @since 1.6
  */
 
-import BasicObjects.Shapes.BBall;
+import BasicObjects.shapes.BBall;
 import BasicObjects.Dimensions;
-import BasicObjects.Shapes.MBall;
+import BasicObjects.shapes.MBall;
 import BasicObjects.Point;
 import junit.framework.Assert;
 import org.junit.Test;

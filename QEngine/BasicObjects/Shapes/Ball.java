@@ -1,4 +1,4 @@
-package BasicObjects.Shapes;
+package BasicObjects.shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

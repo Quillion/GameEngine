@@ -1,18 +1,19 @@
-package test3;
+package test4;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.*;
-import BasicObjects.camera.MultiplayerCamera;
+import BasicObjects.Dimensions;
 import BasicObjects.Point;
+import BasicObjects.camera.FollowingCamera;
 import BasicObjects.shapes.BBox;
-import BasicObjects.shapes.MBox;
 import abstracts.Level;
 import constants.Constants;
+import dungeon.MBox;
 import logic.CollisionEngine;
+import logic.dungeon.Engine;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -24,11 +25,8 @@ public class LevelOne extends Level
 {
 	private List<BBox> walls;
 	private MBox character1;
-	private MBox character2;
 
-	private MultiplayerCamera camera;
-
-	private MultiplayerCamera.Mode mode;
+	private FollowingCamera camera;
 
 	private boolean black;
 
@@ -43,12 +41,8 @@ public class LevelOne extends Level
 		walls = new ArrayList<BBox>();
 
 		character1 = new MBox();
-		character2 = new MBox();
 
-		camera = new MultiplayerCamera(character1, character2);
-
-		mode = MultiplayerCamera.Mode.Horizontal;
-		camera.setMode(mode);
+		camera = new FollowingCamera(character1);
 
 		black = true;
 	}
@@ -108,13 +102,13 @@ public class LevelOne extends Level
 		character1.setSize(new Dimensions(45, 45));
 		character1.setOffsets(new Dimensions(7, 7));
 		character1.setVector(new Point(0, 0));
+		character1.setKeys(new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT, KeyEvent.VK_DOWN});
+		character1.setAcceleration(0.15);
+		character1.setMaxSpeed(3);
+		character1.setFriction(0.3);
 
-		character2.setCoordinates(new Point(250, 250));
-		character2.setSize(new Dimensions(45, 45));
-		character2.setOffsets(new Dimensions(7, 7));
-		character2.setVector(new Point(0, 0));
-
-		camera.setSize(new Dimensions(getWidth(), getHeight()), new Dimensions(getWidth() / 2 - 70, getHeight() / 2 - 70));
+		camera.setSize(new Dimensions(getWidth(), getHeight()));
+		camera.setOffsets(new Dimensions(400, 200));
 
 		setLoaded(true);
 	}
@@ -126,20 +120,27 @@ public class LevelOne extends Level
 			camera.draw(box);
 
 		camera.draw(character1);
-		camera.draw(character2);
 
-		camera.drawCamera(g);
+		camera.drawCamera();
 		if (black)
+		{
 			camera.drawClear(g);
+			g.setColor(Color.WHITE);
+		}
 		else
+		{
 			camera.drawWhite(g);
-
-		g.drawString(String.valueOf(mode), 0, 70);
+		}
+		g.setFont(g.getFont().deriveFont(Font.PLAIN, 12));
+		g.drawString("Max speed: " + character1.getMaxSpeed(), 10, 10);
+		g.drawString("Acceleration: " + character1.getAcceleration(), 10, 20);
+		g.drawString("Friction: " + character1.getFriction(), 10, 30);
 	}
 
 	@Override
 	public void update()
 	{
+		Engine.setControlSpeeds(character1);
 		for (BBox box : walls)
 		{
 			Constants.Direction direction = CollisionEngine.horizontalCollision(character1, box);
@@ -152,21 +153,9 @@ public class LevelOne extends Level
 				character1.setYVector(0);
 			else if (direction.equals(Constants.Direction.Up) && character1.getYVector() < 0)
 				character1.setYVector(0);
-
-			direction = CollisionEngine.horizontalCollision(character2, box);
-			if (direction.equals(Constants.Direction.Right) && character2.getXVector() > 0)
-				character2.setXVector(0);
-			else if (direction.equals(Constants.Direction.Left) && character2.getXVector() < 0)
-				character2.setXVector(0);
-			direction = CollisionEngine.verticalCollision(character2, box);
-			if (direction.equals(Constants.Direction.Down) && character2.getYVector() > 0)
-				character2.setYVector(0);
-			else if (direction.equals(Constants.Direction.Up) && character2.getYVector() < 0)
-				character2.setYVector(0);
 		}
 
 		character1.move();
-		character2.move();
 
 		camera.updateCamera();
 	}
@@ -174,102 +163,42 @@ public class LevelOne extends Level
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_UP)
-		{
-			character1.setYVector(-3);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_DOWN)
-		{
-			character1.setYVector(3);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_LEFT)
-		{
-			character1.setXVector(-3);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-		{
-			character1.setXVector(3);
-		}
-
-		if (e.getKeyCode() == KeyEvent.VK_W)
-		{
-			character2.setYVector(-3);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_S)
-		{
-			character2.setYVector(3);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_A)
-		{
-			character2.setXVector(-3);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_D)
-		{
-			character2.setXVector(3);
-		}
+		Engine.keyPressed(character1, e.getKeyCode());
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_UP)
-		{
-			character1.setYVector(0);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_DOWN)
-		{
-			character1.setYVector(0);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_LEFT)
-		{
-			character1.setXVector(0);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-		{
-			character1.setXVector(0);
-		}
+		Engine.keyReleased(character1, e.getKeyCode());
 
-		if (e.getKeyCode() == KeyEvent.VK_W)
-		{
-			character2.setYVector(0);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_S)
-		{
-			character2.setYVector(0);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_A)
-		{
-			character2.setXVector(0);
-		}
-		else if (e.getKeyCode() == KeyEvent.VK_D)
-		{
-			character2.setXVector(0);
-		}
-
-		if (e.getKeyCode() == KeyEvent.VK_M)
-		{
-			if (mode.equals(MultiplayerCamera.Mode.Horizontal))
-			{
-				mode = MultiplayerCamera.Mode.Vertical;
-			}
-			else if (mode.equals(MultiplayerCamera.Mode.Vertical))
-			{
-				mode = MultiplayerCamera.Mode.One;
-			}
-			else if (mode.equals(MultiplayerCamera.Mode.One))
-			{
-				mode = MultiplayerCamera.Mode.Smart;
-			}
-			else
-			{
-				mode = MultiplayerCamera.Mode.Horizontal;
-			}
-			camera.setMode(mode);
-		}
-
+		System.out.println(e.getKeyChar() + " " + e.getKeyCode() + " " + KeyEvent.VK_Q);
 		if (e.getKeyCode() == KeyEvent.VK_C)
 		{
 			black = !black;
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_Q)
+		{
+			character1.incrementMaxSpeed(0.1);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_A)
+		{
+			character1.incrementMaxSpeed(-0.1);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_W)
+		{
+			character1.incrementAcceleration(0.05);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_S)
+		{
+			character1.incrementAcceleration(-0.05);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_E)
+		{
+			character1.incrementFriction(0.05);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_D)
+		{
+			character1.incrementFriction(-0.05);
 		}
 	}
 

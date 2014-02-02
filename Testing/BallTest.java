@@ -4,7 +4,7 @@
  * @since 1.6
  */
 
-import BasicObjects.Shapes.Ball;
+import BasicObjects.shapes.Ball;
 import BasicObjects.Dimensions;
 import BasicObjects.Point;
 import junit.framework.Assert;

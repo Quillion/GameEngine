@@ -7,7 +7,7 @@ package test1;
 
 import BasicObjects.*;
 import BasicObjects.Point;
-import BasicObjects.Shapes.*;
+import BasicObjects.shapes.*;
 import abstracts.Level;
 import constants.Constants;
 import logic.CollisionEngine;

@@ -1,7 +1,7 @@
-package BasicObjects.Camera;
+package BasicObjects.camera;
 
 import BasicObjects.*;
-import BasicObjects.Shapes.*;
+import BasicObjects.shapes.*;
 import abstracts.Shape;
 import logic.MathEngine;
 

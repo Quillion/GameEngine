@@ -1,8 +1,8 @@
 package constants;
 /**
- * @author      Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version     Version 1
- * @since       1.6
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
  */
 
 /**
@@ -12,7 +12,7 @@ public class Constants
 {
 	public enum Direction
 	{
-		None(-1), Left(0), Right(1), Up(2), Down(3);
+		None(-1), Left(0), Up(1), Right(2), Down(3), Total(4);
 
 		private int value;
 
@@ -50,11 +50,11 @@ public class Constants
 	}
 
 	// PLATFORMER
-    public static int NONE = -1;
-    public static int LEFT = 0;
-    public static int RIGHT = 1;
-    public static int UP = 2;
-    public static int DOWN = 3;
+	public static int NONE = -1;
+	public static int LEFT = 0;
+	public static int RIGHT = 1;
+	public static int UP = 2;
+	public static int DOWN = 3;
 	public static int JUMP = 4;
 
 	// SIM

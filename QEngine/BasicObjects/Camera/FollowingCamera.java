@@ -1,4 +1,4 @@
-package BasicObjects.Camera;
+package BasicObjects.camera;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

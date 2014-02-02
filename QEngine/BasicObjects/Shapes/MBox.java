@@ -1,4 +1,4 @@
-package BasicObjects.Shapes;
+package BasicObjects.shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -216,7 +216,7 @@ public class MBox extends BBox
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString()).append("\n");
-		sb.append("Vector:").append("|\n");
+		sb.append("Vector:").append("\n");
 		sb.append("x: |").append(getXVector()).append("|");
 		sb.append(" y: |").append(getYVector()).append("|");
 		return sb.toString();

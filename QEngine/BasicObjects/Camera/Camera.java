@@ -1,4 +1,4 @@
-package BasicObjects.Camera;
+package BasicObjects.camera;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -6,7 +6,7 @@ package BasicObjects.Camera;
  */
 
 import BasicObjects.*;
-import BasicObjects.Shapes.*;
+import BasicObjects.shapes.*;
 import BasicSprite.BPlatform;
 import BasicSprite.Platform;
 import logic.CollisionEngine;
@@ -15,7 +15,6 @@ import platformer.BasicSprite.MCharacter;
 import platformer.ExtendedShapes.MBControls;
 
 import java.awt.*;
-import java.awt.Point;
 import java.awt.image.BufferedImage;
 
 /**

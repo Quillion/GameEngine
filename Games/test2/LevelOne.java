@@ -6,11 +6,11 @@ package test2;
  */
 
 import BasicObjects.*;
-import BasicObjects.Camera.FollowingCamera;
+import BasicObjects.camera.FollowingCamera;
 import BasicObjects.Point;
-import BasicObjects.Shapes.BBox;
-import BasicObjects.Shapes.Box;
-import BasicObjects.Shapes.MBox;
+import BasicObjects.shapes.BBox;
+import BasicObjects.shapes.Box;
+import BasicObjects.shapes.MBox;
 import abstracts.Level;
 import constants.Constants;
 import logic.CollisionEngine;
