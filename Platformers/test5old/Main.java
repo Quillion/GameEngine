@@ -1,4 +1,4 @@
-package test5;
+package test5old;
 
 import abstracts.GameSimple;
 

@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test 1" type="Application" factoryName="Application">
+  <configuration default="false" name="Collision" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="test1.Game" />
     <option name="VM_PARAMETERS" value="" />
     <option name="PROGRAM_PARAMETERS" value="" />

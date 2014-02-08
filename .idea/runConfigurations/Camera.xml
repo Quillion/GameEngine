@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test 2" type="Application" factoryName="Application">
+  <configuration default="false" name="Camera" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="test2.Game" />
     <option name="VM_PARAMETERS" value="" />
     <option name="PROGRAM_PARAMETERS" value="" />

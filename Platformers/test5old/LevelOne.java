@@ -1,22 +1,4 @@
-package test5;
-
-import BasicObjects.Item;
-import BasicSprite.BPlatform;
-import constants.Constants;
-import abstracts.Game;
-import logic.*;
-import abstracts.Level;
-import platformer.BasicCharacter;
-import platformer.Background;
-import TooGeneral.NormalPlatformGenerator;
-import logic.platformer.BasicAIController;
-import utils.ImageProcessor;
-
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
+package test5old;
 
 /**
  * User: Edgar

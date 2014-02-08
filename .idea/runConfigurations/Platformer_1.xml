@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Platformer 5" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="test5.Main" />
+  <configuration default="false" name="Platformer 1" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="test5.Game" />
     <option name="VM_PARAMETERS" value="" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />

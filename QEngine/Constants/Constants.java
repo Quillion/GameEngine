@@ -12,7 +12,7 @@ public class Constants
 {
 	public enum Direction
 	{
-		None(-1), Left(0), Up(1), Right(2), Down(3), Total(4);
+		None(-1), Left(0), Up(1), Right(2), Down(3), Jump(4), Total(5);
 
 		private int value;
 

@@ -1,12 +1,12 @@
-package dungeon;
+package platformer;
 
 import BasicObjects.Key;
 import constants.Constants;
 
 /**
  * User: Edgar
- * Date: 1/15/14
- * Time: 8:07 PM
+ * Date: 2/2/14
+ * Time: 5:16 PM
  */
 public class MBox extends BasicObjects.shapes.MBox
 {
@@ -14,6 +14,9 @@ public class MBox extends BasicObjects.shapes.MBox
 	private double acceleration;
 	private double maxSpeed;
 	private double friction;
+	private double jump;
+	private double gravity;
+	private boolean standing;
 
 	public MBox()
 	{
@@ -24,10 +27,15 @@ public class MBox extends BasicObjects.shapes.MBox
 		this.acceleration = 0d;
 		this.maxSpeed = 0d;
 		this.friction = 0d;
+		this.jump = 0d;
+		this.gravity = 0d;
+		this.standing = false;
 	}
 
 	public void setKeys(int[] keys)
 	{
+		if (keys.length != Constants.Direction.Total.getValue())
+			return;
 		for (int i = 0; i < keys.length; i++)
 		{
 			this.keys[i].setValue(keys[i]);
@@ -107,6 +115,46 @@ public class MBox extends BasicObjects.shapes.MBox
 		this.friction += friction;
 	}
 
+	public double getJump()
+	{
+		return this.jump;
+	}
+
+	public void setJump(double jump)
+	{
+		this.jump = jump;
+	}
+
+	public void incrementJump(double value)
+	{
+		this.jump += value;
+	}
+
+	public double getGravity()
+	{
+		return gravity;
+	}
+
+	public void setGravity(double gravity)
+	{
+		this.gravity = gravity;
+	}
+
+	public void incrementGravity(double gravity)
+	{
+		this.gravity += gravity;
+	}
+
+	public boolean isStanding()
+	{
+		return this.standing;
+	}
+
+	public void setStanding(boolean standing)
+	{
+		this.standing = standing;
+	}
+
 	@Override
 	public String toString()
 	{
@@ -121,6 +169,7 @@ public class MBox extends BasicObjects.shapes.MBox
 		sb.append("Max Speed: |").append(getMaxSpeed()).append("|");
 		sb.append(" Acceleration: |").append(getAcceleration()).append("|");
 		sb.append(" Friction: |").append(getFriction()).append("|");
+		sb.append(" Gravity: |").append(getGravity()).append("|");
 		return sb.toString();
 	}
 }

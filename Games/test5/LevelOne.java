@@ -1,4 +1,4 @@
-package test4;
+package test5;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -11,9 +11,9 @@ import BasicObjects.camera.FollowingCamera;
 import BasicObjects.shapes.BBox;
 import abstracts.Level;
 import constants.Constants;
-import dungeon.MBox;
 import logic.CollisionEngine;
-import logic.dungeon.Engine;
+import logic.platformer.Engine;
+import platformer.MBox;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -75,37 +75,69 @@ public class LevelOne extends Level
 		walls.add(box);
 
 		box = new BBox();
-		box.setCoordinates(new Point(200, 200));
-		box.setSize(new Dimensions(370, 30));
-		box.setOffsets(new Dimensions(5, 5));
+		box.setCoordinates(new Point(30, 500));
+		box.setSize(new Dimensions(150, 30));
+		box.setOffsets(new Dimensions(0, 5));
 		walls.add(box);
 
 		box = new BBox();
-		box.setCoordinates(new Point(200, 230));
-		box.setSize(new Dimensions(30, 170));
-		box.setOffsets(new Dimensions(5, 5));
+		box.setCoordinates(new Point(420, 500));
+		box.setSize(new Dimensions(150, 30));
+		box.setOffsets(new Dimensions(0, 5));
+		walls.add(box);
+
+		box = new BBox();
+		box.setCoordinates(new Point(30, 100));
+		box.setSize(new Dimensions(150, 30));
+		box.setOffsets(new Dimensions(0, 5));
+		walls.add(box);
+
+		box = new BBox();
+		box.setCoordinates(new Point(420, 100));
+		box.setSize(new Dimensions(150, 30));
+		box.setOffsets(new Dimensions(0, 5));
 		walls.add(box);
 
 		box = new BBox();
 		box.setCoordinates(new Point(200, 400));
 		box.setSize(new Dimensions(200, 30));
-		box.setOffsets(new Dimensions(5, 5));
+		box.setOffsets(new Dimensions(0, 5));
 		walls.add(box);
 
 		box = new BBox();
-		box.setCoordinates(new Point(370, 300));
-		box.setSize(new Dimensions(30, 100));
-		box.setOffsets(new Dimensions(5, 5));
+		box.setCoordinates(new Point(200, 200));
+		box.setSize(new Dimensions(200, 30));
+		box.setOffsets(new Dimensions(0, 5));
+		walls.add(box);
+
+		box = new BBox();
+		box.setCoordinates(new Point(30, 300));
+		box.setSize(new Dimensions(110, 30));
+		box.setOffsets(new Dimensions(0, 5));
+		walls.add(box);
+
+		box = new BBox();
+		box.setCoordinates(new Point(460, 300));
+		box.setSize(new Dimensions(110, 30));
+		box.setOffsets(new Dimensions(0, 5));
+		walls.add(box);
+
+		box = new BBox();
+		box.setCoordinates(new Point(250, 300));
+		box.setSize(new Dimensions(100, 30));
+		box.setOffsets(new Dimensions(0, 5));
 		walls.add(box);
 
 		character1.setCoordinates(new Point(100, 100));
 		character1.setSize(new Dimensions(45, 45));
 		character1.setOffsets(new Dimensions(7, 7));
 		character1.setVector(new Point(0, 0));
-		character1.setKeys(new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT, KeyEvent.VK_DOWN});
+		character1.setKeys(new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT, KeyEvent.VK_DOWN, KeyEvent.VK_UP});
 		character1.setAcceleration(0.15);
 		character1.setMaxSpeed(3);
 		character1.setFriction(0.3);
+		character1.setJump(9);
+		character1.setGravity(0.3);
 
 		camera.setSize(new Dimensions(getWidth(), getHeight()));
 		camera.setOffsets(new Dimensions(400, 200));
@@ -135,6 +167,8 @@ public class LevelOne extends Level
 		g.drawString("Max speed: " + character1.getMaxSpeed(), 10, 10);
 		g.drawString("Acceleration: " + character1.getAcceleration(), 10, 20);
 		g.drawString("Friction: " + character1.getFriction(), 10, 30);
+		g.drawString("Jump: " + character1.getJump(), 10, 40);
+		g.drawString("Gravity: " + character1.getGravity(), 10, 50);
 	}
 
 	@Override
@@ -150,9 +184,17 @@ public class LevelOne extends Level
 				character1.setXVector(0);
 			direction = CollisionEngine.verticalCollision(character1, box);
 			if (direction.equals(Constants.Direction.Down) && character1.getYVector() > 0)
+			{
 				character1.setYVector(0);
+				if (character1.getGravity() > 0)
+					character1.setStanding(true);
+			}
 			else if (direction.equals(Constants.Direction.Up) && character1.getYVector() < 0)
+			{
 				character1.setYVector(0);
+				if (character1.getGravity() < 0)
+					character1.setStanding(true);
+			}
 		}
 
 		character1.move();
@@ -198,6 +240,22 @@ public class LevelOne extends Level
 		else if (e.getKeyCode() == KeyEvent.VK_D)
 		{
 			character1.incrementFriction(-0.05);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_R)
+		{
+			character1.incrementJump(0.5);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_F)
+		{
+			character1.incrementJump(-0.5);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_T)
+		{
+			character1.incrementGravity(0.05);
+		}
+		else if (e.getKeyCode() == KeyEvent.VK_G)
+		{
+			character1.incrementGravity(-0.05);
 		}
 	}
 

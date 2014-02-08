@@ -135,6 +135,14 @@ public class LevelOne extends Level
 			camera.drawWhite(g);
 
 		g.drawString(String.valueOf(mode), 0, 70);
+
+		if (black)
+		{
+			g.setColor(Color.WHITE);
+		}
+		g.setFont(g.getFont().deriveFont(Font.PLAIN, 12));
+		g.drawString("Change Mode: M", 10, 210);
+		g.drawString("Change color: C", 10, 220);
 	}
 
 	@Override

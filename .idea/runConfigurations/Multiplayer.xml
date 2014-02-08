@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test 3" type="Application" factoryName="Application">
+  <configuration default="false" name="Multiplayer" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="test3.Game" />
     <option name="VM_PARAMETERS" value="" />
     <option name="PROGRAM_PARAMETERS" value="" />
