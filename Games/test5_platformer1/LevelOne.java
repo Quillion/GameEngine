@@ -1,4 +1,4 @@
-package test5;
+package test5_platformer1;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

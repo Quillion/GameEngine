@@ -1,13 +1,13 @@
-package test1;
+package test1_collision;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import abstracts.GameSimple;
+import abstracts.GameSimpleS;
 
-public class Game extends GameSimple
+public class Game extends GameSimpleS
 {
 	public static void main(String [] args)
 	{

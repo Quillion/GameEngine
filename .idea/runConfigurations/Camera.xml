@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Camera" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="test2.Game" />
+    <option name="MAIN_CLASS_NAME" value="test2_camera.Game" />
     <option name="VM_PARAMETERS" value="" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />

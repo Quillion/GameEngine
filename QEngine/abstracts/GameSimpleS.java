@@ -15,7 +15,7 @@ import java.util.List;
  * Simplified abstract class.
  * Just add levels and it will handle them properly without your supervision.
  */
-public abstract class GameSimple extends Game
+public abstract class GameSimpleS extends GameSingleThreaded
 {
 	private List<Level> levels;
 	private boolean deleteFinishedLevel;
@@ -23,7 +23,7 @@ public abstract class GameSimple extends Game
 	/**
 	 * Starts the class. Nothing important here.
 	 */
-	public GameSimple()
+	public GameSimpleS()
 	{
 		super();
 		this.levels = new ArrayList<Level>();
@@ -44,7 +44,7 @@ public abstract class GameSimple extends Game
 	 * All it does is call setup() for all levels and then sets level 1 to active.
 	 */
 	@Override
-	protected void setup()
+	public void setup()
 	{
 		for (Level level : this.levels)
 			level.setup();
@@ -81,11 +81,9 @@ public abstract class GameSimple extends Game
 	 * Calls update function for currently active and loaded level.
 	 * As soon as level becomes unactive it will be deleted from this game object and
 	 * the next level will become active, and then will become loaded.
-	 *
-	 * @param deltaTime how much time has passed since last time update was called.
 	 */
 	@Override
-	protected void update(int deltaTime)
+	public void update()
 	{
 		for (int i = 0; i < this.levels.size(); i++)
 		{

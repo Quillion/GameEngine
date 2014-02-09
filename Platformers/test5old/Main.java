@@ -1,13 +1,13 @@
 package test5old;
 
-import abstracts.GameSimple;
+import abstracts.GameSimpleS;
 
 /**
  * User: Edgar
  * Date: 11/14/13
  * Time: 9:27 PM
  */
-public class Main extends GameSimple
+public class Main extends GameSimpleS
 {
 	public static void main(String [] args)
 	{

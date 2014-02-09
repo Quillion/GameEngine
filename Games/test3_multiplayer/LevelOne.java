@@ -1,4 +1,4 @@
-package test3;
+package test3_multiplayer;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

@@ -1,4 +1,4 @@
-package test6;
+package test6_platformer2;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -160,6 +160,11 @@ public class LevelOne extends Level
 		g.drawString("Friction: " + character1.getFriction(), 10, 30);
 		g.drawString("Jump: " + character1.getJump(), 10, 40);
 		g.drawString("Gravity: " + character1.getGravity(), 10, 50);
+		g.drawString("----------------" + character1.getGravity(), 10, 60);
+		g.drawString("Controls: ", 10, 70);
+		g.drawString("--------", 10, 80);
+		g.drawString("q, a, w, s, e, d", 10, 90);
+		g.drawString("r, f, t, g, c, v, b", 10, 100);
 	}
 
 	@Override

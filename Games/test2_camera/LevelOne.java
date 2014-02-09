@@ -1,4 +1,4 @@
-package test2;
+package test2_camera;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

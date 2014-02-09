@@ -1,4 +1,4 @@
-package test4;
+package test4_dungeon1;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

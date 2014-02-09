@@ -1,19 +1,19 @@
-package test5;
+package test4_dungeon1;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import abstracts.GameSimple;
+import abstracts.GameSimpleS;
 
-public class Game extends GameSimple
+public class Game extends GameSimpleS
 {
 	public static void main(String[] args)
 	{
 		Game game = new Game();
 		game.setScreen(900, 500, false);
-		game.setTitle("Test 5");
+		game.setTitle("Test 4");
 		game.init();
 		LevelOne lvl1 = new LevelOne(game);
 		game.addLevel(lvl1);

@@ -1,4 +1,4 @@
-package test1;
+package test1_collision;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
