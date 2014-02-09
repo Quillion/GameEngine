@@ -174,7 +174,7 @@ public abstract class Game extends JFrame implements Runnable
 			// WE TAKE THE TIME
 			beginLoopTime = System.nanoTime();
 
-			// DRAW WHAtEVER WE HAVE TO
+			// DRAW WHATEVER WE HAVE TO
 			render();
 
 			// THIS CALCULATION IS NOT CRUCIAL REALLY AT THE SCALE WE ARE DEALING WITH BUT THIS IS FOR FUTURE

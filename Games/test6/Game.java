@@ -1,4 +1,4 @@
-package test5;
+package test6;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -13,7 +13,7 @@ public class Game extends GameSimple
 	{
 		Game game = new Game();
 		game.setScreen(900, 500, false);
-		game.setTitle("Test 5");
+		game.setTitle("Test 6");
 		game.init();
 		LevelOne lvl1 = new LevelOne(game);
 		game.addLevel(lvl1);
