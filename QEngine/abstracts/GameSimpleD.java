@@ -58,8 +58,7 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	 *
 	 * @param g Graphics to which to draw images to.
 	 */
-	@Override
-	protected void render(Graphics2D g)
+	public void draw(Graphics2D g)
 	{
 		for (Level level : this.levels)
 		{

@@ -58,8 +58,7 @@ public abstract class GameSimpleS extends GameSingleThreaded
 	 *
 	 * @param g Graphics to which to draw images to.
 	 */
-	@Override
-	protected void render(Graphics2D g)
+	public void draw(Graphics2D g)
 	{
 		for (Level level : this.levels)
 		{
@@ -79,7 +78,7 @@ public abstract class GameSimpleS extends GameSingleThreaded
 
 	/**
 	 * Calls update function for currently active and loaded level.
-	 * As soon as level becomes unactive it will be deleted from this game object and
+	 * As soon as level becomes inactive it will be deleted from this game object and
 	 * the next level will become active, and then will become loaded.
 	 */
 	@Override
