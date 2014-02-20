@@ -13,6 +13,10 @@ import java.awt.*;
  */
 public abstract class GameDoubleThreaded extends GameAbstract implements Game
 {
+	/**
+	 * This one is the logic loop. It first does setup and then proceeds to
+	 * doing update infinitely.
+	 */
 	private void logic()
 	{
 		// INITIALIZING VALUES FOR TIME CALCULATIONS
@@ -52,7 +56,10 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 		}
 	}
 
-	public void draw()
+	/**
+	 * This is the draw loop. Set up does not happen here, only drawing does.
+	 */
+	private void draw()
 	{
 		// INITIALIZING VALUES FOR TIME CALCULATIONS
 		long beginLoopTime;
@@ -196,15 +203,18 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 		};
 	}
 
+	/**
+	 * Start running the game loop.
+	 */
 	public void start()
 	{
-		Thread logic = new Thread(this.logic);
 		Thread draw = new Thread(this.draw);
+		Thread logic = new Thread(this.logic);
 
-		logic.setPriority(Thread.MAX_PRIORITY);
 		draw.setPriority(Thread.NORM_PRIORITY);
+		logic.setPriority(Thread.MAX_PRIORITY);
 
-		logic.start();
 		draw.start();
+		logic.start();
 	}
 }

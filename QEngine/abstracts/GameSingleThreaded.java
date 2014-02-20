@@ -9,10 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Simple thread. Creates everything necessary to run the game, and makes you implement things that are only needed.
+ * Simple thread. Creates everything necessary to run the game,
+ * and makes you implement things that are only needed.
  */
 public abstract class GameSingleThreaded extends GameAbstract implements Runnable,
-																   Game
+																		 Game
 {
 	/**
 	 * All the game logic is here. This function calls setup() first, and once the loop starts it
@@ -147,6 +148,9 @@ public abstract class GameSingleThreaded extends GameAbstract implements Runnabl
 		canvas.requestFocus();
 	}
 
+	/**
+	 * Start running the game loop.
+	 */
 	public void start()
 	{
 		new Thread(this).start();

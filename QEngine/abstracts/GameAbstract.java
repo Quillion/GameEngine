@@ -1,4 +1,9 @@
 package abstracts;
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,9 +11,7 @@ import java.awt.event.*;
 import java.awt.image.BufferStrategy;
 
 /**
- * User: edgar
- * Date: 18/02/14
- * Time: 9:41 PM
+ * Simply extends JFrame and initializes some basic things.
  */
 public abstract class GameAbstract extends JFrame implements Game
 {
