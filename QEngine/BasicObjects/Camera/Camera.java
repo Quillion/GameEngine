@@ -5,7 +5,8 @@ package BasicObjects.camera;
  * @since 1.6
  */
 
-import BasicObjects.*;
+import BasicObjects.Dimensions;
+import BasicObjects.Item;
 import BasicObjects.shapes.*;
 import BasicSprite.BPlatform;
 import BasicSprite.Platform;
@@ -34,6 +35,11 @@ public class Camera extends BBox
 		super();
 	}
 
+	/**
+	 * Sets the size of the camera to the given dimensions. Size is drawing area.
+	 *
+	 * @param size The new Size for the camera.
+	 */
 	@Override
 	public void setSize(Dimensions size)
 	{
@@ -77,12 +83,22 @@ public class Camera extends BBox
 		}
 	}
 
+	/**
+	 * Draws the given point to the location relative to camera.
+	 *
+	 * @param point Which point you want drawn.
+	 */
 	private void drawPoint(BasicObjects.Point point)
 	{
 		g.setColor(Color.GREEN);
 		g.drawRect((int) (point.getX() - 1) - this.getX(), (int) (point.getY() - 1) - this.getY(), 2, 2);
 	}
 
+	/**
+	 * Draws the box relative to where the camera is.
+	 *
+	 * @param box Box which you want drawn relative to camera.
+	 */
 	private void drawBox(Box box)
 	{
 		g.setColor(Color.BLUE);
@@ -92,6 +108,11 @@ public class Camera extends BBox
 				box.getHeight());
 	}
 
+	/**
+	 * Draws box with a collision box relative to the camera.
+	 *
+	 * @param box Bounding box that you want drawn relative to camera.
+	 */
 	private void drawBBox(BBox box)
 	{
 		this.drawBox(box);
@@ -102,6 +123,11 @@ public class Camera extends BBox
 				box.getBottomY() - box.getTopY());
 	}
 
+	/**
+	 * Draws box with vectors relative to the camera.
+	 *
+	 * @param box Moving box that you wanr drawn relative to the camera.
+	 */
 	private void drawMBox(MBox box)
 	{
 		this.drawBBox(box);
@@ -112,6 +138,11 @@ public class Camera extends BBox
 				(int) (box.getCenterY() + box.getYVector() * 5 - this.getY()));
 	}
 
+	/**
+	 * Draws ball relative to the camera.
+	 *
+	 * @param ball The ball that you want drawn in the camera.
+	 */
 	private void drawBall(Ball ball)
 	{
 		g.setColor(Color.BLUE);
@@ -125,6 +156,11 @@ public class Camera extends BBox
 				3);
 	}
 
+	/**
+	 * Draws bounding ball relative to this camera.
+	 *
+	 * @param ball The bounding ball that you want drawn relative to this camera.
+	 */
 	private void drawBBall(BBall ball)
 	{
 		this.drawBall(ball);
@@ -135,6 +171,11 @@ public class Camera extends BBox
 				ball.getDiameter() - ball.getOffset() * 2);
 	}
 
+	/**
+	 * Draws ball with vectors relative to this camera.
+	 *
+	 * @param ball Moving ball that you want drawn within this camera.
+	 */
 	private void drawMBall(MBall ball)
 	{
 		this.drawBBall(ball);
@@ -145,6 +186,11 @@ public class Camera extends BBox
 				(int) (ball.getCenterY() + ball.getYVector() * 5));
 	}
 
+	/**
+	 * Draws the given point to the location relative to camera.
+	 *
+	 * @param point Which point you want drawn.
+	 */
 	public void draw(BasicObjects.Point point)
 	{
 		if (CollisionEngine.collision(this, point))
@@ -195,6 +241,11 @@ public class Camera extends BBox
 		}
 	}
 
+	/**
+	 * Draws ball relative to the camera.
+	 *
+	 * @param ball The ball that you want drawn in the camera.
+	 */
 	public void draw(Ball ball)
 	{
 		if (CollisionEngine.collision(this, ball))
@@ -203,6 +254,11 @@ public class Camera extends BBox
 		}
 	}
 
+	/**
+	 * Draws bounding ball relative to this camera.
+	 *
+	 * @param ball The bounding ball that you want drawn relative to this camera.
+	 */
 	public void draw(BBall ball)
 	{
 		if (CollisionEngine.collision(this, ball))
@@ -211,6 +267,11 @@ public class Camera extends BBox
 		}
 	}
 
+	/**
+	 * Draws ball with vectors relative to this camera.
+	 *
+	 * @param ball Moving ball that you want drawn within this camera.
+	 */
 	public void draw(MBall ball)
 	{
 		if (CollisionEngine.collision(this, ball))
@@ -227,6 +288,7 @@ public class Camera extends BBox
 	 */
 	public void draw(Platform box)
 	{
+		// if platform has no image then we will draw wire frame
 		if (box.getImage() == null)
 		{
 			g.setColor(box.getColor());
@@ -267,6 +329,7 @@ public class Camera extends BBox
 	 */
 	public void draw(MCharacter box)
 	{
+		// if character has no image then we will draw wire frame
 		if (box.getImage() == null)
 		{
 			g.setColor(box.getColor());
@@ -312,6 +375,11 @@ public class Camera extends BBox
 				character.getY() - this.getY() + this.getCenterY());
 	}
 
+	/**
+	 * Draws the given item relative to the camera.
+	 *
+	 * @param item Draws this item relative to this camera.
+	 */
 	public void draw(Item item)
 	{
 		g.drawImage(item.getImage(),
@@ -332,12 +400,22 @@ public class Camera extends BBox
 		g.drawImage(view, null, 0, 0);
 	}
 
+	/**
+	 * Draws the camera picture onto the screen, and then clears it out.
+	 *
+	 * @param g Graphics onto which to draw camera's view.
+	 */
 	public void drawClear(Graphics2D g)
 	{
 		g.drawImage(view, null, 0, 0);
 		this.g.clearRect(0, 0, getWidth(), getHeight());
 	}
 
+	/**
+	 * Draws the camera's view to the given graphics, and the colors the whole camera white.
+	 *
+	 * @param g Graphics onto which to draw camera's view.
+	 */
 	public void drawWhite(Graphics2D g)
 	{
 		g.drawImage(view, null, 0, 0);
@@ -358,12 +436,30 @@ public class Camera extends BBox
 		g.drawImage(view, null, x, y);
 	}
 
+	/**
+	 * Draws camera's view on the given graphics at the specified location.
+	 * This will allow you to draw camera for multiple players or with an offset,
+	 * or you can create shaking effect. After drawing camera's image is cleared.
+	 *
+	 * @param g The graphics onto which camera's view will be drawn.
+	 * @param x The x coordinate on which to draw camera.
+	 * @param y The y coordinate on which to draw camera.
+	 */
 	public void drawClear(Graphics2D g, int x, int y)
 	{
 		g.drawImage(view, null, x, y);
 		this.g.clearRect(0, 0, getWidth(), getHeight());
 	}
 
+	/**
+	 * Draws camera's view on the given graphics at the specified location.
+	 * This will allow you to draw camera for multiple players or with an offset,
+	 * or you can create shaking effect. After drawing camera's image is colored white.
+	 *
+	 * @param g The graphics onto which camera's view will be drawn.
+	 * @param x The x coordinate on which to draw camera.
+	 * @param y The y coordinate on which to draw camera.
+	 */
 	public void drawWhite(Graphics2D g, int x, int y)
 	{
 		g.drawImage(view, null, x, y);

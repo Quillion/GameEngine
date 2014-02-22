@@ -11,7 +11,7 @@ import BasicObjects.Point;
 import java.awt.*;
 
 /**
- * Bounding Box.
+ * A Box that contains a Bounding/Collision Box.
  */
 public class BBox extends Box
 {

@@ -10,9 +10,7 @@ import BasicObjects.Point;
 import java.awt.*;
 
 /**
- * @author Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version Version 1
- * @since 1.6
+ * A Ball with Collision box that also had vectors.
  */
 public class MBall extends BBall
 {

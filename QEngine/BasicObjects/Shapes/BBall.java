@@ -10,9 +10,8 @@ import BasicObjects.Point;
 import java.awt.*;
 
 /**
- * @author Edgar Ghahramanyan <edgarquill@gmail.com>
- * @version Version 1
- * @since 1.6
+ * A basic ball that has a bounding box around it.
+ * It is not oval, so remember that.
  */
 public class BBall extends Ball
 {

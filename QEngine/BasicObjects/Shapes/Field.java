@@ -20,10 +20,10 @@ public class Field
 	private List<Field> neighbors;
 	private Constants.FieldShape type;
 
-	// THIS IS GOING TO BE A SUPER USEFUL FIELD WHEN WE WILL HAVE AI
+	// THIS IS GOING TO BE A SUPER USEFUL VARIABLE WHEN WE WILL HAVE AI
 	// TRAVERSE THE FIELDS FOR OPTIMAL PATHS. I CAN THINK UP OF AT LEAST
 	// THREE OTHER USES FOR THIS VARIABLE, SO LET'S KEEP IT, TRUST ME.
-	public int garbage;
+	public int garbage[] = new int[10];
 
 	/**
 	 * Basic constructor.

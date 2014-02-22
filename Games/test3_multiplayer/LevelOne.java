@@ -5,9 +5,9 @@ package test3_multiplayer;
  * @since 1.6
  */
 
-import BasicObjects.*;
-import BasicObjects.camera.MultiplayerCamera;
+import BasicObjects.Dimensions;
 import BasicObjects.Point;
+import BasicObjects.camera.MultiplayerCamera;
 import BasicObjects.shapes.BBox;
 import BasicObjects.shapes.MBox;
 import abstracts.Level;
@@ -128,7 +128,7 @@ public class LevelOne extends Level
 		camera.draw(character1);
 		camera.draw(character2);
 
-		camera.drawCamera(g);
+		camera.drawCamera();
 		if (black)
 			camera.drawClear(g);
 		else
