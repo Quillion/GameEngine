@@ -11,7 +11,7 @@ import com.esotericsoftware.kryonet.EndPoint;
 /**
  * This is the only object that is going to be passed between the Server and the Client.
  */
-public abstract class QNetwork
+public class QNetwork
 {
 	/**
 	 * This enum is going to be constantly growing depending
@@ -19,7 +19,7 @@ public abstract class QNetwork
 	 */
 	public enum Type
 	{
-		None, Connect, NewPlayer, Box, BBox
+		None, Connect, Keyboard, NewPlayer, Box, BBox
 	}
 
 	/**
