@@ -7,10 +7,10 @@ package test5_platformer1;
 
 import BasicObjects.Dimensions;
 import BasicObjects.Point;
-import BasicObjects.camera.FollowingCamera;
-import BasicObjects.shapes.BBox;
+import BasicObjects.Camera.FollowingCamera;
+import BasicObjects.Shapes.BBox;
 import abstracts.Level;
-import constants.Constants;
+import Constants.Constants;
 import logic.CollisionEngine;
 import logic.platformer.Engine;
 import platformer.MBox;

@@ -1,4 +1,4 @@
-package BasicObjects.shapes;
+package BasicObjects.Shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -7,11 +7,8 @@ package BasicObjects.shapes;
 
 import BasicObjects.Point;
 
-import java.awt.*;
-
 /**
- * A basic ball that has a bounding box around it.
- * It is not oval, so remember that.
+ * A basic ball that has a bounding box around it. It is not oval, so remember that.
  */
 public class BBall extends Ball
 {
@@ -21,9 +18,8 @@ public class BBall extends Ball
 	private int offset;
 
 	/**
-	 * A constructor for the bounding box
-	 * BBox extends Box so it has same properties
-	 * but has offsets which will be used  in collision detection.
+	 * A constructor for the bounding box BBox extends Box so it has same properties but has offsets which will be used
+	 * in collision detection.
 	 */
 	public BBall()
 	{
@@ -32,9 +28,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the offset of the ball.
-	 * Since it is a round circular ball,
-	 * then offset is constant irregardless of direction.
+	 * Returns the offset of the ball. Since it is a round circular ball, then offset is constant irregardless of
+	 * direction.
 	 *
 	 * @return Offset of this ball.
 	 */
@@ -44,10 +39,10 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Sets the offset of this ball to given value.
-	 * However since it is a ball, offset will always be the same.
+	 * Sets the offset of this ball to given value. However since it is a ball, offset will always be the same.
 	 *
-	 * @param offset The new offset of this ball.
+	 * @param offset
+	 * 		The new offset of this ball.
 	 */
 	public void setOffset(int offset)
 	{
@@ -65,8 +60,7 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's left x coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's left x coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's left x coordinate with offset.
 	 */
@@ -77,8 +71,7 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's right x coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's right x coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's right x coordinate(which is x+width) with offset.
 	 */
@@ -89,8 +82,7 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's top y coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's top y coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's top y coordinate.
 	 */
@@ -101,8 +93,7 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's bottom y coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's bottom y coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's bottom y coordinate(which is y+height) with offset.
 	 */
@@ -157,34 +148,7 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Draws the box into to the graphics passed, box outline will be black color.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void draw(Graphics2D g)
-	{
-		super.drawBall(g);
-		g.setColor(Color.GRAY);
-		g.drawOval(this.getLeftX(), this.getTopY(), this.getDiameter() - this.getOffset() * 2, this.getDiameter() - this.getOffset() * 2);
-	}
-
-	/**
-	 * Draws the box into to the graphics passed,
-	 * box outline will be black color.
-	 * The bounding box will be gray color.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void drawBall(Graphics2D g)
-	{
-		super.drawBall(g);
-	}
-
-	/**
-	 * Returns This object's box object as a new object.
-	 * Simply calls copy of the parent class.
+	 * Returns This object's box object as a new object. Simply calls copy of the parent class.
 	 *
 	 * @return new Box which is part of this Bounding Box object.
 	 */

@@ -1,14 +1,14 @@
 package dungeon;
 
 import BasicObjects.Key;
-import constants.Constants;
+import Constants.Constants;
 
 /**
  * User: Edgar
  * Date: 1/15/14
  * Time: 8:07 PM
  */
-public class MBox extends BasicObjects.shapes.MBox
+public class MBox extends BasicObjects.Shapes.MBox
 {
 	private Key[] keys;
 	private double acceleration;

@@ -1,6 +1,6 @@
 package logic.platformer;
 
-import constants.Constants;
+import Constants.Constants;
 import platformer.MBox;
 
 /**

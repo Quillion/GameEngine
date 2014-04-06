@@ -1,4 +1,4 @@
-package BasicObjects.shapes;
+package BasicObjects.Shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -29,10 +29,10 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Sets the x vector to whatever you want.
-	 * Useful if you want to launch an object at high speed.
+	 * Sets the x vector to whatever you want. Useful if you want to launch an object at high speed.
 	 *
-	 * @param vector vector value to which x vector will be set to.
+	 * @param vector
+	 * 		vector value to which x vector will be set to.
 	 */
 	public void setXVector(double vector)
 	{
@@ -52,7 +52,8 @@ public class MBox extends BBox
 	/**
 	 * Increments x vector by a value of vector.
 	 *
-	 * @param vector value by which x vector will be incremented.
+	 * @param vector
+	 * 		value by which x vector will be incremented.
 	 */
 	public void incrementXVector(double vector)
 	{
@@ -68,10 +69,10 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Sets the y vector to whatever you want.
-	 * Useful if you want to launch an object at high speed.
+	 * Sets the y vector to whatever you want. Useful if you want to launch an object at high speed.
 	 *
-	 * @param vector vector value to which y vector will be set to.
+	 * @param vector
+	 * 		vector value to which y vector will be set to.
 	 */
 	public void setYVector(double vector)
 	{
@@ -91,7 +92,8 @@ public class MBox extends BBox
 	/**
 	 * Increments y vector by a value of vector.
 	 *
-	 * @param vector value by which y vector will be incremented.
+	 * @param vector
+	 * 		value by which y vector will be incremented.
 	 */
 	public void incrementYVector(double vector)
 	{
@@ -119,7 +121,8 @@ public class MBox extends BBox
 	/**
 	 * Sets the vector of this object to the newly given vector;
 	 *
-	 * @param vector The new Vector to assign to this object.
+	 * @param vector
+	 * 		The new Vector to assign to this object.
 	 */
 	public void setVector(Point vector)
 	{
@@ -138,8 +141,7 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Reverses y and x vector of this given object.
-	 * Can be used for bouncing I guess.
+	 * Reverses y and x vector of this given object. Can be used for bouncing I guess.
 	 */
 	public void reverseVector()
 	{
@@ -154,38 +156,6 @@ public class MBox extends BBox
 	public BBox getBBox()
 	{
 		return super.copy();
-	}
-
-	/**
-	 * Draws the box into to the graphics passed,
-	 * box outline will be black color.
-	 * The bounding box will be dark gray color.
-	 * The Vector line will be light gray line.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void draw(Graphics2D g)
-	{
-		this.drawBox(g);
-		g.setColor(Color.LIGHT_GRAY);
-		g.drawLine(this.getCenterX(),
-				this.getCenterY(),
-				(int) (this.getCenterX() + this.getXVector() * 5),
-				(int) (this.getCenterY() + this.getYVector() * 5));
-	}
-
-	/**
-	 * Draws the box into to the graphics passed,
-	 * box outline will be black color.
-	 * The bounding box will be gray color.
-	 *
-	 * @param g graphics where the bounding box will be drawn into.
-	 */
-	@Override
-	public void drawBox(Graphics2D g)
-	{
-		super.draw(g);
 	}
 
 	/**

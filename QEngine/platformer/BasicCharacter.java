@@ -6,7 +6,7 @@ package platformer;
  */
 
 import BasicObjects.Animation;
-import constants.Constants;
+import Constants.Constants;
 import platformer.ExtendedShapes.MBControls;
 import utils.ImageProcessor;
 

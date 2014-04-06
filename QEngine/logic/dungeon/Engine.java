@@ -1,6 +1,6 @@
 package logic.dungeon;
 
-import constants.Constants;
+import Constants.Constants;
 import dungeon.MBox;
 
 /**

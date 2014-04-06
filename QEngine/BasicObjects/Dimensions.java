@@ -6,9 +6,8 @@ package BasicObjects;
  */
 
 /**
- * Basic dimension that stores values either fo size,
- * or some kind of boundaries or offsets.
- * All the values used are int of course unlike Point.
+ * Basic dimension that stores values either fo size, or some kind of boundaries or offsets. All the values used are int
+ * of course unlike Point.
  */
 public class Dimensions
 {
@@ -20,8 +19,10 @@ public class Dimensions
 	/**
 	 * In order to construct dimension we need its two values.
 	 *
-	 * @param width  Width of this dimension.
-	 * @param height Height of this dimension.
+	 * @param width
+	 * 		Width of this dimension.
+	 * @param height
+	 * 		Height of this dimension.
 	 */
 	public Dimensions(int width, int height)
 	{
@@ -42,7 +43,8 @@ public class Dimensions
 	/**
 	 * Sets the width of this dimension to given value.
 	 *
-	 * @param width The new width of this dimension.
+	 * @param width
+	 * 		The new width of this dimension.
 	 */
 	public void setWidth(int width)
 	{
@@ -62,7 +64,8 @@ public class Dimensions
 	/**
 	 * Sets the height of the dimension to the given value.
 	 *
-	 * @param height The new height for this dimension.
+	 * @param height
+	 * 		The new height for this dimension.
 	 */
 	public void setHeight(int height)
 	{
@@ -72,7 +75,8 @@ public class Dimensions
 	/**
 	 * Increments the width of the dimension by the given value.
 	 *
-	 * @param amount How much to increment width by.
+	 * @param amount
+	 * 		How much to increment width by.
 	 */
 	public void incrementWidth(int amount)
 	{
@@ -82,7 +86,8 @@ public class Dimensions
 	/**
 	 * Increments the height of the dimension by the given value.
 	 *
-	 * @param amount How much to increment height by.
+	 * @param amount
+	 * 		How much to increment height by.
 	 */
 	public void incrementHeight(int amount)
 	{
@@ -92,8 +97,10 @@ public class Dimensions
 	/**
 	 * Sets this dimension to the newly specified value.
 	 *
-	 * @param width  The new width of this dimension.
-	 * @param height The new Height of this dimension.
+	 * @param width
+	 * 		The new width of this dimension.
+	 * @param height
+	 * 		The new Height of this dimension.
 	 */
 	public void setDimensions(int width, int height)
 	{
@@ -102,10 +109,10 @@ public class Dimensions
 	}
 
 	/**
-	 * Sets This dimension to the given Dimension.
-	 * Only values get copied over but not the memory location.
+	 * Sets This dimension to the given Dimension. Only values get copied over but not the memory location.
 	 *
-	 * @param dimensions The new Dimension whose values to copy.
+	 * @param dimensions
+	 * 		The new Dimension whose values to copy.
 	 */
 	public void setDimensions(Dimensions dimensions)
 	{

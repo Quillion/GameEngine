@@ -1,4 +1,4 @@
-package BasicObjects.shapes;
+package BasicObjects.Shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -9,8 +9,6 @@ import BasicObjects.Dimensions;
 import BasicObjects.Point;
 import abstracts.Shape;
 
-import java.awt.*;
-
 /**
  * A simple ball that is completely round. This is not an oval so keep that in mind.
  */
@@ -20,7 +18,7 @@ public class Ball extends Shape
 	 * Any ball has a center coordinate and radius.
 	 */
 	private Point center;
-	private int radius;
+	private int   radius;
 
 	/**
 	 * A basic constructor. Sets center to 0, 0 and radius to 0 by default.
@@ -34,7 +32,8 @@ public class Ball extends Shape
 	/**
 	 * Sets the value of x to whatever you choose to.
 	 *
-	 * @param x the value to which x will be set to.
+	 * @param x
+	 * 		the value to which x will be set to.
 	 */
 	@Override
 	public void setX(double x)
@@ -43,8 +42,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Return x value of the object.
-	 * I return int because it is easier to use for collision detection.
+	 * Return x value of the object. I return int because it is easier to use for collision detection.
 	 *
 	 * @return the x coordinate of the object.
 	 */
@@ -57,7 +55,8 @@ public class Ball extends Shape
 	/**
 	 * Increment the object's x value, very useful for movement.
 	 *
-	 * @param x the value by which to increment x by.
+	 * @param x
+	 * 		the value by which to increment x by.
 	 */
 	@Override
 	public void incrementX(double x)
@@ -68,7 +67,8 @@ public class Ball extends Shape
 	/**
 	 * Sets the value of y to whatever you choose to.
 	 *
-	 * @param y the value to which y will be set to.
+	 * @param y
+	 * 		the value to which y will be set to.
 	 */
 	@Override
 	public void setY(double y)
@@ -77,8 +77,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Return y value of the object.
-	 * I return int because it is easier to use for collision detection.
+	 * Return y value of the object. I return int because it is easier to use for collision detection.
 	 *
 	 * @return the y coordinate of the object.
 	 */
@@ -91,7 +90,8 @@ public class Ball extends Shape
 	/**
 	 * Increment the object's y value, very useful for movement.
 	 *
-	 * @param y the value by which to increment y by.
+	 * @param y
+	 * 		the value by which to increment y by.
 	 */
 	@Override
 	public void incrementY(double y)
@@ -113,7 +113,8 @@ public class Ball extends Shape
 	/**
 	 * Sets the width value to whatever you choose to.
 	 *
-	 * @param width the value to which shape's width will be set to.
+	 * @param width
+	 * 		the value to which shape's width will be set to.
 	 */
 	@Override
 	public void setWidth(int width)
@@ -135,7 +136,8 @@ public class Ball extends Shape
 	/**
 	 * Increments the shape's width by a set amount.
 	 *
-	 * @param amount how much to increment this shape's width by.
+	 * @param amount
+	 * 		how much to increment this shape's width by.
 	 */
 	@Override
 	public void incrementWidth(int amount)
@@ -146,7 +148,8 @@ public class Ball extends Shape
 	/**
 	 * Sets the height value to whatever you choose to.
 	 *
-	 * @param height the value to which shape's height will be set to.
+	 * @param height
+	 * 		the value to which shape's height will be set to.
 	 */
 	@Override
 	public void setHeight(int height)
@@ -166,10 +169,10 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Increments the shape's height by a set amount.
-	 * Keep in mind this is a circle. So height and width is same.
+	 * Increments the shape's height by a set amount. Keep in mind this is a circle. So height and width is same.
 	 *
-	 * @param amount how much to increment this shape's height by.
+	 * @param amount
+	 * 		how much to increment this shape's height by.
 	 */
 	@Override
 	public void incrementHeight(int amount)
@@ -180,19 +183,23 @@ public class Ball extends Shape
 	/**
 	 * Must I say that a ball must be round and as such will always only have one size?
 	 *
-	 * @param size The new Size for this object.
+	 * @param size
+	 * 		The new Size for this object.
 	 */
 	@Override
 	public void setSize(Dimensions size)
 	{
 		if (size.getWidth() == size.getHeight())
+		{
 			this.setRadius(size.getWidth() / 2);
+		}
 	}
 
 	/**
 	 * Moves this box by the given vector.
 	 *
-	 * @param vector The vector that should be applied to this box.
+	 * @param vector
+	 * 		The vector that should be applied to this box.
 	 */
 	@Override
 	public void move(Point vector)
@@ -203,7 +210,8 @@ public class Ball extends Shape
 	/**
 	 * Sets the coordinates of this ball. Ball's coordinates have to do with it's center.
 	 *
-	 * @param point The new coordinates of this ball.
+	 * @param point
+	 * 		The new coordinates of this ball.
 	 */
 	@Override
 	public void setCoordinates(Point point)
@@ -212,8 +220,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's left x coordinate,
-	 * is used for collision detection checking.
+	 * Returns the shape's left x coordinate, is used for collision detection checking.
 	 *
 	 * @return the shape's left x coordinate.
 	 */
@@ -224,8 +231,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's right x coordinate,
-	 * is used for collision detection checking.
+	 * Returns the shape's right x coordinate, is used for collision detection checking.
 	 *
 	 * @return the shape's right x coordinate(which is x+width).
 	 */
@@ -236,8 +242,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's top y coordinate,
-	 * is used for collision detection checking.
+	 * Returns the shape's top y coordinate, is used for collision detection checking.
 	 *
 	 * @return the shape's top y coordinate.
 	 */
@@ -248,8 +253,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's bottom y coordinate,
-	 * is used for collision detection checking.
+	 * Returns the shape's bottom y coordinate, is used for collision detection checking.
 	 *
 	 * @return the shape's bottom y coordinate(which is y+height).
 	 */
@@ -304,8 +308,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's center x coordinate.
-	 * Is used for whatever you want, but it is costly.
+	 * Returns the shape's center x coordinate. Is used for whatever you want, but it is costly.
 	 *
 	 * @return the shape's center x coordinate.
 	 */
@@ -316,8 +319,7 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's center y coordinate.
-	 * Is used for whatever you want, but it is costly.
+	 * Returns the shape's center y coordinate. Is used for whatever you want, but it is costly.
 	 *
 	 * @return the shape's center y coordinate.
 	 */
@@ -340,7 +342,8 @@ public class Ball extends Shape
 	/**
 	 * Sets the radius of the ball to the given value.
 	 *
-	 * @param radius The new radius of this ball.
+	 * @param radius
+	 * 		The new radius of this ball.
 	 */
 	public void setRadius(int radius)
 	{
@@ -350,7 +353,8 @@ public class Ball extends Shape
 	/**
 	 * Increments the ball's radius. This will probably make for cool effect.
 	 *
-	 * @param amount How much to increment radius by.
+	 * @param amount
+	 * 		How much to increment radius by.
 	 */
 	public void incrementRadius(int amount)
 	{
@@ -370,35 +374,12 @@ public class Ball extends Shape
 	/**
 	 * Sets the diameter of this circle to whatever you would like to
 	 *
-	 * @param diameter The diameter for this circle.
+	 * @param diameter
+	 * 		The diameter for this circle.
 	 */
 	public void setDiameter(int diameter)
 	{
 		this.setRadius(diameter / 2);
-	}
-
-	/**
-	 * Draws the ball into to the graphics passed,
-	 * box outline will be black color.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	public void drawBall(Graphics2D g)
-	{
-		g.setColor(Color.BLACK);
-		g.drawOval(this.getX() - this.getRadius(), this.getY() - this.getRadius(), this.getDiameter(), this.getDiameter());
-		g.drawLine(this.getCenterX() - 1, this.getCenterY() - 1, this.getCenterX() + 1, this.getCenterY() + 1);
-	}
-
-	/**
-	 * Same as drawBall.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void draw(Graphics2D g)
-	{
-		this.drawBall(g);
 	}
 
 	/**

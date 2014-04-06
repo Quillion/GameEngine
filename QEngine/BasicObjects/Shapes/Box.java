@@ -1,4 +1,4 @@
-package BasicObjects.shapes;
+package BasicObjects.Shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -9,24 +9,20 @@ import BasicObjects.Dimensions;
 import BasicObjects.Point;
 import abstracts.Shape;
 
-import java.awt.*;
-
 /**
- * A simple Box.
- * Has all the parameters you would expect box to have.
+ * A simple Box. Has all the parameters you would expect box to have.
  */
 public class Box extends Shape
 {
 	/**
 	 * A box will always have a point and dimension.
 	 */
-	private Point coordinates;
+	private Point      coordinates;
 	private Dimensions size;
 
 	/**
-	 * A constructor for the box.
-	 * Box does not contain any offsets, it is just a box.
-	 * All the values are set to 0 on creation.
+	 * A constructor for the box. Box does not contain any offsets, it is just a box. All the values are set to 0 on
+	 * creation.
 	 */
 	public Box()
 	{
@@ -37,7 +33,8 @@ public class Box extends Shape
 	/**
 	 * Sets the value of x to whatever you choose to.
 	 *
-	 * @param x the value to which x will be set to.
+	 * @param x
+	 * 		the value to which x will be set to.
 	 */
 	@Override
 	public void setX(double x)
@@ -46,8 +43,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Return x value of the object.
-	 * I return int because it is easier to use for collision detection.
+	 * Return x value of the object. I return int because it is easier to use for collision detection.
 	 *
 	 * @return returns the x value of the object.
 	 */
@@ -60,7 +56,8 @@ public class Box extends Shape
 	/**
 	 * Increment the object's x value, very useful for movement.
 	 *
-	 * @param x the value by which to increment x by.
+	 * @param x
+	 * 		the value by which to increment x by.
 	 */
 	@Override
 	public void incrementX(double x)
@@ -71,7 +68,8 @@ public class Box extends Shape
 	/**
 	 * Sets the value of y to whatever you choose to.
 	 *
-	 * @param y the value to which y will be set to.
+	 * @param y
+	 * 		the value to which y will be set to.
 	 */
 	@Override
 	public void setY(double y)
@@ -80,8 +78,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Return y value of the object.
-	 * I return int because it is easier to use for collision detection.
+	 * Return y value of the object. I return int because it is easier to use for collision detection.
 	 *
 	 * @return returns the y value of the object.
 	 */
@@ -94,7 +91,8 @@ public class Box extends Shape
 	/**
 	 * Increment the object's y value, very useful for movement.
 	 *
-	 * @param y the value by which to increment y by.
+	 * @param y
+	 * 		the value by which to increment y by.
 	 */
 	@Override
 	public void incrementY(double y)
@@ -105,7 +103,8 @@ public class Box extends Shape
 	/**
 	 * Moves this box by the given vector.
 	 *
-	 * @param vector The vector that should be applied to this box.
+	 * @param vector
+	 * 		The vector that should be applied to this box.
 	 */
 	@Override
 	public void move(Point vector)
@@ -116,7 +115,8 @@ public class Box extends Shape
 	/**
 	 * Changes the coordinates of this box to specified value.
 	 *
-	 * @param point The new coordinates of this box.
+	 * @param point
+	 * 		The new coordinates of this box.
 	 */
 	@Override
 	public void setCoordinates(Point point)
@@ -127,7 +127,8 @@ public class Box extends Shape
 	/**
 	 * Sets the width value to whatever you choose to.
 	 *
-	 * @param width the value to which object's width will be set to.
+	 * @param width
+	 * 		the value to which object's width will be set to.
 	 */
 	@Override
 	public void setWidth(int width)
@@ -149,7 +150,8 @@ public class Box extends Shape
 	/**
 	 * Increments the object's width by a set amount.
 	 *
-	 * @param amount how much to increment this object's width by.
+	 * @param amount
+	 * 		how much to increment this object's width by.
 	 */
 	@Override
 	public void incrementWidth(int amount)
@@ -160,7 +162,8 @@ public class Box extends Shape
 	/**
 	 * Sets the height value to whatever you choose to.
 	 *
-	 * @param height the value to which object's height will be set to.
+	 * @param height
+	 * 		the value to which object's height will be set to.
 	 */
 	@Override
 	public void setHeight(int height)
@@ -182,7 +185,8 @@ public class Box extends Shape
 	/**
 	 * Increments the object's height by a set amount.
 	 *
-	 * @param amount how much to increment this object's height by.
+	 * @param amount
+	 * 		how much to increment this object's height by.
 	 */
 	@Override
 	public void incrementHeight(int amount)
@@ -193,7 +197,8 @@ public class Box extends Shape
 	/**
 	 * Sets the size of this box to the new given Dimensions.
 	 *
-	 * @param size The new Size for this object.
+	 * @param size
+	 * 		The new Size for this object.
 	 */
 	@Override
 	public void setSize(Dimensions size)
@@ -202,8 +207,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's left x coordinate,
-	 * is used for collision detection checking.
+	 * Returns the object's left x coordinate, is used for collision detection checking.
 	 *
 	 * @return the object's left x coordinate.
 	 */
@@ -214,8 +218,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's right x coordinate,
-	 * is used for collision detection checking.
+	 * Returns the object's right x coordinate, is used for collision detection checking.
 	 *
 	 * @return the object's right x coordinate(which is x+width).
 	 */
@@ -226,8 +229,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's top y coordinate,
-	 * is used for collision detection checking.
+	 * Returns the object's top y coordinate, is used for collision detection checking.
 	 *
 	 * @return the object's top y coordinate.
 	 */
@@ -238,8 +240,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's bottom y coordinate,
-	 * is used for collision detection checking.
+	 * Returns the object's bottom y coordinate, is used for collision detection checking.
 	 *
 	 * @return the object's bottom y coordinate(which is y+height).
 	 */
@@ -294,8 +295,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's center x coordinate.
-	 * Is used for whatever you want, but it is costly.
+	 * Returns the object's center x coordinate. Is used for whatever you want, but it is costly.
 	 *
 	 * @return the object's center x coordinate.
 	 */
@@ -306,8 +306,7 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's center y coordinate.
-	 * Is used for whatever you want, but it is costly.
+	 * Returns the object's center y coordinate. Is used for whatever you want, but it is costly.
 	 *
 	 * @return the object's center y coordinate.
 	 */
@@ -326,29 +325,6 @@ public class Box extends Shape
 	public Point getCenter()
 	{
 		return new Point(this.getCenterX(), this.getCenterY());
-	}
-
-	/**
-	 * Draws the box into to the graphics passed,
-	 * box outline will be black color.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	public void drawBox(Graphics2D g)
-	{
-		g.setColor(Color.BLACK);
-		g.drawRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-	}
-
-	/**
-	 * Same as drawBox.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void draw(Graphics2D g)
-	{
-		this.drawBox(g);
 	}
 
 	/**

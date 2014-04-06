@@ -6,8 +6,7 @@ package BasicObjects;
  */
 
 /**
- * Basic Point. Contains x and y coordinate which are both double.
- * Can represent vectors.
+ * Basic Point. Contains x and y coordinate which are both double. Can represent vectors.
  */
 public class Point
 {
@@ -19,8 +18,10 @@ public class Point
 	/**
 	 * We can not have a Point without coordinates, so let's specify them.
 	 *
-	 * @param x The x coordinate of the point.
-	 * @param y The y coordinate of the point.
+	 * @param x
+	 * 		The x coordinate of the point.
+	 * @param y
+	 * 		The y coordinate of the point.
 	 */
 	public Point(double x, double y)
 	{
@@ -41,7 +42,8 @@ public class Point
 	/**
 	 * Sets the x coordinate of this point to specified value.
 	 *
-	 * @param x What the new x coordinate should be.
+	 * @param x
+	 * 		What the new x coordinate should be.
 	 */
 	public void setX(double x)
 	{
@@ -51,7 +53,8 @@ public class Point
 	/**
 	 * Increments the x coordinate of this point by what you want.
 	 *
-	 * @param amount The vector that will affect the x coordinate of this point.
+	 * @param amount
+	 * 		The vector that will affect the x coordinate of this point.
 	 */
 	public void incrementX(double amount)
 	{
@@ -59,9 +62,7 @@ public class Point
 	}
 
 	/**
-	 * Reverses the direction of the x vector.
-	 * This is mainly used when the point
-	 * object is being treated as a vector.
+	 * Reverses the direction of the x vector. This is mainly used when the point object is being treated as a vector.
 	 */
 	public void reverseX()
 	{
@@ -81,7 +82,8 @@ public class Point
 	/**
 	 * Sets the y coordinate value of this point to what you tell it to.
 	 *
-	 * @param y What you would like the new y coordinate to be.
+	 * @param y
+	 * 		What you would like the new y coordinate to be.
 	 */
 	public void setY(double y)
 	{
@@ -91,7 +93,8 @@ public class Point
 	/**
 	 * Moves this point's y value by the given vector.
 	 *
-	 * @param amount The y vector that will move this point.
+	 * @param amount
+	 * 		The y vector that will move this point.
 	 */
 	public void incrementY(double amount)
 	{
@@ -99,9 +102,7 @@ public class Point
 	}
 
 	/**
-	 * Reverses the direction of the y vector.
-	 * This is mainly used when the point
-	 * object is being treated as a vector.
+	 * Reverses the direction of the y vector. This is mainly used when the point object is being treated as a vector.
 	 */
 	public void reverseY()
 	{
@@ -111,7 +112,9 @@ public class Point
 	/**
 	 * Applies the given vector on this point.
 	 *
-	 * @param vector Vector that will determine by how much to move this point.
+	 * @param vector
+	 * 		Vector that will determine by how much to move this point.
+	 *
 	 * @return The instance of the point after it has been moved.
 	 */
 	public Point move(Point vector)
@@ -122,8 +125,24 @@ public class Point
 	}
 
 	/**
-	 * If this object is being treated as a vector,
-	 * this function will reverse the vector.
+	 * Applies the given vector on this point.
+	 *
+	 * @param x
+	 * 		The x value by which incrementation will be done.
+	 * @param y
+	 * 		The y value by which incrementation will be done.
+	 *
+	 * @return The instance of the point after it has been moved.
+	 */
+	public Point move(double x, double y)
+	{
+		this.incrementX(x);
+		this.incrementY(y);
+		return this;
+	}
+
+	/**
+	 * If this object is being treated as a vector, this function will reverse the vector.
 	 */
 	public void reverse()
 	{
@@ -134,8 +153,10 @@ public class Point
 	/**
 	 * Simple changes location of this point to specified location.
 	 *
-	 * @param x The new x coordinate of this point.
-	 * @param y The new y coordinate of this point.
+	 * @param x
+	 * 		The new x coordinate of this point.
+	 * @param y
+	 * 		The new y coordinate of this point.
 	 */
 	public void changeLocation(double x, double y)
 	{
@@ -144,10 +165,11 @@ public class Point
 	}
 
 	/**
-	 * Simple changes location of this point to specified Point.
-	 * Only values get copied over but not the memory location.
+	 * Simple changes location of this point to specified Point. Only values get copied over but not the memory
+	 * location.
 	 *
-	 * @param point The new coordinates of this point.
+	 * @param point
+	 * 		The new coordinates of this point.
 	 */
 	public void changeLocation(Point point)
 	{
@@ -155,8 +177,7 @@ public class Point
 	}
 
 	/**
-	 * Creates a new Point that has the exact same coordinates as this point,
-	 * but different memory location.
+	 * Creates a new Point that has the exact same coordinates as this point, but different memory location.
 	 *
 	 * @return Point that is the same as this point but does not share location.
 	 */

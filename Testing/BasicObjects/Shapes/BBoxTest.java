@@ -1,10 +1,9 @@
-/**
+package BasicObjects.Shapes; /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.shapes.BBox;
 import BasicObjects.Dimensions;
 import BasicObjects.Point;
 import junit.framework.Assert;
@@ -12,12 +11,10 @@ import org.junit.Test;
 
 public class BBoxTest
 {
-	private BBox box;
-
 	@Test
 	public void testBoundingBox()
 	{
-		box = new BBox();
+		BBox box = new BBox();
 		box.setCoordinates(new Point(50, 70));
 		box.setSize(new Dimensions(15, 30));
 		box.setOffsets(new Dimensions(5, 10));
@@ -42,7 +39,7 @@ public class BBoxTest
 	@Test
 	public void testCopy()
 	{
-		box = new BBox();
+		BBox box = new BBox();
 		box.setCoordinates(new Point(50, 70));
 		box.setSize(new Dimensions(15, 30));
 		box.setOffsets(new Dimensions(5, 10));

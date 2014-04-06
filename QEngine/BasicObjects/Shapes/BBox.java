@@ -1,4 +1,4 @@
-package BasicObjects.shapes;
+package BasicObjects.Shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -7,8 +7,6 @@ package BasicObjects.shapes;
 
 import BasicObjects.Dimensions;
 import BasicObjects.Point;
-
-import java.awt.*;
 
 /**
  * A Box that contains a Bounding/Collision Box.
@@ -21,9 +19,8 @@ public class BBox extends Box
 	private Dimensions offsets;
 
 	/**
-	 * A constructor for the bounding box
-	 * BBox extends Box so it has same properties
-	 * but has offsets which will be used  in collision detection.
+	 * A constructor for the bounding box BBox extends Box so it has same properties but has offsets which will be used
+	 * in collision detection.
 	 */
 	public BBox()
 	{
@@ -34,7 +31,8 @@ public class BBox extends Box
 	/**
 	 * Sets the horizontal offset to whatever value is passed.
 	 *
-	 * @param offset value to which horizontal offset will be set to.
+	 * @param offset
+	 * 		value to which horizontal offset will be set to.
 	 */
 	public void setHorizontalOffset(int offset)
 	{
@@ -54,7 +52,8 @@ public class BBox extends Box
 	/**
 	 * Sets the vertical offset to whatever value is passed.
 	 *
-	 * @param offset value to which vertical offset will be set to.
+	 * @param offset
+	 * 		value to which vertical offset will be set to.
 	 */
 	public void setVerticalOffset(int offset)
 	{
@@ -74,7 +73,8 @@ public class BBox extends Box
 	/**
 	 * Sets the offset pf this Bounding Box to the newly given values.
 	 *
-	 * @param dimensions The new Dimension that will be this Bound Box's offsets.
+	 * @param dimensions
+	 * 		The new Dimension that will be this Bound Box's offsets.
 	 */
 	public void setOffsets(Dimensions dimensions)
 	{
@@ -82,8 +82,7 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's left x coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's left x coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's left x coordinate with offset.
 	 */
@@ -94,8 +93,7 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's right x coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's right x coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's right x coordinate(which is x+width) with offset.
 	 */
@@ -106,8 +104,7 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's top y coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's top y coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's top y coordinate.
 	 */
@@ -118,8 +115,7 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's bottom y coordinate with offset,
-	 * is used for collision detection checking.
+	 * Returns the object's bottom y coordinate with offset, is used for collision detection checking.
 	 *
 	 * @return the object's bottom y coordinate(which is y+height) with offset.
 	 */
@@ -174,34 +170,7 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Draws the box into to the graphics passed,
-	 * box outline will be black color.
-	 * The bounding box will be gray color.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void draw(Graphics2D g)
-	{
-		super.drawBox(g);
-		g.setColor(Color.GRAY);
-		g.drawRect(this.getLeftX(), this.getTopY(), this.getRightX() - this.getLeftX(), this.getBottomY() - this.getTopY());
-	}
-
-	/**
-	 * Draws the box into to the graphics passed, box outline will be black color.
-	 *
-	 * @param g graphics where the box will be drawn into.
-	 */
-	@Override
-	public void drawBox(Graphics2D g)
-	{
-		super.drawBox(g);
-	}
-
-	/**
-	 * Returns This object's box object as a new object.
-	 * Simply calls copy of the parent class.
+	 * Returns This object's box object as a new object. Simply calls copy of the parent class.
 	 *
 	 * @return new Box which is part of this Bounding Box object.
 	 */

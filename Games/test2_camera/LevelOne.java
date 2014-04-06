@@ -6,13 +6,13 @@ package test2_camera;
  */
 
 import BasicObjects.*;
-import BasicObjects.camera.FollowingCamera;
+import BasicObjects.Camera.FollowingCamera;
 import BasicObjects.Point;
-import BasicObjects.shapes.BBox;
-import BasicObjects.shapes.Box;
-import BasicObjects.shapes.MBox;
+import BasicObjects.Shapes.BBox;
+import BasicObjects.Shapes.Box;
+import BasicObjects.Shapes.MBox;
 import abstracts.Level;
-import constants.Constants;
+import Constants.Constants;
 import logic.CollisionEngine;
 
 import java.awt.*;

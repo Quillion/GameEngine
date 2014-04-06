@@ -6,18 +6,18 @@ package BasicObjects;
  */
 
 /**
- * Represents a physical keyboard key.
- * Contains value for the said key and a boolean representing key state.
+ * Represents a physical keyboard key. Contains value for the said key and a boolean representing key state.
  */
 public class Key
 {
 	private boolean pressed;
-	private int value;
+	private int     value;
 
 	/**
 	 * Creates a key with a given value.
 	 *
-	 * @param value What value this key is.
+	 * @param value
+	 * 		What value this key is.
 	 */
 	public Key(int value)
 	{
@@ -38,7 +38,8 @@ public class Key
 	/**
 	 * Sets the value for this key.
 	 *
-	 * @param value What value you want this key to have.
+	 * @param value
+	 * 		What value you want this key to have.
 	 */
 	public void setValue(int value)
 	{
@@ -46,8 +47,7 @@ public class Key
 	}
 
 	/**
-	 * If you pressed the key then call this method.
-	 * Sets pressed value to true.
+	 * If you pressed the key then call this method. Sets pressed value to true.
 	 */
 	public void press()
 	{
@@ -55,8 +55,7 @@ public class Key
 	}
 
 	/**
-	 * If you release key then call this method.
-	 * Sets the pressed value to false.
+	 * If you release key then call this method. Sets the pressed value to false.
 	 */
 	public void release()
 	{

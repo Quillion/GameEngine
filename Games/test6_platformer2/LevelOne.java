@@ -7,8 +7,8 @@ package test6_platformer2;
 
 import BasicObjects.Dimensions;
 import BasicObjects.Point;
-import BasicObjects.camera.FollowingCamera;
-import BasicObjects.shapes.BBox;
+import BasicObjects.Camera.FollowingCamera;
+import BasicObjects.Shapes.BBox;
 import abstracts.Level;
 import logic.platformer.CollisionEngine;
 import logic.platformer.Engine;

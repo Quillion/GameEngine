@@ -5,7 +5,7 @@ package platformer.ExtendedShapes;
  * @since 1.6
  */
 
-import constants.Constants;
+import Constants.Constants;
 import platformer.MovingShapes.MBox;
 
 /**

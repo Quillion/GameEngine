@@ -1,4 +1,4 @@
-package constants;
+package Constants;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

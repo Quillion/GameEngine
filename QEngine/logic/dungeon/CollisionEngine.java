@@ -1,7 +1,7 @@
 package logic.dungeon;
 
-import BasicObjects.shapes.BBox;
-import constants.Constants;
+import BasicObjects.Shapes.BBox;
+import Constants.Constants;
 import dungeon.MBox;
 
 /**

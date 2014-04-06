@@ -7,9 +7,10 @@ package test1_collision;
 
 import BasicObjects.*;
 import BasicObjects.Point;
-import BasicObjects.shapes.*;
+import BasicObjects.Shapes.*;
+import Painter.ShapePainter;
 import abstracts.Level;
-import constants.Constants;
+import Constants.Constants;
 import logic.CollisionEngine;
 
 import java.awt.*;
@@ -20,11 +21,11 @@ import java.util.List;
 
 public class LevelOne extends Level
 {
-	private List<Box> boxes;
+	private List<Box>  boxes;
 	private List<BBox> bBoxes;
 	private List<MBox> mBoxes;
 
-	private List<Ball> balls;
+	private List<Ball>  balls;
 	private List<BBall> bBalls;
 	private List<MBall> mBalls;
 
@@ -153,22 +154,34 @@ public class LevelOne extends Level
 	public void draw(Graphics2D g)
 	{
 		for (Box box : boxes)
-			box.draw(g);
+		{
+			ShapePainter.draw(g, box);
+		}
 
 		for (BBox box : bBoxes)
-			box.draw(g);
+		{
+			ShapePainter.draw(g, box);
+		}
 
 		for (MBox box : mBoxes)
-			box.draw(g);
+		{
+			ShapePainter.draw(g, box);
+		}
 
 		for (Ball ball : balls)
-			ball.draw(g);
+		{
+			ShapePainter.draw(g, ball);
+		}
 
 		for (BBall ball : bBalls)
-			ball.draw(g);
+		{
+			ShapePainter.draw(g, ball);
+		}
 
 		for (MBall ball : mBalls)
-			ball.draw(g);
+		{
+			ShapePainter.draw(g, ball);
+		}
 	}
 
 	@Override
@@ -180,28 +193,44 @@ public class LevelOne extends Level
 			{
 				Constants.Direction direction = CollisionEngine.horizontalCollision(mbox, box);
 				if (direction.equals(Constants.Direction.Right) && mbox.getXVector() > 0)
+				{
 					mbox.setXVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Left) && mbox.getXVector() < 0)
+				{
 					mbox.setXVector(0);
+				}
 				direction = CollisionEngine.verticalCollision(mbox, box);
 				if (direction.equals(Constants.Direction.Down) && mbox.getYVector() > 0)
+				{
 					mbox.setYVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Up) && mbox.getYVector() < 0)
+				{
 					mbox.setYVector(0);
+				}
 			}
 
 			for (BBox box : bBoxes)
 			{
 				Constants.Direction direction = CollisionEngine.horizontalCollision(mbox, box);
 				if (direction.equals(Constants.Direction.Right) && mbox.getXVector() > 0)
+				{
 					mbox.setXVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Left) && mbox.getXVector() < 0)
+				{
 					mbox.setXVector(0);
+				}
 				direction = CollisionEngine.verticalCollision(mbox, box);
 				if (direction.equals(Constants.Direction.Down) && mbox.getYVector() > 0)
+				{
 					mbox.setYVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Up) && mbox.getYVector() < 0)
+				{
 					mbox.setYVector(0);
+				}
 			}
 
 			mbox.move();
@@ -216,20 +245,28 @@ public class LevelOne extends Level
 				if (direction.equals(Constants.Direction.Right) &&
 						mball.getXVector() > 0 &&
 						collision)
+				{
 					mball.setXVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Left) &&
 						mball.getXVector() < 0 &&
 						collision)
+				{
 					mball.setXVector(0);
+				}
 				direction = CollisionEngine.verticalOrientation(mball, ball);
 				if (direction.equals(Constants.Direction.Down) &&
 						mball.getYVector() > 0 &&
 						collision)
+				{
 					mball.setYVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Up) &&
 						mball.getYVector() < 0 &&
 						collision)
+				{
 					mball.setYVector(0);
+				}
 			}
 
 			for (BBall ball : bBalls)
@@ -239,20 +276,28 @@ public class LevelOne extends Level
 				if (direction.equals(Constants.Direction.Right) &&
 						mball.getXVector() > 0 &&
 						collision)
+				{
 					mball.setXVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Left) &&
 						mball.getXVector() < 0 &&
 						collision)
+				{
 					mball.setXVector(0);
+				}
 				direction = CollisionEngine.verticalOrientation(mball, ball);
 				if (direction.equals(Constants.Direction.Down) &&
 						mball.getYVector() > 0 &&
 						collision)
+				{
 					mball.setYVector(0);
+				}
 				else if (direction.equals(Constants.Direction.Up) &&
 						mball.getYVector() < 0 &&
 						collision)
+				{
 					mball.setYVector(0);
+				}
 			}
 
 			mball.move();

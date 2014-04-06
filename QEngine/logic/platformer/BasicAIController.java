@@ -5,7 +5,7 @@ package logic.platformer;
  * @since 1.6
  */
 
-import constants.Constants;
+import Constants.Constants;
 import logic.Engine;
 import platformer.BasicCharacter;
 

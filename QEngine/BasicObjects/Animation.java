@@ -12,17 +12,19 @@ import java.awt.image.BufferedImage;
  */
 public class Animation
 {
-	private int size;
+	private int             size;
 	private BufferedImage[] images;
-	private int refreshRate;
-	private int currentFrame;
-	private int count;
+	private int             refreshRate;
+	private int             currentFrame;
+	private int             count;
 
 	/**
 	 * Well we can't have animation without the number of frames and how to quickly to refresh them can we?
 	 *
-	 * @param size        How many frames the animation has.
-	 * @param refreshRate How quickly each frame will change.
+	 * @param size
+	 * 		How many frames the animation has.
+	 * @param refreshRate
+	 * 		How quickly each frame will change.
 	 */
 	public Animation(int size, int refreshRate)
 	{
@@ -33,11 +35,11 @@ public class Animation
 	}
 
 	/**
-	 * Change the refresh rate,
-	 * for example if you have walking animation and you did speed buff,
-	 * you would want walking animation to increase too.
+	 * Change the refresh rate, for example if you have walking animation and you did speed buff, you would want walking
+	 * animation to increase too.
 	 *
-	 * @param refreshRate The new refresh rate for the animation.
+	 * @param refreshRate
+	 * 		The new refresh rate for the animation.
 	 */
 	public void setRefreshRate(int refreshRate)
 	{
@@ -45,8 +47,7 @@ public class Animation
 	}
 
 	/**
-	 * Returns how quickly the given animation changes frames.
-	 * I don't know why you would want it, but there ya go.
+	 * Returns how quickly the given animation changes frames. I don't know why you would want it, but there ya go.
 	 *
 	 * @return The refresh rate of this animation.
 	 */
@@ -66,25 +67,30 @@ public class Animation
 	}
 
 	/**
-	 * Returns the image at the given index.
-	 * If incorrect index is specified (less than zero or more than the size), then null is returned.
+	 * Returns the image at the given index. If incorrect index is specified (less than zero or more than the size),
+	 * then null is returned.
 	 *
-	 * @param index The index of tha frame you want.
+	 * @param index
+	 * 		The index of tha frame you want.
+	 *
 	 * @return null if index is invalid, the frame at the given index if it is correct.
 	 */
 	public BufferedImage getImage(int index)
 	{
 		if (index < this.getSize() && index >= 0)
+		{
 			return this.images[index];
+		}
 		return null;
 	}
 
 	/**
-	 * Add the given image to the animation.
-	 * If Animation can not handle more frames than initially set,
-	 * then the image will not be added.
+	 * Add the given image to the animation. If Animation can not handle more frames than initially set, then the image
+	 * will not be added.
 	 *
-	 * @param image Image that you would like to add.
+	 * @param image
+	 * 		Image that you would like to add.
+	 *
 	 * @return True if the image was added to the animation, false otherwise.
 	 */
 	public boolean addImage(BufferedImage image)
@@ -101,20 +107,23 @@ public class Animation
 	}
 
 	/**
-	 * Adds image at the given index.
-	 * If index is invalid value (bigger than size or less than zero),
-	 * then false is returned and the image is not added.
-	 * Otherwise image is added and true is returned.
-	 * Very useful method to override image in the animation.
+	 * Adds image at the given index. If index is invalid value (bigger than size or less than zero), then false is
+	 * returned and the image is not added. Otherwise image is added and true is returned. Very useful method to
+	 * override image in the animation.
 	 *
-	 * @param image Image that you would like to add to the animation.
-	 * @param index Index at which to add the given image.
+	 * @param image
+	 * 		Image that you would like to add to the animation.
+	 * @param index
+	 * 		Index at which to add the given image.
+	 *
 	 * @return True if the image was added, and false otherwise.
 	 */
 	public boolean addImage(BufferedImage image, int index)
 	{
 		if (index >= this.getSize() && index < 0)
+		{
 			return false;
+		}
 		this.images[index] = image;
 		return true;
 	}
@@ -129,10 +138,8 @@ public class Animation
 	}
 
 	/**
-	 * Returns the image that you request.
-	 * Keep calling this method and the image will keep on changing.
-	 * This is the animation method.
-	 * If animation is incomplete be careful when calling this method.
+	 * Returns the image that you request. Keep calling this method and the image will keep on changing. This is the
+	 * animation method. If animation is incomplete be careful when calling this method.
 	 *
 	 * @return Different image every time depending on the frame and time.
 	 */
@@ -144,7 +151,9 @@ public class Animation
 			this.count = 0;
 			this.currentFrame++;
 			if (this.currentFrame >= this.getSize())
+			{
 				this.currentFrame = 0;
+			}
 		}
 		return this.images[this.currentFrame];
 	}

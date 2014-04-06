@@ -1,14 +1,14 @@
 package platformer;
 
 import BasicObjects.Key;
-import constants.Constants;
+import Constants.Constants;
 
 /**
  * User: Edgar
  * Date: 2/2/14
  * Time: 5:16 PM
  */
-public class MBox extends BasicObjects.shapes.MBox
+public class MBox extends BasicObjects.Shapes.MBox
 {
 	private Key[] keys;
 	private double acceleration;

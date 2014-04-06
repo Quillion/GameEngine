@@ -205,11 +205,4 @@ public abstract class Shape
 	 * @param size The new Size for this object.
 	 */
 	public abstract void setSize(Dimensions size);
-
-	/**
-	 * Same as drawBox.
-	 *
-	 * @param g graphics where the shape will be drawn into.
-	 */
-	public abstract void draw(Graphics2D g);
 }

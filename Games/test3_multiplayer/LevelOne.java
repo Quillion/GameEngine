@@ -7,11 +7,11 @@ package test3_multiplayer;
 
 import BasicObjects.Dimensions;
 import BasicObjects.Point;
-import BasicObjects.camera.MultiplayerCamera;
-import BasicObjects.shapes.BBox;
-import BasicObjects.shapes.MBox;
+import BasicObjects.Camera.MultiplayerCamera;
+import BasicObjects.Shapes.BBox;
+import BasicObjects.Shapes.MBox;
 import abstracts.Level;
-import constants.Constants;
+import Constants.Constants;
 import logic.CollisionEngine;
 
 import java.awt.*;

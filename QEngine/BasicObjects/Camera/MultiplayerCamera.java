@@ -1,4 +1,4 @@
-package BasicObjects.camera;
+package BasicObjects.Camera;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -6,7 +6,7 @@ package BasicObjects.camera;
  */
 
 import BasicObjects.Dimensions;
-import BasicObjects.shapes.*;
+import BasicObjects.Shapes.*;
 import abstracts.Shape;
 import logic.MathEngine;
 

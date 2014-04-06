@@ -6,8 +6,8 @@ package Sim;
  */
 
 import BasicObjects.Dimensions;
-import BasicObjects.shapes.Field;
-import constants.Constants;
+import BasicObjects.Shapes.Field;
+import Constants.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
