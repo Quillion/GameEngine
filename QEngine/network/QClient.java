@@ -16,8 +16,6 @@ import java.io.IOException;
  */
 public abstract class QClient extends Listener
 {
-	private int id;
-
 	private Client client;
 
 	private boolean connecting;
@@ -30,24 +28,24 @@ public abstract class QClient extends Listener
 	 */
 	public QClient(String host)
 	{
-		this.connecting = false;
+		connecting = false;
 		try
 		{
-			this.client = new Client();
-			this.client.start();
+			client = new Client();
+			client.start();
 
-			QNetwork.register(this.client);
+			QNetwork.register(client);
 
-			this.client.addListener(this);
+			client.addListener(this);
 
-			this.client.connect(5000, host, QNetwork.PORT);
+			client.connect(5000, host, QNetwork.PORT);
 		}
 		catch (IOException e)
 		{
 			e.printStackTrace();
 			System.exit(-1);
 		}
-		this.connecting = true;
+		connecting = true;
 	}
 
 	/**
@@ -65,11 +63,6 @@ public abstract class QClient extends Listener
 	 */
 	public abstract void received(Connection connection, Object object);
 
-	public void send(QNetwork object)
-	{
-		this.client.sendTCP(object);
-	}
-
 	/**
 	 * Whenever a disconnect happens then you will know about it here.
 	 *
@@ -84,16 +77,6 @@ public abstract class QClient extends Listener
 	 */
 	public boolean isConnecting()
 	{
-		return this.connecting;
-	}
-
-	public int getId()
-	{
-		return this.id;
-	}
-
-	public void setId(int id)
-	{
-		this.id = id;
+		return connecting;
 	}
 }
