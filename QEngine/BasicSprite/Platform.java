@@ -1,31 +1,28 @@
-package BasicSprite;
+package basicSprite;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Shapes.Box;
+import basicObjects.shapes.Box;
 import utils.ImageProcessor;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Platform with box.
- * This platform is very simplistic and does not contain
- * any bounding box. Additionally this platform has an image,
- * but you do not have to initialize it, instead you can
- * initialize a color and a colorful platform will be drawn.
+ * Platform with box. This platform is very simplistic and does not contain any bounding box. Additionally this platform
+ * has an image, but you do not have to initialize it, instead you can initialize a color and a colorful platform will
+ * be drawn.
  */
 public class Platform extends Box
 {
 	private BufferedImage image;
-	private Color color;
+	private Color         color;
 
 	/**
-	 * Constructor for the platform, originally contains no image,
-	 * and color is set to black.
+	 * Constructor for the platform, originally contains no image, and color is set to black.
 	 */
 	public Platform()
 	{
@@ -37,7 +34,8 @@ public class Platform extends Box
 	/**
 	 * Sets the color of the platform to whatever you want.
 	 *
-	 * @param color what color the new platform will be.
+	 * @param color
+	 * 		what color the new platform will be.
 	 */
 	public void setColor(Color color)
 	{
@@ -57,7 +55,8 @@ public class Platform extends Box
 	/**
 	 * Set the image to whatever is passed to us. The width and height will be changed accordingly.
 	 *
-	 * @param image the image for this platform.
+	 * @param image
+	 * 		the image for this platform.
 	 */
 	public void setImage(BufferedImage image)
 	{
@@ -75,8 +74,10 @@ public class Platform extends Box
 	{
 		this.image = ImageProcessor.loadImage(path);
 
-		if(this.image == null)
+		if (this.image == null)
+		{
 			return false;
+		}
 
 		super.setWidth(this.image.getWidth());
 		super.setHeight(this.image.getHeight());
@@ -105,6 +106,8 @@ public class Platform extends Box
 			g.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
 		}
 		else
+		{
 			g.drawImage(this.getImage(), null, super.getX(), super.getY());
+		}
 	}
 }

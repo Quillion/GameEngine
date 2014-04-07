@@ -1,4 +1,4 @@
-package platformer.MovingShapes;
+package platformer.movingShapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -8,15 +8,14 @@ package platformer.MovingShapes;
 /**
  * Bounding box with vector qualities.
  */
-public class MBBox extends BasicObjects.Shapes.MBox
+public class MBBox extends basicObjects.shapes.MBox
 {
 	private double gravity, groundFriction, airFriction;
 	private double acceleration, maxSpeed, jump;
 
 	/**
-	 * Constructor, creates box which has vectors,
-	 * and certain moving qualities,
-	 * all the vectors and gravity are set to zero.
+	 * Constructor, creates box which has vectors, and certain moving qualities, all the vectors and gravity are set to
+	 * zero.
 	 */
 	public MBBox()
 	{
@@ -32,7 +31,8 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	/**
 	 * Sets gravity to whatever floats your boat.
 	 *
-	 * @param gravity new value to which gravity will be set to.
+	 * @param gravity
+	 * 		new value to which gravity will be set to.
 	 */
 	public void setGravity(double gravity)
 	{
@@ -50,10 +50,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Increments gravity by whatever value you want.
-	 * Useful if your character has a skill to decrease gravity.
+	 * Increments gravity by whatever value you want. Useful if your character has a skill to decrease gravity.
 	 *
-	 * @param value how much to increment gravity by.
+	 * @param value
+	 * 		how much to increment gravity by.
 	 */
 	public void incrementGravity(double value)
 	{
@@ -61,10 +61,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Sets the friction when character is on the ground.
-	 * If character steps on ice simply change friction.
+	 * Sets the friction when character is on the ground. If character steps on ice simply change friction.
 	 *
-	 * @param friction value to which ground friction should be set to.
+	 * @param friction
+	 * 		value to which ground friction should be set to.
 	 */
 	public void setGroundFriction(double friction)
 	{
@@ -82,10 +82,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Increments ground friction by value.
-	 * I don't know what use this can have but I added this in case.
+	 * Increments ground friction by value. I don't know what use this can have but I added this in case.
 	 *
-	 * @param value how much to increment ground friction by.
+	 * @param value
+	 * 		how much to increment ground friction by.
 	 */
 	public void incrementGroundFriction(double value)
 	{
@@ -93,10 +93,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Determines how fast user can accelerate and decelerate while in air.
-	 * Try using it and see what it does.
+	 * Determines how fast user can accelerate and decelerate while in air. Try using it and see what it does.
 	 *
-	 * @param friction value to which air friction will be set to.
+	 * @param friction
+	 * 		value to which air friction will be set to.
 	 */
 	public void setAirFriction(double friction)
 	{
@@ -114,10 +114,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Increments value of air friction by a certain value.
-	 * I have no idea what use this can have.
+	 * Increments value of air friction by a certain value. I have no idea what use this can have.
 	 *
-	 * @param value how much to increment air friction by.
+	 * @param value
+	 * 		how much to increment air friction by.
 	 */
 	public void incrementAirFriction(double value)
 	{
@@ -127,7 +127,8 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	/**
 	 * Determines how fast user can accelerate while touching the ground.
 	 *
-	 * @param acceleration value to which acceleration will be set to.
+	 * @param acceleration
+	 * 		value to which acceleration will be set to.
 	 */
 	public void setAcceleration(double acceleration)
 	{
@@ -145,10 +146,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Increments acceleration by a given value.
-	 * Good for buff or debuff skill use.
+	 * Increments acceleration by a given value. Good for buff or debuff skill use.
 	 *
-	 * @param value how much to increment acceleration by.
+	 * @param value
+	 * 		how much to increment acceleration by.
 	 */
 	public void incrementAcceleration(double value)
 	{
@@ -158,7 +159,8 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	/**
 	 * Sets maximum speed object may have.
 	 *
-	 * @param speed the value to which new max speed will be set to.
+	 * @param speed
+	 * 		the value to which new max speed will be set to.
 	 */
 	public void setMaxSpeed(double speed)
 	{
@@ -176,10 +178,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Increment max allowed speed of this object by value.
-	 * Good for skills that speed up character.
+	 * Increment max allowed speed of this object by value. Good for skills that speed up character.
 	 *
-	 * @param value how much to increment max speed by.
+	 * @param value
+	 * 		how much to increment max speed by.
 	 */
 	public void incrementMaxSpeed(double value)
 	{
@@ -187,10 +189,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Sets the jump value for the object.
-	 * The higher the jump the higher the character will jump.
+	 * Sets the jump value for the object. The higher the jump the higher the character will jump.
 	 *
-	 * @param jump value to which jump will be set to.
+	 * @param jump
+	 * 		value to which jump will be set to.
 	 */
 	public void setJump(double jump)
 	{
@@ -208,10 +210,10 @@ public class MBBox extends BasicObjects.Shapes.MBox
 	}
 
 	/**
-	 * Increments jump value by whatever you specify.
-	 * Can be used for skills.
+	 * Increments jump value by whatever you specify. Can be used for skills.
 	 *
-	 * @param value value by which to increment jump.
+	 * @param value
+	 * 		value by which to increment jump.
 	 */
 	public void incrementJump(double value)
 	{

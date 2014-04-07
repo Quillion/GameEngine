@@ -1,19 +1,18 @@
-package BasicSprite;
+package basicSprite;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Shapes.BBox;
+import basicObjects.shapes.BBox;
 import utils.ImageProcessor;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Platform with bounding box.
- * This type of platform does not contain any animation.
+ * Platform with bounding box. This type of platform does not contain any animation.
  */
 public class BPlatform extends BBox
 {
@@ -31,7 +30,8 @@ public class BPlatform extends BBox
 	/**
 	 * Set the image to whatever is passed to us. The width and height will be changed accordingly.
 	 *
-	 * @param image the image for this platform.
+	 * @param image
+	 * 		the image for this platform.
 	 */
 	public void setImage(BufferedImage image)
 	{
@@ -50,7 +50,9 @@ public class BPlatform extends BBox
 		this.image = ImageProcessor.loadImage(path);
 
 		if (this.image == null)
+		{
 			return false;
+		}
 
 		super.setWidth(this.image.getWidth());
 		super.setHeight(this.image.getHeight());
@@ -71,7 +73,8 @@ public class BPlatform extends BBox
 	/**
 	 * Draws image for the platform to the specified canvas.
 	 *
-	 * @param g Graphics onto which to draw the image to.
+	 * @param g
+	 * 		Graphics onto which to draw the image to.
 	 */
 	public void draw(Graphics2D g)
 	{

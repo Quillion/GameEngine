@@ -14,8 +14,7 @@ import java.awt.*;
 public abstract class GameDoubleThreaded extends GameAbstract implements Game
 {
 	/**
-	 * This one is the logic loop. It first does setup and then proceeds to
-	 * doing update infinitely.
+	 * This one is the logic loop. It first does setup and then proceeds to doing update infinitely.
 	 */
 	private void logic()
 	{
@@ -99,8 +98,8 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 	private Runnable draw;
 
 	/**
-	 * Method to initialise graphics that are going to be painted to the screen.
-	 * Don't mess with this method too much, it does things well.
+	 * Method to initialise graphics that are going to be painted to the screen. Don't mess with this method too much,
+	 * it does things well.
 	 */
 	private void render()
 	{
@@ -117,8 +116,7 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 	}
 
 	/**
-	 * Main thread initialization.
-	 * Default width and height is 640 x 480 and full screen is false.
+	 * Main thread initialization. Default width and height is 640 x 480 and full screen is false.
 	 */
 	public GameDoubleThreaded()
 	{
@@ -131,8 +129,7 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 	}
 
 	/**
-	 * Initializes everything by the specified values.
-	 * You can call it right away, or call setScreen() method first.
+	 * Initializes everything by the specified values. You can call it right away, or call setScreen() method first.
 	 */
 	public void init()
 	{

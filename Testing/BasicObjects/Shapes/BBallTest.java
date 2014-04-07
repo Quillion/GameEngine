@@ -1,12 +1,10 @@
-package BasicObjects.Shapes; /**
+package basicObjects.shapes; /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Shapes.BBall;
-import BasicObjects.Shapes.Ball;
-import BasicObjects.Point;
+import basicObjects.Point;
 import junit.framework.Assert;
 import org.junit.Test;
 

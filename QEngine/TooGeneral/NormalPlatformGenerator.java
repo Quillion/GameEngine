@@ -5,7 +5,7 @@ package TooGeneral;
  * @since 1.6
  */
 
-import logic.ImageExtractor;
+import utils.ImageExtractor;
 import utils.ImageProcessor;
 
 import java.awt.image.BufferedImage;
@@ -17,7 +17,7 @@ import java.util.Random;
 public class NormalPlatformGenerator
 {
 	private ImageExtractor extractor;
-	private Random fate;
+	private Random         fate;
 
 	/**
 	 * Simple constructor, you do not have to do anything.
@@ -96,8 +96,7 @@ public class NormalPlatformGenerator
 	}
 
 	/**
-	 * Returns an image for the top of a wall.
-	 * I personally don't like the image too much.
+	 * Returns an image for the top of a wall. I personally don't like the image too much.
 	 *
 	 * @return The image for the top of the wall.
 	 */
@@ -116,8 +115,7 @@ public class NormalPlatformGenerator
 	}
 
 	/**
-	 * Returns one of the 2 images for the bottom of the wall.
-	 * Again I dislike the image.
+	 * Returns one of the 2 images for the bottom of the wall. Again I dislike the image.
 	 *
 	 * @return The image for the bottom of the wall.
 	 */
@@ -174,8 +172,7 @@ public class NormalPlatformGenerator
 	}
 
 	/**
-	 * Return the image for the ground.
-	 * It is composed of platform top, platform middle and platform bottom.
+	 * Return the image for the ground. It is composed of platform top, platform middle and platform bottom.
 	 *
 	 * @return Image for the ground.
 	 */
@@ -187,11 +184,12 @@ public class NormalPlatformGenerator
 	}
 
 	/**
-	 * Return the image for the ground.
-	 * The ground is as deep as you specify it to be.
-	 * It is composed of platform top, platform middle and platform bottom.
+	 * Return the image for the ground. The ground is as deep as you specify it to be. It is composed of platform top,
+	 * platform middle and platform bottom.
 	 *
-	 * @param depth How deep the platform should be.
+	 * @param depth
+	 * 		How deep the platform should be.
+	 *
 	 * @return Image for the ground.
 	 */
 	public BufferedImage getGround(int depth)
@@ -205,8 +203,7 @@ public class NormalPlatformGenerator
 	}
 
 	/**
-	 * Returns the image for the platform.
-	 * It consists of a combination of platform top and platform bottom.
+	 * Returns the image for the platform. It consists of a combination of platform top and platform bottom.
 	 *
 	 * @return Image for the platform.
 	 */
@@ -216,8 +213,7 @@ public class NormalPlatformGenerator
 	}
 
 	/**
-	 * Returns image for the wall.
-	 * It is composed of wall left and wall right.
+	 * Returns image for the wall. It is composed of wall left and wall right.
 	 *
 	 * @return Image for the wall.
 	 */

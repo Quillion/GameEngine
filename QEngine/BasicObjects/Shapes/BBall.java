@@ -1,11 +1,11 @@
-package BasicObjects.Shapes;
+package basicObjects.shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Point;
+import basicObjects.Point;
 
 /**
  * A basic ball that has a bounding box around it. It is not oval, so remember that.

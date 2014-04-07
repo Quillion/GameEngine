@@ -1,12 +1,15 @@
 package logic.platformer;
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
 
-import Constants.Constants;
+import constants.Constants;
 import platformer.MBox;
 
 /**
- * User: Edgar
- * Date: 2/2/14
- * Time: 8:08 PM
+ * Engine for the platformer.
  */
 public class Engine
 {

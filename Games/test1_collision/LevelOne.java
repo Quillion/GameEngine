@@ -5,12 +5,12 @@ package test1_collision;
  * @since 1.6
  */
 
-import BasicObjects.*;
-import BasicObjects.Point;
-import BasicObjects.Shapes.*;
-import Painter.ShapePainter;
+import basicObjects.*;
+import basicObjects.Point;
+import basicObjects.shapes.*;
+import painter.ShapePainter;
 import abstracts.Level;
-import Constants.Constants;
+import constants.Constants;
 import logic.CollisionEngine;
 
 import java.awt.*;
@@ -50,12 +50,12 @@ public class LevelOne extends Level
 	public void load()
 	{
 		Box box = new Box();
-		box.setCoordinates(new BasicObjects.Point(0, getHeight() - 30));
+		box.setCoordinates(new basicObjects.Point(0, getHeight() - 30));
 		box.setSize(new Dimensions(getWidth() / 2, 30));
 		boxes.add(box);
 
 		box = new Box();
-		box.setCoordinates(new BasicObjects.Point(0, 0));
+		box.setCoordinates(new basicObjects.Point(0, 0));
 		box.setSize(new Dimensions(getWidth() / 2, 30));
 		boxes.add(box);
 

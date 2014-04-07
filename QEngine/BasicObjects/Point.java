@@ -1,4 +1,4 @@
-package BasicObjects;
+package basicObjects;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

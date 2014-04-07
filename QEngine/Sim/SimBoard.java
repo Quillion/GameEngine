@@ -1,13 +1,13 @@
-package Sim;
+package sim;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import BasicObjects.Shapes.Field;
-import Constants.Constants;
+import basicObjects.Dimensions;
+import basicObjects.shapes.Field;
+import constants.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,24 +17,28 @@ import java.util.List;
  */
 public class SimBoard
 {
-	private int sides;
+	private int         sides;
 	private List<Field> board;
-	private int idCounter;
-	private Dimensions size;
+	private int         idCounter;
+	private Dimensions  size;
 
 	/**
-	 * If we are making a board then we have to specify the width and height of the board,
-	 * we also have to specify if it is square or hexagonal board.
-	 * If wrong sides is given, then you will get an exception.
+	 * If we are making a board then we have to specify the width and height of the board, we also have to specify if it
+	 * is square or hexagonal board. If wrong sides is given, then you will get an exception.
 	 *
-	 * @param width  How many fields across the board will have.
-	 * @param height How many fields downward the board will have.
-	 * @param sides  Use Constants to specify hexagonal or square board.
+	 * @param width
+	 * 		How many fields across the board will have.
+	 * @param height
+	 * 		How many fields downward the board will have.
+	 * @param sides
+	 * 		Use Constants to specify hexagonal or square board.
 	 */
 	public SimBoard(int width, int height, int sides)
 	{
 		if (!this.setSides(sides))
+		{
 			throw new IllegalArgumentException("Wrong number for sides given");
+		}
 		this.setWidth(width);
 		this.setHeight(height);
 		this.generateBoard();
@@ -51,16 +55,19 @@ public class SimBoard
 	}
 
 	/**
-	 * We will keep this as private, because you should not be able to change
-	 * the type of board once you set it.
+	 * We will keep this as private, because you should not be able to change the type of board once you set it.
 	 *
-	 * @param sides the type of board, hexagonal or square.
+	 * @param sides
+	 * 		the type of board, hexagonal or square.
+	 *
 	 * @return True if correct board type was specified.
 	 */
 	private boolean setSides(int sides)
 	{
 		if (sides != Constants.FOUR_SIDED && sides != Constants.SIX_SIDED)
+		{
 			return false;
+		}
 		this.sides = sides;
 		return true;
 	}
@@ -68,7 +75,8 @@ public class SimBoard
 	/**
 	 * Sets the width of the board.
 	 *
-	 * @param width how many fields across the board should have.
+	 * @param width
+	 * 		how many fields across the board should have.
 	 */
 	private void setWidth(int width)
 	{
@@ -88,7 +96,8 @@ public class SimBoard
 	/**
 	 * Sets the height of the board.
 	 *
-	 * @param height how many fields downward the board should have.
+	 * @param height
+	 * 		how many fields downward the board should have.
 	 */
 	private void setHeight(int height)
 	{
@@ -106,8 +115,7 @@ public class SimBoard
 	}
 
 	/**
-	 * Generates the board based on width and height, and the type.
-	 * Very simple method.
+	 * Generates the board based on width and height, and the type. Very simple method.
 	 */
 	private void generateBoard()
 	{
@@ -170,8 +178,11 @@ public class SimBoard
 	/**
 	 * Returns the field at given positions.
 	 *
-	 * @param x The x position of the field.
-	 * @param y The y position of the field you want.
+	 * @param x
+	 * 		The x position of the field.
+	 * @param y
+	 * 		The y position of the field you want.
+	 *
 	 * @return The field at specified coordinates (hexagonal is also like square really if you think about it).
 	 */
 	public Field getField(int x, int y)

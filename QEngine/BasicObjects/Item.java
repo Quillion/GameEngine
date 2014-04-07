@@ -1,11 +1,11 @@
-package BasicObjects;
+package basicObjects;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Shapes.BBox;
+import basicObjects.shapes.BBox;
 
 import java.awt.image.BufferedImage;
 

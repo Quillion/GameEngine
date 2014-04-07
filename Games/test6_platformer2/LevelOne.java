@@ -5,10 +5,10 @@ package test6_platformer2;
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import BasicObjects.Point;
-import BasicObjects.Camera.FollowingCamera;
-import BasicObjects.Shapes.BBox;
+import basicObjects.Dimensions;
+import basicObjects.Point;
+import basicObjects.camera.FollowingCamera;
+import basicObjects.shapes.BBox;
 import abstracts.Level;
 import logic.platformer.CollisionEngine;
 import logic.platformer.Engine;

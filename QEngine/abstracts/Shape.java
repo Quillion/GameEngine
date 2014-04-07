@@ -5,10 +5,8 @@ package abstracts;
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import BasicObjects.Point;
-
-import java.awt.*;
+import basicObjects.Dimensions;
+import basicObjects.Point;
 
 /**
  * A simple abstract shape that will exist in a

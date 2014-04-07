@@ -1,27 +1,29 @@
-package BasicObjects.Camera;
+package basicObjects.camera;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import BasicObjects.Shapes.*;
+import basicObjects.Dimensions;
+import basicObjects.shapes.*;
 import abstracts.Shape;
 import logic.MathEngine;
 
 import java.awt.*;
 
 /**
- * This camera will work for two players.
- * It has four modes of keeping track of the players.
- * You can easily follow and copy this code for three or four players.
+ * This camera will work for two players. It has four modes of keeping track of the players. You can easily follow and
+ * copy this code for three or four players.
  */
 public class MultiplayerCamera
 {
 	public enum Mode
 	{
-		One, Vertical, Horizontal, Smart
+		One,
+		Vertical,
+		Horizontal,
+		Smart
 	}
 
 	private Mode mode;
@@ -39,11 +41,12 @@ public class MultiplayerCamera
 	private Dimensions size;
 
 	/**
-	 * Basic constructor. Since this is a two player camera,
-	 * then we should provide two players accordingly.
+	 * Basic constructor. Since this is a two player camera, then we should provide two players accordingly.
 	 *
-	 * @param player1 First player, the one who will be on top or the left, depending on camera mode.
-	 * @param player2 Second player, the one who will be on right or bottom, depending on camera mode.
+	 * @param player1
+	 * 		First player, the one who will be on top or the left, depending on camera mode.
+	 * @param player2
+	 * 		Second player, the one who will be on right or bottom, depending on camera mode.
 	 */
 	public MultiplayerCamera(Shape player1, Shape player2)
 	{
@@ -65,7 +68,8 @@ public class MultiplayerCamera
 	/**
 	 * Sets the camera mode to one of the given modes.
 	 *
-	 * @param mode Which mode the camera should operate in.
+	 * @param mode
+	 * 		Which mode the camera should operate in.
 	 */
 	public void setMode(Mode mode)
 	{
@@ -75,8 +79,10 @@ public class MultiplayerCamera
 	/**
 	 * Sets the size of the given camera.
 	 *
-	 * @param size    The size of the screen itself, or camera view.
-	 * @param offsets The box within which the player will be contained.
+	 * @param size
+	 * 		The size of the screen itself, or camera view.
+	 * @param offsets
+	 * 		The box within which the player will be contained.
 	 */
 	public void setSize(Dimensions size, Dimensions offsets)
 	{
@@ -161,7 +167,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws box if it is within sight of either of the cameras.
 	 *
-	 * @param box Box which you would like to draw.
+	 * @param box
+	 * 		Box which you would like to draw.
 	 */
 	public void draw(Box box)
 	{
@@ -208,7 +215,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws bounding box if it is within sight of either of the cameras.
 	 *
-	 * @param box Bounding Box which you would like to draw.
+	 * @param box
+	 * 		Bounding Box which you would like to draw.
 	 */
 	public void draw(BBox box)
 	{
@@ -255,7 +263,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws moving box if it is within sight of either of the cameras.
 	 *
-	 * @param box Moving Box which you would like to draw.
+	 * @param box
+	 * 		Moving Box which you would like to draw.
 	 */
 	public void draw(MBox box)
 	{
@@ -302,7 +311,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws Ball if it is within sight of either of the cameras.
 	 *
-	 * @param ball Ball which you would like to draw.
+	 * @param ball
+	 * 		Ball which you would like to draw.
 	 */
 	public void draw(Ball ball)
 	{
@@ -349,7 +359,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws bounding ball if it is within sight of either of the cameras.
 	 *
-	 * @param ball Bounding Ball which you would like to draw.
+	 * @param ball
+	 * 		Bounding Ball which you would like to draw.
 	 */
 	public void draw(BBall ball)
 	{
@@ -396,7 +407,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws moving ball if it is within sight of either of the cameras.
 	 *
-	 * @param ball Moving Ball which you would like to draw.
+	 * @param ball
+	 * 		Moving Ball which you would like to draw.
 	 */
 	public void draw(MBall ball)
 	{
@@ -443,7 +455,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws the camera to the given graphics.
 	 *
-	 * @param g Graphics onto which you would like camera to be drown to.
+	 * @param g
+	 * 		Graphics onto which you would like camera to be drown to.
 	 */
 	public void draw(Graphics2D g)
 	{
@@ -510,7 +523,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws the camera to the given graphics, and then clear contents of the camera.
 	 *
-	 * @param g Graphics onto which you would like camera to be drown to.
+	 * @param g
+	 * 		Graphics onto which you would like camera to be drown to.
 	 */
 	public void drawClear(Graphics2D g)
 	{
@@ -577,7 +591,8 @@ public class MultiplayerCamera
 	/**
 	 * Draws the camera to the given graphics, and then color camera view white.
 	 *
-	 * @param g Graphics onto which you would like camera to be drown to.
+	 * @param g
+	 * 		Graphics onto which you would like camera to be drown to.
 	 */
 	public void drawWhite(Graphics2D g)
 	{
@@ -642,9 +657,8 @@ public class MultiplayerCamera
 	}
 
 	/**
-	 * Draw camera properties and such.
-	 * That means draw camera offsets, and points that indicate boundaries and such.
-	 * If you do not want to see what camera is thinking then do not call this method.
+	 * Draw camera properties and such. That means draw camera offsets, and points that indicate boundaries and such. If
+	 * you do not want to see what camera is thinking then do not call this method.
 	 */
 	public void drawCamera()
 	{
@@ -665,7 +679,7 @@ public class MultiplayerCamera
 		else if (this.mode.equals(Mode.One))
 		{
 			this.camera.drawCamera();
-			this.camera.draw(new BasicObjects.Point(
+			this.camera.draw(new basicObjects.Point(
 					(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
 					(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
 			));
@@ -678,7 +692,7 @@ public class MultiplayerCamera
 			if (this.subMode.equals(Mode.One))
 			{
 				this.camera.drawCamera();
-				this.camera.draw(new BasicObjects.Point(
+				this.camera.draw(new basicObjects.Point(
 						(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
 						(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
 				));

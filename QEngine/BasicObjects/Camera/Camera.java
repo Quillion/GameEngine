@@ -1,19 +1,19 @@
-package BasicObjects.Camera;
+package basicObjects.camera;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import BasicObjects.Item;
-import BasicObjects.Shapes.*;
-import BasicSprite.BPlatform;
-import BasicSprite.Platform;
+import basicObjects.Dimensions;
+import basicObjects.Item;
+import basicObjects.shapes.*;
+import basicSprite.BPlatform;
+import basicSprite.Platform;
 import logic.CollisionEngine;
 import platformer.BasicCharacter;
-import platformer.BasicSprite.MCharacter;
-import platformer.ExtendedShapes.MBControls;
+import platformer.basicSprite.MCharacter;
+import platformer.extendedShapes.MBControls;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -91,7 +91,7 @@ public class Camera extends BBox
 	 * @param point
 	 * 		Which point you want drawn.
 	 */
-	private void drawPoint(BasicObjects.Point point)
+	private void drawPoint(basicObjects.Point point)
 	{
 		g.setColor(Color.GREEN);
 		g.drawRect((int) (point.getX() - 1) - this.getX(), (int) (point.getY() - 1) - this.getY(), 2, 2);
@@ -201,7 +201,7 @@ public class Camera extends BBox
 	 * @param point
 	 * 		Which point you want drawn.
 	 */
-	public void draw(BasicObjects.Point point)
+	public void draw(basicObjects.Point point)
 	{
 		if (CollisionEngine.collision(this, point))
 		{
@@ -561,9 +561,9 @@ public class Camera extends BBox
 	 * @return Point which represents top left corner of the box.
 	 */
 	@Override
-	public BasicObjects.Point getTopLeft()
+	public basicObjects.Point getTopLeft()
 	{
-		return new BasicObjects.Point(this.getLeftX(), this.getTopY());
+		return new basicObjects.Point(this.getLeftX(), this.getTopY());
 	}
 
 	/**
@@ -572,9 +572,9 @@ public class Camera extends BBox
 	 * @return Point which represents top right corner of the box.
 	 */
 	@Override
-	public BasicObjects.Point getTopRight()
+	public basicObjects.Point getTopRight()
 	{
-		return new BasicObjects.Point(this.getRightX(), this.getTopY());
+		return new basicObjects.Point(this.getRightX(), this.getTopY());
 	}
 
 	/**
@@ -583,9 +583,9 @@ public class Camera extends BBox
 	 * @return Point which represents bottom left corner of the box.
 	 */
 	@Override
-	public BasicObjects.Point getBottomLeft()
+	public basicObjects.Point getBottomLeft()
 	{
-		return new BasicObjects.Point(this.getLeftX(), this.getBottomY());
+		return new basicObjects.Point(this.getLeftX(), this.getBottomY());
 	}
 
 	/**
@@ -594,8 +594,8 @@ public class Camera extends BBox
 	 * @return Point which represents bottom right corner of the box.
 	 */
 	@Override
-	public BasicObjects.Point getBottomRight()
+	public basicObjects.Point getBottomRight()
 	{
-		return new BasicObjects.Point(this.getRightX(), this.getBottomY());
+		return new basicObjects.Point(this.getRightX(), this.getBottomY());
 	}
 }

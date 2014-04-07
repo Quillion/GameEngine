@@ -5,10 +5,10 @@ package test7_dungeon2;
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import BasicObjects.Point;
-import BasicObjects.Camera.FollowingCamera;
-import BasicObjects.Shapes.BBox;
+import basicObjects.Dimensions;
+import basicObjects.Point;
+import basicObjects.camera.FollowingCamera;
+import basicObjects.shapes.BBox;
 import abstracts.Level;
 import dungeon.MBox;
 import logic.dungeon.CollisionEngine;

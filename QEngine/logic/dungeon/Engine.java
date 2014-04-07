@@ -1,12 +1,15 @@
 package logic.dungeon;
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
 
-import Constants.Constants;
+import constants.Constants;
 import dungeon.MBox;
 
 /**
- * User: Edgar
- * Date: 2/1/14
- * Time: 10:53 PM
+ * Engine for the dungeon crawler.
  */
 public class Engine extends logic.Engine
 {

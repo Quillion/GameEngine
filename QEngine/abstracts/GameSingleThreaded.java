@@ -9,15 +9,14 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Simple thread. Creates everything necessary to run the game,
- * and makes you implement things that are only needed.
+ * Simple thread. Creates everything necessary to run the game, and makes you implement things that are only needed.
  */
 public abstract class GameSingleThreaded extends GameAbstract implements Runnable,
 																		 Game
 {
 	/**
-	 * All the game logic is here. This function calls setup() first, and once the loop starts it
-	 * will keep on calling draw and update alternatively.
+	 * All the game logic is here. This function calls setup() first, and once the loop starts it will keep on calling
+	 * draw and update alternatively.
 	 */
 	@Override
 	public void run()
@@ -62,8 +61,8 @@ public abstract class GameSingleThreaded extends GameAbstract implements Runnabl
 	}
 
 	/**
-	 * Method to initialise graphics that are going to be painted to the screen.
-	 * Don't mess with this method too much, it does things well.
+	 * Method to initialise graphics that are going to be painted to the screen. Don't mess with this method too much,
+	 * it does things well.
 	 */
 	private void render()
 	{
@@ -80,8 +79,7 @@ public abstract class GameSingleThreaded extends GameAbstract implements Runnabl
 	}
 
 	/**
-	 * Main thread initialization.
-	 * Default width and height is 640 x 480 and full screen is false.
+	 * Main thread initialization. Default width and height is 640 x 480 and full screen is false.
 	 */
 	public GameSingleThreaded()
 	{
@@ -94,8 +92,7 @@ public abstract class GameSingleThreaded extends GameAbstract implements Runnabl
 	}
 
 	/**
-	 * Initializes everything by the specified values.
-	 * You can call it right away, or call setScreen() method first.
+	 * Initializes everything by the specified values. You can call it right away, or call setScreen() method first.
 	 */
 	public void init()
 	{

@@ -1,13 +1,16 @@
 package logic.platformer;
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
 
-import BasicObjects.Shapes.BBox;
-import Constants.Constants;
+import basicObjects.shapes.BBox;
+import constants.Constants;
 import platformer.MBox;
 
 /**
- * User: Edgar
- * Date: 2/8/14
- * Time: 7:38 PM
+ * Tests for collision for platformer.
  */
 public class CollisionEngine extends logic.CollisionEngine
 {
@@ -30,14 +33,18 @@ public class CollisionEngine extends logic.CollisionEngine
 			character.setYVector(0);
 			character.setY(wall.getTopY() - character.getHeight() + character.getVerticalOffset());
 			if (character.getGravity() > 0)
+			{
 				character.setStanding(true);
+			}
 		}
 		else if (direction.equals(Constants.Direction.Up) && character.getYVector() < 0)
 		{
 			character.setYVector(0);
 			character.setY(wall.getBottomY() - character.getVerticalOffset());
 			if (character.getGravity() < 0)
+			{
 				character.setStanding(true);
+			}
 		}
 	}
 

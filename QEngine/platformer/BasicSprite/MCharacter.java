@@ -1,28 +1,27 @@
-package platformer.BasicSprite;
+package platformer.basicSprite;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import platformer.ExtendedShapes.MControls;
+import platformer.extendedShapes.MControls;
 import utils.ImageProcessor;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * This object actually has image that can be display, and or a color.
- * The choice is completely yours. It does not have Bounding Box, only a box.
+ * This object actually has image that can be display, and or a color. The choice is completely yours. It does not have
+ * Bounding Box, only a box.
  */
 public class MCharacter extends MControls
 {
 	private BufferedImage image;
-	private Color color;
+	private Color         color;
 
 	/**
-	 * Constructor for the character, originally contains no image,
-	 * and color is set to black.
+	 * Constructor for the character, originally contains no image, and color is set to black.
 	 */
 	public MCharacter()
 	{
@@ -34,7 +33,8 @@ public class MCharacter extends MControls
 	/**
 	 * Sets the color of the character to whatever you want.
 	 *
-	 * @param color what color the new character will be.
+	 * @param color
+	 * 		what color the new character will be.
 	 */
 	public void setColor(Color color)
 	{
@@ -60,8 +60,10 @@ public class MCharacter extends MControls
 	{
 		this.image = ImageProcessor.loadImage(path);
 
-		if(this.image == null)
+		if (this.image == null)
+		{
 			return false;
+		}
 
 		super.setWidth(this.image.getWidth());
 		super.setHeight(this.image.getHeight());
@@ -90,6 +92,8 @@ public class MCharacter extends MControls
 			g.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
 		}
 		else
+		{
 			g.drawImage(this.getImage(), null, super.getX(), super.getY());
+		}
 	}
 }

@@ -1,13 +1,16 @@
 package logic.dungeon;
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
 
-import BasicObjects.Shapes.BBox;
-import Constants.Constants;
+import basicObjects.shapes.BBox;
+import constants.Constants;
 import dungeon.MBox;
 
 /**
- * User: Edgar
- * Date: 2/9/14
- * Time: 12:06 PM
+ * Tests for collision for dungeon crawler.
  */
 public class CollisionEngine extends logic.CollisionEngine
 {

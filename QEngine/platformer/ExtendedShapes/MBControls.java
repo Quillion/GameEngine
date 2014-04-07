@@ -1,12 +1,12 @@
-package platformer.ExtendedShapes;
+package platformer.extendedShapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import Constants.Constants;
-import platformer.MovingShapes.MBBox;
+import constants.Constants;
+import platformer.movingShapes.MBBox;
 
 /**
  * Controls for the bounding box with vector qualities.
@@ -17,9 +17,8 @@ public class MBControls extends MBBox
 	private int LEFT, RIGHT, JUMP;
 
 	/**
-	 * Creates the MBControls.
-	 * By default left, right and standing are false.
-	 * And arrow keys are set to defaults stated in Constants.
+	 * Creates the MBControls. By default left, right and standing are false. And arrow keys are set to defaults stated
+	 * in Constants.
 	 */
 	public MBControls()
 	{
@@ -35,7 +34,8 @@ public class MBControls extends MBBox
 	/**
 	 * Sets the boolean value signifying if the player is moving left.
 	 *
-	 * @param value boolean representing movement to the left.
+	 * @param value
+	 * 		boolean representing movement to the left.
 	 */
 	public void setLeft(boolean value)
 	{
@@ -55,7 +55,8 @@ public class MBControls extends MBBox
 	/**
 	 * Sets the boolean value signifying if character is moving right.
 	 *
-	 * @param value boolean representing movement to the right.
+	 * @param value
+	 * 		boolean representing movement to the right.
 	 */
 	public void setRight(boolean value)
 	{
@@ -75,7 +76,8 @@ public class MBControls extends MBBox
 	/**
 	 * Used to specify if character is jumping or standing.
 	 *
-	 * @param value boolean representation of whether character is jumping or standing.
+	 * @param value
+	 * 		boolean representation of whether character is jumping or standing.
 	 */
 	public void setStanding(boolean value)
 	{
@@ -95,7 +97,8 @@ public class MBControls extends MBBox
 	/**
 	 * Sets the key that would cause character to go left.
 	 *
-	 * @param key value to which to set left key to.
+	 * @param key
+	 * 		value to which to set left key to.
 	 */
 	public void setLeftKey(int key)
 	{
@@ -115,7 +118,8 @@ public class MBControls extends MBBox
 	/**
 	 * Sets the key that would cause character to go right.
 	 *
-	 * @param key value to which to set right key to.
+	 * @param key
+	 * 		value to which to set right key to.
 	 */
 	public void setRightKey(int key)
 	{
@@ -135,7 +139,8 @@ public class MBControls extends MBBox
 	/**
 	 * Sets the key that would cause character to jump.
 	 *
-	 * @param key value to which to set jump key to.
+	 * @param key
+	 * 		value to which to set jump key to.
 	 */
 	public void setJumpKey(int key)
 	{
@@ -155,9 +160,12 @@ public class MBControls extends MBBox
 	/**
 	 * Sets all the keys at once.
 	 *
-	 * @param left  what to set left key to.
-	 * @param right what to set right key to.
-	 * @param jump  what to set jump key to.
+	 * @param left
+	 * 		what to set left key to.
+	 * @param right
+	 * 		what to set right key to.
+	 * @param jump
+	 * 		what to set jump key to.
 	 */
 	public void setKeys(int left, int right, int jump)
 	{

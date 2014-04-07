@@ -20,8 +20,11 @@ public class ImageProcessor
 	/**
 	 * Will attach both images Top to bottom.
 	 *
-	 * @param top    The top of the image you want.
-	 * @param bottom The bottom of the image you want.
+	 * @param top
+	 * 		The top of the image you want.
+	 * @param bottom
+	 * 		The bottom of the image you want.
+	 *
 	 * @return Attached image.
 	 */
 	public static BufferedImage constructVertical(BufferedImage top, BufferedImage bottom)
@@ -40,8 +43,11 @@ public class ImageProcessor
 	/**
 	 * Will attach both images side by side.
 	 *
-	 * @param left  The left side of the image you want.
-	 * @param right The right side of the image you want.
+	 * @param left
+	 * 		The left side of the image you want.
+	 * @param right
+	 * 		The right side of the image you want.
+	 *
 	 * @return Two images attached side by side.
 	 */
 	public static BufferedImage constructHorizontal(BufferedImage left, BufferedImage right)
@@ -60,11 +66,17 @@ public class ImageProcessor
 	/**
 	 * Extracts a given part from a given image.
 	 *
-	 * @param image  Image from which you would like to extract a part.
-	 * @param x      the x coordinate of the newly extracted image.
-	 * @param y      the y coordinate of the newly extracted image within the given image.
-	 * @param width  The width of the newly extracted image.
-	 * @param height The height of the newly extracted image.
+	 * @param image
+	 * 		Image from which you would like to extract a part.
+	 * @param x
+	 * 		the x coordinate of the newly extracted image.
+	 * @param y
+	 * 		the y coordinate of the newly extracted image within the given image.
+	 * @param width
+	 * 		The width of the newly extracted image.
+	 * @param height
+	 * 		The height of the newly extracted image.
+	 *
 	 * @return The extracted image that you desired.
 	 */
 	public static BufferedImage extractImage(BufferedImage image, int x, int y, int width, int height)
@@ -75,7 +87,9 @@ public class ImageProcessor
 	/**
 	 * Flips the image around its y axis.
 	 *
-	 * @param image The image that you want flipped.
+	 * @param image
+	 * 		The image that you want flipped.
+	 *
 	 * @return The new image that is a copy of given image flipped around its y axis.
 	 */
 	public static BufferedImage flipVertically(BufferedImage image)
@@ -89,7 +103,9 @@ public class ImageProcessor
 	/**
 	 * Flips the image around its x axis.
 	 *
-	 * @param image The image that you want flipped.
+	 * @param image
+	 * 		The image that you want flipped.
+	 *
 	 * @return The new image that is a copy of given image flipped around its x axis.
 	 */
 	public static BufferedImage flipHorizontally(BufferedImage image)
@@ -103,9 +119,13 @@ public class ImageProcessor
 	/**
 	 * Resizes image to the specified width and height. The original image is not touched so you are safe.
 	 *
-	 * @param image  The image you want resized.
-	 * @param width  The new width of the image.
-	 * @param height The new height of the image.
+	 * @param image
+	 * 		The image you want resized.
+	 * @param width
+	 * 		The new width of the image.
+	 * @param height
+	 * 		The new height of the image.
+	 *
 	 * @return Newly resized image.
 	 */
 	public static BufferedImage resize(BufferedImage image, int width, int height)
@@ -118,11 +138,11 @@ public class ImageProcessor
 		g.setComposite(AlphaComposite.Src);
 
 		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
-				RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+						   RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 		g.setRenderingHint(RenderingHints.KEY_RENDERING,
-				RenderingHints.VALUE_RENDER_QUALITY);
+						   RenderingHints.VALUE_RENDER_QUALITY);
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-				RenderingHints.VALUE_ANTIALIAS_ON);
+						   RenderingHints.VALUE_ANTIALIAS_ON);
 
 		return resizedImage;
 	}

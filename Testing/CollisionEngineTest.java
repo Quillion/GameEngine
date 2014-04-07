@@ -1,6 +1,6 @@
-import BasicObjects.*;
-import BasicObjects.Shapes.*;
-import Constants.Constants;
+import basicObjects.*;
+import basicObjects.shapes.*;
+import constants.Constants;
 import junit.framework.Assert;
 import logic.CollisionEngine;
 import org.junit.Test;

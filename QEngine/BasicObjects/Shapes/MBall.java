@@ -1,13 +1,11 @@
-package BasicObjects.Shapes;
+package basicObjects.shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Point;
-
-import java.awt.*;
+import basicObjects.Point;
 
 /**
  * A Ball with Collision box that also had vectors.

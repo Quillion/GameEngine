@@ -4,7 +4,7 @@
  * @since 1.6
  */
 
-import BasicObjects.Point;
+import basicObjects.Point;
 import junit.framework.Assert;
 import logic.MathEngine;
 import org.junit.Test;

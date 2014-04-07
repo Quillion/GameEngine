@@ -31,15 +31,18 @@ public abstract class GameAbstract extends JFrame implements Game
 	protected BufferStrategy bufferStrategy;
 
 	protected GraphicsDevice graphicsDevice;
-	protected DisplayMode originalDisplayMode;
-	protected Font graphicsFont;
+	protected DisplayMode    originalDisplayMode;
+	protected Font           graphicsFont;
 
 	/**
 	 * Sets screen to specified values.
 	 *
-	 * @param width      the width of the screen/window.
-	 * @param height     the height of the screen/window.
-	 * @param fullScreen if you do set it to true, please do make sure that width and height are correct parameters.
+	 * @param width
+	 * 		the width of the screen/window.
+	 * @param height
+	 * 		the height of the screen/window.
+	 * @param fullScreen
+	 * 		if you do set it to true, please do make sure that width and height are correct parameters.
 	 */
 	public void setScreen(int width, int height, boolean fullScreen)
 	{
@@ -71,7 +74,8 @@ public abstract class GameAbstract extends JFrame implements Game
 	/**
 	 * Specifies whether or not to set up ESC button to automatically close the program.
 	 *
-	 * @param exitOnEsc True if you want game to close eon ESC, false otherwise.
+	 * @param exitOnEsc
+	 * 		True if you want game to close eon ESC, false otherwise.
 	 */
 	public void exitOnEsc(boolean exitOnEsc)
 	{
@@ -86,11 +90,11 @@ public abstract class GameAbstract extends JFrame implements Game
 			};
 
 	/**
-	 * Let's see which display mode is suitable for our computer.
-	 * Returns you whichever display mode is suitable.
-	 * It will first try 32 bit colors, and if fails it will try 16 and then 8 bit.
+	 * Let's see which display mode is suitable for our computer. Returns you whichever display mode is suitable. It
+	 * will first try 32 bit colors, and if fails it will try 16 and then 8 bit.
 	 *
-	 * @param device which graphics device we should test color depth on.
+	 * @param device
+	 * 		which graphics device we should test color depth on.
 	 */
 	protected DisplayMode getBestDisplayMode(GraphicsDevice device)
 	{
@@ -100,7 +104,8 @@ public abstract class GameAbstract extends JFrame implements Game
 			DisplayMode[] modes = device.getDisplayModes();
 			for (DisplayMode mode : modes)
 			{
-				if (mode.getWidth() == MODE.getWidth() && mode.getHeight() == MODE.getHeight() && mode.getBitDepth() == MODE.getBitDepth())
+				if (mode.getWidth() == MODE.getWidth() && mode.getHeight() == MODE.getHeight() && mode
+						.getBitDepth() == MODE.getBitDepth())
 				{
 					return MODE;
 				}
@@ -110,8 +115,7 @@ public abstract class GameAbstract extends JFrame implements Game
 	}
 
 	/**
-	 * Keyboard Action listeners.
-	 * Key esc closes the program by default, no way you can override that.
+	 * Keyboard Action listeners. Key esc closes the program by default, no way you can override that.
 	 */
 	protected class KeyInputHandler extends KeyAdapter
 	{

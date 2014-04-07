@@ -5,14 +5,14 @@ package test2_camera;
  * @since 1.6
  */
 
-import BasicObjects.*;
-import BasicObjects.Camera.FollowingCamera;
-import BasicObjects.Point;
-import BasicObjects.Shapes.BBox;
-import BasicObjects.Shapes.Box;
-import BasicObjects.Shapes.MBox;
+import basicObjects.*;
+import basicObjects.camera.FollowingCamera;
+import basicObjects.Point;
+import basicObjects.shapes.BBox;
+import basicObjects.shapes.Box;
+import basicObjects.shapes.MBox;
 import abstracts.Level;
-import Constants.Constants;
+import constants.Constants;
 import logic.CollisionEngine;
 
 import java.awt.*;
@@ -49,12 +49,12 @@ public class LevelOne extends Level
 	public void load()
 	{
 		Box box = new Box();
-		box.setCoordinates(new BasicObjects.Point(0, getHeight() - 30));
+		box.setCoordinates(new basicObjects.Point(0, getHeight() - 30));
 		box.setSize(new Dimensions(getWidth(), 30));
 		boxes.add(box);
 
 		box = new Box();
-		box.setCoordinates(new BasicObjects.Point(0, 0));
+		box.setCoordinates(new basicObjects.Point(0, 0));
 		box.setSize(new Dimensions(getWidth(), 30));
 		boxes.add(box);
 

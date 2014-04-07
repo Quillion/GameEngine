@@ -1,21 +1,19 @@
 package platformer;
 
-import BasicObjects.Key;
-import Constants.Constants;
+import basicObjects.Key;
+import constants.Constants;
 
 /**
- * User: Edgar
- * Date: 2/2/14
- * Time: 5:16 PM
+ * User: Edgar Date: 2/2/14 Time: 5:16 PM
  */
-public class MBox extends BasicObjects.Shapes.MBox
+public class MBox extends basicObjects.shapes.MBox
 {
-	private Key[] keys;
-	private double acceleration;
-	private double maxSpeed;
-	private double friction;
-	private double jump;
-	private double gravity;
+	private Key[]   keys;
+	private double  acceleration;
+	private double  maxSpeed;
+	private double  friction;
+	private double  jump;
+	private double  gravity;
 	private boolean standing;
 
 	public MBox()
@@ -23,7 +21,9 @@ public class MBox extends BasicObjects.Shapes.MBox
 		super();
 		this.keys = new Key[Constants.Direction.Total.getValue()];
 		for (int i = 0; i < this.keys.length; i++)
+		{
 			this.keys[i] = new Key(0);
+		}
 		this.acceleration = 0d;
 		this.maxSpeed = 0d;
 		this.friction = 0d;
@@ -35,7 +35,9 @@ public class MBox extends BasicObjects.Shapes.MBox
 	public void setKeys(int[] keys)
 	{
 		if (keys.length != Constants.Direction.Total.getValue())
+		{
 			return;
+		}
 		for (int i = 0; i < keys.length; i++)
 		{
 			this.keys[i].setValue(keys[i]);

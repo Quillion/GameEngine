@@ -1,12 +1,12 @@
-package BasicObjects.Shapes;
+package basicObjects.shapes;
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import BasicObjects.Dimensions;
-import BasicObjects.Point;
+import basicObjects.Dimensions;
+import basicObjects.Point;
 
 /**
  * A Box that contains a Bounding/Collision Box.
