@@ -1,4 +1,5 @@
 package basicObjects.shapes;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -11,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This object is going to be used for sim like games, and other board games. It is extremely basic, but has enough
- * things to be useful.
+ * This object is going to be used for sim like games, and other board games. It
+ * is extremely basic, but has enough things to be useful.
  */
 public class Field
 {
@@ -26,8 +27,8 @@ public class Field
 	public int garbage[] = new int[10];
 
 	/**
-	 * Basic constructor. Each field should have id that is unique to it. Please do not create fields with duplicate
-	 * ids.
+	 * Basic constructor. Each field should have id that is unique to it. Please
+	 * do not create fields with duplicate ids.
 	 *
 	 * @param id
 	 * 		The unique id of this field.
@@ -51,7 +52,8 @@ public class Field
 	}
 
 	/**
-	 * Returns what type of field this is. Value for the types of field are stored in Constants.
+	 * Returns what type of field this is. Value for the types of field are
+	 * stored in Constants.
 	 *
 	 * @return The type of field this is.
 	 */
@@ -61,7 +63,8 @@ public class Field
 	}
 
 	/**
-	 * Returns id of this field. It will almost always be unique, unless design is somewhat stupid.
+	 * Returns id of this field. It will almost always be unique, unless design
+	 * is somewhat stupid.
 	 *
 	 * @return Id that represents this field.
 	 */
@@ -71,8 +74,9 @@ public class Field
 	}
 
 	/**
-	 * Creates connection between supplied field and this field. Will not work if you try to add field that is already
-	 * connected to it. Also will not work if you try to add this field to itself.
+	 * Creates connection between supplied field and this field. Will not work
+	 * if you try to add field that is already connected to it. Also will not
+	 * work if you try to add this field to itself.
 	 *
 	 * @param field
 	 * 		field object to which to connect this object.
@@ -111,8 +115,8 @@ public class Field
 	}
 
 	/**
-	 * Returns the field at a given index. If index is less than 0 or bigger than the given size you get null. So don't
-	 * be stupid!
+	 * Returns the field at a given index. If index is less than 0 or bigger
+	 * than the given size you get null. So don't be stupid!
 	 *
 	 * @param index
 	 * 		the index of the neighbor you want to get.
@@ -129,12 +133,14 @@ public class Field
 	}
 
 	/**
-	 * Returns the field by a given id. If there is no field attached by the given id, then null is returned.
+	 * Returns the field by a given id. If there is no field attached by the
+	 * given id, then null is returned.
 	 *
 	 * @param id
 	 * 		the neighbor's id of the field you want.
 	 *
-	 * @return null if no neighbor with given id is found. Field with id otherwise.
+	 * @return null if no neighbor with given id is found. Field with id
+	 * otherwise.
 	 */
 	public Field getFieldById(int id)
 	{
@@ -149,7 +155,8 @@ public class Field
 	}
 
 	/**
-	 * Removes field by the given index. If index is invalid then nothing will happen.
+	 * Removes field by the given index. If index is invalid then nothing will
+	 * happen.
 	 *
 	 * @param index
 	 * 		true if the field was removed, false otherwise.
@@ -170,8 +177,9 @@ public class Field
 	}
 
 	/**
-	 * Removes field by the given id. If index is invalid then nothing will happen. Yes this method is costly, live with
-	 * it. Why the heck would you even go about removing fields anyway?
+	 * Removes field by the given id. If index is invalid then nothing will
+	 * happen. Yes this method is costly, live with it. Why the heck would you
+	 * even go about removing fields anyway?
 	 *
 	 * @param id
 	 * 		true if the field was removed, false otherwise.
@@ -196,5 +204,99 @@ public class Field
 	public List<Field> getNeighbors()
 	{
 		return this.neighbors;
+	}
+
+	/**
+	 * Gives you a brand new copy of this field. I am not sure why you would
+	 * even need such a feature, but whatever, it is your choice.
+	 *
+	 * @return The exact copy of this field except the garbage values.
+	 */
+	public Field copy()
+	{
+		return this.copy(this.getId());
+	}
+
+	/**
+	 * Gives you a brand new copy of this field but with a newly specified id.
+	 *
+	 * @param id
+	 * 		New id for this field.
+	 *
+	 * @return Copy of this field with a different id.
+	 */
+	public Field copy(int id)
+	{
+		Field field = new Field(id);
+		field.setType(this.getType());
+		this.getNeighbors().forEach(field::addField);
+		return field;
+	}
+
+	/**
+	 * Gives you a string representation of this field. The id, type and all the
+	 * neighbors of this field will be shown.
+	 *
+	 * @return String that represents this field's properties.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("ID: |").append(this.getId()).append("|\n");
+		sb.append("Type: |").append(this.getType()).append("|\n");
+		sb.append("Neighbors(").append(this.getNumOfNeighbors()).append("):\n");
+		for (Field field : this.getNeighbors())
+		{
+			sb.append("|").append(field.getId()).append("| ");
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * Checks if this field is equal the given object. The check is very
+	 * extensive and will check the field id, type, and neighbors and will only
+	 * return true if all the things match.
+	 *
+	 * @param object
+	 * 		This object will be compared with this field.
+	 *
+	 * @return True if the given object is a representation of this field.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof Field)
+		{
+			Field field = (Field) object;
+			if (this.getId() == field.getId() &&
+					this.getType() == field.getType() &&
+					this.getNumOfNeighbors() == field.getNumOfNeighbors())
+			{
+				for (Field neighbor : this.getNeighbors())
+				{
+					System.out.println(
+							"This object looking at " + neighbor.getId());
+					boolean matched = false;
+					for (Field otherNeighbor : field.getNeighbors())
+					{
+						System.out.println(
+								"Other object looking at " + otherNeighbor
+										.getId());
+						if (neighbor.getId() == otherNeighbor.getId())
+						{
+							matched = true;
+							break;
+						}
+					}
+					if (!matched)
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+		return false;
 	}
 }

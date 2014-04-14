@@ -1,13 +1,14 @@
 package basicObjects.shapes;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
+import abstracts.Shape;
 import basicObjects.Dimensions;
 import basicObjects.Point;
-import abstracts.Shape;
 
 /**
  * A simple Box. Has all the parameters you would expect box to have.
@@ -21,8 +22,8 @@ public class Box extends Shape
 	private Dimensions size;
 
 	/**
-	 * A constructor for the box. Box does not contain any offsets, it is just a box. All the values are set to 0 on
-	 * creation.
+	 * A constructor for the box. Box does not contain any offsets, it is just a
+	 * box. All the values are set to 0 on creation.
 	 */
 	public Box()
 	{
@@ -43,7 +44,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Return x value of the object. I return int because it is easier to use for collision detection.
+	 * Return x value of the object. I return int because it is easier to use
+	 * for collision detection.
 	 *
 	 * @return returns the x value of the object.
 	 */
@@ -78,7 +80,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Return y value of the object. I return int because it is easier to use for collision detection.
+	 * Return y value of the object. I return int because it is easier to use
+	 * for collision detection.
 	 *
 	 * @return returns the y value of the object.
 	 */
@@ -109,7 +112,21 @@ public class Box extends Shape
 	@Override
 	public void move(Point vector)
 	{
-		this.coordinates.move(vector);
+		this.move(vector.getX(), vector.getY());
+	}
+
+	/**
+	 * Moves this box on x and y axis by given amounts.
+	 *
+	 * @param x
+	 * 		How much to move on x axis.
+	 * @param y
+	 * 		How much to move on y axis.
+	 */
+	@Override
+	public void move(double x, double y)
+	{
+		this.coordinates.move(x, y);
 	}
 
 	/**
@@ -122,6 +139,19 @@ public class Box extends Shape
 	public void setCoordinates(Point point)
 	{
 		this.coordinates.changeLocation(point);
+	}
+
+	/**
+	 * Sets the coordinates of this box to given x and y values.
+	 *
+	 * @param x
+	 * 		The new x coordinate of this box.
+	 * @param y
+	 * 		The new y coordinate of this box.
+	 */
+	public void setCoordinates(double x, double y)
+	{
+		this.coordinates.changeLocation(x, y);
 	}
 
 	/**
@@ -207,7 +237,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's left x coordinate, is used for collision detection checking.
+	 * Returns the object's left x coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the object's left x coordinate.
 	 */
@@ -218,7 +249,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's right x coordinate, is used for collision detection checking.
+	 * Returns the object's right x coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the object's right x coordinate(which is x+width).
 	 */
@@ -229,7 +261,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's top y coordinate, is used for collision detection checking.
+	 * Returns the object's top y coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the object's top y coordinate.
 	 */
@@ -240,7 +273,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's bottom y coordinate, is used for collision detection checking.
+	 * Returns the object's bottom y coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the object's bottom y coordinate(which is y+height).
 	 */
@@ -295,7 +329,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's center x coordinate. Is used for whatever you want, but it is costly.
+	 * Returns the object's center x coordinate. Is used for whatever you want,
+	 * but it is costly.
 	 *
 	 * @return the object's center x coordinate.
 	 */
@@ -306,7 +341,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns the object's center y coordinate. Is used for whatever you want, but it is costly.
+	 * Returns the object's center y coordinate. Is used for whatever you want,
+	 * but it is costly.
 	 *
 	 * @return the object's center y coordinate.
 	 */
@@ -328,9 +364,11 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Copies the box parameters and stores it into new memory location and returns the said box.
+	 * Copies the box parameters and stores it into new memory location and
+	 * returns the said box.
 	 *
-	 * @return Newly created Box object that has same values as this current box object.
+	 * @return Newly created Box object that has same values as this current box
+	 * object.
 	 */
 	public Box copy()
 	{
@@ -341,7 +379,8 @@ public class Box extends Shape
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -356,5 +395,26 @@ public class Box extends Shape
 		sb.append("width: |").append(getWidth()).append("|");
 		sb.append(" height: |").append(getHeight()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares the given object with this box.
+	 *
+	 * @param object
+	 * 		The object to which to compare this shape to.
+	 *
+	 * @return True if the coordinates and dimensions match, false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof Box)
+		{
+			Box box = (Box) object;
+			return this.getTopLeft().equals(box.getTopLeft()) &&
+					this.getWidth() == box.getWidth() &&
+					this.getHeight() == box.getHeight();
+		}
+		return false;
 	}
 }

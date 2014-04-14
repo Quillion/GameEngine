@@ -21,7 +21,8 @@ public class MathEngine
 	 */
 	public static double distance(Point one, Point two)
 	{
-		return Math.sqrt(Math.pow(deltaX(one, two), 2) + Math.pow(deltaY(one, two), 2));
+		return Math.sqrt(Math.pow(deltaX(one, two), 2) + Math
+				.pow(deltaY(one, two), 2));
 	}
 
 	/**
@@ -49,11 +50,12 @@ public class MathEngine
 	 */
 	public static double hypotenuse(Point one, Point two)
 	{
-		return Math.sqrt(Math.pow(deltaX(one, two), 2) + Math.pow(deltaY(one, two), 2));
+		return distance(one, two);
 	}
 
 	/**
-	 * Returns a point which is a representation of absolute distance between two points.
+	 * Returns a point which is a representation of absolute distance between
+	 * two points.
 	 *
 	 * @param one
 	 * 		First point.
@@ -64,7 +66,8 @@ public class MathEngine
 	 */
 	public static Point absDistance(Point one, Point two)
 	{
-		return new Point(Math.abs(one.getX() - two.getX()), Math.abs(one.getY() - two.getY()));
+		return new Point(Math.abs(one.getX() - two.getX()),
+						 Math.abs(one.getY() - two.getY()));
 	}
 
 	/**
@@ -129,7 +132,8 @@ public class MathEngine
 	}
 
 	/**
-	 * Given Angle, Center point and Radius it will tell you the point at the edge.
+	 * Given Angle, Center point and Radius it will tell you the point at the
+	 * edge.
 	 *
 	 * @param angle
 	 * 		The angle from center.
@@ -142,6 +146,19 @@ public class MathEngine
 	 */
 	public static Point getEdgeAt(double angle, Point center, double radius)
 	{
-		return new Point(center.getX() + radius * Math.sin(angle), center.getY() + radius * Math.cos(angle));
+		return new Point(center.getX() + radius * Math.sin(angle),
+						 center.getY() + radius * Math.cos(angle));
+	}
+
+	/**
+	 * Compares two doubles against each other. This comparison uses
+	 * precision of up to 5 digits and nothing more. Enjoy.
+	 * @param a First double.
+	 * @param b Second double to compare against.
+	 * @return True if both doubles are the same, false otherwise.
+	 */
+	public static boolean equals(double a, double b)
+	{
+		return Math.abs(a - b) <= 0.00001;
 	}
 }

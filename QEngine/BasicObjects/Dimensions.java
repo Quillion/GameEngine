@@ -1,4 +1,5 @@
 package basicObjects;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -6,8 +7,8 @@ package basicObjects;
  */
 
 /**
- * Basic dimension that stores values either fo size, or some kind of boundaries or offsets. All the values used are int
- * of course unlike Point.
+ * Basic dimension that stores values either fo size, or some kind of boundaries
+ * or offsets. All the values used are int of course unlike Point.
  */
 public class Dimensions
 {
@@ -109,7 +110,8 @@ public class Dimensions
 	}
 
 	/**
-	 * Sets This dimension to the given Dimension. Only values get copied over but not the memory location.
+	 * Sets This dimension to the given Dimension. Only values get copied over
+	 * but not the memory location.
 	 *
 	 * @param dimensions
 	 * 		The new Dimension whose values to copy.
@@ -120,17 +122,19 @@ public class Dimensions
 	}
 
 	/**
-	 * Copies the values of this Dimension and returns you new Dimension object.
+	 * Copies the values of this Dimension and returns you new Dimension
+	 * object.
 	 *
 	 * @return New Dimensions object that takes up new memory spot.
 	 */
 	public Dimensions copy()
 	{
-		return new Dimensions(getWidth(), getHeight());
+		return new Dimensions(this.getWidth(), this.getHeight());
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -142,5 +146,26 @@ public class Dimensions
 		sb.append("width: |").append(getWidth()).append("|");
 		sb.append(" height: |").append(getHeight()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares this point with a given object. You do realize hopefully that
+	 * the given object should at least be of type point right?
+	 *
+	 * @param object
+	 * 		The object to which to compare this point to.
+	 *
+	 * @return True if this object is the same point, false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof Dimensions)
+		{
+			Dimensions dimensions = (Dimensions) object;
+			return ((this.getWidth() == dimensions.getWidth()) &&
+					(this.getHeight() == dimensions.getHeight()));
+		}
+		return false;
 	}
 }

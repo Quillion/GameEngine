@@ -1,16 +1,18 @@
 package basicObjects.shapes;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
+import abstracts.Shape;
 import basicObjects.Dimensions;
 import basicObjects.Point;
-import abstracts.Shape;
 
 /**
- * A simple ball that is completely round. This is not an oval so keep that in mind.
+ * A simple ball that is completely round. This is not an oval so keep that in
+ * mind.
  */
 public class Ball extends Shape
 {
@@ -42,7 +44,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Return x value of the object. I return int because it is easier to use for collision detection.
+	 * Return x value of the object. I return int because it is easier to use
+	 * for collision detection.
 	 *
 	 * @return the x coordinate of the object.
 	 */
@@ -77,7 +80,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Return y value of the object. I return int because it is easier to use for collision detection.
+	 * Return y value of the object. I return int because it is easier to use
+	 * for collision detection.
 	 *
 	 * @return the y coordinate of the object.
 	 */
@@ -169,7 +173,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Increments the shape's height by a set amount. Keep in mind this is a circle. So height and width is same.
+	 * Increments the shape's height by a set amount. Keep in mind this is a
+	 * circle. So height and width is same.
 	 *
 	 * @param amount
 	 * 		how much to increment this shape's height by.
@@ -181,7 +186,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Must I say that a ball must be round and as such will always only have one size?
+	 * Must I say that a ball must be round and as such will always only have
+	 * one size?
 	 *
 	 * @param size
 	 * 		The new Size for this object.
@@ -196,6 +202,19 @@ public class Ball extends Shape
 	}
 
 	/**
+	 * Move this Ball on x and y axis by given values.
+	 *
+	 * @param x
+	 * 		How much to move on x axis.
+	 * @param y
+	 * 		How much to move on y axis.
+	 */
+	public void move(double x, double y)
+	{
+		this.center.move(x, y);
+	}
+
+	/**
 	 * Moves this box by the given vector.
 	 *
 	 * @param vector
@@ -204,11 +223,12 @@ public class Ball extends Shape
 	@Override
 	public void move(Point vector)
 	{
-		this.center.move(vector);
+		this.move(vector.getX(), vector.getY());
 	}
 
 	/**
-	 * Sets the coordinates of this ball. Ball's coordinates have to do with it's center.
+	 * Sets the coordinates of this ball. Ball's coordinates have to do with
+	 * it's center.
 	 *
 	 * @param point
 	 * 		The new coordinates of this ball.
@@ -216,11 +236,25 @@ public class Ball extends Shape
 	@Override
 	public void setCoordinates(Point point)
 	{
-		this.center.changeLocation(point);
+		this.setCoordinates(point.getX(), point.getY());
 	}
 
 	/**
-	 * Returns the shape's left x coordinate, is used for collision detection checking.
+	 * Sets the coordinates of this ball to given x and y values.
+	 *
+	 * @param x
+	 * 		The new x coordinate of this ball.
+	 * @param y
+	 * 		The new y coordinate of this ball.
+	 */
+	public void setCoordinates(double x, double y)
+	{
+		this.center.changeLocation(x, y);
+	}
+
+	/**
+	 * Returns the shape's left x coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the shape's left x coordinate.
 	 */
@@ -231,7 +265,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's right x coordinate, is used for collision detection checking.
+	 * Returns the shape's right x coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the shape's right x coordinate(which is x+width).
 	 */
@@ -242,7 +277,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's top y coordinate, is used for collision detection checking.
+	 * Returns the shape's top y coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the shape's top y coordinate.
 	 */
@@ -253,7 +289,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's bottom y coordinate, is used for collision detection checking.
+	 * Returns the shape's bottom y coordinate, is used for collision detection
+	 * checking.
 	 *
 	 * @return the shape's bottom y coordinate(which is y+height).
 	 */
@@ -308,7 +345,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's center x coordinate. Is used for whatever you want, but it is costly.
+	 * Returns the shape's center x coordinate. Is used for whatever you want,
+	 * but it is costly.
 	 *
 	 * @return the shape's center x coordinate.
 	 */
@@ -319,7 +357,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns the shape's center y coordinate. Is used for whatever you want, but it is costly.
+	 * Returns the shape's center y coordinate. Is used for whatever you want,
+	 * but it is costly.
 	 *
 	 * @return the shape's center y coordinate.
 	 */
@@ -383,7 +422,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns a brand new copy of this Ball and it will have all the same values.
+	 * Returns a brand new copy of this Ball and it will have all the same
+	 * values.
 	 *
 	 * @return A new copy of this ball object.
 	 */
@@ -396,7 +436,8 @@ public class Ball extends Shape
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -409,5 +450,26 @@ public class Ball extends Shape
 		sb.append(" y: |").append(getY()).append("|\n");
 		sb.append("Radius: |").append(getRadius()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares the given object with this ball.
+	 *
+	 * @param object
+	 * 		The object to which to compare this shape to.
+	 *
+	 * @return True if both objects are same in regards to coordinates and
+	 * radius, false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof Ball)
+		{
+			Ball ball = (Ball) object;
+			return this.getRadius() == ball.getRadius() &&
+					this.center.equals(ball.getCenter());
+		}
+		return false;
 	}
 }

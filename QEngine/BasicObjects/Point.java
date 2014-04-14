@@ -1,12 +1,16 @@
 package basicObjects;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
+import logic.MathEngine;
+
 /**
- * Basic Point. Contains x and y coordinate which are both double. Can represent vectors.
+ * Basic Point. Contains x and y coordinate which are both double. Can represent
+ * vectors.
  */
 public class Point
 {
@@ -62,7 +66,8 @@ public class Point
 	}
 
 	/**
-	 * Reverses the direction of the x vector. This is mainly used when the point object is being treated as a vector.
+	 * Reverses the direction of the x vector. This is mainly used when the
+	 * point object is being treated as a vector.
 	 */
 	public void reverseX()
 	{
@@ -102,7 +107,8 @@ public class Point
 	}
 
 	/**
-	 * Reverses the direction of the y vector. This is mainly used when the point object is being treated as a vector.
+	 * Reverses the direction of the y vector. This is mainly used when the
+	 * point object is being treated as a vector.
 	 */
 	public void reverseY()
 	{
@@ -142,7 +148,8 @@ public class Point
 	}
 
 	/**
-	 * If this object is being treated as a vector, this function will reverse the vector.
+	 * If this object is being treated as a vector, this function will reverse
+	 * the vector.
 	 */
 	public void reverse()
 	{
@@ -165,8 +172,8 @@ public class Point
 	}
 
 	/**
-	 * Simple changes location of this point to specified Point. Only values get copied over but not the memory
-	 * location.
+	 * Simple changes location of this point to specified Point. Only values get
+	 * copied over but not the memory location.
 	 *
 	 * @param point
 	 * 		The new coordinates of this point.
@@ -177,7 +184,8 @@ public class Point
 	}
 
 	/**
-	 * Creates a new Point that has the exact same coordinates as this point, but different memory location.
+	 * Creates a new Point that has the exact same coordinates as this point,
+	 * but different memory location.
 	 *
 	 * @return Point that is the same as this point but does not share location.
 	 */
@@ -187,7 +195,8 @@ public class Point
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -199,5 +208,26 @@ public class Point
 		sb.append("x: |").append(getX()).append("|");
 		sb.append(" y: |").append(getY()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares this point with a given object. You do realize hopefully that
+	 * the given object should at least be of type point right?
+	 *
+	 * @param object
+	 * 		The object to which to compare this point to.
+	 *
+	 * @return True if this object is the same point, false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof Point)
+		{
+			Point point = (Point) object;
+			return (MathEngine.equals(this.getX(), point.getX()) &&
+					MathEngine.equals(this.getY(), point.getY()));
+		}
+		return false;
 	}
 }

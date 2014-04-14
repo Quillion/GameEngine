@@ -1,4 +1,5 @@
 package basicObjects;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -6,7 +7,8 @@ package basicObjects;
  */
 
 /**
- * Represents a physical keyboard key. Contains value for the said key and a boolean representing key state.
+ * Represents a physical keyboard key. Contains value for the said key and a
+ * boolean representing key state.
  */
 public class Key
 {
@@ -47,7 +49,8 @@ public class Key
 	}
 
 	/**
-	 * If you pressed the key then call this method. Sets pressed value to true.
+	 * If you pressed the key then call this method. Sets pressed value to
+	 * true.
 	 */
 	public void press()
 	{
@@ -55,7 +58,8 @@ public class Key
 	}
 
 	/**
-	 * If you release key then call this method. Sets the pressed value to false.
+	 * If you release key then call this method. Sets the pressed value to
+	 * false.
 	 */
 	public void release()
 	{
@@ -70,5 +74,50 @@ public class Key
 	public boolean isPressed()
 	{
 		return this.pressed;
+	}
+
+	/**
+	 * Returns the copy of this key except it's state. The copy returned will be
+	 * in released state.
+	 *
+	 * @return New copy of this given key.
+	 */
+	public Key copy()
+	{
+		return new Key(this.getValue());
+	}
+
+	/**
+	 * Tells you value of the key and it's state.
+	 *
+	 * @return String that represents information on this key.
+	 */
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("Value: ").append(this.getValue());
+		sb.append(this.isPressed() ? " is Pressed." : " is Released");
+		return sb.toString();
+	}
+
+	/**
+	 * Compares given object to this key. Comparison is being done on the value
+	 * only. We will not compare whether key is pressed or released.
+	 *
+	 * @param object
+	 * 		The object with which to compare this key to.
+	 *
+	 * @return True if two keys are same, and false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof Key)
+		{
+			Key key = (Key) object;
+			return this.getValue() == key.getValue();
+		}
+		return false;
 	}
 }

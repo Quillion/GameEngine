@@ -1,4 +1,5 @@
 package basicObjects.shapes;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -8,7 +9,7 @@ package basicObjects.shapes;
 import basicObjects.Point;
 
 /**
- * A Ball with Collision box that also had vectors.
+ * A Ball with Collision box that also has vectors.
  */
 public class MBall extends BBall
 {
@@ -21,7 +22,8 @@ public class MBall extends BBall
 	}
 
 	/**
-	 * Sets the x vector to whatever you want. Useful if you want to launch an object at high speed.
+	 * Sets the x vector to whatever you want. Useful if you want to launch an
+	 * object at high speed.
 	 *
 	 * @param vector
 	 * 		vector value to which x vector will be set to.
@@ -61,7 +63,8 @@ public class MBall extends BBall
 	}
 
 	/**
-	 * Sets the y vector to whatever you want. Useful if you want to launch an object at high speed.
+	 * Sets the y vector to whatever you want. Useful if you want to launch an
+	 * object at high speed.
 	 *
 	 * @param vector
 	 * 		vector value to which y vector will be set to.
@@ -118,11 +121,25 @@ public class MBall extends BBall
 	 */
 	public void setVector(Point vector)
 	{
-		this.vector.changeLocation(vector);
+		this.setVector(vector.getX(), vector.getY());
 	}
 
 	/**
-	 * Applies this character's vector to itself and moves it by the vector's value.
+	 * Sets the x and y vector of this ball to specified values.
+	 *
+	 * @param x
+	 * 		The new x vector of this ball.
+	 * @param y
+	 * 		The new y vector of this ball.
+	 */
+	public void setVector(double x, double y)
+	{
+		this.vector.changeLocation(x, y);
+	}
+
+	/**
+	 * Applies this character's vector to itself and moves it by the vector's
+	 * value.
 	 *
 	 * @return The instance of this ball after it has been moved.
 	 */
@@ -133,7 +150,8 @@ public class MBall extends BBall
 	}
 
 	/**
-	 * Reverses the y and x vector of this ball. Would be good to use for bouncing.
+	 * Reverses the y and x vector of this ball. Would be good to use for
+	 * bouncing.
 	 */
 	public void reverseVector()
 	{
@@ -141,9 +159,11 @@ public class MBall extends BBall
 	}
 
 	/**
-	 * Returns a copy of it's parent which is bounding Box. The copy is brand new object.
+	 * Returns a copy of it's parent which is bounding Box. The copy is brand
+	 * new object.
 	 *
-	 * @return Brand new bounding box which is a copy of the bounding box this object is built on.
+	 * @return Brand new bounding box which is a copy of the bounding box this
+	 * object is built on.
 	 */
 	public BBall getBBall()
 	{
@@ -151,7 +171,8 @@ public class MBall extends BBall
 	}
 
 	/**
-	 * Returns a brand new copy of this Movement Box object. With a new memory location.
+	 * Returns a brand new copy of this Movement Box object. With a new memory
+	 * location.
 	 *
 	 * @return A new copy of this Movement Box object.
 	 */
@@ -168,7 +189,8 @@ public class MBall extends BBall
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -181,5 +203,25 @@ public class MBall extends BBall
 		sb.append("x: |").append(getXVector()).append("|");
 		sb.append(" y: |").append(getYVector()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares the given object to this movable ball.
+	 *
+	 * @param object
+	 * 		The object to which to compare this shape to.
+	 *
+	 * @return True if the object is similar to this ball, false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof MBall)
+		{
+			MBall ball = (MBall) object;
+			return super.equals(ball) &&
+					this.getVector().equals(ball.getVector());
+		}
+		return false;
 	}
 }

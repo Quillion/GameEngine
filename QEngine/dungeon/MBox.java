@@ -137,41 +137,86 @@ public class MBox extends basicObjects.shapes.MBox
 		this.acceleration = acceleration;
 	}
 
-	public void incrementAcceleration(double acceleration)
+	/**
+	 * Increments acceleration by a given value. Can be used for buffs and debufss.
+	 *
+	 * @param value
+	 * 		The value by which to increment acceleration.
+	 */
+	public void incrementAcceleration(double value)
 	{
-		this.acceleration += acceleration;
+		this.acceleration += value;
 	}
 
+	/**
+	 * Gives you the max speed that the given box can achieve.
+	 *
+	 * @return The max speed of this box.
+	 */
 	public double getMaxSpeed()
 	{
 		return this.maxSpeed;
 	}
 
+	/**
+	 * Sets the maximum speed of this object to the given value.
+	 *
+	 * @param maxSpeed
+	 * 		The new max speed of this object.
+	 */
 	public void setMaxSpeed(double maxSpeed)
 	{
 		this.maxSpeed = maxSpeed;
 	}
 
-	public void incrementMaxSpeed(double maxSpeed)
+	/**
+	 * Increments the max speed of this object by a specified value.
+	 *
+	 * @param value
+	 * 		Value by which to increment the max speed of this object.
+	 */
+	public void incrementMaxSpeed(double value)
 	{
-		this.maxSpeed += maxSpeed;
+		this.maxSpeed += value;
 	}
 
+	/**
+	 * Tells you what is the current friction of this box with the ground.
+	 *
+	 * @return Friction of this object while moving on the ground.
+	 */
 	public double getFriction()
 	{
 		return this.friction;
 	}
 
+	/**
+	 * Sets the friction of this box by a specified value.
+	 *
+	 * @param friction
+	 * 		The new friction of this given box.
+	 */
 	public void setFriction(double friction)
 	{
 		this.friction = friction;
 	}
 
-	public void incrementFriction(double friction)
+	/**
+	 * Increments the friction of this box by a given value.
+	 *
+	 * @param value
+	 * 		The value by which to increment friction.
+	 */
+	public void incrementFriction(double value)
 	{
-		this.friction += friction;
+		this.friction += value;
 	}
 
+	/**
+	 * Gives you a string which represents stats and states of this object.
+	 *
+	 * @return String explaining this object.
+	 */
 	@Override
 	public String toString()
 	{

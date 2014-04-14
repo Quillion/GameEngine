@@ -1,4 +1,5 @@
 package basicObjects.shapes;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -8,7 +9,8 @@ package basicObjects.shapes;
 import basicObjects.Point;
 
 /**
- * A basic ball that has a bounding box around it. It is not oval, so remember that.
+ * A basic ball that has a bounding box around it. It is not oval, so remember
+ * that.
  */
 public class BBall extends Ball
 {
@@ -18,8 +20,8 @@ public class BBall extends Ball
 	private int offset;
 
 	/**
-	 * A constructor for the bounding box BBox extends Box so it has same properties but has offsets which will be used
-	 * in collision detection.
+	 * A constructor for the bounding box BBox extends Box so it has same
+	 * properties but has offsets which will be used in collision detection.
 	 */
 	public BBall()
 	{
@@ -28,8 +30,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the offset of the ball. Since it is a round circular ball, then offset is constant irregardless of
-	 * direction.
+	 * Returns the offset of the ball. Since it is a round circular ball, then
+	 * offset is constant irregardless of direction.
 	 *
 	 * @return Offset of this ball.
 	 */
@@ -39,7 +41,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Sets the offset of this ball to given value. However since it is a ball, offset will always be the same.
+	 * Sets the offset of this ball to given value. However since it is a ball,
+	 * offset will always be the same.
 	 *
 	 * @param offset
 	 * 		The new offset of this ball.
@@ -47,6 +50,17 @@ public class BBall extends Ball
 	public void setOffset(int offset)
 	{
 		this.offset = offset;
+	}
+
+	/**
+	 * Increment the given offset by the specified value.
+	 *
+	 * @param amount
+	 * 		The amount by which to increment the given offset.
+	 */
+	public void incrementOffset(int amount)
+	{
+		this.offset += amount;
 	}
 
 	/**
@@ -60,7 +74,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's left x coordinate with offset, is used for collision detection checking.
+	 * Returns the object's left x coordinate with offset, is used for collision
+	 * detection checking.
 	 *
 	 * @return the object's left x coordinate with offset.
 	 */
@@ -71,7 +86,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's right x coordinate with offset, is used for collision detection checking.
+	 * Returns the object's right x coordinate with offset, is used for
+	 * collision detection checking.
 	 *
 	 * @return the object's right x coordinate(which is x+width) with offset.
 	 */
@@ -82,7 +98,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's top y coordinate with offset, is used for collision detection checking.
+	 * Returns the object's top y coordinate with offset, is used for collision
+	 * detection checking.
 	 *
 	 * @return the object's top y coordinate.
 	 */
@@ -93,7 +110,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns the object's bottom y coordinate with offset, is used for collision detection checking.
+	 * Returns the object's bottom y coordinate with offset, is used for
+	 * collision detection checking.
 	 *
 	 * @return the object's bottom y coordinate(which is y+height) with offset.
 	 */
@@ -148,7 +166,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns This object's box object as a new object. Simply calls copy of the parent class.
+	 * Returns This object's box object as a new object. Simply calls copy of
+	 * the parent class.
 	 *
 	 * @return new Box which is part of this Bounding Box object.
 	 */
@@ -160,7 +179,8 @@ public class BBall extends Ball
 	/**
 	 * Returns a new copy of this BoundingBox.
 	 *
-	 * @return A new Bounding Box object which has same values as this bounding box object.
+	 * @return A new Bounding Box object which has same values as this bounding
+	 * box object.
 	 */
 	@Override
 	public BBall copy()
@@ -173,7 +193,8 @@ public class BBall extends Ball
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -184,5 +205,26 @@ public class BBall extends Ball
 		sb.append(super.toString()).append("\n");
 		sb.append("Offset: |").append(getOffset()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares the given object with this BBall.
+	 *
+	 * @param object
+	 * 		The object to which to compare this shape to.
+	 *
+	 * @return True if the given object is a BBall and has same offset,
+	 * coordinates and radius, false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof BBall)
+		{
+			BBall ball = (BBall) object;
+			return super.equals(object) &&
+					this.getOffset() == ball.getOffset();
+		}
+		return false;
 	}
 }

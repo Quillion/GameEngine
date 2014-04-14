@@ -1,4 +1,5 @@
 package basicObjects.shapes;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -19,8 +20,8 @@ public class BBox extends Box
 	private Dimensions offsets;
 
 	/**
-	 * A constructor for the bounding box BBox extends Box so it has same properties but has offsets which will be used
-	 * in collision detection.
+	 * A constructor for the bounding box BBox extends Box so it has same
+	 * properties but has offsets which will be used in collision detection.
 	 */
 	public BBox()
 	{
@@ -50,6 +51,17 @@ public class BBox extends Box
 	}
 
 	/**
+	 * Increments horizontal offset by a given amount.
+	 *
+	 * @param amount
+	 * 		The amount by which to increment horizontal offset.
+	 */
+	public void incrementHorizontalOffset(int amount)
+	{
+		this.offsets.incrementWidth(amount);
+	}
+
+	/**
 	 * Sets the vertical offset to whatever value is passed.
 	 *
 	 * @param offset
@@ -71,6 +83,17 @@ public class BBox extends Box
 	}
 
 	/**
+	 * Increments vertical offset by a given amount.
+	 *
+	 * @param amount
+	 * 		The amount by which to increment vertical offset.
+	 */
+	public void incrementVerticalOffset(int amount)
+	{
+		this.offsets.incrementHeight(amount);
+	}
+
+	/**
 	 * Sets the offset pf this Bounding Box to the newly given values.
 	 *
 	 * @param dimensions
@@ -82,7 +105,21 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's left x coordinate with offset, is used for collision detection checking.
+	 * Sets the offset of the given box to specified values.
+	 *
+	 * @param horizontal
+	 * 		The new horizontal offset of this box.
+	 * @param vertical
+	 * 		The new vertical offset of this box.
+	 */
+	public void setOffsets(int horizontal, int vertical)
+	{
+		this.offsets.setDimensions(horizontal, vertical);
+	}
+
+	/**
+	 * Returns the object's left x coordinate with offset, is used for collision
+	 * detection checking.
 	 *
 	 * @return the object's left x coordinate with offset.
 	 */
@@ -93,7 +130,8 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's right x coordinate with offset, is used for collision detection checking.
+	 * Returns the object's right x coordinate with offset, is used for
+	 * collision detection checking.
 	 *
 	 * @return the object's right x coordinate(which is x+width) with offset.
 	 */
@@ -104,7 +142,8 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's top y coordinate with offset, is used for collision detection checking.
+	 * Returns the object's top y coordinate with offset, is used for collision
+	 * detection checking.
 	 *
 	 * @return the object's top y coordinate.
 	 */
@@ -115,7 +154,8 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns the object's bottom y coordinate with offset, is used for collision detection checking.
+	 * Returns the object's bottom y coordinate with offset, is used for
+	 * collision detection checking.
 	 *
 	 * @return the object's bottom y coordinate(which is y+height) with offset.
 	 */
@@ -170,7 +210,8 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns This object's box object as a new object. Simply calls copy of the parent class.
+	 * Returns This object's box object as a new object. Simply calls copy of
+	 * the parent class.
 	 *
 	 * @return new Box which is part of this Bounding Box object.
 	 */
@@ -182,7 +223,8 @@ public class BBox extends Box
 	/**
 	 * Returns a new copy of this BoundingBox.
 	 *
-	 * @return A new Bounding Box object which has same values as this bounding box object.
+	 * @return A new Bounding Box object which has same values as this bounding
+	 * box object.
 	 */
 	@Override
 	public BBox copy()
@@ -197,7 +239,8 @@ public class BBox extends Box
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -210,5 +253,27 @@ public class BBox extends Box
 		sb.append("vertical: |").append(getVerticalOffset()).append("|");
 		sb.append(" horizontal: |").append(getHorizontalOffset()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares the given object to this box, and sees if they are the same.
+	 *
+	 * @param object
+	 * 		The object to which to compare this shape to.
+	 *
+	 * @return True if this object has same coordinates, size and offsets as
+	 * this box, false otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof BBox)
+		{
+			BBox box = (BBox) object;
+			return super.equals(object) &&
+					this.getHorizontalOffset() == box.getHorizontalOffset() &&
+					this.getVerticalOffset() == box.getVerticalOffset();
+		}
+		return false;
 	}
 }

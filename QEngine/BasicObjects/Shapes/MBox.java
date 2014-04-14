@@ -1,4 +1,5 @@
 package basicObjects.shapes;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -27,7 +28,8 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Sets the x vector to whatever you want. Useful if you want to launch an object at high speed.
+	 * Sets the x vector to whatever you want. Useful if you want to launch an
+	 * object at high speed.
 	 *
 	 * @param vector
 	 * 		vector value to which x vector will be set to.
@@ -67,7 +69,8 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Sets the y vector to whatever you want. Useful if you want to launch an object at high speed.
+	 * Sets the y vector to whatever you want. Useful if you want to launch an
+	 * object at high speed.
 	 *
 	 * @param vector
 	 * 		vector value to which y vector will be set to.
@@ -124,11 +127,17 @@ public class MBox extends BBox
 	 */
 	public void setVector(Point vector)
 	{
-		this.vector.changeLocation(vector);
+		this.setVector(vector.getX(), vector.getY());
+	}
+
+	public void setVector(double x, double y)
+	{
+		this.vector.changeLocation(x, y);
 	}
 
 	/**
-	 * Applies this character's vector to itself and moves it by the vector's value.
+	 * Applies this character's vector to itself and moves it by the vector's
+	 * value.
 	 *
 	 * @return Returns the instance of this box after it has been moved.
 	 */
@@ -139,7 +148,8 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Reverses y and x vector of this given object. Can be used for bouncing I guess.
+	 * Reverses y and x vector of this given object. Can be used for bouncing I
+	 * guess.
 	 */
 	public void reverseVector()
 	{
@@ -147,9 +157,11 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Returns a copy of it's parent which is bounding Box. The copy is brand new object.
+	 * Returns a copy of it's parent which is bounding Box. The copy is brand
+	 * new object.
 	 *
-	 * @return Brand new bounding box which is a copy of the bounding box this object is built on.
+	 * @return Brand new bounding box which is a copy of the bounding box this
+	 * object is built on.
 	 */
 	public BBox getBBox()
 	{
@@ -157,7 +169,8 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Returns a brand new copy of this Movement Box object. With a new memory location.
+	 * Returns a brand new copy of this Movement Box object. With a new memory
+	 * location.
 	 *
 	 * @return A new copy of this Movement Box object.
 	 */
@@ -175,7 +188,8 @@ public class MBox extends BBox
 	}
 
 	/**
-	 * Returns a string representation tha explains everything about a given Object.
+	 * Returns a string representation tha explains everything about a given
+	 * Object.
 	 *
 	 * @return String which contains all the info about the object.
 	 */
@@ -188,5 +202,26 @@ public class MBox extends BBox
 		sb.append("x: |").append(getXVector()).append("|");
 		sb.append(" y: |").append(getYVector()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Compares the given object to this moving box.
+	 *
+	 * @param object
+	 * 		The object to which to compare this shape to.
+	 *
+	 * @return True if given object has same values as this box, false
+	 * otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof MBox)
+		{
+			MBox box = (MBox) object;
+			return super.equals(object) &&
+					this.getVector().equals(box.getVector());
+		}
+		return false;
 	}
 }
