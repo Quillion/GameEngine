@@ -1,4 +1,5 @@
 package painter;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -12,7 +13,8 @@ import java.awt.*;
 public class ShapePainter
 {
 	/**
-	 * Draws the ball into to the graphics passed, box outline will be black color.
+	 * Draws the ball into to the graphics passed, box outline will be black
+	 * color.
 	 *
 	 * @param g
 	 * 		graphics where the box will be drawn into.
@@ -22,33 +24,40 @@ public class ShapePainter
 	private static void drawBall(Graphics2D g, Ball ball)
 	{
 		g.setColor(Color.BLACK);
-		g.drawOval(ball.getX() - ball.getRadius(), ball.getY() - ball.getRadius(), ball.getDiameter(),
+		g.drawOval(ball.getX() - ball.getRadius(),
+				   ball.getY() - ball.getRadius(), ball.getDiameter(),
 				   ball.getDiameter());
-		g.drawLine(ball.getCenterX() - 1, ball.getCenterY() - 1, ball.getCenterX() + 1, ball.getCenterY() + 1);
+		g.drawLine(ball.getCenterX() - 1, ball.getCenterY() - 1,
+				   ball.getCenterX() + 1, ball.getCenterY() + 1);
 	}
 
 	/**
-	 * Draws the ball into to the graphics passed, box outline will be black color.
+	 * Draws the ball into to the graphics passed, box outline will be black
+	 * color.
 	 *
 	 * @param g
 	 * 		graphics where the box will be drawn into.
 	 * @param ball
-	 * 		The ball which you want drawn to the graphics. Only bounding box will be drawn.
+	 * 		The ball which you want drawn to the graphics. Only bounding box will
+	 * 		be drawn.
 	 */
 	private static void drawBBall(Graphics2D g, BBall ball)
 	{
 		g.setColor(Color.GRAY);
-		g.drawOval(ball.getLeftX(), ball.getTopY(), ball.getDiameter() - ball.getOffset() * 2,
+		g.drawOval(ball.getLeftX(), ball.getTopY(),
+				   ball.getDiameter() - ball.getOffset() * 2,
 				   ball.getDiameter() - ball.getOffset() * 2);
 	}
 
 	/**
-	 * Draws the ball into to the graphics passed, box outline will be black color.
+	 * Draws the ball into to the graphics passed, box outline will be black
+	 * color.
 	 *
 	 * @param g
 	 * 		graphics where the box will be drawn into.
 	 * @param ball
-	 * 		The ball which you want drawn to the graphics. Only vector will be drawn.
+	 * 		The ball which you want drawn to the graphics. Only vector will be
+	 * 		drawn.
 	 */
 	private static void drawMBall(Graphics2D g, MBall ball)
 	{
@@ -60,7 +69,8 @@ public class ShapePainter
 	}
 
 	/**
-	 * Draws the box into to the graphics passed, box outline will be black color.
+	 * Draws the box into to the graphics passed, box outline will be black
+	 * color.
 	 *
 	 * @param g
 	 * 		graphics where the box will be drawn into.
@@ -74,7 +84,8 @@ public class ShapePainter
 	}
 
 	/**
-	 * Draws the box into to the graphics passed, box outline will be black color.
+	 * Draws the box into to the graphics passed, box outline will be black
+	 * color.
 	 *
 	 * @param g
 	 * 		graphics where the box will be drawn into.
@@ -84,11 +95,14 @@ public class ShapePainter
 	private static void drawBBox(Graphics2D g, BBox box)
 	{
 		g.setColor(Color.GRAY);
-		g.drawRect(box.getLeftX(), box.getTopY(), box.getRightX() - box.getLeftX(), box.getBottomY() - box.getTopY());
+		g.drawRect(box.getLeftX(), box.getTopY(),
+				   box.getRightX() - box.getLeftX(),
+				   box.getBottomY() - box.getTopY());
 	}
 
 	/**
-	 * Draws the box into to the graphics passed, box outline will be black color.
+	 * Draws the box into to the graphics passed, box outline will be black
+	 * color.
 	 *
 	 * @param g
 	 * 		graphics where the box will be drawn into.

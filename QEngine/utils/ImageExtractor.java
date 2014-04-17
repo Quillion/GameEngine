@@ -1,4 +1,5 @@
 package utils;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -10,15 +11,16 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 /**
- * Basic image extraction class. You load whatever image you desire, and then you can use given functions to slice and
- * dice the image.
+ * Basic image extraction class. You load whatever image you desire, and then
+ * you can use given functions to slice and dice the image.
  */
 public class ImageExtractor
 {
 	private BufferedImage image;
 
 	/**
-	 * Specify the path to the image and it will be loaded. Please load pngs only.
+	 * Specify the path to the image and it will be loaded. Please load pngs
+	 * only.
 	 *
 	 * @param image
 	 * 		The path where the image you want to load is located.
@@ -29,7 +31,8 @@ public class ImageExtractor
 	}
 
 	/**
-	 * Attach the given Buffered image to this object. Why would you want this method is beyond me, but enjoy.
+	 * Attach the given Buffered image to this object. Why would you want this
+	 * method is beyond me, but enjoy.
 	 *
 	 * @param image
 	 * 		The image that you want to have sliced and diced.
@@ -45,7 +48,8 @@ public class ImageExtractor
 	 * @param image
 	 * 		The path where the image is located.
 	 *
-	 * @return True if loading was successful, false otherwise. You will also have error printed if false.
+	 * @return True if loading was successful, false otherwise. You will also
+	 * have error printed if false.
 	 */
 	public boolean loadImage(String image)
 	{

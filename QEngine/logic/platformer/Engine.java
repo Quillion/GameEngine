@@ -1,4 +1,5 @@
 package logic.platformer;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1

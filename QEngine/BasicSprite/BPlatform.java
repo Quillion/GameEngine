@@ -1,4 +1,5 @@
 package basicSprite;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -12,7 +13,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Platform with bounding box. This type of platform does not contain any animation.
+ * Platform with bounding box. This type of platform does not contain any
+ * animation.
  */
 public class BPlatform extends BBox
 {
@@ -28,7 +30,8 @@ public class BPlatform extends BBox
 	}
 
 	/**
-	 * Set the image to whatever is passed to us. The width and height will be changed accordingly.
+	 * Set the image to whatever is passed to us. The width and height will be
+	 * changed accordingly.
 	 *
 	 * @param image
 	 * 		the image for this platform.

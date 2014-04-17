@@ -1,4 +1,5 @@
 package logic;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -151,14 +152,35 @@ public class MathEngine
 	}
 
 	/**
-	 * Compares two doubles against each other. This comparison uses
-	 * precision of up to 5 digits and nothing more. Enjoy.
-	 * @param a First double.
-	 * @param b Second double to compare against.
+	 * Compares two doubles against each other. This comparison uses precision
+	 * of up to 5 digits and nothing more. Enjoy.
+	 *
+	 * @param a
+	 * 		First double.
+	 * @param b
+	 * 		Second double to compare against.
+	 *
 	 * @return True if both doubles are the same, false otherwise.
 	 */
 	public static boolean equals(double a, double b)
 	{
 		return Math.abs(a - b) <= 0.00001;
+	}
+
+	/**
+	 * Returns a random number using Math.random method. Using Random class is
+	 * better, but if it is just one time occurrence and you do not want to
+	 * create a class then use this method.
+	 *
+	 * @param min
+	 * 		The minimum number you want.
+	 * @param max
+	 * 		The maximum number you want.
+	 *
+	 * @return Random number between the ranges of min and max.
+	 */
+	public static int random(int min, int max)
+	{
+		return (min + (int) (Math.random() * ((max - min) + 1)));
 	}
 }

@@ -1,4 +1,5 @@
 package abstracts;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -42,7 +43,8 @@ public abstract class GameAbstract extends JFrame implements Game
 	 * @param height
 	 * 		the height of the screen/window.
 	 * @param fullScreen
-	 * 		if you do set it to true, please do make sure that width and height are correct parameters.
+	 * 		if you do set it to true, please do make sure that width and height are
+	 * 		correct parameters.
 	 */
 	public void setScreen(int width, int height, boolean fullScreen)
 	{
@@ -72,7 +74,8 @@ public abstract class GameAbstract extends JFrame implements Game
 	}
 
 	/**
-	 * Specifies whether or not to set up ESC button to automatically close the program.
+	 * Specifies whether or not to set up ESC button to automatically close the
+	 * program.
 	 *
 	 * @param exitOnEsc
 	 * 		True if you want game to close eon ESC, false otherwise.
@@ -85,13 +88,15 @@ public abstract class GameAbstract extends JFrame implements Game
 	// WILL HAVE THREE DISPLAY MODES, 32 bit, 16bit and 8 bit
 	private DisplayMode[] MODES = new DisplayMode[]
 			{
-					new DisplayMode(this.WIDTH, this.HEIGHT, 32, 0), new DisplayMode(this.WIDTH, this.HEIGHT, 16, 0),
+					new DisplayMode(this.WIDTH, this.HEIGHT, 32, 0),
+					new DisplayMode(this.WIDTH, this.HEIGHT, 16, 0),
 					new DisplayMode(this.WIDTH, this.HEIGHT, 8, 0)
 			};
 
 	/**
-	 * Let's see which display mode is suitable for our computer. Returns you whichever display mode is suitable. It
-	 * will first try 32 bit colors, and if fails it will try 16 and then 8 bit.
+	 * Let's see which display mode is suitable for our computer. Returns you
+	 * whichever display mode is suitable. It will first try 32 bit colors, and
+	 * if fails it will try 16 and then 8 bit.
 	 *
 	 * @param device
 	 * 		which graphics device we should test color depth on.
@@ -104,7 +109,8 @@ public abstract class GameAbstract extends JFrame implements Game
 			DisplayMode[] modes = device.getDisplayModes();
 			for (DisplayMode mode : modes)
 			{
-				if (mode.getWidth() == MODE.getWidth() && mode.getHeight() == MODE.getHeight() && mode
+				if (mode.getWidth() == MODE.getWidth() && mode
+						.getHeight() == MODE.getHeight() && mode
 						.getBitDepth() == MODE.getBitDepth())
 				{
 					return MODE;
@@ -115,7 +121,8 @@ public abstract class GameAbstract extends JFrame implements Game
 	}
 
 	/**
-	 * Keyboard Action listeners. Key esc closes the program by default, no way you can override that.
+	 * Keyboard Action listeners. Key esc closes the program by default, no way
+	 * you can override that.
 	 */
 	protected class KeyInputHandler extends KeyAdapter
 	{

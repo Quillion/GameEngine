@@ -1,4 +1,5 @@
 package sim;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -23,8 +24,9 @@ public class SimBoard
 	private Dimensions  size;
 
 	/**
-	 * If we are making a board then we have to specify the width and height of the board, we also have to specify if it
-	 * is square or hexagonal board. If wrong sides is given, then you will get an exception.
+	 * If we are making a board then we have to specify the width and height of
+	 * the board, we also have to specify if it is square or hexagonal board. If
+	 * wrong sides is given, then you will get an exception.
 	 *
 	 * @param width
 	 * 		How many fields across the board will have.
@@ -55,7 +57,8 @@ public class SimBoard
 	}
 
 	/**
-	 * We will keep this as private, because you should not be able to change the type of board once you set it.
+	 * We will keep this as private, because you should not be able to change
+	 * the type of board once you set it.
 	 *
 	 * @param sides
 	 * 		the type of board, hexagonal or square.
@@ -115,11 +118,13 @@ public class SimBoard
 	}
 
 	/**
-	 * Generates the board based on width and height, and the type. Very simple method.
+	 * Generates the board based on width and height, and the type. Very simple
+	 * method.
 	 */
 	private void generateBoard()
 	{
-		this.board = new ArrayList<Field>(this.getWidth() * this.getHeight() - 1);
+		this.board = new ArrayList<Field>(
+				this.getWidth() * this.getHeight() - 1);
 		for (int y = 0; y < this.getHeight(); y++)
 		{
 			for (int x = 0; x < this.getWidth(); x++)
@@ -183,7 +188,8 @@ public class SimBoard
 	 * @param y
 	 * 		The y position of the field you want.
 	 *
-	 * @return The field at specified coordinates (hexagonal is also like square really if you think about it).
+	 * @return The field at specified coordinates (hexagonal is also like square
+	 * really if you think about it).
 	 */
 	public Field getField(int x, int y)
 	{

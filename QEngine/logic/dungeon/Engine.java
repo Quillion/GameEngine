@@ -1,4 +1,5 @@
 package logic.dungeon;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -11,7 +12,7 @@ import dungeon.MBox;
 /**
  * Engine for the dungeon crawler.
  */
-public class Engine extends logic.Engine
+public class Engine
 {
 	public static void keyPressed(MBox box, int key)
 	{

@@ -1,20 +1,22 @@
 package basicObjects.camera;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
+import abstracts.Shape;
 import basicObjects.Dimensions;
 import basicObjects.shapes.*;
-import abstracts.Shape;
 import logic.MathEngine;
 
 import java.awt.*;
 
 /**
- * This camera will work for two players. It has four modes of keeping track of the players. You can easily follow and
- * copy this code for three or four players.
+ * This camera will work for two players. It has four modes of keeping track of
+ * the players. You can easily follow and copy this code for three or four
+ * players.
  */
 public class MultiplayerCamera
 {
@@ -41,12 +43,15 @@ public class MultiplayerCamera
 	private Dimensions size;
 
 	/**
-	 * Basic constructor. Since this is a two player camera, then we should provide two players accordingly.
+	 * Basic constructor. Since this is a two player camera, then we should
+	 * provide two players accordingly.
 	 *
 	 * @param player1
-	 * 		First player, the one who will be on top or the left, depending on camera mode.
+	 * 		First player, the one who will be on top or the left, depending on
+	 * 		camera mode.
 	 * @param player2
-	 * 		Second player, the one who will be on right or bottom, depending on camera mode.
+	 * 		Second player, the one who will be on right or bottom, depending on
+	 * 		camera mode.
 	 */
 	public MultiplayerCamera(Shape player1, Shape player2)
 	{
@@ -89,22 +94,32 @@ public class MultiplayerCamera
 		this.size = size;
 
 		// SETTING THE SIZE
-		this.horizontal1.setSize(new Dimensions(this.size.getWidth(), this.size.getHeight() / 2));
-		this.horizontal2.setSize(new Dimensions(this.size.getWidth(), this.size.getHeight() / 2));
-		this.vertical1.setSize(new Dimensions(this.size.getWidth() / 2, this.size.getHeight()));
-		this.vertical2.setSize(new Dimensions(this.size.getWidth() / 2, this.size.getHeight()));
+		this.horizontal1.setSize(new Dimensions(this.size.getWidth(),
+												this.size.getHeight() / 2));
+		this.horizontal2.setSize(new Dimensions(this.size.getWidth(),
+												this.size.getHeight() / 2));
+		this.vertical1.setSize(new Dimensions(this.size.getWidth() / 2,
+											  this.size.getHeight()));
+		this.vertical2.setSize(new Dimensions(this.size.getWidth() / 2,
+											  this.size.getHeight()));
 		this.camera.setSize(this.size);
 
 		// SETTING THE OFFSET
-		this.horizontal1.setOffsets(new Dimensions(offsets.getWidth(), offsets.getHeight() / 2));
-		this.horizontal2.setOffsets(new Dimensions(offsets.getWidth(), offsets.getHeight() / 2));
-		this.vertical1.setOffsets(new Dimensions(offsets.getWidth() / 2, offsets.getHeight()));
-		this.vertical2.setOffsets(new Dimensions(offsets.getWidth() / 2, offsets.getHeight()));
-		this.camera.setOffsets(new Dimensions(offsets.getWidth(), offsets.getHeight()));
+		this.horizontal1.setOffsets(
+				new Dimensions(offsets.getWidth(), offsets.getHeight() / 2));
+		this.horizontal2.setOffsets(
+				new Dimensions(offsets.getWidth(), offsets.getHeight() / 2));
+		this.vertical1.setOffsets(
+				new Dimensions(offsets.getWidth() / 2, offsets.getHeight()));
+		this.vertical2.setOffsets(
+				new Dimensions(offsets.getWidth() / 2, offsets.getHeight()));
+		this.camera.setOffsets(
+				new Dimensions(offsets.getWidth(), offsets.getHeight()));
 	}
 
 	/**
-	 * Update camera position based on the character's coordinates which it should be looking at.
+	 * Update camera position based on the character's coordinates which it
+	 * should be looking at.
 	 */
 	public void updateCamera()
 	{
@@ -125,23 +140,32 @@ public class MultiplayerCamera
 		{
 			this.camera.updateCamera(
 					(this.player1.getCenterX() + this.player2.getCenterX()) / 2,
-					(this.player1.getCenterY() + this.player2.getCenterY()) / 2);
+					(this.player1.getCenterY() + this.player2
+							.getCenterY()) / 2
+			);
 		}
 		// CHOOSE WHICH MODE WE ARE IN
 		else if (this.mode.equals(Mode.Smart))
 		{
 			// FIND DISTANCE BETWEEN TWO CHARACTERS AND SEE IF THEY ARE CLOSE TO EACH OTHER
-			double x = Math.abs(MathEngine.deltaX(this.player1.getCenter(), this.player2.getCenter()));
-			double y = Math.abs(MathEngine.deltaY(this.player1.getCenter(), this.player2.getCenter()));
-			double cameraX = camera.getWidth() - camera.getHorizontalOffset() * 2;
-			double cameraY = camera.getHeight() - camera.getVerticalOffset() * 2;
+			double x = Math.abs(MathEngine.deltaX(this.player1.getCenter(),
+												  this.player2.getCenter()));
+			double y = Math.abs(MathEngine.deltaY(this.player1.getCenter(),
+												  this.player2.getCenter()));
+			double cameraX = camera.getWidth() - camera
+					.getHorizontalOffset() * 2;
+			double cameraY = camera.getHeight() - camera
+					.getVerticalOffset() * 2;
 			// THEY ARE CLOSE TO EACH OTHER
 			if ((x < cameraX) && (y < cameraY))
 			{
 				this.subMode = Mode.One;
 				this.camera.updateCamera(
-						(this.player1.getCenterX() + this.player2.getCenterX()) / 2,
-						(this.player1.getCenterY() + this.player2.getCenterY()) / 2);
+						(this.player1.getCenterX() + this.player2
+								.getCenterX()) / 2,
+						(this.player1.getCenterY() + this.player2
+								.getCenterY()) / 2
+				);
 			}
 			// THEY ARE TOO FAR AWAY
 			else
@@ -521,7 +545,8 @@ public class MultiplayerCamera
 	}
 
 	/**
-	 * Draws the camera to the given graphics, and then clear contents of the camera.
+	 * Draws the camera to the given graphics, and then clear contents of the
+	 * camera.
 	 *
 	 * @param g
 	 * 		Graphics onto which you would like camera to be drown to.
@@ -560,12 +585,14 @@ public class MultiplayerCamera
 				if (this.player1.getY() < this.player2.getY())
 				{
 					this.horizontal1.drawClear(g, 0, 0);
-					this.horizontal2.drawClear(g, 0, this.horizontal1.getHeight());
+					this.horizontal2
+							.drawClear(g, 0, this.horizontal1.getHeight());
 				}
 				// PLAYER 2 CAMERA SHOULD BE ABOVE PLAYER 1 CAMERA SINCE HE IS HIGHER
 				else
 				{
-					this.horizontal1.drawClear(g, 0, this.horizontal2.getHeight());
+					this.horizontal1
+							.drawClear(g, 0, this.horizontal2.getHeight());
 					this.horizontal2.drawClear(g, 0, 0);
 				}
 			}
@@ -589,7 +616,8 @@ public class MultiplayerCamera
 	}
 
 	/**
-	 * Draws the camera to the given graphics, and then color camera view white.
+	 * Draws the camera to the given graphics, and then color camera view
+	 * white.
 	 *
 	 * @param g
 	 * 		Graphics onto which you would like camera to be drown to.
@@ -628,12 +656,14 @@ public class MultiplayerCamera
 				if (this.player1.getY() < this.player2.getY())
 				{
 					this.horizontal1.drawWhite(g, 0, 0);
-					this.horizontal2.drawWhite(g, 0, this.horizontal1.getHeight());
+					this.horizontal2
+							.drawWhite(g, 0, this.horizontal1.getHeight());
 				}
 				// PLAYER 2 CAMERA SHOULD BE ABOVE PLAYER 1 CAMERA SINCE HE IS HIGHER
 				else
 				{
-					this.horizontal1.drawWhite(g, 0, this.horizontal2.getHeight());
+					this.horizontal1
+							.drawWhite(g, 0, this.horizontal2.getHeight());
 					this.horizontal2.drawWhite(g, 0, 0);
 				}
 			}
@@ -657,8 +687,9 @@ public class MultiplayerCamera
 	}
 
 	/**
-	 * Draw camera properties and such. That means draw camera offsets, and points that indicate boundaries and such. If
-	 * you do not want to see what camera is thinking then do not call this method.
+	 * Draw camera properties and such. That means draw camera offsets, and
+	 * points that indicate boundaries and such. If you do not want to see what
+	 * camera is thinking then do not call this method.
 	 */
 	public void drawCamera()
 	{
@@ -680,8 +711,10 @@ public class MultiplayerCamera
 		{
 			this.camera.drawCamera();
 			this.camera.draw(new basicObjects.Point(
-					(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
-					(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
+					(this.player1.getCenterX() + this.player2
+							.getCenterX()) / 2 - 1,
+					(this.player1.getCenterY() + this.player2
+							.getCenterY()) / 2 - 1
 			));
 		}
 		// WE ARE IN SMART MODE, LET'S SEE WHAT CAMERA WE WILL DRAW
@@ -693,8 +726,10 @@ public class MultiplayerCamera
 			{
 				this.camera.drawCamera();
 				this.camera.draw(new basicObjects.Point(
-						(this.player1.getCenterX() + this.player2.getCenterX()) / 2 - 1,
-						(this.player1.getCenterY() + this.player2.getCenterY()) / 2 - 1
+						(this.player1.getCenterX() + this.player2
+								.getCenterX()) / 2 - 1,
+						(this.player1.getCenterY() + this.player2
+								.getCenterY()) / 2 - 1
 				));
 			}
 			// WE ARE IN HORIZONTAL MODE, SO WE DRAW HORIZONTAL CAMERA PROPERTIES

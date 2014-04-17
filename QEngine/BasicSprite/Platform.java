@@ -1,4 +1,5 @@
 package basicSprite;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -12,9 +13,10 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Platform with box. This platform is very simplistic and does not contain any bounding box. Additionally this platform
- * has an image, but you do not have to initialize it, instead you can initialize a color and a colorful platform will
- * be drawn.
+ * Platform with box. This platform is very simplistic and does not contain any
+ * bounding box. Additionally this platform has an image, but you do not have to
+ * initialize it, instead you can initialize a color and a colorful platform
+ * will be drawn.
  */
 public class Platform extends Box
 {
@@ -22,7 +24,8 @@ public class Platform extends Box
 	private Color         color;
 
 	/**
-	 * Constructor for the platform, originally contains no image, and color is set to black.
+	 * Constructor for the platform, originally contains no image, and color is
+	 * set to black.
 	 */
 	public Platform()
 	{
@@ -53,7 +56,8 @@ public class Platform extends Box
 	}
 
 	/**
-	 * Set the image to whatever is passed to us. The width and height will be changed accordingly.
+	 * Set the image to whatever is passed to us. The width and height will be
+	 * changed accordingly.
 	 *
 	 * @param image
 	 * 		the image for this platform.
@@ -103,7 +107,8 @@ public class Platform extends Box
 		if (this.image == null)
 		{
 			g.setColor(this.getColor());
-			g.fillRect(super.getX(), super.getY(), super.getWidth(), super.getHeight());
+			g.fillRect(super.getX(), super.getY(), super.getWidth(),
+					   super.getHeight());
 		}
 		else
 		{

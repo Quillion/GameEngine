@@ -1,15 +1,18 @@
-import basicObjects.*;
+package logic;
+
+/**
+ * @author Edgar Ghahramanyan <edgarquill@gmail.com>
+ * @version Version 1
+ * @since 1.6
+ */
+
+import basicObjects.Dimensions;
+import basicObjects.Point;
 import basicObjects.shapes.*;
 import constants.Constants;
 import junit.framework.Assert;
-import logic.CollisionEngine;
 import org.junit.Test;
 
-/**
- * User: Edgar
- * Date: 12/16/13
- * Time: 10:28 AM
- */
 public class CollisionEngineTest
 {
 	@Test
@@ -284,7 +287,8 @@ public class CollisionEngineTest
 		Assert.assertFalse(CollisionEngine.collision(ball1, ball2));
 		Assert.assertTrue(CollisionEngine.collision(ball1.getBall(), ball2));
 		Assert.assertFalse(CollisionEngine.collision(ball1, ball2.getBall()));
-		Assert.assertTrue(CollisionEngine.collision(ball1.getBall(), ball2.getBall()));
+		Assert.assertTrue(
+				CollisionEngine.collision(ball1.getBall(), ball2.getBall()));
 
 		ball1.move(new Point(1, 1));
 		Assert.assertTrue(CollisionEngine.collision(ball1, ball2));
@@ -312,20 +316,25 @@ public class CollisionEngineTest
 		wall.setCoordinates(new Point(7, 1));
 		wall.setSize(new Dimensions(5, 5));
 
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.move();
-		Assert.assertEquals(Constants.Direction.Right, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.Right, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.incrementXVector(5);
 		character.move();
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.setXVector(-3);
-		Assert.assertEquals(Constants.Direction.Left, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.Left, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.move();
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character, wall));
 	}
 
 	@Test
@@ -342,20 +351,25 @@ public class CollisionEngineTest
 		wall.setSize(new Dimensions(7, 7));
 		wall.setOffsets(new Dimensions(3, 3));
 
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.move();
-		Assert.assertEquals(Constants.Direction.Right, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.Right, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.incrementXVector(5);
 		character.move();
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.setXVector(-3);
-		Assert.assertEquals(Constants.Direction.Left, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.Left, CollisionEngine
+				.horizontalCollision(character, wall));
 
 		character.move();
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character, wall));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character, wall));
 	}
 
 	@Test
@@ -373,23 +387,29 @@ public class CollisionEngineTest
 		character2.setOffsets(new Dimensions(3, 3));
 		character2.setVector(new Point(-3, 0));
 
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character1, character2));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character1, character2));
 
 		character1.move();
-		Assert.assertEquals(Constants.Direction.Right, CollisionEngine.horizontalCollision(character1, character2));
+		Assert.assertEquals(Constants.Direction.Right, CollisionEngine
+				.horizontalCollision(character1, character2));
 
 		character1.incrementXVector(5);
 		character1.move();
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character1, character2));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character1, character2));
 
 		character1.setXVector(-3);
-		Assert.assertEquals(Constants.Direction.Left, CollisionEngine.horizontalCollision(character1, character2));
+		Assert.assertEquals(Constants.Direction.Left, CollisionEngine
+				.horizontalCollision(character1, character2));
 
 		character1.move();
 		character2.move();
-		Assert.assertEquals(Constants.Direction.Left, CollisionEngine.horizontalCollision(character1, character2));
+		Assert.assertEquals(Constants.Direction.Left, CollisionEngine
+				.horizontalCollision(character1, character2));
 
 		character1.move();
-		Assert.assertEquals(Constants.Direction.None, CollisionEngine.horizontalCollision(character1, character2));
+		Assert.assertEquals(Constants.Direction.None, CollisionEngine
+				.horizontalCollision(character1, character2));
 	}
 }

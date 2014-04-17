@@ -282,7 +282,8 @@ public class Field
 					{
 						System.out.println(
 								"Other object looking at " + otherNeighbor
-										.getId());
+										.getId()
+						);
 						if (neighbor.getId() == otherNeighbor.getId())
 						{
 							matched = true;

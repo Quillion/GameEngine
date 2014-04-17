@@ -1,4 +1,5 @@
 package abstracts;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -10,7 +11,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 /**
- * A simple interface for the game. Kind of stupid of me to include something like getWidth and getHeight, but oh well.
+ * A simple interface for the game. Kind of stupid of me to include something
+ * like getWidth and getHeight, but oh well.
  */
 public interface Game
 {
@@ -84,7 +86,8 @@ public interface Game
 	public void mouseMoved(MouseEvent e);
 
 	/**
-	 * Will be called to start the game. Depending on the game different threads and such will be run.
+	 * Will be called to start the game. Depending on the game different threads
+	 * and such will be run.
 	 */
 	public void start();
 }

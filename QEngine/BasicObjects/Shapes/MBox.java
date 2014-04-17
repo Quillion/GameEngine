@@ -174,6 +174,7 @@ public class MBox extends BBox
 	 *
 	 * @return A new copy of this Movement Box object.
 	 */
+	@Override
 	public MBox copy()
 	{
 		MBox box = new MBox();

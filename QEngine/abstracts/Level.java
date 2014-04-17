@@ -1,4 +1,5 @@
 package abstracts;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -21,7 +22,8 @@ public abstract class Level
 	private int     HEIGHT;
 
 	/**
-	 * Game must be given to the level so that the level knows parameters such as screen size and all.
+	 * Game must be given to the level so that the level knows parameters such
+	 * as screen size and all.
 	 *
 	 * @param game
 	 * 		the game in which this level will be present.
@@ -49,7 +51,8 @@ public abstract class Level
 	 * Sets the status of the current level.
 	 *
 	 * @param active
-	 * 		status of the current level. True means active and false means inactive.
+	 * 		status of the current level. True means active and false means
+	 * 		inactive.
 	 */
 	public void setActive(boolean active)
 	{
@@ -57,8 +60,8 @@ public abstract class Level
 	}
 
 	/**
-	 * Tells you if the current level resources are loaded. If not then I would suggest using load before setting loaded
-	 * to true.
+	 * Tells you if the current level resources are loaded. If not then I would
+	 * suggest using load before setting loaded to true.
 	 *
 	 * @return True if resources are loaded, false otherwise.
 	 */
@@ -68,11 +71,13 @@ public abstract class Level
 	}
 
 	/**
-	 * Sets the loaded status of the game to what you give it. Should be private and should be used at the end of the
-	 * load method, however I am leaving this public for experimentation.
+	 * Sets the loaded status of the game to what you give it. Should be private
+	 * and should be used at the end of the load method, however I am leaving
+	 * this public for experimentation.
 	 *
 	 * @param loaded
-	 * 		status of the level's resources. Set to true if resources are loaded, false otherwise.
+	 * 		status of the level's resources. Set to true if resources are loaded,
+	 * 		false otherwise.
 	 */
 	public void setLoaded(boolean loaded)
 	{
@@ -80,7 +85,8 @@ public abstract class Level
 	}
 
 	/**
-	 * Returns the game that this level is attached to. This will be used in the child classes that extend this class.
+	 * Returns the game that this level is attached to. This will be used in the
+	 * child classes that extend this class.
 	 *
 	 * @return Game that this level is attached to.
 	 */
@@ -108,7 +114,8 @@ public abstract class Level
 	public abstract void draw(Graphics2D g);
 
 	/**
-	 * This will be called in parallel with draw. Do all your collision logic and such in here.
+	 * This will be called in parallel with draw. Do all your collision logic
+	 * and such in here.
 	 */
 	public abstract void update();
 
@@ -129,7 +136,8 @@ public abstract class Level
 	public abstract void keyReleased(KeyEvent e);
 
 	/**
-	 * If mouse has entered into the window. Quite useless but I am giving this lesson nonetheless.
+	 * If mouse has entered into the window. Quite useless but I am giving this
+	 * lesson nonetheless.
 	 *
 	 * @param e
 	 * 		Event which shows where the mouse has entered.
@@ -153,13 +161,14 @@ public abstract class Level
 	public abstract void mouseMoved(MouseEvent e);
 
 	/**
-	 * Remove all the variables here. And make sure to set everything to null so that level can be deleted and done
-	 * with.
+	 * Remove all the variables here. And make sure to set everything to null so
+	 * that level can be deleted and done with.
 	 */
 	public abstract void delete();
 
 	/**
-	 * Returns the width that this level is registered to. Width is relative to game's width, so keep that in mind.
+	 * Returns the width that this level is registered to. Width is relative to
+	 * game's width, so keep that in mind.
 	 *
 	 * @return Width of the screen for this level.
 	 */
@@ -169,7 +178,8 @@ public abstract class Level
 	}
 
 	/**
-	 * Returns the height that this level is registered to. Height is relative to game's height, so keep that in mind.
+	 * Returns the height that this level is registered to. Height is relative
+	 * to game's height, so keep that in mind.
 	 *
 	 * @return Height of the screen for this level.
 	 */

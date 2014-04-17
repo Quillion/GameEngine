@@ -1,4 +1,5 @@
 package dungeon;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -7,9 +8,11 @@ package dungeon;
 
 import basicObjects.Key;
 import constants.Constants;
+import logic.MathEngine;
 
 /**
- * MBox used for dungeons. Contains acceleration, friction, speed limit, and remembers keys pressed.
+ * MBox used for dungeons. Contains acceleration, friction, speed limit, and
+ * remembers keys pressed.
  */
 public class MBox extends basicObjects.shapes.MBox
 {
@@ -19,7 +22,8 @@ public class MBox extends basicObjects.shapes.MBox
 	private double friction;
 
 	/**
-	 * Constructs MBox. Sets keys, acceleration, max speed and friction to zero.
+	 * Constructs MBox. Sets keys, acceleration, max speed and friction to
+	 * zero.
 	 */
 	public MBox()
 	{
@@ -29,9 +33,9 @@ public class MBox extends basicObjects.shapes.MBox
 		{
 			this.keys[i] = new Key(0);
 		}
-		this.acceleration = 0d;
-		this.maxSpeed = 0d;
-		this.friction = 0d;
+		this.setAcceleration(0d);
+		this.setMaxSpeed(0d);
+		this.setFriction(0d);
 	}
 
 	/**
@@ -138,7 +142,8 @@ public class MBox extends basicObjects.shapes.MBox
 	}
 
 	/**
-	 * Increments acceleration by a given value. Can be used for buffs and debufss.
+	 * Increments acceleration by a given value. Can be used for buffs and
+	 * debufss.
 	 *
 	 * @param value
 	 * 		The value by which to increment acceleration.
@@ -223,14 +228,78 @@ public class MBox extends basicObjects.shapes.MBox
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString()).append("\n");
 		sb.append("Keys:").append("\n");
-		sb.append("Left: |").append(getKey(Constants.Direction.Left)).append("|");
+		sb.append("Left: |").append(getKey(Constants.Direction.Left))
+		  .append("|");
 		sb.append(" Up: |").append(getKey(Constants.Direction.Up)).append("|");
-		sb.append(" Right: |").append(getKey(Constants.Direction.Right)).append("|");
-		sb.append(" Down: |").append(getKey(Constants.Direction.Down)).append("|\n");
+		sb.append(" Right: |").append(getKey(Constants.Direction.Right))
+		  .append("|");
+		sb.append(" Down: |").append(getKey(Constants.Direction.Down))
+		  .append("|\n");
 		sb.append("Etc:").append("\n");
 		sb.append("Max Speed: |").append(getMaxSpeed()).append("|");
 		sb.append(" Acceleration: |").append(getAcceleration()).append("|");
 		sb.append(" Friction: |").append(getFriction()).append("|");
 		return sb.toString();
+	}
+
+	/**
+	 * Returns a new copy of this object which has values in different memory
+	 * location. Pretty much performs a deep copy.
+	 *
+	 * @return A new copy of this Movement Box object.
+	 */
+	@Override
+	public MBox copy()
+	{
+		MBox box = new MBox();
+		box.setX(this.getX());
+		box.setY(this.getY());
+		box.setWidth(this.getWidth());
+		box.setHeight(this.getHeight());
+		box.setHorizontalOffset(this.getHorizontalOffset());
+		box.setVerticalOffset(this.getVerticalOffset());
+		box.setVector(this.getVector().copy());
+		box.setKeys(this.getKey(Constants.Direction.Left),
+					this.getKey(Constants.Direction.Up),
+					this.getKey(Constants.Direction.Right),
+					this.getKey(Constants.Direction.Down));
+		box.setAcceleration(this.getAcceleration());
+		box.setMaxSpeed(this.getMaxSpeed());
+		box.setFriction(this.getFriction());
+		return box;
+	}
+
+	/**
+	 * Compares the given object to this moving box.
+	 *
+	 * @param object
+	 * 		The object to which to compare this shape to.
+	 *
+	 * @return True if given object has same values as this box, false
+	 * otherwise.
+	 */
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof MBox)
+		{
+			MBox box = (MBox) object;
+			return super.equals(object) &&
+					this.getKey(Constants.Direction.Left) ==
+							box.getKey(Constants.Direction.Left) &&
+					this.getKey(Constants.Direction.Up) ==
+							box.getKey(Constants.Direction.Up) &&
+					this.getKey(Constants.Direction.Right) ==
+							box.getKey(Constants.Direction.Right) &&
+					this.getKey(Constants.Direction.Down) ==
+							box.getKey(Constants.Direction.Down) &&
+					MathEngine.equals(this.getAcceleration(),
+									  box.getAcceleration()) &&
+					MathEngine.equals(this.getMaxSpeed(),
+									  box.getMaxSpeed()) &&
+					MathEngine.equals(this.getFriction(),
+									  box.getFriction());
+		}
+		return false;
 	}
 }

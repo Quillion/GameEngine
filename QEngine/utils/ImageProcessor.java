@@ -1,4 +1,5 @@
 package utils;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -27,7 +28,8 @@ public class ImageProcessor
 	 *
 	 * @return Attached image.
 	 */
-	public static BufferedImage constructVertical(BufferedImage top, BufferedImage bottom)
+	public static BufferedImage constructVertical(BufferedImage top,
+												  BufferedImage bottom)
 	{
 		BufferedImage combined = new BufferedImage(
 				top.getWidth(),
@@ -50,7 +52,8 @@ public class ImageProcessor
 	 *
 	 * @return Two images attached side by side.
 	 */
-	public static BufferedImage constructHorizontal(BufferedImage left, BufferedImage right)
+	public static BufferedImage constructHorizontal(BufferedImage left,
+													BufferedImage right)
 	{
 		BufferedImage combined = new BufferedImage(
 				left.getWidth() + right.getWidth(),
@@ -79,7 +82,8 @@ public class ImageProcessor
 	 *
 	 * @return The extracted image that you desired.
 	 */
-	public static BufferedImage extractImage(BufferedImage image, int x, int y, int width, int height)
+	public static BufferedImage extractImage(BufferedImage image, int x, int y,
+											 int width, int height)
 	{
 		return image.getSubimage(x, y, width, height);
 	}
@@ -90,13 +94,15 @@ public class ImageProcessor
 	 * @param image
 	 * 		The image that you want flipped.
 	 *
-	 * @return The new image that is a copy of given image flipped around its y axis.
+	 * @return The new image that is a copy of given image flipped around its y
+	 * axis.
 	 */
 	public static BufferedImage flipVertically(BufferedImage image)
 	{
 		AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
 		tx.translate(-image.getWidth(null), 0);
-		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+		AffineTransformOp op = new AffineTransformOp(tx,
+													 AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 		return op.filter(image, null);
 	}
 
@@ -106,18 +112,21 @@ public class ImageProcessor
 	 * @param image
 	 * 		The image that you want flipped.
 	 *
-	 * @return The new image that is a copy of given image flipped around its x axis.
+	 * @return The new image that is a copy of given image flipped around its x
+	 * axis.
 	 */
 	public static BufferedImage flipHorizontally(BufferedImage image)
 	{
 		AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
 		tx.translate(0, -image.getHeight(null));
-		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+		AffineTransformOp op = new AffineTransformOp(tx,
+													 AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 		return op.filter(image, null);
 	}
 
 	/**
-	 * Resizes image to the specified width and height. The original image is not touched so you are safe.
+	 * Resizes image to the specified width and height. The original image is
+	 * not touched so you are safe.
 	 *
 	 * @param image
 	 * 		The image you want resized.
@@ -128,9 +137,11 @@ public class ImageProcessor
 	 *
 	 * @return Newly resized image.
 	 */
-	public static BufferedImage resize(BufferedImage image, int width, int height)
+	public static BufferedImage resize(BufferedImage image, int width,
+									   int height)
 	{
-		int type = image.getType() == 0 ? BufferedImage.TYPE_INT_ARGB : image.getType();
+		int type = image.getType() == 0 ? BufferedImage.TYPE_INT_ARGB : image
+				.getType();
 		BufferedImage resizedImage = new BufferedImage(width, height, type);
 		Graphics2D g = resizedImage.createGraphics();
 		g.drawImage(image, 0, 0, width, height, null);

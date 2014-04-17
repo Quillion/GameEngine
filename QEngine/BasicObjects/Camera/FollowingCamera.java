@@ -1,4 +1,5 @@
 package basicObjects.camera;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -8,7 +9,8 @@ package basicObjects.camera;
 import abstracts.Shape;
 
 /**
- * This Camera will require to be given a Shape that it will be following around.
+ * This Camera will require to be given a Shape that it will be following
+ * around.
  */
 public class FollowingCamera extends Camera
 {
@@ -26,7 +28,8 @@ public class FollowingCamera extends Camera
 	}
 
 	/**
-	 * Update camera position based on the character's coordinates which it should be looking at.
+	 * Update camera position based on the character's coordinates which it
+	 * should be looking at.
 	 */
 	public void updateCamera()
 	{

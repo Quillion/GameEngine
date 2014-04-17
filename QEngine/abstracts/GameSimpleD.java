@@ -1,4 +1,5 @@
 package abstracts;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -12,7 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Simplified abstract class. Just add levels and it will handle them properly without your supervision.
+ * Simplified abstract class. Just add levels and it will handle them properly
+ * without your supervision.
  */
 public abstract class GameSimpleD extends GameDoubleThreaded
 {
@@ -30,7 +32,8 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * If you do not want level that is completed to be deleted from the memory then set this to false.
+	 * If you do not want level that is completed to be deleted from the memory
+	 * then set this to false.
 	 *
 	 * @param delete
 	 * 		False if you want finished level to be kept in memory, true otherwise.
@@ -41,7 +44,8 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * All it does is call setup() for all levels and then sets level 1 to active.
+	 * All it does is call setup() for all levels and then sets level 1 to
+	 * active.
 	 */
 	@Override
 	public void setup()
@@ -82,8 +86,9 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * Calls update function for currently active and loaded level. As soon as level becomes unactive it will be deleted
-	 * from this game object and the next level will become active, and then will become loaded.
+	 * Calls update function for currently active and loaded level. As soon as
+	 * level becomes unactive it will be deleted from this game object and the
+	 * next level will become active, and then will become loaded.
 	 */
 	@Override
 	public void update()
@@ -119,7 +124,8 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * All the keyboard presses will be registered here, and passed onto currently active level.
+	 * All the keyboard presses will be registered here, and passed onto
+	 * currently active level.
 	 *
 	 * @param e
 	 * 		What key the user has pressed.
@@ -138,7 +144,8 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * All the keyboard releases will be registered here, and passed onto currently active level.
+	 * All the keyboard releases will be registered here, and passed onto
+	 * currently active level.
 	 *
 	 * @param e
 	 * 		Which key the user has released.
@@ -157,8 +164,9 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * If mouse has entered into the window. Quite useless but I am giving this lesson nonetheless. All mouse actions
-	 * are passed to the currently active level only.
+	 * If mouse has entered into the window. Quite useless but I am giving this
+	 * lesson nonetheless. All mouse actions are passed to the currently active
+	 * level only.
 	 *
 	 * @param e
 	 * 		Event which shows where the mouse has entered.
@@ -177,7 +185,8 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * If user presses the mouse button. All mouse presses are passed to the currently active level only.
+	 * If user presses the mouse button. All mouse presses are passed to the
+	 * currently active level only.
 	 *
 	 * @param e
 	 * 		All the info about which mouse button was pressed and where.
@@ -196,7 +205,8 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * Mouse movement actions will go here. All mouse motions are passed to the currently active level only.
+	 * Mouse movement actions will go here. All mouse motions are passed to the
+	 * currently active level only.
 	 *
 	 * @param e
 	 * 		Where the mouse is currently located.
@@ -215,8 +225,8 @@ public abstract class GameSimpleD extends GameDoubleThreaded
 	}
 
 	/**
-	 * Adds a level to the current game. All levels are stored into linked list. They will be called into order of how
-	 * they are added.
+	 * Adds a level to the current game. All levels are stored into linked list.
+	 * They will be called into order of how they are added.
 	 *
 	 * @param level
 	 * 		The level you would like to add.

@@ -1,4 +1,5 @@
 package logic.platformer;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -6,14 +7,13 @@ package logic.platformer;
  */
 
 import constants.Constants;
-import logic.Engine;
-import platformer.BasicCharacter;
+import platformer.MBox;
 
 import java.util.Random;
 
 /**
- * This will controls the behaviour of the specified character the way you want to. It will perform whatever actions you
- * specify at a specified frequency.
+ * This will controls the behaviour of the specified character the way you want
+ * to. It will perform whatever actions you specify at a specified frequency.
  */
 public class BasicAIController
 {
@@ -25,15 +25,16 @@ public class BasicAIController
 	private int     minRange, maxRange;
 	private int count;
 	private int jumpFrequency, jumpChance;
-	private BasicCharacter character;
+	private MBox character;
 
 	/**
-	 * Well we can't have AI without specifying which character it is for after all.
+	 * Well we can't have AI without specifying which character it is for after
+	 * all.
 	 *
 	 * @param character
 	 * 		Character who will be controlled by AI.
 	 */
-	public BasicAIController(BasicCharacter character)
+	public BasicAIController(MBox character)
 	{
 		this.fate = new Random();
 		this.character = character;
@@ -50,55 +51,80 @@ public class BasicAIController
 	 */
 	public void randomNoJump()
 	{
+		// STILL DOING THE ACTION FROM LAST TIME
 		if (this.count++ < this.duration)
 		{
 			if (this.rangeSet)
 			{
 				if (this.character.getLeftX() < this.minRange + 10)
 				{
-					this.choice = this.character.getRightKey();
+					this.character.press(Constants.Direction.Right);
 				}
 				else if (this.character.getRightX() > this.maxRange - 10)
 				{
-					this.choice = this.character.getLeftKey();
+					this.character.press(Constants.Direction.Left);
 				}
 			}
-			Engine.keyPressed(this.choice, this.character);
 		}
+		// WE WANT NEW ACTION
 		else
 		{
 			this.count = 0;
-			this.duration = this.fate.nextInt(this.choiceRange) + this.minChoiceDuration;
+			this.duration = this.fate
+					.nextInt(this.choiceRange) + this.minChoiceDuration;
 			this.choice = Constants.NONE;
 
-			// DO SOMETHING
+			// DO SOMETHING CHOSEN
 			if (this.activity > this.fate.nextInt(100))
 			{
 				if (this.rangeSet)
 				{
+					// IF WE EXCEEDED OUR CURRENT RANGE MOVE TO RANGE
 					if (this.character.getLeftX() < this.minRange + 10)
 					{
-						this.choice = this.character.getRightKey();
+						this.character.press(Constants.Direction.Right);
+						this.character.release(Constants.Direction.Left);
 					}
 					else if (this.character.getRightX() > this.maxRange - 10)
 					{
-						this.choice = this.character.getLeftKey();
+						this.character.release(Constants.Direction.Right);
+						this.character.press(Constants.Direction.Left);
+					}
+					// WE ARE WITHIN OUR RANGE, DECIDE ON NEW ACTION
+					else
+					{
+						if (this.fate.nextInt(2) == 1)
+						{
+							this.character.press(Constants.Direction.Right);
+							this.character.release(Constants.Direction.Left);
+						}
+						else
+						{
+							this.character.release(Constants.Direction.Right);
+							this.character.press(Constants.Direction.Left);
+						}
+					}
+				}
+				// WE DO NOT HAVE RANGE CONSTRAINTS GO CRAZY
+				else
+				{
+					if (this.fate.nextInt(2) == 1)
+					{
+						this.character.press(Constants.Direction.Right);
+						this.character.release(Constants.Direction.Left);
 					}
 					else
 					{
-						this.choice = this.fate.nextInt(2);
+						this.character.release(Constants.Direction.Right);
+						this.character.press(Constants.Direction.Left);
 					}
-				}
-				else
-				{
-					this.choice = this.fate.nextInt(2);
 				}
 			}
 			// DO NOTHING
 			else
 			{
-				this.character.setLeft(false);
-				this.character.setRight(false);
+				this.character.release(Constants.Direction.Left);
+				this.character.release(Constants.Direction.Right);
 			}
 		}
 	}
@@ -108,65 +134,95 @@ public class BasicAIController
 	 */
 	public void random()
 	{
+		// STILL DOING THE ACTION FROM LAST TIME
 		if (this.count++ < this.duration)
 		{
+			// MAKE SURE WE DID NOT EXCEED OUR RANGE
 			if (this.rangeSet)
 			{
 				if (this.character.getLeftX() < this.minRange + 10)
 				{
-					this.choice = this.character.getRightKey();
+					this.character.press(Constants.Direction.Right);
+					this.character.release(Constants.Direction.Left);
 				}
 				else if (this.character.getRightX() > this.maxRange - 10)
 				{
-					this.choice = this.character.getLeftKey();
+					this.character.release(Constants.Direction.Right);
+					this.character.press(Constants.Direction.Left);
 				}
 			}
-			Engine.keyPressed(this.choice, this.character);
-			if (this.count % this.jumpFrequency == 0 && this.fate.nextInt(this.jumpChance) == 1)
+			// SEE IF WE SHOULD TRY JUMPING
+			if (this.count % this.jumpFrequency == 0 && this.fate
+					.nextInt(this.jumpChance) == 1)
 			{
-				Engine.keyPressed(this.character.getJumpKey(), this.character);
+				this.character.press(Constants.Direction.Jump);
 			}
 		}
 		else
 		{
 			this.count = 0;
-			this.duration = this.fate.nextInt(this.choiceRange) + this.minChoiceDuration;
+			this.duration = this.fate
+					.nextInt(this.choiceRange) + this.minChoiceDuration;
 			this.choice = Constants.NONE;
 
 			// DO SOMETHING
 			if (this.activity > this.fate.nextInt(100))
 			{
+				// IF WE EXCEEDED OUR CURRENT RANGE MOVE TO RANGE
 				if (this.rangeSet)
 				{
 					if (this.character.getLeftX() < this.minRange + 10)
 					{
-						this.choice = this.character.getRightKey();
+						this.character.press(Constants.Direction.Right);
+						this.character.release(Constants.Direction.Left);
 					}
 					else if (this.character.getRightX() > this.maxRange - 10)
 					{
-						this.choice = this.character.getLeftKey();
+						this.character.release(Constants.Direction.Right);
+						this.character.press(Constants.Direction.Left);
+					}
+					// WE ARE WITHIN OUR RANGE, DECIDE ON NEW ACTION
+					else
+					{
+						if (this.fate.nextInt(2) == 1)
+						{
+							this.character.press(Constants.Direction.Right);
+							this.character.release(Constants.Direction.Left);
+						}
+						else
+						{
+							this.character.release(Constants.Direction.Right);
+							this.character.press(Constants.Direction.Left);
+						}
+					}
+				}
+				// WE DO NOT HAVE RANGE CONSTRAINTS GO CRAZY
+				else
+				{
+					if (this.fate.nextInt(2) == 1)
+					{
+						this.character.press(Constants.Direction.Right);
+						this.character.release(Constants.Direction.Left);
 					}
 					else
 					{
-						this.choice = this.fate.nextInt(2);
+						this.character.release(Constants.Direction.Right);
+						this.character.press(Constants.Direction.Left);
 					}
-				}
-				else
-				{
-					this.choice = this.fate.nextInt(2);
 				}
 			}
 			// DO NOTHING
 			else
 			{
-				this.character.setLeft(false);
-				this.character.setRight(false);
+				this.character.release(Constants.Direction.Left);
+				this.character.release(Constants.Direction.Right);
 			}
 		}
 	}
 
 	/**
-	 * Must be in range from 1 to 100, the higher the range, the more active the character.
+	 * Must be in range from 1 to 100, the higher the range, the more active the
+	 * character.
 	 *
 	 * @param activity
 	 * 		The rate of activity of the given character.
@@ -180,8 +236,9 @@ public class BasicAIController
 	}
 
 	/**
-	 * The duration of actions that character will take. Smaller range will result in more rapidly changing and
-	 * seizurelike character. Make sure that minimum choice duration is smaller than max choice duration.
+	 * The duration of actions that character will take. Smaller range will
+	 * result in more rapidly changing and seizurelike character. Make sure that
+	 * minimum choice duration is smaller than max choice duration.
 	 *
 	 * @param minChoiceDuration
 	 * 		Minimum duration to hold the action.
@@ -199,7 +256,8 @@ public class BasicAIController
 	}
 
 	/**
-	 * The range within which the character can move. Very useful to keep character on the platform.
+	 * The range within which the character can move. Very useful to keep
+	 * character on the platform.
 	 *
 	 * @param minRange
 	 * 		The left side range for the character. The left x.
@@ -218,13 +276,14 @@ public class BasicAIController
 	}
 
 	/**
-	 * Sets up jumping behaviour. For truly random jumping I would recommend setting frequency to low and chance to
-	 * high.
+	 * Sets up jumping behaviour. For truly random jumping I would recommend
+	 * setting frequency to low and chance to high.
 	 *
 	 * @param jumpFrequency
 	 * 		How frequently the character will jump.
 	 * @param jumpChance
-	 * 		The chance of jumping. The higher the number the less likely the character is to jump.
+	 * 		The chance of jumping. The higher the number the less likely the
+	 * 		character is to jump.
 	 */
 	public void setJumpFParameters(int jumpFrequency, int jumpChance)
 	{

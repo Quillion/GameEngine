@@ -1,4 +1,5 @@
 package abstracts;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
@@ -9,12 +10,14 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Simple thread. Creates everything necessary to run the game, and makes you implement things that are only needed.
+ * Simple thread. Creates everything necessary to run the game, and makes you
+ * implement things that are only needed.
  */
 public abstract class GameDoubleThreaded extends GameAbstract implements Game
 {
 	/**
-	 * This one is the logic loop. It first does setup and then proceeds to doing update infinitely.
+	 * This one is the logic loop. It first does setup and then proceeds to
+	 * doing update infinitely.
 	 */
 	private void logic()
 	{
@@ -45,7 +48,8 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 			{
 				try
 				{
-					Thread.sleep((this.desiredDeltaLoop - deltaLoop) / (1000 * 1000));
+					Thread.sleep(
+							(this.desiredDeltaLoop - deltaLoop) / (1000 * 1000));
 				}
 				catch (InterruptedException e)
 				{
@@ -84,7 +88,8 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 			{
 				try
 				{
-					Thread.sleep((this.desiredDeltaLoop - deltaLoop) / (1000 * 1000));
+					Thread.sleep(
+							(this.desiredDeltaLoop - deltaLoop) / (1000 * 1000));
 				}
 				catch (InterruptedException e)
 				{
@@ -98,8 +103,8 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 	private Runnable draw;
 
 	/**
-	 * Method to initialise graphics that are going to be painted to the screen. Don't mess with this method too much,
-	 * it does things well.
+	 * Method to initialise graphics that are going to be painted to the screen.
+	 * Don't mess with this method too much, it does things well.
 	 */
 	private void render()
 	{
@@ -116,7 +121,8 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 	}
 
 	/**
-	 * Main thread initialization. Default width and height is 640 x 480 and full screen is false.
+	 * Main thread initialization. Default width and height is 640 x 480 and
+	 * full screen is false.
 	 */
 	public GameDoubleThreaded()
 	{
@@ -129,12 +135,14 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 	}
 
 	/**
-	 * Initializes everything by the specified values. You can call it right away, or call setScreen() method first.
+	 * Initializes everything by the specified values. You can call it right
+	 * away, or call setScreen() method first.
 	 */
 	public void init()
 	{
 		// SET UP THE WINDOW AND GRAPHICS
-		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment
+				.getLocalGraphicsEnvironment();
 		this.graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
 		this.originalDisplayMode = this.graphicsDevice.getDisplayMode();
 
@@ -145,7 +153,8 @@ public abstract class GameDoubleThreaded extends GameAbstract implements Game
 			this.graphicsDevice.setFullScreenWindow(this);
 			if (this.graphicsDevice.isDisplayChangeSupported())
 			{
-				this.graphicsDevice.setDisplayMode(getBestDisplayMode(this.graphicsDevice));
+				this.graphicsDevice.setDisplayMode(
+						getBestDisplayMode(this.graphicsDevice));
 			}
 		}
 		else
