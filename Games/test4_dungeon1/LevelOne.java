@@ -5,11 +5,11 @@ package test4_dungeon1;
  * @since 1.6
  */
 
+import abstractSwing.Level;
 import basicObjects.Dimensions;
 import basicObjects.Point;
 import basicObjects.camera.FollowingCamera;
 import basicObjects.shapes.BBox;
-import abstracts.Level;
 import constants.Constants;
 import dungeon.MBox;
 import logic.CollisionEngine;
@@ -24,7 +24,7 @@ import java.util.List;
 public class LevelOne extends Level
 {
 	private List<BBox> walls;
-	private MBox character1;
+	private MBox       character1;
 
 	private FollowingCamera camera;
 
@@ -102,7 +102,9 @@ public class LevelOne extends Level
 		character1.setSize(new Dimensions(45, 45));
 		character1.setOffsets(new Dimensions(7, 7));
 		character1.setVector(new Point(0, 0));
-		character1.setKeys(new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT, KeyEvent.VK_DOWN});
+		character1.setKeys(
+				new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT,
+						  KeyEvent.VK_DOWN});
 		character1.setAcceleration(0.15);
 		character1.setMaxSpeed(3);
 		character1.setFriction(0.3);
@@ -117,7 +119,9 @@ public class LevelOne extends Level
 	public void draw(Graphics2D g)
 	{
 		for (BBox box : walls)
+		{
 			camera.draw(box);
+		}
 
 		camera.draw(character1);
 
@@ -143,16 +147,29 @@ public class LevelOne extends Level
 		Engine.setControlSpeeds(character1);
 		for (BBox box : walls)
 		{
-			Constants.Direction direction = CollisionEngine.horizontalCollision(character1, box);
-			if (direction.equals(Constants.Direction.Right) && character1.getXVector() > 0)
+			Constants.Direction direction = CollisionEngine
+					.horizontalCollision(character1, box);
+			if (direction.equals(Constants.Direction.Right) && character1
+					.getXVector() > 0)
+			{
 				character1.setXVector(0);
-			else if (direction.equals(Constants.Direction.Left) && character1.getXVector() < 0)
+			}
+			else if (direction.equals(Constants.Direction.Left) && character1
+					.getXVector() < 0)
+			{
 				character1.setXVector(0);
+			}
 			direction = CollisionEngine.verticalCollision(character1, box);
-			if (direction.equals(Constants.Direction.Down) && character1.getYVector() > 0)
+			if (direction.equals(Constants.Direction.Down) && character1
+					.getYVector() > 0)
+			{
 				character1.setYVector(0);
-			else if (direction.equals(Constants.Direction.Up) && character1.getYVector() < 0)
+			}
+			else if (direction.equals(Constants.Direction.Up) && character1
+					.getYVector() < 0)
+			{
 				character1.setYVector(0);
+			}
 		}
 
 		character1.move();

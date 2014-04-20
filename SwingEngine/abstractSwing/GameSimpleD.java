@@ -1,4 +1,4 @@
-package abstracts;
+package abstractSwing;
 
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>

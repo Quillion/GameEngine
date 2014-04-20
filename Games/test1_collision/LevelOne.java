@@ -1,17 +1,18 @@
 package test1_collision;
+
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
  * @version Version 1
  * @since 1.6
  */
 
-import basicObjects.*;
+import abstractSwing.Level;
+import basicObjects.Dimensions;
 import basicObjects.Point;
 import basicObjects.shapes.*;
-import painter.ShapePainter;
-import abstracts.Level;
 import constants.Constants;
 import logic.CollisionEngine;
+import painter.ShapePainter;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -72,7 +73,8 @@ public class LevelOne extends Level
 		bBoxes.add(bBox);
 
 		bBox = new BBox();
-		bBox.setCoordinates(new Point(getWidth() / 4 - 50, getHeight() / 2 - 50));
+		bBox.setCoordinates(
+				new Point(getWidth() / 4 - 50, getHeight() / 2 - 50));
 		bBox.setSize(new Dimensions(100, 100));
 		bBox.setOffsets(new Dimensions(9, 9));
 		bBoxes.add(bBox);
@@ -93,7 +95,8 @@ public class LevelOne extends Level
 			balls.add(ball);
 
 			ball = new Ball();
-			ball.setCoordinates(new Point(getWidth() / 2 + 125 + (i * 50), getHeight() - 25));
+			ball.setCoordinates(new Point(getWidth() / 2 + 125 + (i * 50),
+										  getHeight() - 25));
 			ball.setRadius(25);
 			balls.add(ball);
 		}
@@ -101,7 +104,8 @@ public class LevelOne extends Level
 		for (int i = 0; i < 3; i++)
 		{
 			ball = new Ball();
-			ball.setCoordinates(new Point(getWidth() / 2 + 40, 140 + (i * 110)));
+			ball.setCoordinates(
+					new Point(getWidth() / 2 + 40, 140 + (i * 110)));
 			ball.setRadius(40);
 			balls.add(ball);
 
@@ -191,21 +195,26 @@ public class LevelOne extends Level
 		{
 			for (Box box : boxes)
 			{
-				Constants.Direction direction = CollisionEngine.horizontalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Right) && mbox.getXVector() > 0)
+				Constants.Direction direction = CollisionEngine
+						.horizontalCollision(mbox, box);
+				if (direction.equals(Constants.Direction.Right) && mbox
+						.getXVector() > 0)
 				{
 					mbox.setXVector(0);
 				}
-				else if (direction.equals(Constants.Direction.Left) && mbox.getXVector() < 0)
+				else if (direction.equals(Constants.Direction.Left) && mbox
+						.getXVector() < 0)
 				{
 					mbox.setXVector(0);
 				}
 				direction = CollisionEngine.verticalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Down) && mbox.getYVector() > 0)
+				if (direction.equals(Constants.Direction.Down) && mbox
+						.getYVector() > 0)
 				{
 					mbox.setYVector(0);
 				}
-				else if (direction.equals(Constants.Direction.Up) && mbox.getYVector() < 0)
+				else if (direction.equals(Constants.Direction.Up) && mbox
+						.getYVector() < 0)
 				{
 					mbox.setYVector(0);
 				}
@@ -213,21 +222,26 @@ public class LevelOne extends Level
 
 			for (BBox box : bBoxes)
 			{
-				Constants.Direction direction = CollisionEngine.horizontalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Right) && mbox.getXVector() > 0)
+				Constants.Direction direction = CollisionEngine
+						.horizontalCollision(mbox, box);
+				if (direction.equals(Constants.Direction.Right) && mbox
+						.getXVector() > 0)
 				{
 					mbox.setXVector(0);
 				}
-				else if (direction.equals(Constants.Direction.Left) && mbox.getXVector() < 0)
+				else if (direction.equals(Constants.Direction.Left) && mbox
+						.getXVector() < 0)
 				{
 					mbox.setXVector(0);
 				}
 				direction = CollisionEngine.verticalCollision(mbox, box);
-				if (direction.equals(Constants.Direction.Down) && mbox.getYVector() > 0)
+				if (direction.equals(Constants.Direction.Down) && mbox
+						.getYVector() > 0)
 				{
 					mbox.setYVector(0);
 				}
-				else if (direction.equals(Constants.Direction.Up) && mbox.getYVector() < 0)
+				else if (direction.equals(Constants.Direction.Up) && mbox
+						.getYVector() < 0)
 				{
 					mbox.setYVector(0);
 				}
@@ -240,8 +254,10 @@ public class LevelOne extends Level
 		{
 			for (Ball ball : balls)
 			{
-				boolean collision = CollisionEngine.collision(mball.copy().move(), ball);
-				Constants.Direction direction = CollisionEngine.horizontalOrientation(mball, ball);
+				boolean collision = CollisionEngine
+						.collision(mball.copy().move(), ball);
+				Constants.Direction direction = CollisionEngine
+						.horizontalOrientation(mball, ball);
 				if (direction.equals(Constants.Direction.Right) &&
 						mball.getXVector() > 0 &&
 						collision)
@@ -271,8 +287,10 @@ public class LevelOne extends Level
 
 			for (BBall ball : bBalls)
 			{
-				boolean collision = CollisionEngine.collision(mball.copy().move(), ball);
-				Constants.Direction direction = CollisionEngine.horizontalOrientation(mball, ball);
+				boolean collision = CollisionEngine
+						.collision(mball.copy().move(), ball);
+				Constants.Direction direction = CollisionEngine
+						.horizontalOrientation(mball, ball);
 				if (direction.equals(Constants.Direction.Right) &&
 						mball.getXVector() > 0 &&
 						collision)

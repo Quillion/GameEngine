@@ -5,7 +5,7 @@ package test5_platformer1;
  * @since 1.6
  */
 
-import abstracts.GameSimpleS;
+import abstractSwing.GameSimpleS;
 
 public class Game extends GameSimpleS
 {

@@ -6,7 +6,7 @@ package test6_platformer2;
  * @since 1.6
  */
 
-import abstracts.Level;
+import abstractSwing.Level;
 import basicObjects.Dimensions;
 import basicObjects.Point;
 import basicObjects.camera.FollowingCamera;
@@ -124,7 +124,8 @@ public class LevelOne extends Level
 		character1.setVector(new Point(0, 0));
 		character1.setKeys(
 				new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT,
-						  KeyEvent.VK_DOWN, KeyEvent.VK_UP});
+						  KeyEvent.VK_DOWN, KeyEvent.VK_UP}
+		);
 		character1.setAcceleration(0.15);
 		character1.setMaxSpeed(3);
 		character1.setFriction(0.3);

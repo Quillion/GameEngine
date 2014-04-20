@@ -5,11 +5,11 @@ package test7_dungeon2;
  * @since 1.6
  */
 
+import abstractSwing.Level;
 import basicObjects.Dimensions;
 import basicObjects.Point;
 import basicObjects.camera.FollowingCamera;
 import basicObjects.shapes.BBox;
-import abstracts.Level;
 import dungeon.MBox;
 import logic.dungeon.CollisionEngine;
 import logic.dungeon.Engine;
@@ -23,7 +23,7 @@ import java.util.List;
 public class LevelOne extends Level
 {
 	private List<BBox> walls;
-	private MBox character1;
+	private MBox       character1;
 
 	private FollowingCamera camera;
 
@@ -101,7 +101,9 @@ public class LevelOne extends Level
 		character1.setSize(new Dimensions(45, 45));
 		character1.setOffsets(new Dimensions(7, 7));
 		character1.setVector(new Point(0, 0));
-		character1.setKeys(new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT, KeyEvent.VK_DOWN});
+		character1.setKeys(
+				new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_UP, KeyEvent.VK_RIGHT,
+						  KeyEvent.VK_DOWN});
 		character1.setAcceleration(0.15);
 		character1.setMaxSpeed(3);
 		character1.setFriction(0.3);
@@ -116,7 +118,9 @@ public class LevelOne extends Level
 	public void draw(Graphics2D g)
 	{
 		for (BBox box : walls)
+		{
 			camera.draw(box);
+		}
 
 		camera.draw(character1);
 

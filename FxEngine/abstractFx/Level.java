@@ -1,4 +1,4 @@
-package abstracts;
+package abstractFx;
 
 /**
  * @author Edgar Ghahramanyan <edgarquill@gmail.com>
@@ -6,9 +6,8 @@ package abstracts;
  * @since 1.6
  */
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 /**
  * Contains all the basics that a level should contain.
@@ -107,11 +106,8 @@ public abstract class Level
 
 	/**
 	 * Draw everything needed here.
-	 *
-	 * @param g
-	 * 		Graphics to which to draw images to.
 	 */
-	public abstract void draw(Graphics2D g);
+	public abstract void draw();
 
 	/**
 	 * This will be called in parallel with draw. Do all your collision logic
@@ -122,43 +118,50 @@ public abstract class Level
 	/**
 	 * All the keyboard presses will be registered here.
 	 *
-	 * @param e
+	 * @param keyEvent
 	 * 		What key the user has pressed.
 	 */
-	public abstract void keyPressed(KeyEvent e);
+	public abstract void keyPressed(KeyEvent keyEvent);
 
 	/**
 	 * All the keyboard releases will be registered here.
 	 *
-	 * @param e
+	 * @param keyEvent
 	 * 		Which key the user has released.
 	 */
-	public abstract void keyReleased(KeyEvent e);
-
-	/**
-	 * If mouse has entered into the window. Quite useless but I am giving this
-	 * lesson nonetheless.
-	 *
-	 * @param e
-	 * 		Event which shows where the mouse has entered.
-	 */
-	public abstract void mouseEntered(MouseEvent e);
+	public abstract void keyReleased(KeyEvent keyEvent);
 
 	/**
 	 * If user presses the mouse button.
 	 *
-	 * @param e
+	 * @param mouseEvent
 	 * 		All the info about which mouse button was pressed and where.
 	 */
-	public abstract void mousePressed(MouseEvent e);
+	public abstract void mousePressed(MouseEvent mouseEvent);
 
 	/**
-	 * Mouse movement actions will go here.
+	 * If user releases the mouse button.
 	 *
-	 * @param e
-	 * 		Where the mouse is currently located.
+	 * @param mouseEvent
+	 * 		All the info about which mouse button was pressed and where.
 	 */
-	public abstract void mouseMoved(MouseEvent e);
+	public abstract void mouseReleased(MouseEvent mouseEvent);
+
+	/**
+	 * If user clicks the mouse button.
+	 *
+	 * @param mouseEvent
+	 * 		All the info about which mouse button was pressed and where.
+	 */
+	public abstract void mouseClicked(MouseEvent mouseEvent);
+
+	/**
+	 * If user drags the mouse while pressed.
+	 *
+	 * @param mouseEvent
+	 * 		All the info about which mouse button was pressed and where.
+	 */
+	public abstract void mouseDragged(MouseEvent mouseEvent);
 
 	/**
 	 * Remove all the variables here. And make sure to set everything to null so

@@ -5,13 +5,13 @@ package test2_camera;
  * @since 1.6
  */
 
-import basicObjects.*;
-import basicObjects.camera.FollowingCamera;
+import abstractSwing.Level;
+import basicObjects.Dimensions;
 import basicObjects.Point;
+import basicObjects.camera.FollowingCamera;
 import basicObjects.shapes.BBox;
 import basicObjects.shapes.Box;
 import basicObjects.shapes.MBox;
-import abstracts.Level;
 import constants.Constants;
 import logic.CollisionEngine;
 
@@ -23,9 +23,9 @@ import java.util.List;
 
 public class LevelOne extends Level
 {
-	private List<Box> boxes;
+	private List<Box>  boxes;
 	private List<BBox> bBoxes;
-	private MBox character;
+	private MBox       character;
 
 	private FollowingCamera camera;
 
@@ -71,7 +71,8 @@ public class LevelOne extends Level
 		bBoxes.add(bBox);
 
 		bBox = new BBox();
-		bBox.setCoordinates(new Point(getWidth() / 2 - 50, getHeight() / 2 - 50));
+		bBox.setCoordinates(
+				new Point(getWidth() / 2 - 50, getHeight() / 2 - 50));
 		bBox.setSize(new Dimensions(100, 100));
 		bBox.setOffsets(new Dimensions(9, 9));
 		bBoxes.add(bBox);
@@ -91,10 +92,14 @@ public class LevelOne extends Level
 	public void draw(Graphics2D g)
 	{
 		for (Box box : boxes)
+		{
 			camera.draw(box);
+		}
 
 		for (BBox box : bBoxes)
+		{
 			camera.draw(box);
+		}
 
 		camera.draw(character);
 
@@ -107,30 +112,56 @@ public class LevelOne extends Level
 	{
 		for (Box box : boxes)
 		{
-			Constants.Direction direction = CollisionEngine.horizontalCollision(character, box);
-			if (direction.equals(Constants.Direction.Right) && character.getXVector() > 0)
+			Constants.Direction direction = CollisionEngine
+					.horizontalCollision(character, box);
+			if (direction.equals(Constants.Direction.Right) && character
+					.getXVector() > 0)
+			{
 				character.setXVector(0);
-			else if (direction.equals(Constants.Direction.Left) && character.getXVector() < 0)
+			}
+			else if (direction.equals(Constants.Direction.Left) && character
+					.getXVector() < 0)
+			{
 				character.setXVector(0);
+			}
 			direction = CollisionEngine.verticalCollision(character, box);
-			if (direction.equals(Constants.Direction.Down) && character.getYVector() > 0)
+			if (direction.equals(Constants.Direction.Down) && character
+					.getYVector() > 0)
+			{
 				character.setYVector(0);
-			else if (direction.equals(Constants.Direction.Up) && character.getYVector() < 0)
+			}
+			else if (direction.equals(Constants.Direction.Up) && character
+					.getYVector() < 0)
+			{
 				character.setYVector(0);
+			}
 		}
 
 		for (BBox box : bBoxes)
 		{
-			Constants.Direction direction = CollisionEngine.horizontalCollision(character, box);
-			if (direction.equals(Constants.Direction.Right) && character.getXVector() > 0)
+			Constants.Direction direction = CollisionEngine
+					.horizontalCollision(character, box);
+			if (direction.equals(Constants.Direction.Right) && character
+					.getXVector() > 0)
+			{
 				character.setXVector(0);
-			else if (direction.equals(Constants.Direction.Left) && character.getXVector() < 0)
+			}
+			else if (direction.equals(Constants.Direction.Left) && character
+					.getXVector() < 0)
+			{
 				character.setXVector(0);
+			}
 			direction = CollisionEngine.verticalCollision(character, box);
-			if (direction.equals(Constants.Direction.Down) && character.getYVector() > 0)
+			if (direction.equals(Constants.Direction.Down) && character
+					.getYVector() > 0)
+			{
 				character.setYVector(0);
-			else if (direction.equals(Constants.Direction.Up) && character.getYVector() < 0)
+			}
+			else if (direction.equals(Constants.Direction.Up) && character
+					.getYVector() < 0)
+			{
 				character.setYVector(0);
+			}
 		}
 
 		character.move();
